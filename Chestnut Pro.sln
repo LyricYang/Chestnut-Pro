@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chestnut Pro", "Chestnut Pro\Chestnut Pro.csproj", "{28C3D6F4-0BF0-4D06-948A-E433760C2857}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28C3D6F4-0BF0-4D06-948A-E433760C2857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28C3D6F4-0BF0-4D06-948A-E433760C2857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28C3D6F4-0BF0-4D06-948A-E433760C2857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28C3D6F4-0BF0-4D06-948A-E433760C2857}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9CF8B00F-ECD9-4054-8B2D-7C90196DAA92}
+	EndGlobalSection
+EndGlobal
