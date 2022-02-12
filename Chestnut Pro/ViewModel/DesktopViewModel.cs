@@ -27,7 +27,6 @@
                 new DesktopItems { DesktopName = "Headphone", DesktopImage = @"Assets/headphone_icon.png" },
                 new DesktopItems { DesktopName = "Password", DesktopImage = @"Assets/password_icon.png" },
                 new DesktopItems { DesktopName = "Calendar", DesktopImage = @"Assets/calendar_icon.png" }
-
             };
 
             DesktopItemsCollection = new CollectionViewSource { Source = desktopItems };

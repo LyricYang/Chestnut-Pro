@@ -5,15 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:Chestnut_Pro.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow"
-        Height="920"
-        Width="1320"
+        Title="Chestnut Pro"
+        Height="880"
+        Width="1300"
         x:Name="DashboardWindow"
         WindowStartupLocation="CenterScreen"
-        WindowStyle="None"
-        ResizeMode="CanResize"
-        Background="Transparent"
-        AllowsTransparency="True">
+        ResizeMode="CanResize">
 
     <!--Setting the DataContext (Binding Source)-->
     <Window.DataContext>
@@ -22,21 +19,7 @@
 
     <Grid>
         <!--Background Border-->
-        <Border Background="#F6F6F8"
-                CornerRadius="10" Margin="0,0,0,0"/>
-
-        <!--Header-->
-        <Border VerticalAlignment="Top"
-                HorizontalAlignment="Center"
-                CornerRadius="10 10 0 0"
-                Height="55"
-                Width="1320">
-            <Border.Background>
-                <SolidColorBrush Color="#FF673AB7"/>
-            </Border.Background>
-            <TextBlock Text="C H E S T N U T    P R O"
-                       Style="{StaticResource HeaderStyle}" />
-        </Border>
+        <Border Background="White"/>
 
         <!--Content Grid-->
         <Grid>
@@ -50,7 +33,7 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="0"/>
-                <RowDefinition Height="80"/>
+                <RowDefinition Height="10"/>
                 <RowDefinition Height="55"/>
                 <RowDefinition Height="370"/>
                 <RowDefinition Height="0"/>
@@ -63,14 +46,14 @@
                      Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}"
                      Style="{StaticResource SearchBoxStyle}"/>
 
-                <TextBlock Text="Search"
+                <TextBlock Text="Type to search..."
                        Style="{StaticResource SearchTextStyle}"/>
             </Grid>
 
             <!--Menu-->
             <Grid Grid.Row="3"
                   Grid.Column="1"
-                  Margin="0,10,0,0">
+                  Margin="0,0,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="41*"/>
                     <ColumnDefinition Width="139*"/>
@@ -104,16 +87,5 @@
                                 Content="{Binding SelectedViewModel}" Margin="0,0,-440,-415" Grid.ColumnSpan="2"/>
             </Grid>
         </Grid>
-
-        <!--Close Button-->
-        <Button Height="50"
-                Width="50"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                Command="{Binding CloseCommand}"
-                CommandParameter="{Binding ElementName=DashboardWindow}"
-                Margin="0,5,20,0"
-                Style="{StaticResource CloseBtn_Style}"/>
     </Grid>
-
 </Window>

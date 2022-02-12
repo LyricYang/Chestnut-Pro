@@ -6,6 +6,7 @@
     <RootNamespace>Chestnut_Pro</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Assets\chestnut.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,8 +24,6 @@
     <None Remove="Assets\channel_icon.png" />
     <None Remove="Assets\chart_icon.png" />
     <None Remove="Assets\clap_icon.png" />
-    <None Remove="Assets\close_icon.png" />
-    <None Remove="Assets\close_mo_icon.png" />
     <None Remove="Assets\Desktop_Icon.png" />
     <None Remove="Assets\Document_Icon.png" />
     <None Remove="Assets\Download_Icon.png" />
@@ -71,6 +70,7 @@
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="MaterialDesignColors" Version="2.0.4" />
     <PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -96,8 +96,6 @@
     <Resource Include="Assets\channel_icon.png" />
     <Resource Include="Assets\chart_icon.png" />
     <Resource Include="Assets\clap_icon.png" />
-    <Resource Include="Assets\close_icon.png" />
-    <Resource Include="Assets\close_mo_icon.png" />
     <Resource Include="Assets\Desktop_Icon.png" />
     <Resource Include="Assets\Document_Icon.png" />
     <Resource Include="Assets\Download_Icon.png" />
@@ -139,6 +137,15 @@
     <Resource Include="Assets\vsc_icon.png" />
     <Resource Include="Assets\vs_icon.png" />
     <Resource Include="Assets\webcam_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\chestnut.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\Data.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
