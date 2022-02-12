@@ -84,7 +84,9 @@
                     <ColumnDefinition Width="179*"/>
                 </Grid.ColumnDefinitions>
                 <ContentControl x:Name="Pages"
-                                Content="{Binding SelectedViewModel}" Margin="0,0,-440,-415" Grid.ColumnSpan="2"/>
+                                Content="{Binding SelectedViewModel}"
+                                Margin="0,0,-440,-415"
+                                Grid.ColumnSpan="2"/>
             </Grid>
         </Grid>
     </Grid>

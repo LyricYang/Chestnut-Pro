@@ -4,7 +4,7 @@
     using System.Windows.Input;
 
     /// <summary>
-    /// RelayCommand allows you to inject the command's logic via delegates passed into its contructor.
+    /// RelayCommand allows you to inject the command's logic via delegates passed into its constructor.
     /// This method enables ViewModel classes to implement commands in a concise manner.
     /// </summary>
     public class RelayCommand : ICommand

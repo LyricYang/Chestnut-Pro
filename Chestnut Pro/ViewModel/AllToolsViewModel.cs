@@ -5,12 +5,12 @@
     using System.Windows.Data;
     using Chestnut_Pro.Model;
 
-    public class DesktopViewModel : INotifyPropertyChanged
+    public class AllToolsViewModel : INotifyPropertyChanged
     {
         private readonly CollectionViewSource DesktopItemsCollection;
         public ICollectionView DesktopSourceCollection => DesktopItemsCollection.View;
 
-        public DesktopViewModel()
+        public AllToolsViewModel()
         {
             ObservableCollection<DesktopItems> desktopItems = new ObservableCollection<DesktopItems>
             {

@@ -6,12 +6,12 @@ using Chestnut_Pro.Model;
 
 namespace Chestnut_Pro.ViewModel
 {
-    public class DocumentViewModel : INotifyPropertyChanged
+    public class NumberBaseViewModel : INotifyPropertyChanged
     {
         private CollectionViewSource DocumentItemsCollection;
         public ICollectionView DocumentSourceCollection => DocumentItemsCollection.View;
 
-        public DocumentViewModel()
+        public NumberBaseViewModel()
         {
             ObservableCollection<DocumentItems> documentItems = new ObservableCollection<DocumentItems>
             {
@@ -28,7 +28,6 @@ namespace Chestnut_Pro.ViewModel
 
             DocumentItemsCollection = new CollectionViewSource { Source = documentItems };
             DocumentItemsCollection.Filter += MenuItems_Filter;
-
         }
 
         private string filterText;

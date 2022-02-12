@@ -1,12 +1,14 @@
-﻿using Chestnut_Pro.Model;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Windows.Data;
-using System.Windows.Input;
-
-namespace Chestnut_Pro.ViewModel
+﻿namespace Chestnut_Pro.ViewModel
 {
+    using Chestnut_Pro.Model;
+    using System.Collections.ObjectModel;
+    using System.ComponentModel;
+    using System.Windows.Data;
+    using System.Windows.Input;
 
+    /// <summary>
+    /// Navigation View Model
+    /// </summary>
     public class NavigationViewModel : INotifyPropertyChanged
     {
         /// <summary>
@@ -21,6 +23,9 @@ namespace Chestnut_Pro.ViewModel
         /// </summary>
         public ICollectionView SourceCollection => MenuItemsCollection.View;
 
+        /// <summary>
+        /// The Constructor
+        /// </summary>
         public NavigationViewModel()
         {
             // ObservableCollection represents a dynamic data collection that provides notifications when items
@@ -28,8 +33,8 @@ namespace Chestnut_Pro.ViewModel
             ObservableCollection<MenuItems> menuItems = new ()
             {
                 new () { MenuName = "Home", MenuImage = @"Assets/Home_Icon.png"},
-                new () { MenuName = "Desktop", MenuImage = @"Assets/Desktop_Icon.png"},
-                new () { MenuName = "Documents", MenuImage = @"Assets/Document_Icon.png" },
+                new () { MenuName = "All Tools", MenuImage = @"Assets/Desktop_Icon.png"},
+                new () { MenuName = "Number Base", MenuImage = @"Assets/Document_Icon.png" },
                 new () { MenuName = "Downloads", MenuImage = @"Assets/Download_Icon.png" },
                 new () { MenuName = "Pictures", MenuImage = @"Assets/Images_Icon.png" },
                 new () { MenuName = "Music", MenuImage = @"Assets/Music_Icon.png" },
@@ -79,7 +84,7 @@ namespace Chestnut_Pro.ViewModel
                 return;
             }
 
-            MenuItems _item = e.Item as MenuItems;
+            MenuItems? _item = e.Item as MenuItems;
             if (_item.MenuName.ToUpper().Contains(FilterText.ToUpper()))
             {
                 e.Accepted = true;
@@ -112,11 +117,11 @@ namespace Chestnut_Pro.ViewModel
                 case "Home":
                     SelectedViewModel = new HomeViewModel();
                     break;
-                case "Desktop":
-                    SelectedViewModel = new DesktopViewModel();
+                case "All Tools":
+                    SelectedViewModel = new AllToolsViewModel();
                     break;
-                case "Documents":
-                    SelectedViewModel = new DocumentViewModel();
+                case "Number Base":
+                    SelectedViewModel = new NumberBaseViewModel();
                     break;
                 case "Downloads":
                     SelectedViewModel = new DownloadViewModel();
@@ -194,29 +199,6 @@ namespace Chestnut_Pro.ViewModel
                     _backHomeCommand = new RelayCommand(param => ShowHome());
                 }
                 return _backHomeCommand;
-            }
-        }
-
-        /// <summary>
-        /// Close App
-        /// </summary>
-        /// <param name="obj"></param>
-        public void CloseApp(object obj)
-        {
-            MainWindow win = obj as MainWindow;
-            win.Close();
-        }
-
-        private ICommand _closeCommand;
-        public ICommand CloseCommand
-        {
-            get
-            {
-                if (_closeCommand == null)
-                {
-                    _closeCommand = new RelayCommand(param => CloseApp(param));
-                }
-                return _closeCommand;
             }
         }
     }

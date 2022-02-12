@@ -14,14 +14,14 @@
         <view:HomeView />
     </DataTemplate>
 
-    <!--Desktop Page-->
-    <DataTemplate DataType="{x:Type viewmodel:DesktopViewModel}">
-        <view:DesktopView />
+    <!--All tools Page-->
+    <DataTemplate DataType="{x:Type viewmodel:AllToolsViewModel}">
+        <view:AllToolsView />
     </DataTemplate>
 
     <!--Document Page-->
-    <DataTemplate DataType="{x:Type viewmodel:DocumentViewModel}">
-        <view:DocumentView />
+    <DataTemplate DataType="{x:Type viewmodel:NumberBaseViewModel}">
+        <view:NumberBaseView />
     </DataTemplate>
 
     <!--Download Page-->
@@ -29,7 +29,7 @@
         <view:DownloadView />
     </DataTemplate>
 
-    <!--Pciture Page-->
+    <!--Picture Page-->
     <DataTemplate DataType="{x:Type viewmodel:PictureViewModel}">
         <view:PictureView />
     </DataTemplate>

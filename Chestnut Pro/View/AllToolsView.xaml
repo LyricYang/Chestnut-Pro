@@ -1,0 +1,107 @@
+﻿<UserControl x:Class="Chestnut_Pro.View.AllToolsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             xmlns:local="clr-namespace:Chestnut_Pro.View"
+             mc:Ignorable="d"
+             d:DesignHeight="850"
+             d:DesignWidth="1100"
+             Background="Transparent">
+
+    <Border BorderBrush="#C8C8C8"
+            Background="#FCFCFC"
+            BorderThickness="1,1,1,1"
+            CornerRadius="5">
+        <Grid Margin="5">
+            <StackPanel Background="#FCFCFC">
+                <!--Header-->
+                <Grid Height="60">
+                    <!--Title-->
+                    <TextBlock Text="All tools"
+                               FontSize="24"
+                               Foreground="#1A1A1A"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Margin="30,20,0,0"/>
+                </Grid>
+                <!--Profile-->
+                <WrapPanel HorizontalAlignment="Left">
+                    <!--RGB Converter-->
+                    <materialDesign:Card Margin="40 30 30 30" UniformCornerRadius="10" Height="300" Width="200" Background="white">
+                        <StackPanel Margin="10">
+                            <materialDesign:PackIcon Kind="Palette" Height="100" Width="100" Foreground="Black" HorizontalAlignment="Center" Margin="30 30 30 15"/>
+                            <TextBlock FontWeight="SemiBold" FontSize="16" Text="" Margin="10 20 0 0">
+                                    <Hyperlink Name="Github" NavigateUri="https://github.com/LyricYang" Foreground="Black">RGB Color Converter</Hyperlink>
+                            </TextBlock>
+                            <TextBlock FontSize="14" Text="Convert RGB to CMYK&#x000A;and Picture" Foreground="Gray" Margin="10 5 0 0"/>
+                        </StackPanel>
+                    </materialDesign:Card>
+                    <!--Number Base Converter-->
+                    <materialDesign:Card Margin="30" UniformCornerRadius="10" Height="300" Width="200" Background="white">
+                        <StackPanel Margin="10">
+                            <materialDesign:PackIcon Kind="Numeric8BoxMultipleOutline" Height="100" Width="100" Foreground="Black" HorizontalAlignment="Center" Margin="30 30 30 15"/>
+                            <TextBlock FontWeight="SemiBold" FontSize="16" Text="Number Base&#x000A;Converter" Margin="10 20 0 0"/>
+                            <TextBlock FontSize="14" Text="Convert numbers from&#x000A;one base to another" Foreground="Gray" Margin="10 5 0 0"/>
+                        </StackPanel>
+                    </materialDesign:Card>
+                    <!--Base 64 Encoder / Decoder-->
+                    <materialDesign:Card Margin="30" UniformCornerRadius="10" Height="300" Width="200" Background="white">
+                        <StackPanel Margin="10">
+                            <materialDesign:PackIcon Kind="Cpu64Bit" Height="100" Width="100" Foreground="Black" HorizontalAlignment="Center" Margin="30 30 30 15"/>
+                            <TextBlock FontWeight="SemiBold" FontSize="16" Text="Base 64 Encoder /&#x000A;Decoder" Margin="10 20 0 0"/>
+                            <TextBlock FontSize="14" Text="Encode and decode&#x000A;Base64 data" Foreground="Gray" Margin="10 5 0 0"/>
+                        </StackPanel>
+                    </materialDesign:Card>
+                    <!--GUID Generator-->
+                    <materialDesign:Card Margin="30" UniformCornerRadius="10" Height="300" Width="200" Background="white">
+                        <StackPanel Margin="10">
+                            <materialDesign:PackIcon Kind="Identifier" Height="100" Width="100" Foreground="Black" HorizontalAlignment="Center" Margin="30 30 30 15"/>
+                            <TextBlock FontWeight="SemiBold" FontSize="16" Text="GUID Generator" Margin="10 20 0 0"/>
+                            <TextBlock FontSize="14" Text="Generate GUIDs version&#x000A;1 and 4" Foreground="Gray" Margin="10 5 0 0"/>
+                        </StackPanel>
+                    </materialDesign:Card>
+                </WrapPanel>
+
+                <!--Profile-->
+                <WrapPanel HorizontalAlignment="Left">
+                    <!--Markdown Preview-->
+                    <materialDesign:Card Margin="40 30 30 30" UniformCornerRadius="10" Height="300" Width="200" Background="white">
+                        <StackPanel Margin="10">
+                            <materialDesign:PackIcon Kind="LanguageMarkdown" Height="100" Width="100" Foreground="Black" HorizontalAlignment="Center" Margin="30 30 30 15"/>
+                            <TextBlock FontWeight="SemiBold" FontSize="16" Text="Markdown Preview" Margin="10 20 0 0">
+                            </TextBlock>
+                            <TextBlock FontSize="14" Text="Preview a Markdown&#x000A;document with a&#x000A;GitHub-like render" Foreground="Gray" Margin="10 5 0 0"/>
+                        </StackPanel>
+                    </materialDesign:Card>
+                    <!--Hash Generator-->
+                    <materialDesign:Card Margin="30" UniformCornerRadius="10" Height="300" Width="200" Background="white">
+                        <StackPanel Margin="10">
+                            <materialDesign:PackIcon Kind="FormatHeaderPound" Height="100" Width="100" Foreground="Black" HorizontalAlignment="Center" Margin="30 30 30 15"/>
+                            <TextBlock FontWeight="SemiBold" FontSize="16" Text="Hash Generator" Margin="10 20 0 0"/>
+                            <TextBlock FontSize="14" Text="Calculate MD5, SHA1,&#x000A;SHA256 and SHA512&#x000A;hash from text data" Foreground="Gray" Margin="10 5 0 0"/>
+                        </StackPanel>
+                    </materialDesign:Card>
+                    <!--Text Comparer-->
+                    <materialDesign:Card Margin="30" UniformCornerRadius="10" Height="300" Width="200" Background="white">
+                        <StackPanel Margin="10">
+                            <materialDesign:PackIcon Kind="FileCompare" Height="100" Width="100" Foreground="Black" HorizontalAlignment="Center" Margin="30 30 30 15"/>
+                            <TextBlock FontWeight="SemiBold" FontSize="16" Text="Text Comparer" Margin="10 20 0 0"/>
+                            <TextBlock FontSize="14" Text="Compare two texts" Foreground="Gray" Margin="10 5 0 0"/>
+                        </StackPanel>
+                    </materialDesign:Card>
+                    <!--JSON Converter-->
+                    <materialDesign:Card Margin="30" UniformCornerRadius="10" Height="300" Width="200" Background="white">
+                        <StackPanel Margin="10">
+                            <materialDesign:PackIcon Kind="CodeJson" Height="100" Width="100" Foreground="Black" HorizontalAlignment="Center" Margin="30 30 30 15"/>
+                            <TextBlock FontWeight="SemiBold" FontSize="16" Text="JSON Converter" Margin="10 20 0 0"/>
+                            <TextBlock FontSize="14" Text="Indent or minify JSON&#x000A;data" Foreground="Gray" Margin="10 5 0 0"/>
+                        </StackPanel>
+                    </materialDesign:Card>
+                </WrapPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

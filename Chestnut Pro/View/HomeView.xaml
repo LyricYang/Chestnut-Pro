@@ -10,6 +10,7 @@
              d:DesignHeight="850"
              d:DesignWidth="1100"
              Background="Transparent">
+
     <Border BorderBrush="#C8C8C8"
             Background="#FCFCFC"
             BorderThickness="1,1,1,1"
@@ -120,7 +121,7 @@
                                     <lvc:Axis ShowLabels="True" Foreground="Black" Labels="{Binding Labels}"/>
                                 </lvc:CartesianChart.AxisX>
                                 <lvc:CartesianChart.AxisY>
-                                    <lvc:Axis Title="Money/RMB" ShowLabels="True" Foreground="Black" MinValue="0"/>
+                                    <lvc:Axis Title="Money" ShowLabels="True" Foreground="Black" MinValue="0"/>
                                 </lvc:CartesianChart.AxisY>
                             </lvc:CartesianChart>
                         </StackPanel>
@@ -129,7 +130,7 @@
                     <WrapPanel HorizontalAlignment="Center">
                         <materialDesign:Card Margin="10" UniformCornerRadius="20" Padding="10">
                             <StackPanel>
-                                <TextBlock Text="Key Matrics" Margin="10 20" FontWeight="SemiBold" />
+                                <TextBlock Text="Key Metrics" Margin="10 20" FontWeight="SemiBold" />
                                 <Grid Height="150">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition />
@@ -141,29 +142,29 @@
                                         <RowDefinition />
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
-                                    <TextBlock Text="Deposit" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="13" FontWeight="SemiBold" />
-                                    <TextBlock Text="Expenses" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="13" FontWeight="SemiBold" />
-                                    <TextBlock Text="Seniority" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="13" FontWeight="SemiBold" />
-                                    <TextBlock Text="Investment" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="13" FontWeight="SemiBold" />
-                                    <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                                        <TextBlock Text="16W" FontWeight="SemiBold" Margin="5 0" />
-                                        <ProgressBar Margin="5 0" Width="100" Height="8" Foreground="Orange" Background="#FFE8E8E8" BorderBrush="Orange" Value="32" />
-                                        <TextBlock Text="50W" FontWeight="SemiBold" />
+                                    <TextBlock Text="Deposit" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="13" FontWeight="SemiBold" />
+                                    <TextBlock Text="Expenses" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="13" FontWeight="SemiBold" />
+                                    <TextBlock Text="Seniority" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="13" FontWeight="SemiBold" />
+                                    <TextBlock Text="Investment" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="13" FontWeight="SemiBold" />
+                                    <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock Text="17w" FontWeight="SemiBold" Margin="5 0" />
+                                        <ProgressBar Margin="8 0 5 0" HorizontalAlignment="Right" Width="100" Height="8" Foreground="Orange" Background="#FFE8E8E8" BorderBrush="Orange" Value="32" />
+                                        <TextBlock Text="50w" FontWeight="SemiBold" />
                                     </StackPanel>
-                                    <StackPanel Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                                    <StackPanel Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
                                         <TextBlock Text="1007" FontWeight="SemiBold" Margin="5 0" />
-                                        <ProgressBar Margin="5 0" Width="100" Height="8" Foreground="Orange" Background="#FFE8E8E8" BorderBrush="Orange" Value="7" />
+                                        <ProgressBar Margin="5 0" HorizontalAlignment="Right" Width="100" Height="8" Foreground="Orange" Background="#FFE8E8E8" BorderBrush="Orange" Value="7" />
                                         <TextBlock Text="14405" FontWeight="SemiBold" />
                                     </StackPanel>
-                                    <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                                    <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
                                         <TextBlock Text="8.5w" FontWeight="SemiBold" Margin="5 0" />
-                                        <ProgressBar Margin="5 0" Width="100" Height="8" Foreground="SeaGreen" Background="#FFE8E8E8" BorderBrush="SeaGreen" Value="85" />
-                                        <TextBlock Text="10W" FontWeight="SemiBold" />
+                                        <ProgressBar Margin="5 0" HorizontalAlignment="Right" Width="100" Height="8" Foreground="SeaGreen" Background="#FFE8E8E8" BorderBrush="SeaGreen" Value="85" />
+                                        <TextBlock Text="10w" FontWeight="SemiBold" />
                                     </StackPanel>
-                                    <StackPanel Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                                        <TextBlock Text="0.6W" FontWeight="SemiBold" Margin="5 0" />
-                                        <ProgressBar Margin="5 0" Width="100" Height="8" Foreground="SeaGreen" Background="#FFE8E8E8" BorderBrush="SeaGreen" Value="1.2" />
-                                        <TextBlock Text="5W" FontWeight="SemiBold" />
+                                    <StackPanel Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock Text="0.6w" FontWeight="SemiBold" Margin="5 0" />
+                                        <ProgressBar Margin="5 0" HorizontalAlignment="Right" Width="100" Height="8" Foreground="SeaGreen" Background="#FFE8E8E8" BorderBrush="SeaGreen" Value="1.2" />
+                                        <TextBlock Text="5w" FontWeight="SemiBold" />
                                     </StackPanel>
                                 </Grid>
                             </StackPanel>
