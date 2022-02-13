@@ -1,4 +1,4 @@
-﻿namespace Chestnut_Pro.Service.Utils
+﻿namespace Chestnut_Pro.Service
 {
     using Newtonsoft.Json;
     using System.IO;

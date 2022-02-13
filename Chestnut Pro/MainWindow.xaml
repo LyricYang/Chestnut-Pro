@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Chestnut Pro"
         Height="880"
-        Width="1300"
+        Width="1320"
         x:Name="DashboardWindow"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanResize">

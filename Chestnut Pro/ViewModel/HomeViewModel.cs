@@ -3,8 +3,8 @@
     using System;
     using System.ComponentModel;
     using System.Windows.Media;
+    using Chestnut_Pro.Service;
     using Chestnut_Pro.Service.Common;
-    using Chestnut_Pro.Service.Utils;
     using LiveCharts;
     using LiveCharts.Defaults;
     using LiveCharts.Wpf;

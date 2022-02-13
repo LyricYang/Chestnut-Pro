@@ -4,8 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
-             xmlns:local="clr-namespace:Chestnut_Pro.View"
              mc:Ignorable="d"
              d:DesignHeight="850"
              d:DesignWidth="1100"
@@ -50,9 +48,7 @@
                     <!--Parameter 1-->
                     <Grid Grid.Row="1"
                           Grid.Column="1">
-                        <!--Profile-->
                         <WrapPanel HorizontalAlignment="Left">
-                            <!--GUID Generator-->
                             <Border BorderBrush="#C8C8C8"
                                         Background="White"
                                         BorderThickness="1,1,1,1"
@@ -78,10 +74,11 @@
                                         </Grid>
                                         <Grid Grid.Row="0"
                                               Grid.Column="3">
-                                            <ToggleButton Style="{StaticResource MaterialDesignSwitchToggleButton}"
+                                            <ToggleButton x:Name="Fromat_Button"
+                                                          Style="{StaticResource MaterialDesignSwitchToggleButton}"
                                                           HorizontalAlignment="Right"
                                                           Margin="0 0 30 0"
-                                                          ToolTip="Default ToggleButton Style" />
+                                                          ToolTip="Default ToggleButton Style"/>
                                         </Grid>
                                     </Grid>
                                 </StackPanel>
@@ -91,9 +88,7 @@
                     <!--Parameter 2-->
                     <Grid Grid.Row="2"
                           Grid.Column="1">
-                        <!--Profile-->
                         <WrapPanel HorizontalAlignment="Left">
-                            <!--GUID Generator-->
                             <Border BorderBrush="#C8C8C8"
                                         Background="White"
                                         BorderThickness="1,1,1,1"
@@ -121,7 +116,7 @@
                                         <Grid Grid.Row="0"
                                               Grid.Column="3">
                                             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0">
-                                                <ComboBox x:Name="OutlinedComboBox"
+                                                <ComboBox x:Name="NumberTypeBox"
                                                           Height="40"
                                                           Width="100">
                                                     <ComboBoxItem IsSelected="True">
@@ -154,7 +149,8 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="40"/>
-                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="55"/>
+                        <RowDefinition Height="40"/>
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="40"/>
@@ -170,27 +166,38 @@
                                Foreground="#1A1A1A"
                                HorizontalAlignment="Left"
                                VerticalAlignment="Center"/>
-                        <Button Content="{materialDesign:PackIcon ContentPaste}"
+                        <Button Content="{materialDesign:PackIcon FormatLetterStartsWith}"
                                 BorderBrush="#C8C8C8"
                                 Background="White"
                                 BorderThickness="1,1,1,1"
-                                ToolTip="Icon"
+                                ToolTip="Convert"
                                 Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
                                 Width="60"
                                 HorizontalAlignment="Right"
-                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                Click="ConvertNumberBase"/>
                     </Grid>
                     <Grid Grid.Row="1"
                           Grid.Column="1">
                         <StackPanel>
-                            <TextBox materialDesign:HintAssist.Hint="Input Number"
+                            <TextBox x:Name="NumberBase_Input"
+                                     materialDesign:HintAssist.Hint="Input Number"
                                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                      Height="40"
                                      VerticalAlignment="Center" />
                         </StackPanel>
                     </Grid>
-                    <!--Binary-->
                     <Grid Grid.Row="2"
+                          Grid.Column="1">
+                        <materialDesign:Snackbar x:Name="Warning_Message"
+                                                 IsActive="False"
+                                                 Background="#FF673AB7"
+                                                 Opacity="0.7"
+                                                 HorizontalAlignment="Stretch"
+                                                 Message="The current value isn't Valid"/>
+                    </Grid>
+                    <!--Binary-->
+                    <Grid Grid.Row="3"
                           Grid.Column="1">
                         <TextBlock Text="Binary"
                                FontSize="14"
@@ -198,7 +205,7 @@
                                HorizontalAlignment="Left"
                                VerticalAlignment="Bottom"/>
                     </Grid>
-                    <Grid Grid.Row="3"
+                    <Grid Grid.Row="4"
                           Grid.Column="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="900"/>
@@ -210,27 +217,29 @@
                         <Grid Grid.Row="0"
                               Grid.Column="0">
                             <StackPanel>
-                                <TextBox materialDesign:HintAssist.Hint="Output Binary"
-                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                     Height="40"
-                                     VerticalAlignment="Center" />
+                                <TextBox x:Name="Binary_output"
+                                         materialDesign:HintAssist.Hint="Output Binary"
+                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                         Height="40"
+                                         VerticalAlignment="Center" />
                             </StackPanel>
                         </Grid>
                         <Grid Grid.Row="0"
                               Grid.Column="1">
                             <Button Content="{materialDesign:PackIcon ContentCopy}"
-                                BorderBrush="#C8C8C8"
-                                Background="White"
-                                BorderThickness="1,1,1,1"
-                                ToolTip="Icon"
-                                Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
-                                Width="60"
-                                HorizontalAlignment="Right"
-                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+                                    BorderBrush="#C8C8C8"
+                                    Background="White"
+                                    BorderThickness="1,1,1,1"
+                                    ToolTip="Copy"
+                                    Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
+                                    Width="60"
+                                    HorizontalAlignment="Right"
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Click="BinaryCopy"/>
                         </Grid>
                     </Grid>
                     <!--Octal-->
-                    <Grid Grid.Row="4"
+                    <Grid Grid.Row="5"
                           Grid.Column="1">
                         <TextBlock Text="Octal"
                                FontSize="14"
@@ -238,7 +247,7 @@
                                HorizontalAlignment="Left"
                                VerticalAlignment="Bottom"/>
                     </Grid>
-                    <Grid Grid.Row="5"
+                    <Grid Grid.Row="6"
                           Grid.Column="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="900"/>
@@ -250,27 +259,29 @@
                         <Grid Grid.Row="0"
                               Grid.Column="0">
                             <StackPanel>
-                                <TextBox materialDesign:HintAssist.Hint="Output Octal"
-                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                     Height="40"
-                                     VerticalAlignment="Center" />
+                                <TextBox x:Name="Octal_output"
+                                         materialDesign:HintAssist.Hint="Output Octal"
+                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                         Height="40"
+                                         VerticalAlignment="Center" />
                             </StackPanel>
                         </Grid>
                         <Grid Grid.Row="0"
                               Grid.Column="1">
                             <Button Content="{materialDesign:PackIcon ContentCopy}"
-                                BorderBrush="#C8C8C8"
-                                Background="White"
-                                BorderThickness="1,1,1,1"
-                                ToolTip="Icon"
-                                Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
-                                Width="60"
-                                HorizontalAlignment="Right"
-                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+                                    BorderBrush="#C8C8C8"
+                                    Background="White"
+                                    BorderThickness="1,1,1,1"
+                                    ToolTip="Copy"
+                                    Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
+                                    Width="60"
+                                    HorizontalAlignment="Right"
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Click="OctalCopy"/>
                         </Grid>
                     </Grid>
                     <!--Decimal-->
-                    <Grid Grid.Row="6"
+                    <Grid Grid.Row="7"
                           Grid.Column="1">
                         <TextBlock Text="Decimal"
                                FontSize="14"
@@ -278,7 +289,7 @@
                                HorizontalAlignment="Left"
                                VerticalAlignment="Bottom"/>
                     </Grid>
-                    <Grid Grid.Row="7"
+                    <Grid Grid.Row="8"
                           Grid.Column="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="900"/>
@@ -290,27 +301,29 @@
                         <Grid Grid.Row="0"
                               Grid.Column="0">
                             <StackPanel>
-                                <TextBox materialDesign:HintAssist.Hint="Output Decimal"
-                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                     Height="40"
-                                     VerticalAlignment="Center" />
+                                <TextBox x:Name ="Decimal_output"
+                                         materialDesign:HintAssist.Hint="Output Decimal"
+                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                         Height="40"
+                                         VerticalAlignment="Center" />
                             </StackPanel>
                         </Grid>
                         <Grid Grid.Row="0"
                               Grid.Column="1">
                             <Button Content="{materialDesign:PackIcon ContentCopy}"
-                                BorderBrush="#C8C8C8"
-                                Background="White"
-                                BorderThickness="1,1,1,1"
-                                ToolTip="Icon"
-                                Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
-                                Width="60"
-                                HorizontalAlignment="Right"
-                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+                                    BorderBrush="#C8C8C8"
+                                    Background="White"
+                                    BorderThickness="1,1,1,1"
+                                    ToolTip="Copy"
+                                    Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
+                                    Width="60"
+                                    HorizontalAlignment="Right"
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Click="DecimalCopy"/>
                         </Grid>
                     </Grid>
                     <!--Hexadecimal-->
-                    <Grid Grid.Row="8"
+                    <Grid Grid.Row="9"
                           Grid.Column="1">
                         <TextBlock Text="Hexadecimal"
                                FontSize="14"
@@ -318,7 +331,7 @@
                                HorizontalAlignment="Left"
                                VerticalAlignment="Bottom"/>
                     </Grid>
-                    <Grid Grid.Row="9"
+                    <Grid Grid.Row="10"
                           Grid.Column="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="900"/>
@@ -330,23 +343,25 @@
                         <Grid Grid.Row="0"
                               Grid.Column="0">
                             <StackPanel>
-                                <TextBox materialDesign:HintAssist.Hint="Output Hexadecimal"
-                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                     Height="40"
-                                     VerticalAlignment="Center" />
+                                <TextBox x:Name="Hexadecimal_output"
+                                         materialDesign:HintAssist.Hint="Output Hexadecimal"
+                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                         Height="40"
+                                         VerticalAlignment="Center" />
                             </StackPanel>
                         </Grid>
                         <Grid Grid.Row="0"
                               Grid.Column="1">
                             <Button Content="{materialDesign:PackIcon ContentCopy}"
-                                BorderBrush="#C8C8C8"
-                                Background="White"
-                                BorderThickness="1,1,1,1"
-                                ToolTip="Icon"
-                                Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
-                                Width="60"
-                                HorizontalAlignment="Right"
-                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+                                    BorderBrush="#C8C8C8"
+                                    Background="White"
+                                    BorderThickness="1,1,1,1"
+                                    ToolTip="Copy"
+                                    Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
+                                    Width="60"
+                                    HorizontalAlignment="Right"
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Click="HexadecimalCopy"/>
                         </Grid>
                     </Grid>
                 </Grid>
