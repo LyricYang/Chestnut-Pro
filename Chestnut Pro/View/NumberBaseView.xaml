@@ -218,10 +218,12 @@
                               Grid.Column="0">
                             <StackPanel>
                                 <TextBox x:Name="Binary_output"
+                                         IsEnabled="False"
                                          materialDesign:HintAssist.Hint="Output Binary"
                                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                          Height="40"
-                                         VerticalAlignment="Center" />
+                                         VerticalAlignment="Center"
+                                         />
                             </StackPanel>
                         </Grid>
                         <Grid Grid.Row="0"
@@ -260,6 +262,7 @@
                               Grid.Column="0">
                             <StackPanel>
                                 <TextBox x:Name="Octal_output"
+                                         IsEnabled="False"
                                          materialDesign:HintAssist.Hint="Output Octal"
                                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                          Height="40"
@@ -302,6 +305,7 @@
                               Grid.Column="0">
                             <StackPanel>
                                 <TextBox x:Name ="Decimal_output"
+                                         IsEnabled="False"
                                          materialDesign:HintAssist.Hint="Output Decimal"
                                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                          Height="40"
@@ -344,6 +348,7 @@
                               Grid.Column="0">
                             <StackPanel>
                                 <TextBox x:Name="Hexadecimal_output"
+                                         IsEnabled="False"
                                          materialDesign:HintAssist.Hint="Output Hexadecimal"
                                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                          Height="40"
