@@ -235,9 +235,9 @@
                                     ToolTip="Copy"
                                     Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
                                     Width="60"
-                                    HorizontalAlignment="Right"
+                                    HorizontalAlignment="Left"
                                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                                    Click="BinaryCopy"/>
+                                    Click="BinaryCopy" Height="32" Margin="40,4,0,0" VerticalAlignment="Top"/>
                         </Grid>
                     </Grid>
                     <!--Octal-->

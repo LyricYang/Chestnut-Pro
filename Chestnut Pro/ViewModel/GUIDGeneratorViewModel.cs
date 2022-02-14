@@ -6,12 +6,12 @@ using Chestnut_Pro.Model;
 
 namespace Chestnut_Pro.ViewModel
 {
-    public class DownloadViewModel : INotifyPropertyChanged
+    public class GUIDGeneratorViewModel : INotifyPropertyChanged
     {
         private CollectionViewSource DownloadItemsCollection;
         public ICollectionView DownloadSourceCollection => DownloadItemsCollection.View;
 
-        public DownloadViewModel()
+        public GUIDGeneratorViewModel()
         {
             ObservableCollection<DownloadItems> downloadItems = new ObservableCollection<DownloadItems>
             {

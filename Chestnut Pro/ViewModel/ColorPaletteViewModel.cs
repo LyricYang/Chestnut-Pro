@@ -6,12 +6,12 @@ using Chestnut_Pro.Model;
 
 namespace Chestnut_Pro.ViewModel
 {
-    public class PictureViewModel : INotifyPropertyChanged
+    public class ColorPaletteViewModel : INotifyPropertyChanged
     {
         private CollectionViewSource PictureItemsCollection;
         public ICollectionView PictureSourceCollection => PictureItemsCollection.View;
 
-        public PictureViewModel()
+        public ColorPaletteViewModel()
         {
             ObservableCollection<PictureItems> pictureItems = new ObservableCollection<PictureItems>
             {

@@ -4,11 +4,6 @@
                     xmlns:view="clr-namespace:Chestnut_Pro.View">
 
     <!--Data Templates apply Views to ViewModel objects displayed in the UI-->
-    <!--PC Page-->
-    <DataTemplate DataType="{x:Type viewmodel:PCViewModel}">
-        <view:PCView />
-    </DataTemplate>
-
     <!--Home Page-->
     <DataTemplate DataType="{x:Type viewmodel:HomeViewModel}">
         <view:HomeView />
@@ -19,19 +14,19 @@
         <view:AllToolsView />
     </DataTemplate>
 
-    <!--Document Page-->
+    <!--Number Base Convert Page-->
     <DataTemplate DataType="{x:Type viewmodel:NumberBaseViewModel}">
         <view:NumberBaseView />
     </DataTemplate>
 
     <!--Download Page-->
-    <DataTemplate DataType="{x:Type viewmodel:DownloadViewModel}">
-        <view:DownloadView />
+    <DataTemplate DataType="{x:Type viewmodel:GUIDGeneratorViewModel}">
+        <view:GUIDGeneratorView />
     </DataTemplate>
 
     <!--Picture Page-->
-    <DataTemplate DataType="{x:Type viewmodel:PictureViewModel}">
-        <view:PictureView />
+    <DataTemplate DataType="{x:Type viewmodel:ColorPaletteViewModel}">
+        <view:ColorPaletteView />
     </DataTemplate>
 
     <!--Music Page-->

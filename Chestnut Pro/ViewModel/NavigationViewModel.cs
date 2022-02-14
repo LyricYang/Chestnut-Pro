@@ -35,8 +35,8 @@
                 new () { MenuName = "Home", MenuImage = @"Assets/Home_Icon.png"},
                 new () { MenuName = "All Tools", MenuImage = @"Assets/Desktop_Icon.png"},
                 new () { MenuName = "Number Base", MenuImage = @"Assets/Document_Icon.png" },
-                new () { MenuName = "Downloads", MenuImage = @"Assets/Download_Icon.png" },
-                new () { MenuName = "Pictures", MenuImage = @"Assets/Images_Icon.png" },
+                new () { MenuName = "GUID Generator", MenuImage = @"Assets/Download_Icon.png" },
+                new () { MenuName = "Color Palette", MenuImage = @"Assets/Images_Icon.png" },
                 new () { MenuName = "Music", MenuImage = @"Assets/Music_Icon.png" },
                 new () { MenuName = "Movies", MenuImage = @"Assets/Movies_Icon.png" },
                 new () { MenuName = "Trash", MenuImage = @"Assets/Trash_Icon.png" },
@@ -123,11 +123,11 @@
                 case "Number Base":
                     SelectedViewModel = new NumberBaseViewModel();
                     break;
-                case "Downloads":
-                    SelectedViewModel = new DownloadViewModel();
+                case "GUID Generator":
+                    SelectedViewModel = new GUIDGeneratorViewModel();
                     break;
-                case "Pictures":
-                    SelectedViewModel = new PictureViewModel();
+                case "Color Palette":
+                    SelectedViewModel = new ColorPaletteViewModel();
                     break;
                 case "Music":
                     SelectedViewModel = new MusicViewModel();
@@ -162,7 +162,7 @@
         /// </summary>
         public void PCView()
         {
-            SelectedViewModel = new PCViewModel();
+            SelectedViewModel = new ColorPaletteViewModel();
         }
 
         /// <summary>
