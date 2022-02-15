@@ -144,5 +144,65 @@
                 return _menuCommand;
             }
         }
+
+        // ============================== Show Color Palette View =============================================
+        public void ColorPaletteView()
+        {
+            SelectedViewModel = new ColorPaletteViewModel();
+        }
+
+        // This PC button Command
+        private ICommand _colorPaletteCommand;
+        public ICommand ColorPaletteCommand
+        {
+            get
+            {
+                if (_colorPaletteCommand == null)
+                {
+                    _colorPaletteCommand = new RelayCommand(param => ColorPaletteView());
+                }
+                return _colorPaletteCommand;
+            }
+        }
+
+        // ============================== Show GUID Generator View =============================================
+        public void GUIDGeneratorView()
+        {
+            SelectedViewModel = new GUIDGeneratorViewModel();
+        }
+
+        // This PC button Command
+        private ICommand _GUIDGeneratorCommand;
+        public ICommand GUIDGeneratorCommand
+        {
+            get
+            {
+                if (_GUIDGeneratorCommand == null)
+                {
+                    _GUIDGeneratorCommand = new RelayCommand(param => GUIDGeneratorView());
+                }
+                return _GUIDGeneratorCommand;
+            }
+        }
+
+        // ============================== Show Number Base Converter View =============================================
+        public void NumberBaseConverterView()
+        {
+            SelectedViewModel = new NumberBaseViewModel();
+        }
+
+        // This PC button Command
+        private ICommand _NumberBaseCommand;
+        public ICommand NumberBaseCommand
+        {
+            get
+            {
+                if (_NumberBaseCommand == null)
+                {
+                    _NumberBaseCommand = new RelayCommand(param => NumberBaseConverterView());
+                }
+                return _NumberBaseCommand;
+            }
+        }
     }
 }
