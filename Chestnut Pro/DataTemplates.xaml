@@ -19,29 +19,14 @@
         <view:NumberBaseView />
     </DataTemplate>
 
-    <!--Download Page-->
+    <!--GUID Page-->
     <DataTemplate DataType="{x:Type viewmodel:GUIDGeneratorViewModel}">
         <view:GUIDGeneratorView />
     </DataTemplate>
 
-    <!--Picture Page-->
+    <!--Color Palette Page-->
     <DataTemplate DataType="{x:Type viewmodel:ColorPaletteViewModel}">
         <view:ColorPaletteView />
-    </DataTemplate>
-
-    <!--Music Page-->
-    <DataTemplate DataType="{x:Type viewmodel:MusicViewModel}">
-        <view:MusicView />
-    </DataTemplate>
-
-    <!--Movie Page-->
-    <DataTemplate DataType="{x:Type viewmodel:MovieViewModel}">
-        <view:MovieView />
-    </DataTemplate>
-
-    <!--Trash Page-->
-    <DataTemplate DataType="{x:Type viewmodel:TrashViewModel}">
-        <view:TrashView />
     </DataTemplate>
 
 </ResourceDictionary>

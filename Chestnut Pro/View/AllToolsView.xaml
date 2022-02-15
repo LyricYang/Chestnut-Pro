@@ -28,23 +28,15 @@
                                Margin="30,20,0,0"/>
                 </Grid>
                 <!--Profile-->
-                <WrapPanel HorizontalAlignment="Left">
+                <WrapPanel>
                     <!--RGB Converter-->
                     <materialDesign:Card Margin="40 30 30 30" UniformCornerRadius="10" Height="300" Width="200" Background="white">
                         <StackPanel Margin="10">
                             <materialDesign:PackIcon Kind="Palette" Height="100" Width="100" Foreground="Black" HorizontalAlignment="Center" Margin="30 30 30 15"/>
                             <TextBlock FontWeight="SemiBold" FontSize="16" Text="" Margin="10 20 0 0">
-                                    <Hyperlink Name="Github" NavigateUri="https://github.com/LyricYang" Foreground="Black">RGB Color Converter</Hyperlink>
+                            <Hyperlink Name="Github" NavigateUri="https://github.com/LyricYang" Foreground="Black">RGB Color Converter</Hyperlink>
                             </TextBlock>
                             <TextBlock FontSize="14" Text="Convert RGB to CMYK&#x000A;and Picture" Foreground="Gray" Margin="10 5 0 0"/>
-                        </StackPanel>
-                    </materialDesign:Card>
-                    <!--Number Base Converter-->
-                    <materialDesign:Card Margin="30" UniformCornerRadius="10" Height="300" Width="200" Background="white">
-                        <StackPanel Margin="10">
-                            <materialDesign:PackIcon Kind="Numeric8BoxMultipleOutline" Height="100" Width="100" Foreground="Black" HorizontalAlignment="Center" Margin="30 30 30 15"/>
-                            <TextBlock FontWeight="SemiBold" FontSize="16" Text="Number Base&#x000A;Converter" Margin="10 20 0 0"/>
-                            <TextBlock FontSize="14" Text="Convert numbers from&#x000A;one base to another" Foreground="Gray" Margin="10 5 0 0"/>
                         </StackPanel>
                     </materialDesign:Card>
                     <!--Base 64 Encoder / Decoder-->
@@ -63,8 +55,14 @@
                             <TextBlock FontSize="14" Text="Generate GUIDs version&#x000A;1 and 4" Foreground="Gray" Margin="10 5 0 0"/>
                         </StackPanel>
                     </materialDesign:Card>
+                    <materialDesign:Card UniformCornerRadius="10" Height="300" Width="200" Background="white">
+                        <StackPanel Margin="10">
+                            <materialDesign:PackIcon Kind="Numeric8BoxMultipleOutline" Height="100" Width="100" Foreground="Black" HorizontalAlignment="Center" Margin="30 30 30 15"/>
+                            <TextBlock FontWeight="SemiBold" FontSize="16" Text="Number Base&#xA;Converter" Margin="10 20 0 0"/>
+                            <TextBlock FontSize="14" Text="Convert numbers from&#xA;one base to another" Foreground="Gray" Margin="10 5 0 0"/>
+                        </StackPanel>
+                    </materialDesign:Card>
                 </WrapPanel>
-
                 <!--Profile-->
                 <WrapPanel HorizontalAlignment="Left">
                     <!--Markdown Preview-->

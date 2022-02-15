@@ -32,14 +32,11 @@
             // get added, removed, or when the whole list is refreshed.
             ObservableCollection<MenuItems> menuItems = new ()
             {
-                new () { MenuName = "Home", MenuImage = @"Assets/Home_Icon.png"},
-                new () { MenuName = "All Tools", MenuImage = @"Assets/Desktop_Icon.png"},
-                new () { MenuName = "Number Base", MenuImage = @"Assets/Document_Icon.png" },
+                new () { MenuName = "Home",           MenuImage = @"Assets/Home_Icon.png"},
+                new () { MenuName = "All Tools",      MenuImage = @"Assets/Desktop_Icon.png"},
+                new () { MenuName = "Number Base",    MenuImage = @"Assets/Document_Icon.png" },
                 new () { MenuName = "GUID Generator", MenuImage = @"Assets/Download_Icon.png" },
-                new () { MenuName = "Color Palette", MenuImage = @"Assets/Images_Icon.png" },
-                new () { MenuName = "Music", MenuImage = @"Assets/Music_Icon.png" },
-                new () { MenuName = "Movies", MenuImage = @"Assets/Movies_Icon.png" },
-                new () { MenuName = "Trash", MenuImage = @"Assets/Trash_Icon.png" },
+                new () { MenuName = "Color Palette",  MenuImage = @"Assets/Images_Icon.png" },
             };
 
             MenuItemsCollection = new CollectionViewSource { Source = menuItems };
@@ -129,15 +126,6 @@
                 case "Color Palette":
                     SelectedViewModel = new ColorPaletteViewModel();
                     break;
-                case "Music":
-                    SelectedViewModel = new MusicViewModel();
-                    break;
-                case "Movies":
-                    SelectedViewModel= new MovieViewModel();
-                    break;
-                case "Trash":
-                    SelectedViewModel = new TrashViewModel();
-                    break;
                 default:
                     SelectedViewModel = new HomeViewModel();
                     break;
@@ -154,51 +142,6 @@
                     _menuCommand = new RelayCommand(param => SwitchViews(param));
                 }
                 return _menuCommand;
-            }
-        }
-
-        /// <summary>
-        /// Show PC View
-        /// </summary>
-        public void PCView()
-        {
-            SelectedViewModel = new ColorPaletteViewModel();
-        }
-
-        /// <summary>
-        /// The PC Button Command
-        /// </summary>
-        private ICommand _pccommand;
-        public ICommand PCCommand
-        {
-            get
-            {
-                if(_pccommand == null)
-                {
-                    _pccommand = new RelayCommand(param => PCView());
-                }
-                return _pccommand;
-            }
-        }
-
-        /// <summary>
-        /// Show Home View
-        /// </summary>
-        private void ShowHome()
-        {
-            SelectedViewModel = new HomeViewModel();
-        }
-
-        private ICommand _backHomeCommand;
-        public ICommand BackHomeCommand
-        {
-            get
-            {
-                if (_backHomeCommand == null)
-                {
-                    _backHomeCommand = new RelayCommand(param => ShowHome());
-                }
-                return _backHomeCommand;
             }
         }
     }
