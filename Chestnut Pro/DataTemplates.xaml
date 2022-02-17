@@ -29,4 +29,9 @@
         <view:ColorPaletteView />
     </DataTemplate>
 
+    <!--Color Palette Page-->
+    <DataTemplate DataType="{x:Type viewmodel:TSVCSVConverterViewModel}">
+        <view:TSVCSVConverterView />
+    </DataTemplate>
+
 </ResourceDictionary>
