@@ -32,12 +32,12 @@
             // get added, removed, or when the whole list is refreshed.
             ObservableCollection<MenuItems> menuItems = new ()
             {
-                new () { MenuName = "Home",           MenuImage = @"Assets/Home_Icon.png"},
-                new () { MenuName = "All Tools",      MenuImage = @"Assets/Desktop_Icon.png"},
-                new () { MenuName = "Number Base",    MenuImage = @"Assets/Document_Icon.png" },
-                new () { MenuName = "GUID Generator", MenuImage = @"Assets/Download_Icon.png" },
-                new () { MenuName = "Color Palette",  MenuImage = @"Assets/Images_Icon.png" },
-                new () { MenuName = "TSV <=> CSV",    MenuImage = @"Assets/Images_Icon.png" },
+                new () { MenuName = "Home",           MenuImage = @"Assets/home.png" },
+                new () { MenuName = "All Tools",      MenuImage = @"Assets/tools-hardware.png" },
+                new () { MenuName = "Number Base",    MenuImage = @"Assets/number-base.png" },
+                new () { MenuName = "GUID Generator", MenuImage = @"Assets/guid.png" },
+                new () { MenuName = "Color Palette",  MenuImage = @"Assets/palette.png" },
+                new () { MenuName = "TSV <=> CSV",    MenuImage = @"Assets/csv.png" },
             };
 
             MenuItemsCollection = new CollectionViewSource { Source = menuItems };

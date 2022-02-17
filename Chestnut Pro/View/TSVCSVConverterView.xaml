@@ -1,81 +1,108 @@
-﻿<UserControl x:Class="Chestnut_Pro.View.TSVCSVConverterView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             mc:Ignorable="d"
-             d:DesignHeight="850"
-             d:DesignWidth="1100"
-             Background="Transparent">
-    <Border BorderBrush="#C8C8C8"
-            Background="#FCFCFC"
-            BorderThickness="1,1,1,1"
-            CornerRadius="5">
-        <Grid Margin="5">
-            <StackPanel Background="#FCFCFC">
+﻿<UserControl
+	x:Class="Chestnut_Pro.View.TSVCSVConverterView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+	mc:Ignorable="d"
+	d:DesignHeight="850"
+	d:DesignWidth="1100"
+	Background="Transparent">
+    <Border
+		BorderBrush="#C8C8C8"
+		Background="#FCFCFC"
+		BorderThickness="1,1,1,1"
+		CornerRadius="5">
+        <Grid
+			Margin="5">
+            <StackPanel
+				Background="#FCFCFC">
                 <!--Header-->
-                <Grid Height="60">
+                <Grid
+					Height="60">
                     <!--Title-->
-                    <TextBlock Text="TSV-CSV Converter"
-                               FontSize="24"
-                               Foreground="#1A1A1A"
-                               HorizontalAlignment="Left"
-                               VerticalAlignment="Top"
-                               Margin="30,20,0,0"/>
+                    <TextBlock
+						Text="TSV-CSV Converter"
+						FontSize="24"
+						Foreground="#1A1A1A"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+						Margin="30,20,0,0" />
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="30"/>
-                        <ColumnDefinition Width="440"/>
-                        <ColumnDefinition Width="140"/>
-                        <ColumnDefinition Width="440"/>
-                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition
+							Width="30" />
+                        <ColumnDefinition
+							Width="440" />
+                        <ColumnDefinition
+							Width="140" />
+                        <ColumnDefinition
+							Width="440" />
+                        <ColumnDefinition
+							Width="30" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="40"/>
-                        <RowDefinition Height="150"/>
-                        <RowDefinition Height="20"/>
-                        <RowDefinition Height="40"/>
-                        <RowDefinition Height="450"/>
+                        <RowDefinition
+							Height="40" />
+                        <RowDefinition
+							Height="150" />
+                        <RowDefinition
+							Height="20" />
+                        <RowDefinition
+							Height="40" />
+                        <RowDefinition
+							Height="450" />
                     </Grid.RowDefinitions>
                     <!--File Title-->
-                    <Grid Grid.Row="0"
-                          Grid.Column="1">
-                        <TextBlock Text="TSV-CSV File Converter"
-                               FontSize="14"
-                               Foreground="#1A1A1A"
-                               HorizontalAlignment="Left"
-                               VerticalAlignment="Center"/>
+                    <Grid
+						Grid.Row="0"
+						Grid.Column="1">
+                        <TextBlock
+							Text="TSV-CSV File Converter"
+							FontSize="14"
+							Foreground="#1A1A1A"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Center" />
                     </Grid>
                     <!--File Title-->
-                    <Grid Grid.Row="3"
-                          Grid.Column="1">
-                        <TextBlock Text="TSV-CSV Text Converter"
-                               FontSize="14"
-                               Foreground="#1A1A1A"
-                               HorizontalAlignment="Left"
-                               VerticalAlignment="Center"/>
+                    <Grid
+						Grid.Row="3"
+						Grid.Column="1">
+                        <TextBlock
+							Text="TSV-CSV Text Converter"
+							FontSize="14"
+							Foreground="#1A1A1A"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Center" />
                     </Grid>
-                    <Grid Grid.Row="1"
-                          Grid.Column="1">
-                        <WrapPanel HorizontalAlignment="Left">
-                            <Border BorderThickness="1,1,1,1"
-                                    Background="#FCFCFC"
-                                    Width="440"
-                                    Height="150"
-                                    CornerRadius="5">
+                    <Grid
+						Grid.Row="1"
+						Grid.Column="1">
+                        <WrapPanel
+							HorizontalAlignment="Left">
+                            <Border
+								BorderThickness="1,1,1,1"
+								Background="#FCFCFC"
+								Width="440"
+								Height="150"
+								CornerRadius="5">
                                 <Border.BorderBrush>
-                                    <DrawingBrush Viewport="10,10,10,10"
-                                                  ViewportUnits="Absolute"
-                                                  TileMode="Tile">
+                                    <DrawingBrush
+										Viewport="10,10,10,10"
+										ViewportUnits="Absolute"
+										TileMode="Tile">
                                         <DrawingBrush.Drawing>
                                             <DrawingGroup>
-                                                <GeometryDrawing Brush="#C8C8C8">
+                                                <GeometryDrawing
+													Brush="#C8C8C8">
                                                     <GeometryDrawing.Geometry>
                                                         <GeometryGroup>
-                                                            <RectangleGeometry Rect="0,0,50,50" />
-                                                            <RectangleGeometry Rect="50,50,50,50" />
+                                                            <RectangleGeometry
+																Rect="0,0,50,50" />
+                                                            <RectangleGeometry
+																Rect="50,50,50,50" />
                                                         </GeometryGroup>
                                                     </GeometryDrawing.Geometry>
                                                 </GeometryDrawing>
@@ -83,48 +110,59 @@
                                         </DrawingBrush.Drawing>
                                     </DrawingBrush>
                                 </Border.BorderBrush>
-
-                                <StackPanel HorizontalAlignment="Center"
-                                            VerticalAlignment="Center">
-                                    <Button Style="{StaticResource MaterialDesignFlatLightButton}"
-                                            ToolTip="MaterialDesignFlatLightButton"
-                                            FontWeight="Bold"
-                                            FontStyle="Oblique"
-                                            Foreground="#FF673AB7"
-                                            Content="Browse file"/>
+                                <StackPanel
+									HorizontalAlignment="Center"
+									VerticalAlignment="Center">
+                                    <Button
+										Style="{StaticResource MaterialDesignFlatLightButton}"
+										ToolTip="MaterialDesignFlatLightButton"
+										FontWeight="Bold"
+										FontStyle="Oblique"
+										Foreground="#FF673AB7"
+										Content="Browse file" />
                                 </StackPanel>
                             </Border>
                         </WrapPanel>
                     </Grid>
-                    <Grid Grid.Row="1"
-                          Grid.Column="2">
-                        <materialDesign:Badged Badge="{materialDesign:PackIcon ArrowLeftRightBold}"
-                                               BadgeColorZoneMode="PrimaryLight"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center">
-                            <Button Style="{StaticResource MaterialDesignPaperDarkButton}"
-                                    Content="Convert" />
+                    <Grid
+						Grid.Row="1"
+						Grid.Column="2">
+                        <materialDesign:Badged
+							Badge="{materialDesign:PackIcon ArrowLeftRightBold}"
+							BadgeColorZoneMode="PrimaryLight"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center">
+                            <Button
+								Style="{StaticResource MaterialDesignPaperDarkButton}"
+								Content="Convert" />
                         </materialDesign:Badged>
                     </Grid>
-                    <Grid Grid.Row="1"
-                          Grid.Column="3">
-                        <WrapPanel HorizontalAlignment="Left">
-                            <Border BorderThickness="1,1,1,1"
-                                    Background="#FCFCFC"
-                                    Width="440"
-                                    Height="150"
-                                    CornerRadius="5">
+                    <Grid
+						Grid.Row="1"
+						Grid.Column="3">
+                        <WrapPanel
+							HorizontalAlignment="Left">
+                            <Border
+								BorderThickness="1,1,1,1"
+								Background="#FCFCFC"
+								Width="440"
+								Height="150"
+								CornerRadius="5">
                                 <Border.BorderBrush>
-                                    <DrawingBrush Viewport="10,10,10,10"
-                                                  ViewportUnits="Absolute"
-                                                  TileMode="Tile">
+                                    <DrawingBrush
+										Viewport="10,10,10,10"
+										ViewportUnits="Absolute"
+										TileMode="Tile">
                                         <DrawingBrush.Drawing>
                                             <DrawingGroup>
-                                                <GeometryDrawing Brush="#C8C8C8">
+                                                <GeometryDrawing
+													Brush="#C8C8C8">
                                                     <GeometryDrawing.Geometry>
                                                         <GeometryGroup>
-                                                            <RectangleGeometry Rect="0,0,50,50" />
-                                                            <RectangleGeometry Rect="50,50,50,50" />
+                                                            <RectangleGeometry
+																Rect="0,0,50,50" />
+                                                            <RectangleGeometry
+																Rect="50,50,50,50" />
                                                         </GeometryGroup>
                                                     </GeometryDrawing.Geometry>
                                                 </GeometryDrawing>
@@ -132,60 +170,66 @@
                                         </DrawingBrush.Drawing>
                                     </DrawingBrush>
                                 </Border.BorderBrush>
-
-                                <StackPanel HorizontalAlignment="Center"
-                                            VerticalAlignment="Center">
-                                    <Button Style="{StaticResource MaterialDesignFlatLightButton}"
-                                            ToolTip="MaterialDesignFlatLightButton"
-                                            FontWeight="Bold"
-                                            FontStyle="Oblique"
-                                            Foreground="#FF673AB7"
-                                            Content="Browse file"/>
+                                <StackPanel
+									HorizontalAlignment="Center"
+									VerticalAlignment="Center">
+                                    <Button
+										Style="{StaticResource MaterialDesignFlatLightButton}"
+										ToolTip="MaterialDesignFlatLightButton"
+										FontWeight="Bold"
+										FontStyle="Oblique"
+										Foreground="#FF673AB7"
+										Content="Browse file" />
                                 </StackPanel>
                             </Border>
                         </WrapPanel>
                     </Grid>
                     <!--TSV Content Title-->
-                    <Grid Grid.Row="4"
-                          Grid.Column="1">
-                        <TextBox x:Name="TSV_Text_Box"
-                                 Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                                 VerticalAlignment="Top"
-                                 FontSize="12"
-                                 Height="440"
-                                 Margin="0 10 0 0"
-                                 AcceptsReturn="True"
-                                 TextWrapping="Wrap"
-                                 VerticalScrollBarVisibility="Auto"
-                                 materialDesign:HintAssist.Hint="TSV Text"
-                                 BorderBrush="#C8C8C8C8"/>
+                    <Grid
+						Grid.Row="4"
+						Grid.Column="1">
+                        <TextBox
+							x:Name="TSV_Text_Box"
+							Style="{StaticResource MaterialDesignOutlinedTextBox}"
+							VerticalAlignment="Top"
+							FontSize="12"
+							Height="440"
+							Margin="0 10 0 0"
+							AcceptsReturn="True"
+							TextWrapping="Wrap"
+							VerticalScrollBarVisibility="Auto"
+							materialDesign:HintAssist.Hint="TSV Text"
+							BorderBrush="#C8C8C8C8" />
                     </Grid>
-
-                    <Grid Grid.Row="4"
-                          Grid.Column="2">
-                        <materialDesign:Badged Badge="{materialDesign:PackIcon ArrowLeftRightBold}"
-                                               BadgeColorZoneMode="PrimaryLight"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center">
-                            <Button Style="{StaticResource MaterialDesignPaperDarkButton}"
-                                    Content="Convert"/>
+                    <Grid
+						Grid.Row="4"
+						Grid.Column="2">
+                        <materialDesign:Badged
+							Badge="{materialDesign:PackIcon ArrowLeftRightBold}"
+							BadgeColorZoneMode="PrimaryLight"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center">
+                            <Button
+								Style="{StaticResource MaterialDesignPaperDarkButton}"
+								Content="Convert" />
                         </materialDesign:Badged>
                     </Grid>
-
                     <!--TSV Content Title-->
-                    <Grid Grid.Row="4"
-                          Grid.Column="3">
-                        <TextBox x:Name="CSV_Text_Box"
-                                 Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                                 VerticalAlignment="Top"
-                                 FontSize="12"
-                                 Height="440"
-                                 Margin="0 10 0 0"
-                                 AcceptsReturn="True"
-                                 TextWrapping="Wrap"
-                                 VerticalScrollBarVisibility="Auto"
-                                 materialDesign:HintAssist.Hint="CSV Text"
-                                 BorderBrush="#C8C8C8C8"/>
+                    <Grid
+						Grid.Row="4"
+						Grid.Column="3">
+                        <TextBox
+							x:Name="CSV_Text_Box"
+							Style="{StaticResource MaterialDesignOutlinedTextBox}"
+							VerticalAlignment="Top"
+							FontSize="12"
+							Height="440"
+							Margin="0 10 0 0"
+							AcceptsReturn="True"
+							TextWrapping="Wrap"
+							VerticalScrollBarVisibility="Auto"
+							materialDesign:HintAssist.Hint="CSV Text"
+							BorderBrush="#C8C8C8C8" />
                     </Grid>
                 </Grid>
             </StackPanel>
