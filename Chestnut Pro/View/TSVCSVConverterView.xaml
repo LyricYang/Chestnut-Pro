@@ -124,11 +124,12 @@
 										Content="Browse file"
                                         Click="BrowseTSVFile"
                                         Margin="0 20 0 0"/>
-                                    <TextBox
+                                    <TextBlock
                                         x:Name="TSV_File_Text_Box"
                                         Margin="5 0 0 0"
                                         HorizontalAlignment="Left"
 										IsEnabled="False"
+                                        TextTrimming="CharacterEllipsis"
                                         Visibility="Hidden"
 										MinWidth="380" />
                                 </StackPanel>
@@ -196,11 +197,12 @@
 										Content="Browse file"
                                         Click="BrowseCSVFile"
                                         Margin="0 20 0 0"/>
-                                    <TextBox
+                                    <TextBlock
                                         x:Name="CSV_File_Text_Box"
                                         Margin="5 0 0 0"
                                         HorizontalAlignment="Left"
 										IsEnabled="False"
+                                        TextTrimming="CharacterEllipsis"
                                         Visibility="Hidden"
 										MinWidth="380" />
                                 </StackPanel>
