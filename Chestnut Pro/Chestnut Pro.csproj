@@ -13,7 +13,6 @@
     <None Remove="Assets\avatar1.jpg" />
     <None Remove="Assets\csv.png" />
     <None Remove="Assets\guid.png" />
-    <None Remove="Assets\home %281%29.png" />
     <None Remove="Assets\home.png" />
     <None Remove="Assets\number-base.png" />
     <None Remove="Assets\palette.png" />
@@ -37,7 +36,6 @@
 
   <ItemGroup>
     <Resource Include="Assets\guid.png" />
-    <Resource Include="Assets\home (1).png" />
     <Resource Include="Assets\home.png" />
     <Resource Include="Assets\number-base.png" />
     <Resource Include="Assets\palette.png" />

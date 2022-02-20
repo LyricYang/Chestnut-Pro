@@ -45,13 +45,13 @@
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition
-							Height="40" />
+							Height="50" />
                         <RowDefinition
 							Height="150" />
                         <RowDefinition
 							Height="20" />
                         <RowDefinition
-							Height="40" />
+							Height="30" />
                         <RowDefinition
 							Height="450" />
                     </Grid.RowDefinitions>
@@ -112,14 +112,25 @@
                                 </Border.BorderBrush>
                                 <StackPanel
 									HorizontalAlignment="Center"
-									VerticalAlignment="Center">
+									VerticalAlignment="Center"
+                                    Width="420"
+                                    Height="130">
                                     <Button
 										Style="{StaticResource MaterialDesignFlatLightButton}"
 										ToolTip="MaterialDesignFlatLightButton"
 										FontWeight="Bold"
 										FontStyle="Oblique"
 										Foreground="#FF673AB7"
-										Content="Browse file" />
+										Content="Browse file"
+                                        Click="BrowseTSVFile"
+                                        Margin="0 20 0 0"/>
+                                    <TextBox
+                                        x:Name="TSV_File_Text_Box"
+                                        Margin="5 0 0 0"
+                                        HorizontalAlignment="Left"
+										IsEnabled="False"
+                                        Visibility="Hidden"
+										MinWidth="380" />
                                 </StackPanel>
                             </Border>
                         </WrapPanel>
@@ -134,7 +145,8 @@
 							VerticalAlignment="Center">
                             <Button
 								Style="{StaticResource MaterialDesignPaperDarkButton}"
-								Content="Convert" />
+								Content="Convert"
+                                Click="TSVCSVFileConvert"/>
                         </materialDesign:Badged>
                     </Grid>
                     <Grid
@@ -172,14 +184,25 @@
                                 </Border.BorderBrush>
                                 <StackPanel
 									HorizontalAlignment="Center"
-									VerticalAlignment="Center">
+									VerticalAlignment="Center"
+                                    Width="420"
+                                    Height="130">
                                     <Button
 										Style="{StaticResource MaterialDesignFlatLightButton}"
 										ToolTip="MaterialDesignFlatLightButton"
 										FontWeight="Bold"
 										FontStyle="Oblique"
 										Foreground="#FF673AB7"
-										Content="Browse file" />
+										Content="Browse file"
+                                        Click="BrowseCSVFile"
+                                        Margin="0 20 0 0"/>
+                                    <TextBox
+                                        x:Name="CSV_File_Text_Box"
+                                        Margin="5 0 0 0"
+                                        HorizontalAlignment="Left"
+										IsEnabled="False"
+                                        Visibility="Hidden"
+										MinWidth="380" />
                                 </StackPanel>
                             </Border>
                         </WrapPanel>
@@ -191,6 +214,7 @@
                         <TextBox
 							x:Name="TSV_Text_Box"
 							Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                            AcceptsTab="True"
 							VerticalAlignment="Top"
 							FontSize="12"
 							Height="440"
@@ -211,7 +235,8 @@
 							VerticalAlignment="Center">
                             <Button
 								Style="{StaticResource MaterialDesignPaperDarkButton}"
-								Content="Convert" />
+								Content="Convert"
+                                Click="TSVCSVTextConvert"/>
                         </materialDesign:Badged>
                     </Grid>
                     <!--TSV Content Title-->

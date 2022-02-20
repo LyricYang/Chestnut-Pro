@@ -37,7 +37,7 @@
                 new () { MenuName = "Number Base",    MenuImage = @"Assets/number-base.png" },
                 new () { MenuName = "GUID Generator", MenuImage = @"Assets/guid.png" },
                 new () { MenuName = "Color Palette",  MenuImage = @"Assets/palette.png" },
-                new () { MenuName = "TSV <=> CSV",    MenuImage = @"Assets/csv.png" },
+                new () { MenuName = "TSV <> CSV",     MenuImage = @"Assets/csv.png" },
             };
 
             MenuItemsCollection = new CollectionViewSource { Source = menuItems };
@@ -127,7 +127,7 @@
                 case "Color Palette":
                     SelectedViewModel = new ColorPaletteViewModel();
                     break;
-                case "TSV <=> CSV":
+                case "TSV <> CSV":
                     SelectedViewModel = new TSVCSVConverterViewModel();
                     break;
                 default:
