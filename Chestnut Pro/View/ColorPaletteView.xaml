@@ -4411,38 +4411,23 @@
 								Content="CMYK" />
                         </ComboBox>
                         <Button
-							BorderBrush="#C8C8C8"
-							Background="White"
-							BorderThickness="1,1,1,1"
-							ToolTip="Copy"
-							Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
+                            BorderBrush="Black"
+                            Foreground="Black"
+                            FontWeight="Light"
+                            Content="Clear"
+							Style="{StaticResource MaterialDesignOutlinedButton}"
 							Height="50"
-							IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
 							Click="ColorPaletteClear"
 							Margin="176,540,224,10">
-                            <Button.Content>
-                                <StackPanel
-									Orientation="Horizontal">
-                                    <materialDesign:PackIcon
-										Kind="CloseBox"
-										Foreground="Black"
-										HorizontalAlignment="Left"
-										VerticalAlignment="Center" />
-                                    <TextBlock
-										Text="Clear"
-										FontSize="14"
-										FontWeight="Bold"
-										Foreground="#1A1A1A"
-										Margin="10 0 0 0" />
-                                </StackPanel>
-                            </Button.Content>
                         </Button>
                         <Button
-							Style="{StaticResource MaterialDesignRaisedButton}"
+                            BorderBrush="Black"
+                            Foreground="Black"
+                            FontWeight="Light"
+							Style="{StaticResource MaterialDesignOutlinedButton}"
 							Content="Convert"
 							Click="RGBConvert"
 							Height="50"
-							IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
 							Margin="344,540,56,10" />
                     </Grid>
                 </Grid>
