@@ -547,7 +547,11 @@
 					Width="277">
                     <Calendar
 						Foreground="White"
-						Background="{x:Null}" />
+						Background="{x:Null}">
+                        <Calendar.BlackoutDates>
+                            <CalendarDateRange Start="2/1/2022" End="2/23/2022"></CalendarDateRange>
+                        </Calendar.BlackoutDates>
+                    </Calendar>
                 </materialDesign:Card>
                 <materialDesign:Card
 					Margin="20 10"
