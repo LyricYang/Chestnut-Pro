@@ -19,7 +19,7 @@
 				Background="#FCFCFC">
                 <!--Header-->
                 <Grid
-					Height="60">
+					Height="100">
                     <!--Title-->
                     <TextBlock
 						Text="Color Palette"

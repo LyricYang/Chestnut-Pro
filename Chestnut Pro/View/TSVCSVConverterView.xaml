@@ -63,6 +63,7 @@
                         <TextBlock
 							Text="TSV-CSV File Converter"
 							FontSize="14"
+                            FontWeight="DemiBold"
 							Foreground="#1A1A1A"
 							HorizontalAlignment="Left"
 							VerticalAlignment="Center" />
@@ -74,6 +75,7 @@
                         <TextBlock
 							Text="TSV-CSV Text Converter"
 							FontSize="14"
+                            FontWeight="DemiBold"
 							Foreground="#1A1A1A"
 							HorizontalAlignment="Left"
 							VerticalAlignment="Center" />

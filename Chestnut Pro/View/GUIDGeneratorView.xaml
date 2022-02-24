@@ -185,7 +185,7 @@
                     </Grid>
                 </Grid>
                 <!--Input&Output-->
-                <Grid>
+                <Grid Margin="0 30 0 0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition
 							Width="30" />
