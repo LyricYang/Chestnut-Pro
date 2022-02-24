@@ -25,6 +25,7 @@
                     <TextBlock
 						Text="All tools"
 						FontSize="24"
+                        FontWeight="Bold"
 						Foreground="#1A1A1A"
 						HorizontalAlignment="Left"
 						VerticalAlignment="Top"

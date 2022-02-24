@@ -25,6 +25,7 @@
                     <TextBlock
 						Text="Number Base Converter"
 						FontSize="24"
+                        FontWeight="Bold"
 						Foreground="#1A1A1A"
 						HorizontalAlignment="Left"
 						VerticalAlignment="Top"
@@ -40,7 +41,7 @@
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition
-							Height="40" />
+							Height="50" />
                         <RowDefinition
 							Height="80" />
                         <RowDefinition
@@ -53,6 +54,7 @@
                         <TextBlock
 							Text="Configuration"
 							FontSize="14"
+                            FontWeight="DemiBold"
 							Foreground="#1A1A1A"
 							HorizontalAlignment="Left"
 							VerticalAlignment="Center" />
@@ -210,7 +212,7 @@
                     </Grid>
                 </Grid>
                 <!--Input&Output-->
-                <Grid>
+                <Grid Margin="0 30 0 0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition
 							Width="30" />
@@ -223,7 +225,7 @@
                         <RowDefinition
 							Height="40" />
                         <RowDefinition
-							Height="55" />
+							Height="20" />
                         <RowDefinition
 							Height="40" />
                         <RowDefinition
@@ -247,6 +249,7 @@
                         <TextBlock
 							Text="Input"
 							FontSize="14"
+                            FontWeight="DemiBold"
 							Foreground="#1A1A1A"
 							HorizontalAlignment="Left"
 							VerticalAlignment="Center" />
@@ -292,6 +295,7 @@
                         <TextBlock
 							Text="Binary"
 							FontSize="14"
+                            FontWeight="DemiBold"
 							Foreground="#1A1A1A"
 							HorizontalAlignment="Left"
 							VerticalAlignment="Bottom" />
@@ -348,6 +352,7 @@
                         <TextBlock
 							Text="Octal"
 							FontSize="14"
+                            FontWeight="DemiBold"
 							Foreground="#1A1A1A"
 							HorizontalAlignment="Left"
 							VerticalAlignment="Bottom" />
@@ -401,6 +406,7 @@
                         <TextBlock
 							Text="Decimal"
 							FontSize="14"
+                            FontWeight="DemiBold"
 							Foreground="#1A1A1A"
 							HorizontalAlignment="Left"
 							VerticalAlignment="Bottom" />
@@ -454,6 +460,7 @@
                         <TextBlock
 							Text="Hexadecimal"
 							FontSize="14"
+                            FontWeight="DemiBold"
 							Foreground="#1A1A1A"
 							HorizontalAlignment="Left"
 							VerticalAlignment="Bottom" />
