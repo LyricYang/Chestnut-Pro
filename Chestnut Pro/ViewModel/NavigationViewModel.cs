@@ -70,7 +70,7 @@
             {
                 filterText = value;
                 MenuItemsCollection.View.Refresh();
-                OnPropertyChanged("FilterText");
+                OnPropertyChanged(nameof(FilterText));
             }
         }
 

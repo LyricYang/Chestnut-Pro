@@ -21,7 +21,7 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ConvertNumberBase(object sender, System.Windows.RoutedEventArgs e)
+        private void ConvertNumberBase(object sender, RoutedEventArgs e)
         {
             var format = Fromat_Button.IsChecked ?? false;
             var type = (NumberBaseType)NumberTypeBox.SelectedIndex;

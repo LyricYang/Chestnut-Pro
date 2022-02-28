@@ -4395,15 +4395,15 @@
 							materialDesign:TransitionAssist.DisableTransitions="True" />
                         <ComboBox
 							x:Name="Color_InputType_Box"
-							Style="{StaticResource MaterialDesignOutlinedComboBox}"
-							IsEnabled="{Binding Path=IsChecked, ElementName=OutlinedComboBoxEnabledCheckBox}"
-							materialDesign:HintAssist.Hint="Input Type"
-							ItemsSource="{Binding ShortStringList}"
-							Height="50"
-							Margin="10,540,390,10">
+							materialDesign:HintAssist.Hint="Input"
+                            materialDesign:TextFieldAssist.SuffixText="type"
+							Height="30"
+                            Width="200"
+                            HorizontalAlignment="Left"
+							Margin="20,500,0,0">
                             <ComboBoxItem
-								Content="RGB"
-								IsSelected="True" />
+                                IsSelected="True"
+								Content="RGB" />
                             <ComboBoxItem
 								Content="HSL" />
                             <ComboBoxItem
@@ -4412,24 +4412,27 @@
 								Content="CMYK" />
                         </ComboBox>
                         <Button
-                            BorderBrush="Black"
-                            Foreground="Black"
-                            FontWeight="Light"
+							Style="{StaticResource MaterialDesignRaisedButton}"
+							materialDesign:ButtonAssist.CornerRadius="10"
+                            Height="30"
+                            Width="100"
+							ToolTip="MaterialDesignRaisedButton with Round Corners"
                             Content="Clear"
-							Style="{StaticResource MaterialDesignOutlinedButton}"
-							Height="50"
-							Click="ColorPaletteClear"
-							Margin="176,540,224,10">
+                            Click="ColorPaletteClear"
+                            HorizontalAlignment="Right"
+                            Margin="0,500,190,0">
                         </Button>
                         <Button
-                            BorderBrush="Black"
-                            Foreground="Black"
-                            FontWeight="Light"
-							Style="{StaticResource MaterialDesignOutlinedButton}"
-							Content="Convert"
-							Click="RGBConvert"
-							Height="50"
-							Margin="344,540,56,10" />
+							Style="{StaticResource MaterialDesignRaisedButton}"
+							materialDesign:ButtonAssist.CornerRadius="10"
+                            Height="30"
+                            Width="100"
+							ToolTip="MaterialDesignRaisedButton with Round Corners"
+                            Content="Convert"
+                            Click="RGBConvert"
+                            HorizontalAlignment="Right"
+                            Margin="0,500,55,0">
+                        </Button>
                     </Grid>
                 </Grid>
             </StackPanel>

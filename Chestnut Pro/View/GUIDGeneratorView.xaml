@@ -108,13 +108,14 @@
                                         <Grid
 											Grid.Row="0"
 											Grid.Column="3">
-                                            <ToggleButton
-												x:Name="Hyphens_Button"
-												Style="{StaticResource MaterialDesignSwitchToggleButton}"
-												HorizontalAlignment="Right"
+                                            <CheckBox
+                                                x:Name="Hyphens_Button"
+                                                HorizontalAlignment="Right"
+                                                Style="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}"
 												IsChecked="True"
-												Margin="0 0 30 0"
-												ToolTip="Default ToggleButton Style" />
+                                                Width="80"
+                                                Margin="0 0 30 0"
+												Content="Hyphens" />
                                         </Grid>
                                     </Grid>
                                 </StackPanel>
@@ -171,12 +172,14 @@
                                         <Grid
 											Grid.Row="0"
 											Grid.Column="3">
-                                            <ToggleButton
-												x:Name="Uppercase_Button"
-												Style="{StaticResource MaterialDesignSwitchToggleButton}"
-												HorizontalAlignment="Right"
-												Margin="0 0 30 0"
-												ToolTip="Default ToggleButton Style" />
+                                            <CheckBox
+                                                x:Name="Uppercase_Button"
+                                                HorizontalAlignment="Right"
+                                                Style="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}"
+												IsChecked="False"
+                                                Margin="0 0 30 0"
+                                                Width="80"
+												Content="Uppercase" />
                                         </Grid>
                                     </Grid>
                                 </StackPanel>

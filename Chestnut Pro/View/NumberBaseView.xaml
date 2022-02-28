@@ -109,12 +109,13 @@
                                         <Grid
 											Grid.Row="0"
 											Grid.Column="3">
-                                            <ToggleButton
-												x:Name="Fromat_Button"
-												Style="{StaticResource MaterialDesignSwitchToggleButton}"
-												HorizontalAlignment="Right"
-												Margin="0 0 30 0"
-												ToolTip="Default ToggleButton Style" />
+                                            <CheckBox
+                                                x:Name="Fromat_Button"
+                                                HorizontalAlignment="Right"
+                                                Style="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}"
+												IsChecked="True"
+                                                Margin="0 0 30 0"
+												Content="Format" />
                                         </Grid>
                                     </Grid>
                                 </StackPanel>
@@ -183,25 +184,12 @@
 												Margin="0 0 20 0">
                                                 <ComboBox
 													x:Name="NumberTypeBox"
-													Height="40"
-													Width="100">
-                                                    <ComboBoxItem
-														IsSelected="True">
-                                                        <TextBlock
-															Text="Decimal" />
-                                                    </ComboBoxItem>
-                                                    <ComboBoxItem>
-                                                        <TextBlock
-															Text="Binary" />
-                                                    </ComboBoxItem>
-                                                    <ComboBoxItem>
-                                                        <TextBlock
-															Text="Octal" />
-                                                    </ComboBoxItem>
-                                                    <ComboBoxItem>
-                                                        <TextBlock
-															Text="Hexadecimal" />
-                                                    </ComboBoxItem>
+                                                    Width="85"
+                                                    materialDesign:HintAssist.Hint="Decimal">
+                                                    <ComboBoxItem Content="Decimal" />
+                                                    <ComboBoxItem Content="Binary" />
+                                                    <ComboBoxItem Content="Octal" />
+                                                    <ComboBoxItem Content="Hexadecimal" />
                                                 </ComboBox>
                                             </StackPanel>
                                         </Grid>
@@ -225,7 +213,7 @@
                         <RowDefinition
 							Height="40" />
                         <RowDefinition
-							Height="20" />
+							Height="55" />
                         <RowDefinition
 							Height="40" />
                         <RowDefinition
@@ -280,13 +268,14 @@
                     <Grid
 						Grid.Row="2"
 						Grid.Column="1">
+                        <!-- long hand form for setting the message -->
                         <materialDesign:Snackbar
 							x:Name="Warning_Message"
 							IsActive="False"
 							Background="#FF673AB7"
-							Opacity="0.7"
+							Opacity="1"
 							HorizontalAlignment="Stretch"
-							Message="The current value isn't Valid" />
+							Message="The current type isn't Valid" />
                     </Grid>
                     <!--Binary-->
                     <Grid
