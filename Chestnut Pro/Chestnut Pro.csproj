@@ -24,7 +24,7 @@
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="MaterialDesignColors" Version="2.0.4" />
     <PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,9 +39,7 @@
     <Resource Include="Assets\home.png" />
     <Resource Include="Assets\number-base.png" />
     <Resource Include="Assets\palette.png" />
-    <Resource Include="Assets\tools-hardware.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="Assets\tools-hardware.png" />
   </ItemGroup>
 
   <ItemGroup>

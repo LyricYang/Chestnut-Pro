@@ -192,16 +192,14 @@
 								HorizontalAlignment="Center"
 								VerticalAlignment="Center" />
                         </Grid>
-                        <Grid
-							Grid.Row="0"
-							Grid.Column="9">
-                            <TextBlock
+                        <TextBlock
 								Text="700"
 								FontSize="12"
 								Foreground="#1A1A1A"
 								HorizontalAlignment="Center"
-								VerticalAlignment="Center" />
-                        </Grid>
+								VerticalAlignment="Center"
+                                Grid.Column="9"
+                                Grid.Row="0"/>
                         <Grid
 							Grid.Row="0"
 							Grid.Column="10">
