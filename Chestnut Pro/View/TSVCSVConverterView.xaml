@@ -36,11 +36,11 @@
                         <ColumnDefinition
 							Width="30" />
                         <ColumnDefinition
-							Width="440" />
+							Width="*" />
                         <ColumnDefinition
-							Width="140" />
+							Width="8" />
                         <ColumnDefinition
-							Width="440" />
+							Width="*" />
                         <ColumnDefinition
 							Width="30" />
                     </Grid.ColumnDefinitions>
@@ -49,17 +49,12 @@
 							Height="50" />
                         <RowDefinition
 							Height="150" />
-                        <RowDefinition
-							Height="20" />
-                        <RowDefinition
-							Height="30" />
-                        <RowDefinition
-							Height="450" />
                     </Grid.RowDefinitions>
                     <!--File Title-->
                     <Grid
 						Grid.Row="0"
-						Grid.Column="1">
+						Grid.Column="1"
+                        Grid.ColumnSpan="3">
                         <TextBlock
 							Text="TSV-CSV File Converter"
 							FontSize="14"
@@ -67,18 +62,13 @@
 							Foreground="#1A1A1A"
 							HorizontalAlignment="Left"
 							VerticalAlignment="Center" />
-                    </Grid>
-                    <!--File Title-->
-                    <Grid
-						Grid.Row="3"
-						Grid.Column="1">
-                        <TextBlock
-							Text="TSV-CSV Text Converter"
-							FontSize="14"
-                            FontWeight="DemiBold"
-							Foreground="#1A1A1A"
-							HorizontalAlignment="Left"
-							VerticalAlignment="Center" />
+                        <Button
+                            Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                            HorizontalAlignment="Right"
+                            Content="Convert"
+                            Click="TSVCSVFileConvert"
+                            Height="30"
+                            Width="85"/>
                     </Grid>
                     <Grid
 						Grid.Row="1"
@@ -88,7 +78,7 @@
                             <Border
 								BorderThickness="1,1,1,1"
 								Background="#FCFCFC"
-								Width="440"
+								Width="510"
 								Height="150"
 								CornerRadius="5">
                                 <Border.BorderBrush>
@@ -141,27 +131,13 @@
                     </Grid>
                     <Grid
 						Grid.Row="1"
-						Grid.Column="2">
-                        <materialDesign:Badged
-							Badge="{materialDesign:PackIcon ArrowLeftRightBold}"
-							BadgeColorZoneMode="PrimaryLight"
-							HorizontalAlignment="Center"
-							VerticalAlignment="Center">
-                            <Button
-								Style="{StaticResource MaterialDesignPaperDarkButton}"
-								Content="Convert"
-                                Click="TSVCSVFileConvert"/>
-                        </materialDesign:Badged>
-                    </Grid>
-                    <Grid
-						Grid.Row="1"
 						Grid.Column="3">
                         <WrapPanel
 							HorizontalAlignment="Left">
                             <Border
 								BorderThickness="1,1,1,1"
 								Background="#FCFCFC"
-								Width="440"
+								Width="510"
 								Height="150"
 								CornerRadius="5">
                                 <Border.BorderBrush>
@@ -212,9 +188,51 @@
                             </Border>
                         </WrapPanel>
                     </Grid>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+							Width="30" />
+                        <ColumnDefinition
+							Width="*" />
+                        <ColumnDefinition
+							Width="8" />
+                        <ColumnDefinition
+							Width="*" />
+                        <ColumnDefinition
+							Width="30" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+							Height="20" />
+                        <RowDefinition
+							Height="30" />
+                        <RowDefinition
+							Height="450" />
+                    </Grid.RowDefinitions>
+                    <!--File Title-->
+                    <Grid
+						Grid.Row="1"
+						Grid.Column="1"
+                        Grid.ColumnSpan="3">
+                        <TextBlock
+							Text="TSV-CSV Text Converter"
+							FontSize="14"
+                            FontWeight="DemiBold"
+							Foreground="#1A1A1A"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Center" />
+                        <Button
+                            Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                            HorizontalAlignment="Right"
+                            Content="Convert"
+                            Click="TSVCSVTextConvert"
+                            Height="30"
+                            Width="85"/>
+                    </Grid>
                     <!--TSV Content Title-->
                     <Grid
-						Grid.Row="4"
+						Grid.Row="2"
 						Grid.Column="1">
                         <TextBox
 							x:Name="TSV_Text_Box"
@@ -230,23 +248,23 @@
 							materialDesign:HintAssist.Hint="TSV Text"
 							BorderBrush="#C8C8C8C8" />
                     </Grid>
-                    <Grid
-						Grid.Row="4"
-						Grid.Column="2">
-                        <materialDesign:Badged
-							Badge="{materialDesign:PackIcon ArrowLeftRightBold}"
-							BadgeColorZoneMode="PrimaryLight"
-							HorizontalAlignment="Center"
-							VerticalAlignment="Center">
-                            <Button
-								Style="{StaticResource MaterialDesignPaperDarkButton}"
-								Content="Convert"
-                                Click="TSVCSVTextConvert"/>
-                        </materialDesign:Badged>
-                    </Grid>
+                    <GridSplitter Grid.Row="2" Grid.Column="2" Width="5" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="{x:Null}">
+                        <GridSplitter.Template>
+                            <ControlTemplate TargetType="{x:Type GridSplitter}">
+                                <Grid>
+                                    <TextBlock
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Text="⁞" />
+                                    <Rectangle Fill="#00FFFFFF" />
+                                </Grid>
+                            </ControlTemplate>
+                        </GridSplitter.Template>
+                    </GridSplitter>
+
                     <!--TSV Content Title-->
                     <Grid
-						Grid.Row="4"
+						Grid.Row="2"
 						Grid.Column="3">
                         <TextBox
 							x:Name="CSV_Text_Box"
