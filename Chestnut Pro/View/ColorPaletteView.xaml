@@ -4316,37 +4316,37 @@
 							Kind="AlphaRBoxOutline"
 							Height="40"
 							Width="40"
-							Margin="4,292,0,0" />
+							Margin="8,322,0,0" />
                         <TextBox
 							x:Name="RGB_BOX_R"
 							MaxLength="3"
 							Height="35"
-							Margin="54,290,321,258"
+							Margin="58,328,317,236"
 							materialDesign:HintAssist.Hint="0-255"
 							materialDesign:TransitionAssist.DisableTransitions="True" />
                         <materialDesign:PackIcon
 							Kind="AlphaGBoxOutline"
 							Height="40"
 							Width="40"
-							Margin="4,372,0,0" />
+							Margin="8,402,0,0" />
                         <TextBox
 							x:Name="RGB_BOX_G"
 							MaxLength="3"
 							Height="35"
-							Margin="54,370,321,183"
+							Margin="58,406,317,159"
 							materialDesign:HintAssist.Hint="0-255"
 							materialDesign:TransitionAssist.DisableTransitions="True" />
                         <materialDesign:PackIcon
 							Kind="AlphaBBoxOutline"
 							Height="40"
 							Width="40"
-							Margin="4,442,0,0"
+							Margin="8,472,0,0"
 							RenderTransformOrigin="0.631,-0.472" />
                         <TextBox
 							x:Name="RGB_BOX_B"
 							MaxLength="3"
 							Height="35"
-							Margin="54,442,321,108"
+							Margin="58,480,317,85"
 							materialDesign:HintAssist.Hint="0-255"
 							materialDesign:TransitionAssist.DisableTransitions="True" />
                         <TextBlock
@@ -4356,11 +4356,11 @@
 							Foreground="#1A1A1A"
 							HorizontalAlignment="Left"
 							VerticalAlignment="Top"
-							Margin="279,305,0,0" />
+							Margin="283,335,0,0" />
                         <TextBox
 							x:Name="Hex_Copy"
 							Height="30"
-							Margin="324,290,56,258"
+							Margin="328,331,52,239"
 							materialDesign:HintAssist.Hint="#FFFFFF"
 							materialDesign:TransitionAssist.DisableTransitions="True" />
                         <TextBlock
@@ -4370,11 +4370,11 @@
 							Foreground="#1A1A1A"
 							HorizontalAlignment="Left"
 							VerticalAlignment="Top"
-							Margin="279,383,0,0" />
+							Margin="283,413,0,0" />
                         <TextBox
 							x:Name="HSL_Copy"
 							Height="30"
-							Margin="324,370,56,183"
+							Margin="328,408,52,162"
 							materialDesign:HintAssist.Hint="0.00,0.00%,100.00%"
 							materialDesign:TransitionAssist.DisableTransitions="True" />
                         <TextBlock
@@ -4384,21 +4384,21 @@
 							Foreground="#1A1A1A"
 							HorizontalAlignment="Left"
 							VerticalAlignment="Top"
-							Margin="279,455,0,0" />
+							Margin="283,485,0,0" />
                         <TextBox
 							x:Name="CMYK_Copy"
 							Height="30"
-							Margin="324,442,56,108"
+							Margin="328,482,52,88"
 							materialDesign:HintAssist.Hint="0.00,0.00,0.00,0.00"
-							materialDesign:TransitionAssist.DisableTransitions="True" />
+							materialDesign:TransitionAssist.DisableTransitions="True"/>
                         <ComboBox
 							x:Name="Color_InputType_Box"
 							materialDesign:HintAssist.Hint="Input"
                             materialDesign:TextFieldAssist.SuffixText="type"
 							Height="30"
-                            Width="200"
+                            Width="213"
                             HorizontalAlignment="Left"
-							Margin="20,500,0,0">
+							Margin="20,262,0,308">
                             <ComboBoxItem
                                 IsSelected="True"
 								Content="RGB" />
@@ -4409,27 +4409,84 @@
                             <ComboBoxItem
 								Content="CMYK" />
                         </ComboBox>
+                        <ComboBox
+							x:Name="Popular_Color_Box"
+							materialDesign:HintAssist.Hint="Popular"
+                            materialDesign:TextFieldAssist.SuffixText="type"
+							Height="30"
+                            Width="214"
+                            HorizontalAlignment="Left"
+							Margin="285,262,0,308"
+                            SelectionChanged="PopularColorChanged"
+                            DropDownClosed="DropDownClosed">
+                            <ComboBoxItem
+								Content="2003:	Aqua Sky" Background="#7BC4C4"/>
+                            <ComboBoxItem
+								Content="2004:	Tigerlily" Background="#E2583E"/>
+                            <ComboBoxItem
+								Content="2005:	Blue Turquoise" Background="#53B0AE"/>
+                            <ComboBoxItem
+								Content="2006:	Sand Dollar" Background="#DECDBE"/>
+                            <ComboBoxItem
+								Content="2007:	Chili Pepper" Background="#9B1B30"/>
+                            <ComboBoxItem
+								Content="2008:	Blue Iris" Background="#5A5B9F"/>
+                            <ComboBoxItem
+								Content="2009:	Mimosa" Background="#F0C05A"/>
+                            <ComboBoxItem
+								Content="2010:	Turquoise" Background="#45B5AA"/>
+                            <ComboBoxItem
+								Content="2011:	Honeysuckle" Background="#D94F70"/>
+                            <ComboBoxItem
+								Content="2012:	Tangerine Tango" Background="#DD4124"/>
+                            <ComboBoxItem
+								Content="2013:	Emerald" Background="#009473"/>
+                            <ComboBoxItem
+								Content="2014:	Radiant Orchid" Background="#B163A3"/>
+                            <ComboBoxItem
+								Content="2015:	Marsala" Background="#955251"/>
+                            <ComboBoxItem
+								Content="2016:	Serenity" Background="#92A8D1"/>
+                            <ComboBoxItem
+								Content="2016:	Rose Quartz" Background="#F7CAC9"/>
+                            <ComboBoxItem
+								Content="2017:	Greenery" Background="#88B04B"/>
+                            <ComboBoxItem
+								Content="2018:	ULTRA VIOLET" Background="#5F4B8B"/>
+                            <ComboBoxItem
+								Content="2019:	Living Coral" Background="#FF6F61"/>
+                            <ComboBoxItem
+								Content="2020:	Classic Blue" Background="#0F4C81"/>
+                            <ComboBoxItem
+								Content="2021:	Ultimate Gray" Background="#939597"/>
+                            <ComboBoxItem
+								Content="2021:	Illuminating" Background="#F5DF4D"/>
+                            <ComboBoxItem
+								Content="2022:	Very Peri" Background="#696AAD"/>
+                        </ComboBox>
                         <Button
 							Style="{StaticResource MaterialDesignRaisedButton}"
 							materialDesign:ButtonAssist.CornerRadius="10"
                             Height="30"
-                            Width="100"
+                            Width="80"
 							ToolTip="MaterialDesignRaisedButton with Round Corners"
                             Content="Clear"
+                            FontSize="12"
                             Click="ColorPaletteClear"
                             HorizontalAlignment="Right"
-                            Margin="0,500,190,0">
+                            Margin="0,565,144,5">
                         </Button>
                         <Button
 							Style="{StaticResource MaterialDesignRaisedButton}"
 							materialDesign:ButtonAssist.CornerRadius="10"
                             Height="30"
-                            Width="100"
+                            Width="80"
+                            FontSize="12"
 							ToolTip="MaterialDesignRaisedButton with Round Corners"
                             Content="Convert"
                             Click="RGBConvert"
                             HorizontalAlignment="Right"
-                            Margin="0,500,55,0">
+                            Margin="0,565,51,5">
                         </Button>
                     </Grid>
                 </Grid>

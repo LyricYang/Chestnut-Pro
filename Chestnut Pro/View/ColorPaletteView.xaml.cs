@@ -11,6 +11,8 @@
     /// </summary>
     public partial class ColorPaletteView : UserControl
     {
+        private bool handle = true;
+
         public ColorPaletteView()
         {
             InitializeComponent();
@@ -1710,6 +1712,55 @@
             Color_Text.Text = HexText;
             Color_Text.Visibility = System.Windows.Visibility.Visible;
             HSL_Copy.Text = HSLText;
+        }
+
+        /// <summary>
+        /// Popular Color Changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PopularColorChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox cmb = sender as ComboBox;
+            handle = !cmb.IsDropDownOpen;
+            Handle();
+        }
+
+        private void DropDownClosed(object sender, EventArgs e)
+        {
+            if (handle) Handle();
+            handle = true;
+        }
+
+        private void Handle()
+        {
+            var hexStr = Popular_Color_Box.SelectedIndex switch
+            {
+                0 => "#7BC4C4",
+                1 => "#E2583E",
+                2 => "#53B0AE",
+                3 => "#DECDBE",
+                4 => "#9B1B30",
+                5 => "#5A5B9F",
+                6 => "#F0C05A",
+                7 => "#45B5AA",
+                8 => "#D94F70",
+                9 => "#DD4124",
+                10 => "#009473",
+                11 => "#B163A3",
+                12 => "#955251",
+                13 => "#92A8D1",
+                14 => "#F7CAC9",
+                15 => "#88B04B",
+                16 => "#5F4B8B",
+                17 => "#FF6F61",
+                18 => "#0F4C81",
+                19 => "#939597",
+                20 => "#F5DF4D",
+                21 => "#696AAD",
+                _ => "#FFFFFF"
+            };
+            ShowHexColor(hexStr);
         }
     }
 }

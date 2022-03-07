@@ -63,12 +63,57 @@
 							HorizontalAlignment="Left"
 							VerticalAlignment="Center" />
                         <Button
+							Content="{materialDesign:PackIcon ContentCopy}"
+							BorderBrush="#C8C8C8"
+							Background="White"
+							BorderThickness="1,1,1,1"
+							ToolTip="Copy"
+							Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
+							Width="50"
+							HorizontalAlignment="Right"
+							Margin="0 0 573 0"
+							IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+                        <Button
+							Content="{materialDesign:PackIcon Close}"
+							BorderBrush="#C8C8C8"
+							Background="White"
+							BorderThickness="1,1,1,1"
+							ToolTip="Copy"
+							Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
+							Width="50"
+                            Margin="0 0 518 0"
+							HorizontalAlignment="Right"
+							IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+                        <Button
+							Content="{materialDesign:PackIcon ContentCopy}"
+							BorderBrush="#C8C8C8"
+							Background="White"
+							BorderThickness="1,1,1,1"
+							ToolTip="Copy"
+							Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
+							Width="50"
+							HorizontalAlignment="Right"
+							Margin="0 0 135 0"
+							IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+                        <Button
+							Content="{materialDesign:PackIcon Close}"
+							BorderBrush="#C8C8C8"
+							Background="White"
+							BorderThickness="1,1,1,1"
+							ToolTip="Copy"
+							Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
+							Width="50"
+                            Margin="0 0 80 0"
+							HorizontalAlignment="Right"
+							IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+                        <Button
                             Style="{StaticResource MaterialDesignFlatMidBgButton}"
                             HorizontalAlignment="Right"
                             Content="Convert"
                             Click="TSVCSVFileConvert"
+                            FontSize="12"
                             Height="30"
-                            Width="85"/>
+                            Width="75"/>
                     </Grid>
                     <Grid
 						Grid.Row="1"
@@ -204,9 +249,9 @@
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition
-							Height="20" />
-                        <RowDefinition
 							Height="30" />
+                        <RowDefinition
+							Height="40" />
                         <RowDefinition
 							Height="450" />
                     </Grid.RowDefinitions>
@@ -223,12 +268,57 @@
 							HorizontalAlignment="Left"
 							VerticalAlignment="Center" />
                         <Button
+							Content="{materialDesign:PackIcon ContentCopy}"
+							BorderBrush="#C8C8C8"
+							Background="White"
+							BorderThickness="1,1,1,1"
+							ToolTip="Copy"
+							Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
+							Width="50"
+							HorizontalAlignment="Right"
+							Margin="0 0 573 0"
+							IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+                        <Button
+							Content="{materialDesign:PackIcon Close}"
+							BorderBrush="#C8C8C8"
+							Background="White"
+							BorderThickness="1,1,1,1"
+							ToolTip="Copy"
+							Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
+							Width="50"
+                            Margin="0 0 518 0"
+							HorizontalAlignment="Right"
+							IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+                        <Button
+							Content="{materialDesign:PackIcon ContentCopy}"
+							BorderBrush="#C8C8C8"
+							Background="White"
+							BorderThickness="1,1,1,1"
+							ToolTip="Copy"
+							Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
+							Width="50"
+							HorizontalAlignment="Right"
+							Margin="0 0 135 0"
+							IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+                        <Button
+							Content="{materialDesign:PackIcon Close}"
+							BorderBrush="#C8C8C8"
+							Background="White"
+							BorderThickness="1,1,1,1"
+							ToolTip="Copy"
+							Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
+							Width="50"
+                            Margin="0 0 80 0"
+							HorizontalAlignment="Right"
+							IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+                        <Button
                             Style="{StaticResource MaterialDesignFlatMidBgButton}"
                             HorizontalAlignment="Right"
                             Content="Convert"
                             Click="TSVCSVTextConvert"
                             Height="30"
-                            Width="85"/>
+                            FontSize="12"
+                            Width="75"/>
                     </Grid>
                     <!--TSV Content Title-->
                     <Grid
