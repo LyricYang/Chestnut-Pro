@@ -538,7 +538,7 @@
                     <Border x:Name="rectangle"
                                 SnapsToDevicePixels="True"
                                 CornerRadius="3"
-                            Background="#898989"
+                            Background="#673ab7"
                                 Height="{TemplateBinding Height}"
                                 Width="{TemplateBinding Width}"/>
                 </ControlTemplate>

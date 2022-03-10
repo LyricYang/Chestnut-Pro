@@ -7,26 +7,31 @@
     xmlns:vm="clr-namespace:Chestnut_Pro.ViewModel"
 	mc:Ignorable="d"
 	Title="Chestnut Pro"
-	Height="880"
+	Height="888"
 	Width="1330"
+    MinHeight="888"
+    MinWidth="1330"
 	x:Name="DashboardWindow"
 	WindowStartupLocation="CenterScreen"
-	ResizeMode="CanResize">
+	ResizeMode="CanResize"
+    Background="#FCFCFC">
     <!--Setting the DataContext (Binding Source)-->
     <Window.DataContext>
         <vm:NavigationViewModel />
     </Window.DataContext>
     <Grid>
-        <!--Background Border-->
-        <Border
-			Background="White" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1313*"/>
+        </Grid.ColumnDefinitions>
         <!--Content Grid-->
-        <Grid>
+        <Grid Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition
 					Width="25" />
                 <ColumnDefinition
-					Width="180" />
+					Width="21.04" />
+                <ColumnDefinition Width="158.96"/>
                 <ColumnDefinition
 					Width="10" />
                 <ColumnDefinition
@@ -49,7 +54,7 @@
             <!--Menu Search Box-->
             <Grid
 				Grid.Row="2"
-				Grid.Column="1">
+				Grid.Column="1" Grid.ColumnSpan="2">
                 <TextBox
 					x:Name="SearchBox"
 					Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}"
@@ -61,8 +66,7 @@
             <!--Menu-->
             <Grid
 				Grid.Row="3"
-				Grid.Column="1"
-				Margin="0,0,0,0">
+				Grid.Column="1" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition
 						Width="41*" />
@@ -90,7 +94,7 @@
             <!--Page Container-->
             <Grid
 				Grid.Row="2"
-				Grid.Column="3"
+				Grid.Column="4"
 				Grid.RowSpan="2"
 				Background="Transparent">
                 <Grid.ColumnDefinitions>
