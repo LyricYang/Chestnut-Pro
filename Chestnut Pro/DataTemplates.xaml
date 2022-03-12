@@ -19,6 +19,11 @@
 		DataType="{x:Type viewmodel:NumberBaseViewModel}">
         <view:NumberBaseView />
     </DataTemplate>
+    <!--Number Base Convert Page-->
+    <DataTemplate
+		DataType="{x:Type viewmodel:Base64ViewModel}">
+        <view:Base64View />
+    </DataTemplate>
     <!--GUID Page-->
     <DataTemplate
 		DataType="{x:Type viewmodel:GUIDGeneratorViewModel}">

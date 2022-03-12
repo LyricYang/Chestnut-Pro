@@ -36,8 +36,9 @@
                 new () { MenuName = "All Tools",      MenuImage = @"Assets/tools-hardware.png" },
                 new () { MenuName = "Number Base",    MenuImage = @"Assets/number-base.png" },
                 new () { MenuName = "GUID Generator", MenuImage = @"Assets/guid.png" },
-                new () { MenuName = "Color Palette",  MenuImage = @"Assets/palette.png" },
+                new () { MenuName = "Base 64",        MenuImage = @"Assets/base64.png" },
                 new () { MenuName = "TSV <> CSV",     MenuImage = @"Assets/csv.png" },
+                new () { MenuName = "Color Palette",  MenuImage = @"Assets/palette.png" },
             };
 
             MenuItemsCollection = new CollectionViewSource { Source = menuItems };
@@ -123,6 +124,9 @@
                     break;
                 case "GUID Generator":
                     SelectedViewModel = new GUIDGeneratorViewModel();
+                    break;
+                case "Base 64":
+                    SelectedViewModel = new Base64ViewModel();
                     break;
                 case "Color Palette":
                     SelectedViewModel = new ColorPaletteViewModel();
