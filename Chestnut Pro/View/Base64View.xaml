@@ -23,7 +23,7 @@
 					Height="60">
                     <!--Title-->
                     <TextBlock
-						Text="Number Base Converter"
+						Text="Base 64 Encoder / Decoder"
 						FontSize="24"
                         FontWeight="Bold"
 						Foreground="#1A1A1A"
@@ -44,8 +44,6 @@
 							Height="50" />
                         <RowDefinition
 							Height="80" />
-                        <RowDefinition
-							Height="80" />
                     </Grid.RowDefinitions>
                     <!--Content Title-->
                     <Grid
@@ -58,6 +56,180 @@
 							Foreground="#1A1A1A"
 							HorizontalAlignment="Left"
 							VerticalAlignment="Center" />
+                    </Grid>
+                    <!--Parameter 1-->
+                    <Grid
+						Grid.Row="1"
+						Grid.Column="1">
+                        <WrapPanel
+							HorizontalAlignment="Left">
+                            <Border
+								BorderBrush="#C8C8C8"
+								Background="White"
+								BorderThickness="1,1,1,1"
+								CornerRadius="5">
+                                <StackPanel>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition
+												Width="25" />
+                                            <ColumnDefinition
+												Width="100" />
+                                            <ColumnDefinition
+												Width="300" />
+                                            <ColumnDefinition
+												Width="600" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition
+												Height="60" />
+                                        </Grid.RowDefinitions>
+                                        <Grid
+											Grid.Row="0"
+											Grid.Column="1">
+                                            <materialDesign:PackIcon
+												Kind="CompareHorizontal"
+												Foreground="Black"
+												Height="30"
+												Width="30"
+												HorizontalAlignment="Left"
+												VerticalAlignment="Center" />
+                                        </Grid>
+                                        <Grid
+											Grid.Row="0"
+											Grid.Column="2">
+                                            <TextBlock
+												HorizontalAlignment="Left"
+												FontSize="14"
+												Text="Conversion"
+												Margin="0 15 0 0" />
+                                            <TextBlock
+												HorizontalAlignment="Left"
+												FontSize="11"
+												Text="Select which conversion mode you want to use"
+												Margin="0 35 0 0 "
+												Foreground="Gray" />
+                                        </Grid>
+                                        <Grid
+											Grid.Row="0"
+											Grid.Column="3">
+                                            <CheckBox
+                                                x:Name="Encode_Button"
+                                                HorizontalAlignment="Right"
+                                                Style="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}"
+												IsChecked="False"
+                                                Margin="0 0 30 0"
+												Content="Decode"
+                                                Click="Base64Type"/>
+                                        </Grid>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
+                        </WrapPanel>
+                    </Grid>
+                </Grid>
+                <!--Input-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+							Width="30" />
+                        <ColumnDefinition
+							Width="1000" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+							Height="40" />
+                        <RowDefinition
+							Height="250" />
+                        <RowDefinition
+							Height="50" />
+                        <RowDefinition
+							Height="250" />
+                    </Grid.RowDefinitions>
+                    <Grid
+						Grid.Row="0"
+						Grid.Column="1" Grid.ColumnSpan="2">
+                        <TextBlock
+							Text="Input"
+							FontSize="14"
+                            FontWeight="DemiBold"
+							Foreground="#1A1A1A"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Bottom" />
+                        <Button
+							Content="{materialDesign:PackIcon CursorDefaultClick}"
+							BorderBrush="#C8C8C8"
+							Background="White"
+							BorderThickness="1,1,1,1"
+							ToolTip="Convert"
+							Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
+							Width="50"
+							HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+							Margin="0 0 60 0"
+                            Click="Base64Convert"/>
+                        <Button
+							Content="{materialDesign:PackIcon Close}"
+							BorderBrush="#C8C8C8"
+							Background="White"
+							BorderThickness="1,1,1,1"
+							ToolTip="Clear"
+							Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
+							Width="50"
+							HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+							Click="Base64InputClear"/>
+                    </Grid>
+                    <Grid
+						Grid.Row="1"
+						Grid.Column="1" Grid.ColumnSpan="2">
+                        <TextBox
+							x:Name="Base64Input_Box"
+							Style="{StaticResource MaterialDesignOutlinedTextBox}"
+							VerticalAlignment="Top"
+							FontSize="12"
+							Height="240"
+							Margin="0 10 0 0"
+							AcceptsReturn="True"
+							TextWrapping="Wrap"
+							VerticalScrollBarVisibility="Auto"/>
+                    </Grid>
+                    <Grid
+						Grid.Row="2"
+						Grid.Column="1" Grid.ColumnSpan="2">
+                        <TextBlock
+							Text="Output"
+							FontSize="14"
+                            FontWeight="DemiBold"
+							Foreground="#1A1A1A"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Bottom" />
+                        <Button
+							Content="{materialDesign:PackIcon ContentCopy}"
+							BorderBrush="#C8C8C8"
+							Background="White"
+							BorderThickness="1,1,1,1"
+							ToolTip="Copy"
+							Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
+							Width="50"
+							HorizontalAlignment="Right"
+							VerticalAlignment="Bottom"
+							IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                            Click="Base64OutputCopy"/>
+                    </Grid>
+                    <Grid
+						Grid.Row="3"
+						Grid.Column="1" Grid.ColumnSpan="2">
+                        <TextBox
+							x:Name="Base64Output_Box"
+							Style="{StaticResource MaterialDesignOutlinedTextBox}"
+							VerticalAlignment="Top"
+							FontSize="12"
+							Height="240"
+							Margin="0 10 0 0"
+							AcceptsReturn="True"
+							TextWrapping="Wrap"
+							VerticalScrollBarVisibility="Auto"/>
                     </Grid>
                 </Grid>
             </StackPanel>

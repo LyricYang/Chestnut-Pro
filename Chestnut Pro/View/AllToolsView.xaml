@@ -38,7 +38,7 @@
                         <materialDesign:Card
 							Margin="40 30 30 30"
 							UniformCornerRadius="10"
-							Height="300"
+							Height="320"
 							Width="200"
 							Background="white">
                             <StackPanel
@@ -76,7 +76,7 @@
                         <materialDesign:Card
 							Margin="30"
 							UniformCornerRadius="10"
-							Height="300"
+							Height="320"
 							Width="200"
 							Background="white">
                             <StackPanel
@@ -113,7 +113,7 @@
                         <materialDesign:Card
 							Margin="30"
 							UniformCornerRadius="10"
-							Height="300"
+							Height="320"
 							Width="200"
 							Background="white">
                             <StackPanel
@@ -150,7 +150,7 @@
                         <materialDesign:Card
 							Margin="30"
 							UniformCornerRadius="10"
-							Height="300"
+							Height="320"
 							Width="200"
 							Background="white">
                             <StackPanel
@@ -192,7 +192,7 @@
                         <materialDesign:Card
 							Margin="40 30 30 30"
 							UniformCornerRadius="10"
-							Height="300"
+							Height="320"
 							Width="200"
 							Background="white">
                             <StackPanel
@@ -229,7 +229,7 @@
                         <materialDesign:Card
 							Margin="30"
 							UniformCornerRadius="10"
-							Height="300"
+							Height="320"
 							Width="200"
 							Background="white">
                             <StackPanel
@@ -266,7 +266,7 @@
                         <materialDesign:Card
 							Margin="30"
 							UniformCornerRadius="10"
-							Height="300"
+							Height="320"
 							Width="200"
 							Background="white">
                             <StackPanel
@@ -303,7 +303,7 @@
                         <materialDesign:Card
 							Margin="30"
 							UniformCornerRadius="10"
-							Height="300"
+							Height="320"
 							Width="200"
 							Background="white">
                             <StackPanel
@@ -344,7 +344,7 @@
                         <materialDesign:Card
 							Margin="40 30 30 30"
 							UniformCornerRadius="10"
-							Height="300"
+							Height="320"
 							Width="200"
 							Background="white">
                             <StackPanel
@@ -381,7 +381,7 @@
                         <materialDesign:Card
 							Margin="30"
 							UniformCornerRadius="10"
-							Height="300"
+							Height="320"
 							Width="200"
 							Background="white">
                             <StackPanel
@@ -418,7 +418,7 @@
                         <materialDesign:Card
 							Margin="30"
 							UniformCornerRadius="10"
-							Height="300"
+							Height="320"
 							Width="200"
 							Background="white">
                             <StackPanel
@@ -455,7 +455,7 @@
                         <materialDesign:Card
 							Margin="30"
 							UniformCornerRadius="10"
-							Height="300"
+							Height="320"
 							Width="200"
 							Background="white">
                             <StackPanel
