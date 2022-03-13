@@ -23,6 +23,8 @@
                 Value="30" />
             <Setter Property="HorizontalAlignment"
                 Value="Right" />
+            <Setter Property="BorderBrush"
+                Value="#C8C8C8" />
         </Style>
         <Style x:Key="ConvertButtonStyle"
                TargetType="{x:Type ButtonBase}"
@@ -69,7 +71,7 @@
                 <Grid
 					Height="60">
                     <!--Title-->
-                    <TextBlock Style="{StaticResource ConfigurationTitleTextStyle}"
+                    <TextBlock Style="{StaticResource ControlTitleTextStyle}"
 						Text="TSV-CSV Converter" />
                 </Grid>
                 <Grid>
@@ -270,12 +272,8 @@
 						Grid.Column="1"
                         Grid.ColumnSpan="3">
                         <TextBlock
-							Text="TSV-CSV Text Converter"
-							FontSize="14"
-                            FontWeight="DemiBold"
-							Foreground="#1A1A1A"
-							HorizontalAlignment="Left"
-							VerticalAlignment="Center" />
+                            Style="{StaticResource ConfigurationTitleTextStyle}"
+							Text="TSV-CSV Text Converter" />
                         <Button
 							Content="{materialDesign:PackIcon ContentCopy}"
 							ToolTip="Copy"

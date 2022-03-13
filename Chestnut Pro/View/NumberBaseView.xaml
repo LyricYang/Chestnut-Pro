@@ -9,6 +9,71 @@
 	d:DesignHeight="850"
 	d:DesignWidth="1100"
 	Background="Transparent">
+    <UserControl.Resources>
+        <Style x:Key="ConfigTag"
+               TargetType="materialDesign:PackIcon">
+            <Setter Property="Height"
+                    Value="30"/>
+            <Setter Property="Width"
+                    Value="30"/>
+            <Setter Property="Foreground"
+                    Value="Black"/>
+            <Setter Property="HorizontalAlignment"
+                    Value="Left"/>
+            <Setter Property="VerticalAlignment"
+                    Value="Center"/>
+        </Style>
+        <Style x:Key="InputOutputTitle"
+               TargetType="{x:Type TextBlock}">
+            <Setter Property="IsEnabled"
+                    Value="False" />
+            <Setter Property="FontSize"
+                    Value="14" />
+            <Setter Property="Foreground"
+                    Value="#1A1A1A" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Left" />
+            <Setter Property="VerticalAlignment"
+                    Value="Bottom" />
+        </Style>
+        <Style x:Key="OutputContent"
+               TargetType="{x:Type TextBox}"
+               BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}">
+            <Setter Property="FontWeight"
+                    Value="DemiBold" />
+            <Setter Property="Height"
+                    Value="40" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+            <Setter Property="IsEnabled"
+                    Value="False" />
+        </Style>
+        <Style x:Key="Content"
+               TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize"
+                    Value="14" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Left" />
+        </Style>
+        <Style x:Key="CommonButtonStyle"
+           TargetType="{x:Type Button}"
+           BasedOn="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}">
+            <Setter Property="Background"
+                Value="White" />
+            <Setter Property="BorderThickness"
+                Value="1,1,1,1" />
+            <Setter Property="Width"
+                Value="50" />
+            <Setter Property="Height"
+                Value="30" />
+            <Setter Property="HorizontalAlignment"
+                Value="Right" />
+            <Setter Property="BorderBrush"
+                Value="#C8C8C8" />
+        </Style>
+    </UserControl.Resources>
     <Border
 		BorderBrush="#C8C8C8"
 		Background="#FCFCFC"
@@ -23,13 +88,8 @@
 					Height="60">
                     <!--Title-->
                     <TextBlock
-						Text="Number Base Converter"
-						FontSize="24"
-                        FontWeight="Bold"
-						Foreground="#1A1A1A"
-						HorizontalAlignment="Left"
-						VerticalAlignment="Top"
-						Margin="30,20,0,0" />
+                        Style="{StaticResource ControlTitleTextStyle}"
+						Text="Number Base Converter" />
                 </Grid>
                 <!--Configuration-->
                 <Grid>
@@ -52,14 +112,10 @@
 						Grid.Row="0"
 						Grid.Column="1">
                         <TextBlock
-							Text="Configuration"
-							FontSize="14"
-                            FontWeight="DemiBold"
-							Foreground="#1A1A1A"
-							HorizontalAlignment="Left"
-							VerticalAlignment="Center" />
+                            Style="{StaticResource ConfigurationTitleTextStyle}"
+							Text="Configuration" />
                     </Grid>
-                    <!--Parameter 1-->
+                    <!--Configuration 1-->
                     <Grid
 						Grid.Row="1"
 						Grid.Column="1">
@@ -86,43 +142,31 @@
                                             <RowDefinition
 												Height="60" />
                                         </Grid.RowDefinitions>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="1">
-                                            <materialDesign:PackIcon
-												Kind="AlphaA"
-												Foreground="Black"
-												Height="30"
-												Width="30"
-												HorizontalAlignment="Left"
-												VerticalAlignment="Center" />
-                                        </Grid>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="2">
-                                            <TextBlock
-												HorizontalAlignment="Left"
-												VerticalAlignment="Center"
-												FontSize="14"
+                                        <materialDesign:PackIcon
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                Style="{StaticResource ConfigTag}"
+                                                Kind="AlphaA" />
+                                        <TextBlock
+                                                Grid.Row="0"
+                                                Grid.Column="2"
+                                                Style="{StaticResource Content}"
 												Text="Format number" />
-                                        </Grid>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="3">
-                                            <CheckBox
+                                        <CheckBox
+                                                Grid.Row="0"
+                                                Grid.Column="3"
                                                 x:Name="Fromat_Button"
                                                 HorizontalAlignment="Right"
                                                 Style="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}"
 												IsChecked="True"
                                                 Margin="0 0 30 0"
 												Content="Format" />
-                                        </Grid>
                                     </Grid>
                                 </StackPanel>
                             </Border>
                         </WrapPanel>
                     </Grid>
-                    <!--Parameter 2-->
+                    <!--Configuration 2-->
                     <Grid
 						Grid.Row="2"
 						Grid.Column="1">
@@ -149,50 +193,42 @@
                                             <RowDefinition
 												Height="60" />
                                         </Grid.RowDefinitions>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="1">
-                                            <materialDesign:PackIcon
-												Kind="FormatHorizontalAlignCenter"
-												Foreground="Black"
-												Height="30"
-												Width="30"
-												HorizontalAlignment="Left"
-												VerticalAlignment="Center" />
-                                        </Grid>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="2">
-                                            <TextBlock
+                                        <materialDesign:PackIcon
+                                                Grid.Row="0"
+											    Grid.Column="1"
+                                                Style="{StaticResource ConfigTag}"
+                                                Kind="FormatHorizontalAlignCenter"/>
+                                        <TextBlock
+                                                Grid.Row="0"
+											    Grid.Column="2"
 												HorizontalAlignment="Left"
 												FontSize="14"
 												Text="Input type"
 												Margin="0 15 0 0" />
-                                            <TextBlock
+                                        <TextBlock
+                                                Grid.Row="0"
+											    Grid.Column="2"
 												HorizontalAlignment="Left"
 												FontSize="11"
 												Text="Select which input type you want to use"
 												Margin="0 35 0 0 "
 												Foreground="Gray" />
-                                        </Grid>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="3">
-                                            <StackPanel
+                                        <StackPanel
+                                                Grid.Row="0"
+											    Grid.Column="3"
 												VerticalAlignment="Center"
 												HorizontalAlignment="Right"
 												Margin="0 0 20 0">
-                                                <ComboBox
-													x:Name="NumberTypeBox"
-                                                    Width="85"
-                                                    materialDesign:HintAssist.Hint="Decimal">
-                                                    <ComboBoxItem Content="Decimal" />
-                                                    <ComboBoxItem Content="Binary" />
-                                                    <ComboBoxItem Content="Octal" />
-                                                    <ComboBoxItem Content="Hexadecimal" />
-                                                </ComboBox>
-                                            </StackPanel>
-                                        </Grid>
+                                            <ComboBox
+												x:Name="NumberTypeBox"
+                                                Width="85"
+                                                materialDesign:HintAssist.Hint="Decimal">
+                                                <ComboBoxItem Content="Decimal" />
+                                                <ComboBoxItem Content="Binary" />
+                                                <ComboBoxItem Content="Octal" />
+                                                <ComboBoxItem Content="Hexadecimal" />
+                                            </ComboBox>
+                                        </StackPanel>
                                     </Grid>
                                 </StackPanel>
                             </Border>
@@ -235,59 +271,40 @@
 						Grid.Row="0"
 						Grid.Column="1">
                         <TextBlock
-							Text="Input"
-							FontSize="14"
-                            FontWeight="DemiBold"
-							Foreground="#1A1A1A"
-							HorizontalAlignment="Left"
-							VerticalAlignment="Center" />
+                            Style="{StaticResource ConfigurationTitleTextStyle}"
+							Text="Input" />
                         <Button
+                            Style="{StaticResource CommonButtonStyle}"
 							Content="{materialDesign:PackIcon FormatLetterStartsWith}"
-							BorderBrush="#C8C8C8"
-							Background="White"
-							BorderThickness="1,1,1,1"
 							ToolTip="Convert"
-							Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
-							Width="60"
-							HorizontalAlignment="Right"
-							IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
 							Click="ConvertNumberBase" />
                     </Grid>
-                    <Grid
-						Grid.Row="1"
+                    <StackPanel
+                        Grid.Row="1"
 						Grid.Column="1">
-                        <StackPanel>
-                            <TextBox
-								x:Name="NumberBase_Input"
-								materialDesign:HintAssist.Hint="Input Number"
-								Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-								Height="40"
-								VerticalAlignment="Center" />
-                        </StackPanel>
-                    </Grid>
-                    <Grid
-						Grid.Row="2"
-						Grid.Column="1">
-                        <!-- long hand form for setting the message -->
-                        <materialDesign:Snackbar
-							x:Name="Warning_Message"
-							IsActive="False"
-							Background="#FF673AB7"
-							Opacity="1"
-							HorizontalAlignment="Stretch"
-							Message="The current type isn't Valid" />
-                    </Grid>
+                        <TextBox
+							x:Name="NumberBase_Input"
+							materialDesign:HintAssist.Hint="Input Number"
+							Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+							Height="40"
+							VerticalAlignment="Center" />
+                    </StackPanel>
+                    <materialDesign:Snackbar
+                        Grid.Row="2"
+						Grid.Column="1"
+						x:Name="Warning_Message"
+						IsActive="False"
+						Background="#FF673AB7"
+						Opacity="1"
+						HorizontalAlignment="Stretch"
+						Message="The current type isn't Valid" />
                     <!--Binary-->
                     <Grid
 						Grid.Row="3"
 						Grid.Column="1">
                         <TextBlock
-							Text="Binary"
-							FontSize="14"
-                            FontWeight="DemiBold"
-							Foreground="#1A1A1A"
-							HorizontalAlignment="Left"
-							VerticalAlignment="Bottom" />
+                            Style="{StaticResource InputOutputTitle}"
+							Text="Binary" />
                     </Grid>
                     <Grid
 						Grid.Row="4"
@@ -302,49 +319,29 @@
                             <RowDefinition
 								Height="40" />
                         </Grid.RowDefinitions>
-                        <Grid
-							Grid.Row="0"
+                        <StackPanel
+                            Grid.Row="0"
 							Grid.Column="0">
-                            <StackPanel>
-                                <TextBox
-									x:Name="Binary_output"
-									IsEnabled="False"
-									materialDesign:HintAssist.Hint="Output Binary"
-									Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-									Height="40"
-									VerticalAlignment="Center" />
-                            </StackPanel>
-                        </Grid>
-                        <Grid
-							Grid.Row="0"
-							Grid.Column="1">
-                            <Button
-								Content="{materialDesign:PackIcon ContentCopy}"
-								BorderBrush="#C8C8C8"
-								Background="White"
-								BorderThickness="1,1,1,1"
-								ToolTip="Copy"
-								Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
-								Width="60"
-								HorizontalAlignment="Left"
-								IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-								Click="BinaryCopy"
-								Height="32"
-								Margin="40,4,0,0"
-								VerticalAlignment="Top" />
-                        </Grid>
+                            <TextBox
+								x:Name="Binary_output"
+								materialDesign:HintAssist.Hint="Output Binary"
+								Style="{StaticResource OutputContent}"/>
+                        </StackPanel>
+                        <Button
+                                Grid.Row="0"
+							    Grid.Column="1"
+                                Content="{materialDesign:PackIcon ContentCopy}"
+                                ToolTip="Copy"
+                                Style="{StaticResource CommonButtonStyle}"
+								Click="BinaryCopy"/>
                     </Grid>
                     <!--Octal-->
                     <Grid
 						Grid.Row="5"
 						Grid.Column="1">
                         <TextBlock
-							Text="Octal"
-							FontSize="14"
-                            FontWeight="DemiBold"
-							Foreground="#1A1A1A"
-							HorizontalAlignment="Left"
-							VerticalAlignment="Bottom" />
+                            Style="{StaticResource InputOutputTitle}"
+							Text="Octal"/>
                     </Grid>
                     <Grid
 						Grid.Row="6"
@@ -365,40 +362,25 @@
                             <StackPanel>
                                 <TextBox
 									x:Name="Octal_output"
-									IsEnabled="False"
 									materialDesign:HintAssist.Hint="Output Octal"
-									Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-									Height="40"
-									VerticalAlignment="Center" />
+									Style="{StaticResource OutputContent}" />
                             </StackPanel>
                         </Grid>
-                        <Grid
-							Grid.Row="0"
-							Grid.Column="1">
-                            <Button
+                        <Button
+                                Grid.Row="0"
+							    Grid.Column="1"
 								Content="{materialDesign:PackIcon ContentCopy}"
-								BorderBrush="#C8C8C8"
-								Background="White"
-								BorderThickness="1,1,1,1"
 								ToolTip="Copy"
-								Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
-								Width="60"
-								HorizontalAlignment="Right"
-								IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+								Style="{StaticResource CommonButtonStyle}"
 								Click="OctalCopy" />
-                        </Grid>
                     </Grid>
                     <!--Decimal-->
                     <Grid
 						Grid.Row="7"
 						Grid.Column="1">
                         <TextBlock
-							Text="Decimal"
-							FontSize="14"
-                            FontWeight="DemiBold"
-							Foreground="#1A1A1A"
-							HorizontalAlignment="Left"
-							VerticalAlignment="Bottom" />
+                            Style="{StaticResource InputOutputTitle}"
+							Text="Decimal" />
                     </Grid>
                     <Grid
 						Grid.Row="8"
@@ -419,40 +401,25 @@
                             <StackPanel>
                                 <TextBox
 									x:Name="Decimal_output"
-									IsEnabled="False"
 									materialDesign:HintAssist.Hint="Output Decimal"
-									Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-									Height="40"
-									VerticalAlignment="Center" />
+									Style="{StaticResource OutputContent}" />
                             </StackPanel>
                         </Grid>
-                        <Grid
-							Grid.Row="0"
-							Grid.Column="1">
-                            <Button
+                        <Button
+                                Grid.Row="0"
+							    Grid.Column="1"
 								Content="{materialDesign:PackIcon ContentCopy}"
-								BorderBrush="#C8C8C8"
-								Background="White"
-								BorderThickness="1,1,1,1"
 								ToolTip="Copy"
-								Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
-								Width="60"
-								HorizontalAlignment="Right"
-								IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+								Style="{StaticResource CommonButtonStyle}"
 								Click="DecimalCopy" />
-                        </Grid>
                     </Grid>
                     <!--Hexadecimal-->
                     <Grid
 						Grid.Row="9"
 						Grid.Column="1">
                         <TextBlock
-							Text="Hexadecimal"
-							FontSize="14"
-                            FontWeight="DemiBold"
-							Foreground="#1A1A1A"
-							HorizontalAlignment="Left"
-							VerticalAlignment="Bottom" />
+                            Style="{StaticResource InputOutputTitle}"
+							Text="Hexadecimal"/>
                     </Grid>
                     <Grid
 						Grid.Row="10"
@@ -473,28 +440,17 @@
                             <StackPanel>
                                 <TextBox
 									x:Name="Hexadecimal_output"
-									IsEnabled="False"
 									materialDesign:HintAssist.Hint="Output Hexadecimal"
-									Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-									Height="40"
-									VerticalAlignment="Center" />
+									Style="{StaticResource OutputContent}" />
                             </StackPanel>
                         </Grid>
-                        <Grid
-							Grid.Row="0"
-							Grid.Column="1">
-                            <Button
-								Content="{materialDesign:PackIcon ContentCopy}"
-								BorderBrush="#C8C8C8"
-								Background="White"
-								BorderThickness="1,1,1,1"
-								ToolTip="Copy"
-								Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
-								Width="60"
-								HorizontalAlignment="Right"
-								IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-								Click="HexadecimalCopy" />
-                        </Grid>
+                        <Button
+                            Grid.Row="0"
+							Grid.Column="1"
+							Content="{materialDesign:PackIcon ContentCopy}"
+							ToolTip="Copy"
+							Style="{StaticResource CommonButtonStyle}"
+							Click="HexadecimalCopy" />
                     </Grid>
                 </Grid>
             </StackPanel>

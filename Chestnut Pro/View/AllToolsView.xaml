@@ -9,6 +9,45 @@
 	d:DesignHeight="820"
 	d:DesignWidth="1100"
 	Background="Transparent">
+    <UserControl.Resources>
+        <Style TargetType="materialDesign:PackIcon">
+            <Setter Property="Height"
+                    Value="80"/>
+            <Setter Property="Width"
+                    Value="80"/>
+            <Setter Property="Foreground"
+                    Value="Black"/>
+            <Setter Property="HorizontalAlignment"
+                    Value="Center"/>
+            <Setter Property="Margin"
+                    Value="30 30 30 15"/>
+        </Style>
+        <Style x:Key="Title"
+               TargetType="{x:Type TextBlock}">
+            <Setter Property="FontWeight"
+                    Value="SemiBold" />
+            <Setter Property="FontSize"
+                    Value="16" />
+            <Setter Property="Margin"
+                    Value="10 20 0 0" />
+        </Style>
+        <Style x:Key="Content"
+               TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground"
+                    Value="Gray" />
+            <Setter Property="FontSize"
+                    Value="14" />
+            <Setter Property="Margin"
+                    Value="10 5 0 0" />
+        </Style>
+        <Style TargetType="{x:Type Button}"
+               BasedOn="{StaticResource MaterialDesignIconButton}">
+            <Setter Property="Foreground"
+                    Value="Black" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Right"/>
+        </Style>
+    </UserControl.Resources>
     <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
         <Border
 			BorderBrush="#C8C8C8"
@@ -24,467 +63,233 @@
 						Height="60">
                         <!--Title-->
                         <TextBlock
-							Text="All tools"
-							FontSize="24"
-							FontWeight="Bold"
-							Foreground="#1A1A1A"
-							HorizontalAlignment="Left"
-							VerticalAlignment="Top"
-							Margin="30,20,0,0" />
+                            Style="{StaticResource ControlTitleTextStyle}"
+							Text="All tools" />
                     </Grid>
-                    <!--Profile-->
+                    <!--Row 1-->
                     <WrapPanel>
-                        <!--RGB Converter-->
+                        <!--Number Base-->
                         <materialDesign:Card
-							Margin="40 30 30 30"
-							UniformCornerRadius="10"
-							Height="320"
-							Width="200"
-							Background="white">
+                            Style="{StaticResource ToolCard}"
+							Margin="40 30 30 30">
                             <StackPanel
 								Margin="10">
                                 <materialDesign:PackIcon
-									Kind="Palette"
-									Height="100"
-									Width="100"
-									Foreground="Black"
-									HorizontalAlignment="Center"
-									Margin="30 30 30 15" />
+									Kind="Numeric8BoxMultipleOutline"/>
                                 <TextBlock
-									FontWeight="SemiBold"
-									FontSize="16"
-									Text="RGB Color Converter"
-									Margin="10 20 0 0" />
+                                    Style="{StaticResource Title}"
+									Text="Number Base"/>
                                 <TextBlock
-									FontSize="14"
-									Text="Convert RGB to CMYK&#xA;and Picture"
-									Foreground="Gray"
-									Margin="10 5 0 0" />
+									Style="{StaticResource Content}"
+									Text="Convert numbers from&#xA;one base to another" />
                                 <Button
-									Style="{StaticResource MaterialDesignIconButton}"
-									ToolTip="MaterialDesignIconButton"
-									Foreground="Black"
-									HorizontalAlignment="Right"
-									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.ColorPaletteCommand}"
-									IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
-                                    <materialDesign:PackIcon
-										Kind="DotsHorizontal" />
-                                </Button>
-                            </StackPanel>
-                        </materialDesign:Card>
-                        <!--Base 64 Encoder / Decoder-->
-                        <materialDesign:Card
-							Margin="30"
-							UniformCornerRadius="10"
-							Height="320"
-							Width="200"
-							Background="white">
-                            <StackPanel
-								Margin="10">
-                                <materialDesign:PackIcon
-									Kind="Cpu64Bit"
-									Height="100"
-									Width="100"
-									Foreground="Black"
-									HorizontalAlignment="Center"
-									Margin="30 30 30 15" />
-                                <TextBlock
-									FontWeight="SemiBold"
-									FontSize="16"
-									Text="Base 64 Encoder"
-									Margin="10 20 0 0" />
-                                <TextBlock
-									FontSize="14"
-									Text="Encode and decode&#xA;Base64 data"
-									Foreground="Gray"
-									Margin="10 5 0 0" />
-                                <Button
-									Style="{StaticResource MaterialDesignIconButton}"
-									ToolTip="MaterialDesignIconButton"
-									Foreground="Black"
-									HorizontalAlignment="Right"
-									IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
-                                    <materialDesign:PackIcon
-										Kind="DotsHorizontal" />
+									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.NumberBaseCommand}">
+                                    <materialDesign:PackIcon Kind="DotsHorizontal" />
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>
                         <!--GUID Generator-->
                         <materialDesign:Card
-							Margin="30"
-							UniformCornerRadius="10"
-							Height="320"
-							Width="200"
-							Background="white">
+                            Style="{StaticResource ToolCard}"
+							Margin="30">
                             <StackPanel
 								Margin="10">
-                                <materialDesign:PackIcon
-									Kind="Identifier"
-									Height="100"
-									Width="100"
-									Foreground="Black"
-									HorizontalAlignment="Center"
-									Margin="30 30 30 15" />
+                                <materialDesign:PackIcon Kind="Identifier" />
                                 <TextBlock
-									FontWeight="SemiBold"
-									FontSize="16"
-									Text="GUID Generator"
-									Margin="10 20 0 0" />
+									Style="{StaticResource Title}"
+									Text="GUID Generator"/>
                                 <TextBlock
-									FontSize="14"
-									Text="Generate GUIDs version&#xA;1 and 4"
-									Foreground="Gray"
-									Margin="10 5 0 0" />
+									Style="{StaticResource Content}"
+									Text="Generate GUIDs version&#xA;1 and 4" />
                                 <Button
-									Style="{StaticResource MaterialDesignIconButton}"
-									ToolTip="MaterialDesignIconButton"
-									Foreground="Black"
-									HorizontalAlignment="Right"
-									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.GUIDGeneratorCommand}"
-									IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
-                                    <materialDesign:PackIcon
-										Kind="DotsHorizontal" />
+									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.GUIDGeneratorCommand}">
+                                    <materialDesign:PackIcon Kind="DotsHorizontal" />
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>
+                        <!--Base 64 Encoder / Decoder-->
                         <materialDesign:Card
-							Margin="30"
-							UniformCornerRadius="10"
-							Height="320"
-							Width="200"
-							Background="white">
+                            Style="{StaticResource ToolCard}"
+							Margin="30" >
                             <StackPanel
 								Margin="10">
-                                <materialDesign:PackIcon
-									Kind="Numeric8BoxMultipleOutline"
-									Height="100"
-									Width="100"
-									Foreground="Black"
-									HorizontalAlignment="Center"
-									Margin="30 30 30 15" />
+                                <materialDesign:PackIcon Kind="Cpu64Bit" />
                                 <TextBlock
-									FontWeight="SemiBold"
-									FontSize="16"
-									Text="Number Base"
-									Margin="10 20 0 0" />
+									Style="{StaticResource Title}"
+									Text="Base 64 Encoder"/>
                                 <TextBlock
-									FontSize="14"
-									Text="Convert numbers from&#xA;one base to another"
-									Foreground="Gray"
-									Margin="10 5 0 0" />
+									Style="{StaticResource Content}"
+									Text="Encode and decode&#xA;Base64 data"/>
+                                <Button>
+                                    <materialDesign:PackIcon Kind="DotsHorizontal" />
+                                </Button>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <!--RGB Converter-->
+                        <materialDesign:Card
+                            Style="{StaticResource ToolCard}"
+							Margin="30">
+                            <StackPanel Margin="10">
+                                <materialDesign:PackIcon Kind="Palette" />
+                                <TextBlock
+									Style="{StaticResource Title}"
+									Text="RGB Color Converter"/>
+                                <TextBlock
+									Style="{StaticResource Content}"
+									Text="Convert RGB to CMYK&#xA;and Picture" />
                                 <Button
-									Style="{StaticResource MaterialDesignIconButton}"
-									ToolTip="MaterialDesignIconButton"
-									Foreground="Black"
-									HorizontalAlignment="Right"
-									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.NumberBaseCommand}"
-									IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
-                                    <materialDesign:PackIcon
-										Kind="DotsHorizontal" />
+									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.ColorPaletteCommand}">
+                                    <materialDesign:PackIcon Kind="DotsHorizontal" />
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>
                     </WrapPanel>
-                    <!--Profile-->
+                    <!--Row 2-->
                     <WrapPanel
 						HorizontalAlignment="Left">
                         <!--Markdown Preview-->
                         <materialDesign:Card
-							Margin="40 30 30 30"
-							UniformCornerRadius="10"
-							Height="320"
-							Width="200"
-							Background="white">
+                            Style="{StaticResource ToolCard}"
+							Margin="40 30 30 30">
                             <StackPanel
 								Margin="10">
-                                <materialDesign:PackIcon
-									Kind="LanguageMarkdown"
-									Height="100"
-									Width="100"
-									Foreground="Black"
-									HorizontalAlignment="Center"
-									Margin="30 30 30 15" />
+                                <materialDesign:PackIcon Kind="LanguageMarkdown" />
                                 <TextBlock
-									FontWeight="SemiBold"
-									FontSize="16"
-									Text="Markdown Preview"
-									Margin="10 20 0 0" />
+									Style="{StaticResource Title}"
+									Text="Markdown Preview" />
                                 <TextBlock
-									FontSize="14"
-									Text="Preview a Markdown&#xA;document"
-									Foreground="Gray"
-									Margin="10 5 0 0" />
-                                <Button
-									Style="{StaticResource MaterialDesignIconButton}"
-									ToolTip="MaterialDesignIconButton"
-									Foreground="Black"
-									HorizontalAlignment="Right"
-									IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
-                                    <materialDesign:PackIcon
-										Kind="DotsHorizontal" />
+									Style="{StaticResource Content}"
+									Text="Preview a Markdown&#xA;document" />
+                                <Button>
+                                    <materialDesign:PackIcon Kind="DotsHorizontal" />
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>
                         <!--Hash Generator-->
                         <materialDesign:Card
-							Margin="30"
-							UniformCornerRadius="10"
-							Height="320"
-							Width="200"
-							Background="white">
-                            <StackPanel
-								Margin="10">
-                                <materialDesign:PackIcon
-									Kind="FormatHeaderPound"
-									Height="100"
-									Width="100"
-									Foreground="Black"
-									HorizontalAlignment="Center"
-									Margin="30 30 30 15" />
+                            Style="{StaticResource ToolCard}"
+							Margin="30">
+                            <StackPanel Margin="10">
+                                <materialDesign:PackIcon Kind="FormatHeaderPound" />
                                 <TextBlock
-									FontWeight="SemiBold"
-									FontSize="16"
-									Text="Hash Generator"
-									Margin="10 20 0 0" />
+									Style="{StaticResource Title}"
+									Text="Hash Generator" />
                                 <TextBlock
-									FontSize="14"
-									Text="Calculate MD5, SHA1,&#xA;SHA256 and SHA512"
-									Foreground="Gray"
-									Margin="10 5 0 0" />
-                                <Button
-									Style="{StaticResource MaterialDesignIconButton}"
-									ToolTip="MaterialDesignIconButton"
-									Foreground="Black"
-									HorizontalAlignment="Right"
-									IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
-                                    <materialDesign:PackIcon
-										Kind="DotsHorizontal" />
+									Style="{StaticResource Content}"
+									Text="Calculate MD5, SHA1,&#xA;SHA256 and SHA512"/>
+                                <Button>
+                                    <materialDesign:PackIcon Kind="DotsHorizontal" />
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>
                         <!--Text Comparer-->
                         <materialDesign:Card
-							Margin="30"
-							UniformCornerRadius="10"
-							Height="320"
-							Width="200"
-							Background="white">
+                            Style="{StaticResource ToolCard}"
+							Margin="30">
                             <StackPanel
 								Margin="10">
-                                <materialDesign:PackIcon
-									Kind="FileCompare"
-									Height="100"
-									Width="100"
-									Foreground="Black"
-									HorizontalAlignment="Center"
-									Margin="30 30 30 15" />
+                                <materialDesign:PackIcon Kind="FileCompare" />
                                 <TextBlock
-									FontWeight="SemiBold"
-									FontSize="16"
-									Text="Text Comparer"
-									Margin="10 20 0 0" />
+									Style="{StaticResource Title}"
+                                    Text="Text Comparer" />
                                 <TextBlock
-									FontSize="14"
-									Text="Compare two texts&#xA;"
-									Foreground="Gray"
-									Margin="10 5 0 0" />
-                                <Button
-									Style="{StaticResource MaterialDesignIconButton}"
-									ToolTip="MaterialDesignIconButton"
-									Foreground="Black"
-									HorizontalAlignment="Right"
-									IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
-                                    <materialDesign:PackIcon
-										Kind="DotsHorizontal" />
+									Style="{StaticResource Content}"
+									Text="Compare two texts&#xA;" />
+                                <Button>
+                                    <materialDesign:PackIcon Kind="DotsHorizontal" />
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>
                         <!--JSON Converter-->
                         <materialDesign:Card
-							Margin="30"
-							UniformCornerRadius="10"
-							Height="320"
-							Width="200"
-							Background="white">
+                            Style="{StaticResource ToolCard}"
+							Margin="30">
                             <StackPanel
 								Margin="10">
-                                <materialDesign:PackIcon
-									Kind="CodeJson"
-									Height="100"
-									Width="100"
-									Foreground="Black"
-									HorizontalAlignment="Center"
-									Margin="30 30 30 15" />
+                                <materialDesign:PackIcon Kind="CodeJson" />
                                 <TextBlock
-									FontWeight="SemiBold"
-									FontSize="16"
-									Text="JSON Converter"
-									Margin="10 20 0 0" />
+									Style="{StaticResource Title}"
+									Text="JSON Converter" />
                                 <TextBlock
-									FontSize="14"
-									Text="Indent or minify JSON&#xA;data"
-									Foreground="Gray"
-									Margin="10 5 0 0" />
-                                <Button
-									Style="{StaticResource MaterialDesignIconButton}"
-									ToolTip="MaterialDesignIconButton"
-									Foreground="Black"
-									HorizontalAlignment="Right"
-									IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
-                                    <materialDesign:PackIcon
-										Kind="DotsHorizontal" />
+									Style="{StaticResource Content}"
+									Text="Indent or minify JSON&#xA;data" />
+                                <Button>
+                                    <materialDesign:PackIcon Kind="DotsHorizontal" />
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>
                     </WrapPanel>
-                    <!--Profile-->
+                    <!--Row 3-->
                     <WrapPanel
 						HorizontalAlignment="Left">
                         <!--Markdown Preview-->
                         <materialDesign:Card
-							Margin="40 30 30 30"
-							UniformCornerRadius="10"
-							Height="320"
-							Width="200"
-							Background="white">
+                            Style="{StaticResource ToolCard}"
+							Margin="40 30 30 30">
                             <StackPanel
 								Margin="10">
-                                <materialDesign:PackIcon
-									Kind="LanguageMarkdown"
-									Height="100"
-									Width="100"
-									Foreground="Black"
-									HorizontalAlignment="Center"
-									Margin="30 30 30 15" />
+                                <materialDesign:PackIcon Kind="LanguageMarkdown" />
                                 <TextBlock
-									FontWeight="SemiBold"
-									FontSize="16"
-									Text="Markdown Preview"
-									Margin="10 20 0 0" />
+									Style="{StaticResource Title}"
+									Text="Markdown Preview" />
                                 <TextBlock
-									FontSize="14"
-									Text="Preview a Markdown&#xA;document"
-									Foreground="Gray"
-									Margin="10 5 0 0" />
-                                <Button
-									Style="{StaticResource MaterialDesignIconButton}"
-									ToolTip="MaterialDesignIconButton"
-									Foreground="Black"
-									HorizontalAlignment="Right"
-									IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
-                                    <materialDesign:PackIcon
-										Kind="DotsHorizontal" />
+									Style="{StaticResource Content}"
+									Text="Preview a Markdown&#xA;document" />
+                                <Button>
+                                    <materialDesign:PackIcon Kind="DotsHorizontal" />
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>
                         <!--Hash Generator-->
                         <materialDesign:Card
-							Margin="30"
-							UniformCornerRadius="10"
-							Height="320"
-							Width="200"
-							Background="white">
-                            <StackPanel
-								Margin="10">
-                                <materialDesign:PackIcon
-									Kind="FormatHeaderPound"
-									Height="100"
-									Width="100"
-									Foreground="Black"
-									HorizontalAlignment="Center"
-									Margin="30 30 30 15" />
+                            Style="{StaticResource ToolCard}"
+							Margin="30">
+                            <StackPanel Margin="10">
+                                <materialDesign:PackIcon Kind="FormatHeaderPound" />
                                 <TextBlock
-									FontWeight="SemiBold"
-									FontSize="16"
-									Text="Hash Generator"
-									Margin="10 20 0 0" />
+									Style="{StaticResource Title}"
+									Text="Hash Generator" />
                                 <TextBlock
-									FontSize="14"
-									Text="Calculate MD5, SHA1,&#xA;SHA256 and SHA512"
-									Foreground="Gray"
-									Margin="10 5 0 0" />
-                                <Button
-									Style="{StaticResource MaterialDesignIconButton}"
-									ToolTip="MaterialDesignIconButton"
-									Foreground="Black"
-									HorizontalAlignment="Right"
-									IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
-                                    <materialDesign:PackIcon
-										Kind="DotsHorizontal" />
+									Style="{StaticResource Content}"
+									Text="Calculate MD5, SHA1,&#xA;SHA256 and SHA512"/>
+                                <Button>
+                                    <materialDesign:PackIcon Kind="DotsHorizontal" />
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>
                         <!--Text Comparer-->
                         <materialDesign:Card
-							Margin="30"
-							UniformCornerRadius="10"
-							Height="320"
-							Width="200"
-							Background="white">
+                            Style="{StaticResource ToolCard}"
+							Margin="30">
                             <StackPanel
 								Margin="10">
-                                <materialDesign:PackIcon
-									Kind="FileCompare"
-									Height="100"
-									Width="100"
-									Foreground="Black"
-									HorizontalAlignment="Center"
-									Margin="30 30 30 15" />
+                                <materialDesign:PackIcon Kind="FileCompare" />
                                 <TextBlock
-									FontWeight="SemiBold"
-									FontSize="16"
-									Text="Text Comparer"
-									Margin="10 20 0 0" />
+									Style="{StaticResource Title}"
+                                    Text="Text Comparer" />
                                 <TextBlock
-									FontSize="14"
-									Text="Compare two texts&#xA;"
-									Foreground="Gray"
-									Margin="10 5 0 0" />
-                                <Button
-									Style="{StaticResource MaterialDesignIconButton}"
-									ToolTip="MaterialDesignIconButton"
-									Foreground="Black"
-									HorizontalAlignment="Right"
-									IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
-                                    <materialDesign:PackIcon
-										Kind="DotsHorizontal" />
+									Style="{StaticResource Content}"
+									Text="Compare two texts&#xA;" />
+                                <Button>
+                                    <materialDesign:PackIcon Kind="DotsHorizontal" />
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>
                         <!--JSON Converter-->
                         <materialDesign:Card
-							Margin="30"
-							UniformCornerRadius="10"
-							Height="320"
-							Width="200"
-							Background="white">
+                            Style="{StaticResource ToolCard}"
+							Margin="30">
                             <StackPanel
 								Margin="10">
-                                <materialDesign:PackIcon
-									Kind="CodeJson"
-									Height="100"
-									Width="100"
-									Foreground="Black"
-									HorizontalAlignment="Center"
-									Margin="30 30 30 15" />
+                                <materialDesign:PackIcon Kind="CodeJson" />
                                 <TextBlock
-									FontWeight="SemiBold"
-									FontSize="16"
-									Text="JSON Converter"
-									Margin="10 20 0 0" />
+									Style="{StaticResource Title}"
+									Text="JSON Converter" />
                                 <TextBlock
-									FontSize="14"
-									Text="Indent or minify JSON&#xA;data"
-									Foreground="Gray"
-									Margin="10 5 0 0" />
-                                <Button
-									Style="{StaticResource MaterialDesignIconButton}"
-									ToolTip="MaterialDesignIconButton"
-									Foreground="Black"
-									HorizontalAlignment="Right"
-									IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
-                                    <materialDesign:PackIcon
-										Kind="DotsHorizontal" />
+									Style="{StaticResource Content}"
+									Text="Indent or minify JSON&#xA;data" />
+                                <Button>
+                                    <materialDesign:PackIcon Kind="DotsHorizontal" />
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>
