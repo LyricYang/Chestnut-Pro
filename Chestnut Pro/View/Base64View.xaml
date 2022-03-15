@@ -46,6 +46,25 @@
             <Setter Property="VerticalScrollBarVisibility"
                     Value="Auto" />
         </Style>
+        <Style
+            x:Key="CheckBoxStyle"
+            TargetType="{x:Type CheckBox}"
+            BasedOn="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}">
+            <Setter Property="HorizontalAlignment"
+                    Value="Right"/>
+            <Style.Triggers>
+                <Trigger Property="IsChecked"
+                         Value="True">
+                    <Setter Property="Content"
+                            Value="Encode"/>
+                </Trigger>
+                <Trigger Property="IsChecked"
+                         Value="False">
+                    <Setter Property="Content"
+                            Value="Decode"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </UserControl.Resources>
     <Border
 		BorderBrush="#C8C8C8"
@@ -119,8 +138,8 @@
                                             <materialDesign:PackIcon
 												Kind="CompareHorizontal"
 												Foreground="Black"
-												Height="30"
-												Width="30"
+												Height="25"
+												Width="25"
 												HorizontalAlignment="Left"
 												VerticalAlignment="Center" />
                                         </Grid>
@@ -144,12 +163,8 @@
 											Grid.Column="3">
                                             <CheckBox
                                                 x:Name="Encode_Button"
-                                                HorizontalAlignment="Right"
-                                                Style="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}"
-												IsChecked="False"
-                                                Margin="0 0 30 0"
-												Content="Decode"
-                                                Click="Base64Type"/>
+                                                Style="{StaticResource CheckBoxStyle}"
+                                                Margin="0 0 30 0"/>
                                         </Grid>
                                     </Grid>
                                 </StackPanel>

@@ -8,6 +8,57 @@
 	mc:Ignorable="d"
 	d:DesignHeight="850"
 	d:DesignWidth="1100">
+    <UserControl.Resources>
+        <Style x:Key="ConfigTag"
+               TargetType="materialDesign:PackIcon">
+            <Setter Property="Height"
+                    Value="25"/>
+            <Setter Property="Width"
+                    Value="25"/>
+            <Setter Property="Foreground"
+                    Value="Black"/>
+            <Setter Property="HorizontalAlignment"
+                    Value="Left"/>
+            <Setter Property="VerticalAlignment"
+                    Value="Center"/>
+        </Style>
+        <Style x:Key="Content"
+               TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize"
+                    Value="14" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Left" />
+        </Style>
+        <Style TargetType="{x:Type CheckBox}"
+               BasedOn="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}">
+            <Setter Property="HorizontalAlignment"
+                    Value="Right"/>
+            <Setter Property="IsChecked"
+                    Value="True"/>
+            <Setter Property="Margin"
+                    Value="0 0 30 0"/>
+            <Setter Property="Width"
+                    Value="80"/>
+        </Style>
+        <Style x:Key="CommonButtonStyle"
+           TargetType="{x:Type Button}"
+           BasedOn="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}">
+            <Setter Property="Background"
+                Value="White" />
+            <Setter Property="BorderThickness"
+                Value="1,1,1,1" />
+            <Setter Property="Width"
+                Value="50" />
+            <Setter Property="Height"
+                Value="30" />
+            <Setter Property="HorizontalAlignment"
+                Value="Right" />
+            <Setter Property="BorderBrush"
+                Value="#C8C8C8" />
+        </Style>
+    </UserControl.Resources>
     <Border
 		BorderBrush="#C8C8C8"
 		Background="#FCFCFC"
@@ -22,13 +73,8 @@
 					Height="60">
                     <!--Title-->
                     <TextBlock
-						Text="GUID Generator"
-						FontSize="24"
-                        FontWeight="Bold"
-						Foreground="#1A1A1A"
-						HorizontalAlignment="Left"
-						VerticalAlignment="Top"
-						Margin="30,20,0,0" />
+                        Style="{StaticResource ControlTitleTextStyle}"
+						Text="GUID Generator"/>
                 </Grid>
                 <!--Configuration-->
                 <Grid>
@@ -51,12 +97,8 @@
 						Grid.Row="0"
 						Grid.Column="1">
                         <TextBlock
-							Text="Configuration"
-							FontSize="14"
-                            FontWeight="DemiBold"
-							Foreground="#1A1A1A"
-							HorizontalAlignment="Left"
-							VerticalAlignment="Center" />
+                            Style="{StaticResource ConfigurationTitleTextStyle}"
+							Text="Configuration" />
                     </Grid>
                     <!--Parameter 1-->
                     <Grid
@@ -89,20 +131,14 @@
 											Grid.Row="0"
 											Grid.Column="1">
                                             <materialDesign:PackIcon
-												Kind="FormatVerticalAlignBottom"
-												Foreground="Black"
-												Height="30"
-												Width="30"
-												HorizontalAlignment="Left"
-												VerticalAlignment="Center" />
+                                                Style="{StaticResource ConfigTag}"
+												Kind="FormatVerticalAlignBottom" />
                                         </Grid>
                                         <Grid
 											Grid.Row="0"
 											Grid.Column="2">
                                             <TextBlock
-												HorizontalAlignment="Left"
-												VerticalAlignment="Center"
-												FontSize="14"
+												Style="{StaticResource Content}"
 												Text="Hyphens" />
                                         </Grid>
                                         <Grid
@@ -110,11 +146,6 @@
 											Grid.Column="3">
                                             <CheckBox
                                                 x:Name="Hyphens_Button"
-                                                HorizontalAlignment="Right"
-                                                Style="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}"
-												IsChecked="True"
-                                                Width="80"
-                                                Margin="0 0 30 0"
 												Content="Hyphens" />
                                         </Grid>
                                     </Grid>
@@ -153,20 +184,14 @@
 											Grid.Row="0"
 											Grid.Column="1">
                                             <materialDesign:PackIcon
-												Kind="FormatLetterCaseUpper"
-												Foreground="Black"
-												Height="30"
-												Width="30"
-												HorizontalAlignment="Left"
-												VerticalAlignment="Center" />
+                                                Style="{StaticResource ConfigTag}"
+												Kind="FormatLetterCaseUpper" />
                                         </Grid>
                                         <Grid
 											Grid.Row="0"
 											Grid.Column="2">
                                             <TextBlock
-												HorizontalAlignment="Left"
-												VerticalAlignment="Center"
-												FontSize="14"
+												Style="{StaticResource Content}"
 												Text="Uppercase" />
                                         </Grid>
                                         <Grid
@@ -174,11 +199,7 @@
 											Grid.Column="3">
                                             <CheckBox
                                                 x:Name="Uppercase_Button"
-                                                HorizontalAlignment="Right"
-                                                Style="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}"
 												IsChecked="False"
-                                                Margin="0 0 30 0"
-                                                Width="80"
 												Content="Uppercase" />
                                         </Grid>
                                     </Grid>
@@ -252,26 +273,14 @@
 							VerticalAlignment="Bottom" />
                         <Button
 							Content="{materialDesign:PackIcon ContentCopy}"
-							BorderBrush="#C8C8C8"
-							Background="White"
-							BorderThickness="1,1,1,1"
 							ToolTip="Copy"
-							Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
-							Width="50"
-							HorizontalAlignment="Right"
+							Style="{StaticResource CommonButtonStyle}"
 							Margin="0 0 60 0"
-							IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
 							Click="GUIDCopy" />
                         <Button
 							Content="{materialDesign:PackIcon Close}"
-							BorderBrush="#C8C8C8"
-							Background="White"
-							BorderThickness="1,1,1,1"
-							ToolTip="Copy"
-							Style="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}"
-							Width="50"
-							HorizontalAlignment="Right"
-							IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+							ToolTip="Clear"
+							Style="{StaticResource CommonButtonStyle}"
 							Click="GUIDClear" />
                     </Grid>
                     <Grid

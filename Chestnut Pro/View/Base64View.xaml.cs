@@ -46,18 +46,5 @@
                 Console.WriteLine(ex.ToString());
             }
         }
-
-        private void Base64Type(object sender, RoutedEventArgs e)
-        {
-            var type = Encode_Button.Content.ToString();
-            if (type.Equals("Decode"))
-            {
-                Encode_Button.Content = "Encode";
-            }
-            else
-            {
-                Encode_Button.Content = "Decode";
-            }
-        }
     }
 }
