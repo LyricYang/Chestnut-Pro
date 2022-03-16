@@ -213,22 +213,20 @@
 												Text="Select which input type you want to use"
 												Margin="0 35 0 0 "
 												Foreground="Gray" />
-                                        <StackPanel
-                                                Grid.Row="0"
-											    Grid.Column="3"
-												VerticalAlignment="Center"
-												HorizontalAlignment="Right"
-												Margin="0 0 20 0">
-                                            <ComboBox
-												x:Name="NumberTypeBox"
-                                                Width="85"
-                                                materialDesign:HintAssist.Hint="Decimal">
-                                                <ComboBoxItem Content="Decimal" />
-                                                <ComboBoxItem Content="Binary" />
-                                                <ComboBoxItem Content="Octal" />
-                                                <ComboBoxItem Content="Hexadecimal" />
-                                            </ComboBox>
-                                        </StackPanel>
+                                        <ComboBox
+                                            Grid.Row="0"
+                                            Grid.Column="3"
+											x:Name="NumberTypeBox"
+                                            Width="85"
+                                            materialDesign:HintAssist.Hint="Decimal"
+                                            HorizontalAlignment="Right"
+                                            VerticalAlignment="Center"
+                                            Margin="0 0 30 0">
+                                            <ComboBoxItem Content="Decimal" />
+                                            <ComboBoxItem Content="Binary" />
+                                            <ComboBoxItem Content="Octal" />
+                                            <ComboBoxItem Content="Hexadecimal" />
+                                        </ComboBox>
                                     </Grid>
                                 </StackPanel>
                             </Border>

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Chestnut_Pro.Service
+﻿namespace Chestnut_Pro.Service
 {
     /// <summary>
     /// Number Base Type

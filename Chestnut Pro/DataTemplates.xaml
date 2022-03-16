@@ -39,4 +39,8 @@
 		DataType="{x:Type viewmodel:TSVCSVConverterViewModel}">
         <view:TSVCSVConverterView />
     </DataTemplate>
+    <DataTemplate
+		DataType="{x:Type viewmodel:JsonFormatterViewModel}">
+        <view:JsonFormatterView />
+    </DataTemplate>
 </ResourceDictionary>

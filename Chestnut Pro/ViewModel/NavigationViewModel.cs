@@ -38,6 +38,7 @@
                 new () { MenuName = "GUID Generator", MenuImage = @"Assets/guid.png" },
                 new () { MenuName = "Base 64",        MenuImage = @"Assets/base64.png" },
                 new () { MenuName = "TSV <> CSV",     MenuImage = @"Assets/csv.png" },
+                new () { MenuName = "JSON Formatter", MenuImage = @"Assets/jsonformat.png" },
                 new () { MenuName = "Color Palette",  MenuImage = @"Assets/palette.png" },
             };
 
@@ -133,6 +134,9 @@
                     break;
                 case "TSV <> CSV":
                     SelectedViewModel = new TSVCSVConverterViewModel();
+                    break;
+                case "JSON Formatter":
+                    SelectedViewModel = new JsonFormatterViewModel();
                     break;
                 default:
                     SelectedViewModel = new HomeViewModel();
