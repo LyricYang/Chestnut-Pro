@@ -75,12 +75,12 @@
 						HorizontalAlignment="Left">
                         <materialDesign:Card
 							UniformCornerRadius="15"
-							Width="350"
+							Width="355"
 							Height="130"
 							Background="White"
 							Margin="30,0,0,0">
                             <StackPanel
-								Margin="10">
+								Margin="20 10 20 10">
                                 <materialDesign:PackIcon
 									Kind="CardAccountDetailsOutline"
 									Foreground="Black" />
@@ -106,7 +106,7 @@
 							UniformCornerRadius="15"
 							BorderThickness="5"
 							BorderBrush="White"
-							Width="120"
+							Width="125"
 							Height="130"
 							Background="White"
 							Margin="30,0,0,0">
@@ -117,7 +117,7 @@
                                 <TextBlock
 									FontWeight="SemiBold"
 									FontSize="25"
-									Text="51"
+									Text="55"
 									Margin="0 10 0 0" />
                                 <TextBlock
 									FontSize="12"
@@ -131,7 +131,7 @@
 							UniformCornerRadius="15"
 							BorderThickness="5"
 							BorderBrush="White"
-							Width="120"
+							Width="125"
 							Height="130"
 							Background="White"
 							Margin="30,0,0,0">
@@ -155,7 +155,7 @@
                                 <TextBlock
 									FontWeight="SemiBold"
 									FontSize="25"
-									Text="457"
+									Text="489"
 									Margin="0 10 0 0" />
                                 <TextBlock
 									FontSize="12"
@@ -267,7 +267,8 @@
                                 <TextBlock
 									Text="Key Metrics"
 									Margin="10 20"
-									FontWeight="SemiBold" />
+									FontWeight="SemiBold"
+                                    FontSize="18" />
                                 <Grid
 									Height="150">
                                     <Grid.ColumnDefinitions>

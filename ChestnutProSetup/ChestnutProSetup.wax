@@ -3,7 +3,9 @@
   <DeployedProjects>
     <string>Chestnut Pro\Chestnut Pro.csproj</string>
   </DeployedProjects>
-  <DirectoryMappings />
+  <DirectoryMappings>
+    <Item Key="" Value="ProgramFilesFolder" />
+  </DirectoryMappings>
   <FileMappings />
   <DeploySymbols>false</DeploySymbols>
   <DeployLocalizations>true</DeployLocalizations>
