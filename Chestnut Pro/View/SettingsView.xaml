@@ -81,8 +81,17 @@
                                                 TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
                                                 Margin="24,8,24,16">
                                                 <TextBlock
-                                                    Style="{StaticResource ConfigurationTitleTextStyle}"
-							                        Text="Chestnut Pro" />
+                                                    TextWrapping="Wrap">
+                                                    <Span Foreground="Brown"><Bold>Chestnut Pro</Bold></Span> integrate tools commonly used
+                                                    by soft engineer in the development, such as color palette,
+                                                    number base converter, tsv file and csv file converter.
+                                                    No need to bookmark various tool sites.<LineBreak/><LineBreak/>
+                                                    <Bold>Many tools are available.</Bold><LineBreak/>
+                                                    &#x26AC; Number Base<LineBreak/>
+                                                    &#x26AC; GUID Generator<LineBreak/>
+                                                    &#x26AC; Color Palette<LineBreak/>
+                                                    &#x26AC; TSV/CSV Converter<LineBreak/>
+                                                </TextBlock>
                                             </StackPanel>
                                         </Expander.Content>
                                     </Expander>
