@@ -47,46 +47,119 @@
                     <Grid
 						Grid.Row="1"
 						Grid.Column="1">
-                        <materialDesign:Card
-                            UniformCornerRadius="5"
-                            HorizontalAlignment="Left"
-                            Width="1000"
-                            Background="White">
-                            <StackPanel
-                                Margin="2">
-                                <Expander
-                                    HorizontalAlignment="Stretch"
-                                    Background="White">
-                                    <Expander.Header>
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image
-                                                Source="\Assets\chestnut.ico"
-                                                Stretch="Fill"
-                                                Width="16"
-                                                Height="16"
-                                                Margin="0 0 10 0"/>
-                                            <StackPanel Orientation="Vertical">
+                        <StackPanel>
+                            <materialDesign:Card
+                                UniformCornerRadius="5"
+                                HorizontalAlignment="Left"
+                                Width="1000"
+                                Background="White">
+                                <StackPanel
+                                    Margin="2">
+                                    <Expander
+                                        HorizontalAlignment="Stretch"
+                                        Background="White">
+                                        <Expander.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Image
+                                                    Source="\Assets\chestnut.ico"
+                                                    Stretch="Fill"
+                                                    Width="16"
+                                                    Height="16"
+                                                    Margin="0 0 10 0"/>
+                                                <StackPanel Orientation="Vertical">
+                                                    <TextBlock
+                                                        Text="Chestnut Pro"
+                                                        FontWeight="Bold"
+                                                        FontSize="12"/>
+                                                    <TextBlock Text="Integrate some commonly used tools"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </Expander.Header>
+                                        <Expander.Content>
+                                            <StackPanel
+                                                Orientation="Vertical"
+                                                TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+                                                Margin="24,8,24,16">
                                                 <TextBlock
-                                                    Text="Chestnut Pro"
+                                                    Style="{StaticResource ConfigurationTitleTextStyle}"
+							                        Text="Chestnut Pro" />
+                                            </StackPanel>
+                                        </Expander.Content>
+                                    </Expander>
+                                </StackPanel>
+                            </materialDesign:Card>
+                            <materialDesign:Card
+                                UniformCornerRadius="5"
+                                HorizontalAlignment="Left"
+                                Width="1000"
+                                Background="White"
+                                Margin="0 10 0 0">
+                                <StackPanel
+                                    Margin="2">
+                                    <Expander
+                                        HorizontalAlignment="Stretch"
+                                        Background="White">
+                                        <Expander.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon
+                                                    Kind="LinkVariant"
+                                                    Height="16"
+                                                    Width="16"
+                                                    HorizontalAlignment="Center"
+                                                    VerticalAlignment="Center"
+                                                    Margin="0 0 10 0"/>
+                                                <TextBlock
+                                                    Text="Useful Github Repo"
                                                     FontWeight="Bold"
                                                     FontSize="12"/>
-                                                <TextBlock Text="Integrate some commonly used tools"/>
                                             </StackPanel>
-                                        </StackPanel>
-                                    </Expander.Header>
-                                    <Expander.Content>
-                                        <StackPanel
-                                        Orientation="Vertical"
-                                        TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
-                                        Margin="24,8,24,16">
-                                            <TextBlock
-                                                Style="{StaticResource ConfigurationTitleTextStyle}"
-							                    Text="Chestnut Pro" />
-                                        </StackPanel>
-                                    </Expander.Content>
-                                </Expander>
-                            </StackPanel>
-                        </materialDesign:Card>
+                                        </Expander.Header>
+                                        <Expander.Content>
+                                            <WrapPanel
+                                                Orientation="Horizontal"
+                                                TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+                                                Margin="24,8,24,16">
+                                                <TextBlock
+                                                    Margin="35 0 0 0"
+                                                    FontWeight="Bold">
+                                                    <Hyperlink Foreground="Orange" NavigateUri="https://github.com/LyricYang/Chestnut-Pro" RequestNavigate="Hyperlink_RequestNavigate">
+                                                        SourceCode
+                                                    </Hyperlink>
+                                                </TextBlock>
+                                                <TextBlock
+                                                    Margin="35 0 0 0"
+                                                    FontWeight="Bold">
+                                                    <Hyperlink NavigateUri="https://github.com/veler/DevToys" RequestNavigate="Hyperlink_RequestNavigate">
+                                                        DevToys
+                                                    </Hyperlink>
+                                                </TextBlock>
+                                                <TextBlock
+                                                    Margin="35 0 0 0"
+                                                    FontWeight="Bold">
+                                                    <Hyperlink NavigateUri="https://github.com/microsoft/PowerToys" RequestNavigate="Hyperlink_RequestNavigate">
+                                                        PowerToys
+                                                    </Hyperlink>
+                                                </TextBlock>
+                                                <TextBlock
+                                                    Margin="35 0 0 0"
+                                                    FontWeight="Bold">
+                                                    <Hyperlink NavigateUri="https://github.com/icsharpcode/AvalonEdit" RequestNavigate="Hyperlink_RequestNavigate">
+                                                        AvalonEdit
+                                                    </Hyperlink>
+                                                </TextBlock>
+                                                <TextBlock
+                                                    Margin="35 0 0 0"
+                                                    FontWeight="Bold">
+                                                    <Hyperlink NavigateUri="https://github.com/microsoft/monaco-editor" RequestNavigate="Hyperlink_RequestNavigate">
+                                                        MonacoEditor
+                                                    </Hyperlink>
+                                                </TextBlock>
+                                            </WrapPanel>
+                                        </Expander.Content>
+                                    </Expander>
+                                </StackPanel>
+                            </materialDesign:Card>
+                        </StackPanel>
                     </Grid>
                 </Grid>
             </StackPanel>

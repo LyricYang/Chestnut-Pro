@@ -1,12 +1,8 @@
 ﻿namespace Chestnut_Pro.View
 {
-    using Chestnut_Pro.Service;
-    using Microsoft.Win32;
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Windows;
+    using System.Diagnostics;
     using System.Windows.Controls;
+    using System.Windows.Navigation;
 
     /// <summary>
     /// Interaction logic for TSVCSVConverterView.xaml
@@ -16,6 +12,11 @@
         public SettingsView()
         {
             InitializeComponent();
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            Process.Start("rundll32", "url.dll,FileProtocolHandler " + e.Uri.ToString());
         }
     }
 }
