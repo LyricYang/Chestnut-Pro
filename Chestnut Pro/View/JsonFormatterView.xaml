@@ -174,7 +174,8 @@
                         <Button
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
-							Style="{StaticResource CommonButtonStyle}"/>
+							Style="{StaticResource CommonButtonStyle}"
+                            Click="JsonClear"/>
                     </Grid>
                     <Grid
 						Grid.Row="1"
@@ -217,7 +218,8 @@
                         <Button
 							Content="{materialDesign:PackIcon ContentCopy}"
 							ToolTip="Copy"
-							Style="{StaticResource CommonButtonStyle}"/>
+							Style="{StaticResource CommonButtonStyle}"
+                            Click="JsonCopy"/>
                     </Grid>
                     <Grid
 						Grid.Row="1"

@@ -20,6 +20,9 @@ namespace Chestnut_Pro.View
             InitializeAvalonEditor();
         }
 
+        /// <summary>
+        /// Initialize Avalon Editor
+        /// </summary>
         private void InitializeAvalonEditor()
         {
             JsonInput_Box.ShowLineNumbers = true;
@@ -34,6 +37,11 @@ namespace Chestnut_Pro.View
             foldingUpdateTimer.Start();
         }
 
+        /// <summary>
+        /// Json formatter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void JsonFormat(object sender, RoutedEventArgs e)
         {
             var json = JsonInput_Box.Text;
@@ -41,6 +49,22 @@ namespace Chestnut_Pro.View
             {
                 JsonOutput_Box.Text = JsonHelper.Format(json, (Indentation)JsonFormatComboBox.SelectedIndex);
             }
+        }
+
+        /// <summary>
+        /// Json clear
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void JsonClear(object sender, RoutedEventArgs e)
+        {
+            JsonInput_Box.Text = string.Empty;
+            JsonOutput_Box.Text = string.Empty;
+        }
+
+        private void JsonCopy(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(JsonOutput_Box.Text);
         }
     }
 }

@@ -120,7 +120,50 @@
                                 <TextBlock
 									Style="{StaticResource Content}"
 									Text="Encode and decode&#xA;Base64 data"/>
-                                <Button>
+                                <Button
+                                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.Base64GeneratorCommand}">
+                                    <materialDesign:PackIcon Kind="DotsHorizontal" />
+                                </Button>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <!--JSON Converter-->
+                        <materialDesign:Card
+                            Style="{StaticResource ToolCard}"
+							Margin="30">
+                            <StackPanel
+								Margin="10">
+                                <materialDesign:PackIcon Kind="CodeJson" />
+                                <TextBlock
+									Style="{StaticResource Title}"
+									Text="JSON Formatter" />
+                                <TextBlock
+									Style="{StaticResource Content}"
+									Text="Indent or minify JSON&#xA;data" />
+                                <Button
+                                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.JsonFormatterCommand}">
+                                    <materialDesign:PackIcon Kind="DotsHorizontal" />
+                                </Button>
+                            </StackPanel>
+                        </materialDesign:Card>
+                    </WrapPanel>
+                    <!--Row 2-->
+                    <WrapPanel
+						HorizontalAlignment="Left">
+                        <!--TSV <> CSV-->
+                        <materialDesign:Card
+                            Style="{StaticResource ToolCard}"
+							Margin="40 30 30 30">
+                            <StackPanel
+								Margin="10">
+                                <materialDesign:PackIcon Kind="FileSwap" />
+                                <TextBlock
+									Style="{StaticResource Title}"
+									Text="TSV/CSV Converter" />
+                                <TextBlock
+									Style="{StaticResource Content}"
+									Text="Convert csv and tsv&#xA;to each other" />
+                                <Button
+                                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.TsvCsvConverterCommand}">
                                     <materialDesign:PackIcon Kind="DotsHorizontal" />
                                 </Button>
                             </StackPanel>
@@ -139,45 +182,6 @@
 									Text="Convert RGB to CMYK&#xA;and Picture" />
                                 <Button
 									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.ColorPaletteCommand}">
-                                    <materialDesign:PackIcon Kind="DotsHorizontal" />
-                                </Button>
-                            </StackPanel>
-                        </materialDesign:Card>
-                    </WrapPanel>
-                    <!--Row 2-->
-                    <WrapPanel
-						HorizontalAlignment="Left">
-                        <!--Markdown Preview-->
-                        <materialDesign:Card
-                            Style="{StaticResource ToolCard}"
-							Margin="40 30 30 30">
-                            <StackPanel
-								Margin="10">
-                                <materialDesign:PackIcon Kind="LanguageMarkdown" />
-                                <TextBlock
-									Style="{StaticResource Title}"
-									Text="Markdown Preview" />
-                                <TextBlock
-									Style="{StaticResource Content}"
-									Text="Preview a Markdown&#xA;document" />
-                                <Button>
-                                    <materialDesign:PackIcon Kind="DotsHorizontal" />
-                                </Button>
-                            </StackPanel>
-                        </materialDesign:Card>
-                        <!--Hash Generator-->
-                        <materialDesign:Card
-                            Style="{StaticResource ToolCard}"
-							Margin="30">
-                            <StackPanel Margin="10">
-                                <materialDesign:PackIcon Kind="FormatHeaderPound" />
-                                <TextBlock
-									Style="{StaticResource Title}"
-									Text="Hash Generator" />
-                                <TextBlock
-									Style="{StaticResource Content}"
-									Text="Calculate MD5, SHA1,&#xA;SHA256 and SHA512"/>
-                                <Button>
                                     <materialDesign:PackIcon Kind="DotsHorizontal" />
                                 </Button>
                             </StackPanel>

@@ -1,6 +1,7 @@
 ﻿namespace Chestnut_Pro.ViewModel
 {
     using Chestnut_Pro.Model;
+    using Chestnut_Pro.View;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Windows.Data;
@@ -32,14 +33,14 @@
             // get added, removed, or when the whole list is refreshed.
             ObservableCollection<MenuItems> menuItems = new ()
             {
-                new () { MenuName = "Home",           MenuImage = @"Assets/home.png" },
-                new () { MenuName = "All Tools",      MenuImage = @"Assets/tools-hardware.png" },
-                new () { MenuName = "Number Base",    MenuImage = @"Assets/number-base.png" },
-                new () { MenuName = "GUID Generator", MenuImage = @"Assets/guid.png" },
-                new () { MenuName = "Base 64",        MenuImage = @"Assets/base64.png" },
-                new () { MenuName = "TSV <> CSV",     MenuImage = @"Assets/csv.png" },
-                new () { MenuName = "JSON Formatter", MenuImage = @"Assets/jsonformat.png" },
-                new () { MenuName = "Color Palette",  MenuImage = @"Assets/palette.png" },
+                new () { MenuName = "Home",              MenuImage = @"Assets/home.png" },
+                new () { MenuName = "All Tools",         MenuImage = @"Assets/tools-hardware.png" },
+                new () { MenuName = "Number Base",       MenuImage = @"Assets/number-base.png" },
+                new () { MenuName = "GUID Generator",    MenuImage = @"Assets/guid.png" },
+                new () { MenuName = "Base64 Generator",  MenuImage = @"Assets/base64.png" },
+                new () { MenuName = "JSON Formatter",    MenuImage = @"Assets/jsonformat.png" },
+                new () { MenuName = "TSV/CSV Converter", MenuImage = @"Assets/csv.png" },
+                new () { MenuName = "Color Palette",     MenuImage = @"Assets/palette.png" },
             };
 
             MenuItemsCollection = new CollectionViewSource { Source = menuItems };
@@ -126,13 +127,13 @@
                 case "GUID Generator":
                     SelectedViewModel = new GUIDGeneratorViewModel();
                     break;
-                case "Base 64":
+                case "Base64 Generator":
                     SelectedViewModel = new Base64ViewModel();
                     break;
                 case "Color Palette":
                     SelectedViewModel = new ColorPaletteViewModel();
                     break;
-                case "TSV <> CSV":
+                case "TSV/CSV Converter":
                     SelectedViewModel = new TSVCSVConverterViewModel();
                     break;
                 case "JSON Formatter":
@@ -214,6 +215,66 @@
                     _NumberBaseCommand = new RelayCommand(param => NumberBaseConverterView());
                 }
                 return _NumberBaseCommand;
+            }
+        }
+
+        // ============================== Show Base 64 Generator View =============================================
+        public void Base64GeneratorView()
+        {
+            SelectedViewModel = new Base64ViewModel();
+        }
+
+        // This PC button Command
+        private ICommand _Base64GeneratorCommand;
+        public ICommand Base64GeneratorCommand
+        {
+            get
+            {
+                if (_Base64GeneratorCommand == null)
+                {
+                    _Base64GeneratorCommand = new RelayCommand(param => Base64GeneratorView());
+                }
+                return _Base64GeneratorCommand;
+            }
+        }
+
+        // ============================== Show Json Formatter View =============================================
+        public void JsonFormatterView()
+        {
+            SelectedViewModel = new JsonFormatterViewModel();
+        }
+
+        // This PC button Command
+        private ICommand _JsonFormatterCommand;
+        public ICommand JsonFormatterCommand
+        {
+            get
+            {
+                if (_JsonFormatterCommand == null)
+                {
+                    _JsonFormatterCommand = new RelayCommand(param => JsonFormatterView());
+                }
+                return _JsonFormatterCommand;
+            }
+        }
+
+        // ============================== Show TSV/CSV Converter View =============================================
+        public void TSVCSVConverterView()
+        {
+            SelectedViewModel = new TSVCSVConverterViewModel();
+        }
+
+        // This PC button Command
+        private ICommand _TsvCsvConverterCommand;
+        public ICommand TsvCsvConverterCommand
+        {
+            get
+            {
+                if (_TsvCsvConverterCommand == null)
+                {
+                    _TsvCsvConverterCommand = new RelayCommand(param => TSVCSVConverterView());
+                }
+                return _TsvCsvConverterCommand;
             }
         }
     }
