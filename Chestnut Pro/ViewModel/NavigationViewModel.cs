@@ -47,7 +47,7 @@
             MenuItemsCollection.Filter += MenuItems_Filter;
 
             // Set Home Page
-            SelectedViewModel = new HomeViewModel();
+            SelectedViewModel = new AllToolsView();
 
         }
 
@@ -275,6 +275,26 @@
                     _TsvCsvConverterCommand = new RelayCommand(param => TSVCSVConverterView());
                 }
                 return _TsvCsvConverterCommand;
+            }
+        }
+
+        // ============================== Show Settings View =============================================
+        public void SettingsView()
+        {
+            SelectedViewModel = new SettingsViewModel();
+        }
+
+        // This PC button Command
+        private ICommand _SettingsCommand;
+        public ICommand SettingsCommand
+        {
+            get
+            {
+                if (_SettingsCommand == null)
+                {
+                    _SettingsCommand = new RelayCommand(param => SettingsView());
+                }
+                return _SettingsCommand;
             }
         }
     }

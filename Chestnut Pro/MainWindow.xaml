@@ -30,8 +30,9 @@
                 <ColumnDefinition
 					Width="25" />
                 <ColumnDefinition
-					Width="21.04" />
-                <ColumnDefinition Width="158.96"/>
+					Width="20" />
+                <ColumnDefinition
+                    Width="160"/>
                 <ColumnDefinition
 					Width="10" />
                 <ColumnDefinition
@@ -49,7 +50,7 @@
                 <RowDefinition
 					Height="370" />
                 <RowDefinition
-					Height="0" />
+					Height="*" />
             </Grid.RowDefinitions>
             <!--Menu Search Box-->
             <Grid
@@ -64,50 +65,49 @@
 					Style="{StaticResource SearchTextStyle}" />
             </Grid>
             <!--Menu-->
-            <Grid
-				Grid.Row="3"
-				Grid.Column="1" Grid.ColumnSpan="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition
-						Width="41*" />
-                    <ColumnDefinition
-						Width="139*" />
-                </Grid.ColumnDefinitions>
-                <ItemsControl
-					ItemsSource="{Binding SourceCollection}"
-					Grid.ColumnSpan="2">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <RadioButton
-									Content="{Binding MenuName}"
-									Tag="{Binding MenuImage}"
-									CommandParameter="{Binding MenuName}"
-									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
-									Style="{StaticResource MenuButtonStyle}"
-									GroupName="MenuGroup" />
-                            </StackPanel>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </Grid>
+            <ItemsControl
+                Grid.Row="3"
+				Grid.Column="1" Grid.ColumnSpan="2"
+                ItemsSource="{Binding SourceCollection}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <RadioButton
+								Content="{Binding MenuName}"
+								Tag="{Binding MenuImage}"
+								CommandParameter="{Binding MenuName}"
+								Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
+								Style="{StaticResource MenuButtonStyle}"
+								GroupName="MenuGroup" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
             <!--Page Container-->
             <Grid
 				Grid.Row="2"
 				Grid.Column="4"
 				Grid.RowSpan="2"
 				Background="Transparent">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition
-						Width="41*" />
-                    <ColumnDefinition
-						Width="179*" />
-                </Grid.ColumnDefinitions>
                 <ContentControl
 					x:Name="Pages"
 					Content="{Binding SelectedViewModel}"
 					Margin="0,0,-440,-415"
 					Grid.ColumnSpan="2" />
+            </Grid>
+            <Grid
+                Grid.Row="4"
+				Grid.Column="1" Grid.ColumnSpan="2">
+                <StackPanel>
+                    <RadioButton
+						Content="Settings"
+						Tag="\Assets\settings.png"
+						CommandParameter="GUID Generator"
+						Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.SettingsCommand}"
+						Style="{StaticResource MenuButtonStyle}"
+						GroupName="MenuGroup"
+                        Margin="0 360 0 0"/>
+                </StackPanel>
             </Grid>
         </Grid>
     </Grid>

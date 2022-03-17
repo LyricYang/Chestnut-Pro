@@ -43,4 +43,8 @@
 		DataType="{x:Type viewmodel:JsonFormatterViewModel}">
         <view:JsonFormatterView />
     </DataTemplate>
+    <DataTemplate
+		DataType="{x:Type viewmodel:SettingsViewModel}">
+        <view:SettingsView />
+    </DataTemplate>
 </ResourceDictionary>

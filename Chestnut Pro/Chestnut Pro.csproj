@@ -12,6 +12,7 @@
   <ItemGroup>
     <None Remove="Assets\avatar1.jpg" />
     <None Remove="Assets\base64.png" />
+    <None Remove="Assets\chestnut.ico" />
     <None Remove="Assets\csv.png" />
     <None Remove="Assets\guid.png" />
     <None Remove="Assets\home.png" />
@@ -19,6 +20,7 @@
     <None Remove="Assets\number-base.png" />
     <None Remove="Assets\palette.png" />
     <None Remove="Assets\print_icon.png" />
+    <None Remove="Assets\settings.png" />
     <None Remove="Assets\tools-hardware.png" />
   </ItemGroup>
 
@@ -35,6 +37,9 @@
     <Resource Include="Assets\avatar1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\chestnut.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\csv.png" />
   </ItemGroup>
 
@@ -45,6 +50,7 @@
     <Resource Include="Assets\number-base.png" />
     <Resource Include="Assets\base64.png" />
     <Resource Include="Assets\palette.png" />
+    <Resource Include="Assets\settings.png" />
     <Resource Include="Assets\tools-hardware.png" />
   </ItemGroup>
 
@@ -52,12 +58,12 @@
     <Compile Update="View\AllToolsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\SettingsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Assets\chestnut.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Data\Data.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -74,6 +80,10 @@
     </Page>
     <Page Update="View\Base64View.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="View\SettingsView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
 
