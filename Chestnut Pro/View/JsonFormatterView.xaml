@@ -129,6 +129,8 @@
 								                Content="4 spaces" />
                                             <ComboBoxItem
 								                Content="1 tab" />
+                                            <ComboBoxItem
+								                Content="Minified" />
                                         </ComboBox>
                                     </Grid>
                                 </StackPanel>
@@ -167,7 +169,8 @@
 							Content="{materialDesign:PackIcon CursorDefaultClick}"
 							ToolTip="Convert"
 							Style="{StaticResource CommonButtonStyle}"
-							Margin="0 0 60 0"/>
+							Margin="0 0 60 0"
+                            Click="JsonFormat"/>
                         <Button
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
@@ -176,10 +179,6 @@
                     <Grid
 						Grid.Row="1"
 						Grid.Column="1">
-                        <!--<TextBox
-							x:Name="JsonInput_Box"
-							Style="{StaticResource TextBoxStyle}"
-                            BorderBrush="#C8C8C8" />-->
                         <Border
 		                    BorderBrush="#C8C8C8"
 		                    Background="#FCFCFC"
@@ -232,7 +231,7 @@
                                 <avalonEdit:TextEditor
                                     Name="JsonOutput_Box"
                                     FontFamily="Consolas"
-                                    SyntaxHighlighting="JSON"
+                                    SyntaxHighlighting="Json"
                                     Height="520"
                                     FontSize="10pt"
                                     Background="#FCFCFC"/>
