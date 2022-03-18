@@ -13,15 +13,19 @@
     <None Remove="Assets\avatar1.jpg" />
     <None Remove="Assets\base64.png" />
     <None Remove="Assets\chestnut.ico" />
+    <None Remove="Assets\china.png" />
     <None Remove="Assets\csv.png" />
     <None Remove="Assets\guid.png" />
     <None Remove="Assets\home.png" />
+    <None Remove="Assets\india.png" />
     <None Remove="Assets\jsonformat.png" />
     <None Remove="Assets\number-base.png" />
     <None Remove="Assets\palette.png" />
     <None Remove="Assets\print_icon.png" />
     <None Remove="Assets\settings.png" />
+    <None Remove="Assets\timestamp.png" />
     <None Remove="Assets\tools-hardware.png" />
+    <None Remove="Assets\unitedstates.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,18 +43,24 @@
     <Resource Include="Assets\chestnut.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\china.png" />
     <Resource Include="Assets\csv.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Assets\guid.png" />
     <Resource Include="Assets\home.png" />
+    <Resource Include="Assets\india.png" />
     <Resource Include="Assets\jsonformat.png" />
     <Resource Include="Assets\number-base.png" />
     <Resource Include="Assets\base64.png" />
     <Resource Include="Assets\palette.png" />
     <Resource Include="Assets\settings.png" />
+    <Resource Include="Assets\timestamp.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\tools-hardware.png" />
+    <Resource Include="Assets\unitedstates.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -70,6 +80,10 @@
 
   <ItemGroup>
     <Page Update="View\AllToolsView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TimestampConverterView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>

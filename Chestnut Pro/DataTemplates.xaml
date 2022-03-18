@@ -47,4 +47,8 @@
 		DataType="{x:Type viewmodel:SettingsViewModel}">
         <view:SettingsView />
     </DataTemplate>
+    <DataTemplate
+		DataType="{x:Type viewmodel:TimestampConverterViewModel}">
+        <view:TimestampConverterView />
+    </DataTemplate>
 </ResourceDictionary>

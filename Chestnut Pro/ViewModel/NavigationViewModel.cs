@@ -33,14 +33,15 @@
             // get added, removed, or when the whole list is refreshed.
             ObservableCollection<MenuItems> menuItems = new ()
             {
-                new () { MenuName = "Home",              MenuImage = @"Assets/home.png" },
-                new () { MenuName = "All Tools",         MenuImage = @"Assets/tools-hardware.png" },
-                new () { MenuName = "Number Base",       MenuImage = @"Assets/number-base.png" },
-                new () { MenuName = "GUID Generator",    MenuImage = @"Assets/guid.png" },
-                new () { MenuName = "Base64 Generator",  MenuImage = @"Assets/base64.png" },
-                new () { MenuName = "JSON Formatter",    MenuImage = @"Assets/jsonformat.png" },
-                new () { MenuName = "TSV/CSV Converter", MenuImage = @"Assets/csv.png" },
-                new () { MenuName = "Color Palette",     MenuImage = @"Assets/palette.png" },
+                new () { MenuName = "Home",                 MenuImage = @"Assets/home.png" },
+                new () { MenuName = "All Tools",            MenuImage = @"Assets/tools-hardware.png" },
+                new () { MenuName = "Number Base",          MenuImage = @"Assets/number-base.png" },
+                new () { MenuName = "GUID Generator",       MenuImage = @"Assets/guid.png" },
+                new () { MenuName = "Base64 Generator",     MenuImage = @"Assets/base64.png" },
+                new () { MenuName = "Timestamp Converter",  MenuImage = @"Assets/timestamp.png" },
+                new () { MenuName = "JSON Formatter",       MenuImage = @"Assets/jsonformat.png" },
+                new () { MenuName = "TSV/CSV Converter",    MenuImage = @"Assets/csv.png" },
+                new () { MenuName = "Color Palette",        MenuImage = @"Assets/palette.png" },
             };
 
             MenuItemsCollection = new CollectionViewSource { Source = menuItems };
@@ -138,6 +139,9 @@
                     break;
                 case "JSON Formatter":
                     SelectedViewModel = new JsonFormatterViewModel();
+                    break;
+                case "Timestamp Converter":
+                    SelectedViewModel = new TimestampConverterViewModel();
                     break;
                 default:
                     SelectedViewModel = new HomeViewModel();
