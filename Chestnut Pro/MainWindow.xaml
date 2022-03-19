@@ -100,13 +100,18 @@
 				Grid.Column="1" Grid.ColumnSpan="2">
                 <StackPanel>
                     <RadioButton
-						Content="Settings"
-						Tag="\Assets\settings.png"
-						CommandParameter="GUID Generator"
-						Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.SettingsCommand}"
+						Content="Dashboard"
+						Tag="\Assets\dashboard.png"
+						Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.DashboardCommand}"
 						Style="{StaticResource MenuButtonStyle}"
 						GroupName="MenuGroup"
-                        Margin="0 360 0 0"/>
+                        Margin="0 300 0 0"/>
+                    <RadioButton
+						Content="Settings"
+						Tag="\Assets\settings.png"
+						Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.SettingsCommand}"
+						Style="{StaticResource MenuButtonStyle}"
+						GroupName="MenuGroup"/>
                 </StackPanel>
             </Grid>
         </Grid>

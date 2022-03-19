@@ -33,7 +33,6 @@
             // get added, removed, or when the whole list is refreshed.
             ObservableCollection<MenuItems> menuItems = new ()
             {
-                new () { MenuName = "Home",              MenuImage = @"Assets/home.png" },
                 new () { MenuName = "All Tools",         MenuImage = @"Assets/tools-hardware.png" },
                 new () { MenuName = "Number Base",       MenuImage = @"Assets/number-base.png" },
                 new () { MenuName = "GUID Generator",    MenuImage = @"Assets/guid.png" },
@@ -116,9 +115,6 @@
         {
             switch (parameter)
             {
-                case "Home":
-                    SelectedViewModel = new HomeViewModel();
-                    break;
                 case "All Tools":
                     SelectedViewModel = new AllToolsViewModel();
                     break;
@@ -142,6 +138,9 @@
                     break;
                 case "Epoch Converter":
                     SelectedViewModel = new TimestampConverterViewModel();
+                    break;
+                case "Dashboard":
+                    SelectedViewModel = new HomeViewModel();
                     break;
                 default:
                     SelectedViewModel = new HomeViewModel();
@@ -299,6 +298,26 @@
                     _SettingsCommand = new RelayCommand(param => SettingsView());
                 }
                 return _SettingsCommand;
+            }
+        }
+
+        // ============================== Show Settings View =============================================
+        public void DashboardView()
+        {
+            SelectedViewModel = new HomeViewModel();
+        }
+
+        // This PC button Command
+        private ICommand _DashboardCommand;
+        public ICommand DashboardCommand
+        {
+            get
+            {
+                if (_DashboardCommand == null)
+                {
+                    _DashboardCommand = new RelayCommand(param => DashboardView());
+                }
+                return _DashboardCommand;
             }
         }
 

@@ -15,6 +15,7 @@
     <None Remove="Assets\chestnut.ico" />
     <None Remove="Assets\china.png" />
     <None Remove="Assets\csv.png" />
+    <None Remove="Assets\dashboard.png" />
     <None Remove="Assets\guid.png" />
     <None Remove="Assets\home.png" />
     <None Remove="Assets\india.png" />
@@ -45,6 +46,7 @@
     </Resource>
     <Resource Include="Assets\china.png" />
     <Resource Include="Assets\csv.png" />
+    <Resource Include="Assets\dashboard.png" />
   </ItemGroup>
 
   <ItemGroup>
