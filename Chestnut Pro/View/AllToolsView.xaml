@@ -186,20 +186,21 @@
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>
-                        <!--Text Comparer-->
+                        <!--Unix Timestamp-->
                         <materialDesign:Card
                             Style="{StaticResource ToolCard}"
 							Margin="30">
                             <StackPanel
 								Margin="10">
-                                <materialDesign:PackIcon Kind="FileCompare" />
+                                <materialDesign:PackIcon Kind="MapClock" />
                                 <TextBlock
 									Style="{StaticResource Title}"
-                                    Text="Text Comparer" />
+                                    Text="Epoch Converter" />
                                 <TextBlock
 									Style="{StaticResource Content}"
-									Text="Compare two texts&#xA;" />
-                                <Button>
+									Text="Convert epoch to&#xA;human-readable date" />
+                                <Button
+                                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.EpochConverterCommand}">
                                     <materialDesign:PackIcon Kind="DotsHorizontal" />
                                 </Button>
                             </StackPanel>

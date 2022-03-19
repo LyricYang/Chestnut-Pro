@@ -38,7 +38,7 @@
                 new () { MenuName = "Number Base",       MenuImage = @"Assets/number-base.png" },
                 new () { MenuName = "GUID Generator",    MenuImage = @"Assets/guid.png" },
                 new () { MenuName = "Base64 Generator",  MenuImage = @"Assets/base64.png" },
-                new () { MenuName = "Unix Timestamp",    MenuImage = @"Assets/timestamp.png" },
+                new () { MenuName = "Epoch Converter",   MenuImage = @"Assets/timestamp.png" },
                 new () { MenuName = "JSON Formatter",    MenuImage = @"Assets/jsonformat.png" },
                 new () { MenuName = "TSV/CSV Converter", MenuImage = @"Assets/csv.png" },
                 new () { MenuName = "Color Palette",     MenuImage = @"Assets/palette.png" },
@@ -140,7 +140,7 @@
                 case "JSON Formatter":
                     SelectedViewModel = new JsonFormatterViewModel();
                     break;
-                case "Unix Timestamp":
+                case "Epoch Converter":
                     SelectedViewModel = new TimestampConverterViewModel();
                     break;
                 default:
@@ -299,6 +299,26 @@
                     _SettingsCommand = new RelayCommand(param => SettingsView());
                 }
                 return _SettingsCommand;
+            }
+        }
+
+        // ============================== Show Settings View =============================================
+        public void EpochConverterView()
+        {
+            SelectedViewModel = new TimestampConverterViewModel();
+        }
+
+        // This PC button Command
+        private ICommand _EpochConverterCommand;
+        public ICommand EpochConverterCommand
+        {
+            get
+            {
+                if (_EpochConverterCommand == null)
+                {
+                    _EpochConverterCommand = new RelayCommand(param => EpochConverterView());
+                }
+                return _EpochConverterCommand;
             }
         }
     }
