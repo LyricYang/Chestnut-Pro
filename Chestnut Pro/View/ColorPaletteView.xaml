@@ -52,13 +52,13 @@
 				Background="#FCFCFC">
                 <!--Header-->
                 <Grid
-					Height="100">
+					Height="60">
                     <!--Title-->
                     <TextBlock
 						Text="Color Palette"
                         Style="{StaticResource ControlTitleTextStyle}"/>
                 </Grid>
-                <Grid>
+                <Grid Margin="0 30 0 0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition
 							Width="550" />
