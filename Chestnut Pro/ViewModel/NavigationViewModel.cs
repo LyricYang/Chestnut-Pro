@@ -39,6 +39,7 @@
                 new () { MenuName = "Base64 Generator",  MenuImage = @"Assets/base64.png" },
                 new () { MenuName = "Epoch Converter",   MenuImage = @"Assets/timestamp.png" },
                 new () { MenuName = "JSON Formatter",    MenuImage = @"Assets/jsonformat.png" },
+                new () { MenuName = "XML Formatter",     MenuImage = @"Assets/xml.png" },
                 new () { MenuName = "TSV/CSV Converter", MenuImage = @"Assets/csv.png" },
                 new () { MenuName = "Color Palette",     MenuImage = @"Assets/palette.png" },
             };
@@ -135,6 +136,9 @@
                     break;
                 case "JSON Formatter":
                     SelectedViewModel = new JsonFormatterViewModel();
+                    break;
+                case "XML Formatter":
+                    SelectedViewModel = new XMLFormatterViewModel();
                     break;
                 case "Epoch Converter":
                     SelectedViewModel = new TimestampConverterViewModel();

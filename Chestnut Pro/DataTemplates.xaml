@@ -44,6 +44,10 @@
         <view:JsonFormatterView />
     </DataTemplate>
     <DataTemplate
+		DataType="{x:Type viewmodel:XMLFormatterViewModel}">
+        <view:XmlFormatterView />
+    </DataTemplate>
+    <DataTemplate
 		DataType="{x:Type viewmodel:SettingsViewModel}">
         <view:SettingsView />
     </DataTemplate>
