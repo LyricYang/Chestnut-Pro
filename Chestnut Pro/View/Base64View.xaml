@@ -10,60 +10,82 @@
 	d:DesignWidth="1100"
 	Background="Transparent">
     <UserControl.Resources>
-        <Style x:Key="CommonButtonStyle"
-           TargetType="{x:Type Button}"
-           BasedOn="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}">
-            <Setter Property="Background"
-                Value="White" />
-            <Setter Property="BorderThickness"
-                Value="1,1,1,1" />
-            <Setter Property="Width"
-                Value="50" />
-            <Setter Property="Height"
-                Value="30" />
-            <Setter Property="HorizontalAlignment"
-                Value="Right" />
-            <Setter Property="VerticalAlignment"
-                Value="Bottom" />
-            <Setter Property="BorderBrush"
-                Value="#C8C8C8" />
-        </Style>
-        <Style x:Key="TextBoxStyle"
-               TargetType="{x:Type TextBox}"
-               BasedOn="{StaticResource MaterialDesignOutlinedTextBox}">
-            <Setter Property="VerticalAlignment"
-                    Value="Top" />
-            <Setter Property="FontSize"
-                    Value="12" />
-            <Setter Property="Height"
-                    Value="240" />
-            <Setter Property="Margin"
-                    Value="0 10 0 0" />
-            <Setter Property="AcceptsReturn"
-                    Value="True" />
-            <Setter Property="TextWrapping"
-                    Value="Wrap" />
-            <Setter Property="VerticalScrollBarVisibility"
-                    Value="Auto" />
+        <Style
+			x:Key="CommonButtonStyle"
+			TargetType="{x:Type Button}"
+			BasedOn="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}">
+            <Setter
+				Property="Background"
+				Value="White" />
+            <Setter
+				Property="BorderThickness"
+				Value="1,1,1,1" />
+            <Setter
+				Property="Width"
+				Value="50" />
+            <Setter
+				Property="Height"
+				Value="30" />
+            <Setter
+				Property="HorizontalAlignment"
+				Value="Right" />
+            <Setter
+				Property="VerticalAlignment"
+				Value="Bottom" />
+            <Setter
+				Property="BorderBrush"
+				Value="#C8C8C8" />
         </Style>
         <Style
-            x:Key="CheckBoxStyle"
-            TargetType="{x:Type CheckBox}"
-            BasedOn="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}">
-            <Setter Property="HorizontalAlignment"
-                    Value="Right"/>
-            <Setter Property="Margin"
-                    Value="0 0 50 0"/>
+			x:Key="TextBoxStyle"
+			TargetType="{x:Type TextBox}"
+			BasedOn="{StaticResource MaterialDesignOutlinedTextBox}">
+            <Setter
+				Property="VerticalAlignment"
+				Value="Top" />
+            <Setter
+				Property="FontSize"
+				Value="12" />
+            <Setter
+				Property="Height"
+				Value="240" />
+            <Setter
+				Property="Margin"
+				Value="0 10 0 0" />
+            <Setter
+				Property="AcceptsReturn"
+				Value="True" />
+            <Setter
+				Property="TextWrapping"
+				Value="Wrap" />
+            <Setter
+				Property="VerticalScrollBarVisibility"
+				Value="Auto" />
+        </Style>
+        <Style
+			x:Key="CheckBoxStyle"
+			TargetType="{x:Type CheckBox}"
+			BasedOn="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}">
+            <Setter
+				Property="HorizontalAlignment"
+				Value="Right" />
+            <Setter
+				Property="Margin"
+				Value="0 0 50 0" />
             <Style.Triggers>
-                <Trigger Property="IsChecked"
-                         Value="True">
-                    <Setter Property="Content"
-                            Value="Encode"/>
+                <Trigger
+					Property="IsChecked"
+					Value="True">
+                    <Setter
+						Property="Content"
+						Value="Encode" />
                 </Trigger>
-                <Trigger Property="IsChecked"
-                         Value="False">
-                    <Setter Property="Content"
-                            Value="Decode"/>
+                <Trigger
+					Property="IsChecked"
+					Value="False">
+                    <Setter
+						Property="Content"
+						Value="Decode" />
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -82,7 +104,7 @@
 					Height="60">
                     <!--Title-->
                     <TextBlock
-                        Style="{StaticResource ControlTitleTextStyle}"
+						Style="{StaticResource ControlTitleTextStyle}"
 						Text="Base 64 Encoder / Decoder" />
                 </Grid>
                 <!--Configuration-->
@@ -104,7 +126,7 @@
 						Grid.Row="0"
 						Grid.Column="1">
                         <TextBlock
-                            Style="{StaticResource ConfigurationTitleTextStyle}"
+							Style="{StaticResource ConfigurationTitleTextStyle}"
 							Text="Configuration" />
                     </Grid>
                     <!--Parameter 1-->
@@ -164,8 +186,8 @@
 											Grid.Row="0"
 											Grid.Column="3">
                                             <CheckBox
-                                                x:Name="Encode_Button"
-                                                Style="{StaticResource CheckBoxStyle}"/>
+												x:Name="Encode_Button"
+												Style="{StaticResource CheckBoxStyle}" />
                                         </Grid>
                                     </Grid>
                                 </StackPanel>
@@ -193,51 +215,55 @@
                     </Grid.RowDefinitions>
                     <Grid
 						Grid.Row="0"
-						Grid.Column="1" Grid.ColumnSpan="2">
+						Grid.Column="1"
+						Grid.ColumnSpan="2">
                         <TextBlock
-                            Style="{StaticResource ConfigurationTitleTextStyle}"
+							Style="{StaticResource ConfigurationTitleTextStyle}"
 							Text="Input"
-                            VerticalAlignment="Bottom"/>
+							VerticalAlignment="Bottom" />
                         <Button
 							Content="{materialDesign:PackIcon CursorDefaultClick}"
 							ToolTip="Convert"
 							Style="{StaticResource CommonButtonStyle}"
 							Margin="0 0 60 0"
-                            Click="Base64Convert"/>
+							Click="Base64Convert" />
                         <Button
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
 							Style="{StaticResource CommonButtonStyle}"
-							Click="Base64InputClear"/>
+							Click="Base64InputClear" />
                     </Grid>
                     <Grid
 						Grid.Row="1"
-						Grid.Column="1" Grid.ColumnSpan="2">
+						Grid.Column="1"
+						Grid.ColumnSpan="2">
                         <TextBox
 							x:Name="Base64Input_Box"
 							Style="{StaticResource TextBoxStyle}"
-                            BorderBrush="#C8C8C8" />
+							BorderBrush="#C8C8C8" />
                     </Grid>
                     <Grid
 						Grid.Row="2"
-						Grid.Column="1" Grid.ColumnSpan="2">
+						Grid.Column="1"
+						Grid.ColumnSpan="2">
                         <TextBlock
-                            Style="{StaticResource ConfigurationTitleTextStyle}"
+							Style="{StaticResource ConfigurationTitleTextStyle}"
 							Text="Output"
-                            VerticalAlignment="Bottom"/>
+							VerticalAlignment="Bottom" />
                         <Button
 							Content="{materialDesign:PackIcon ContentCopy}"
 							ToolTip="Copy"
 							Style="{StaticResource CommonButtonStyle}"
-                            Click="Base64OutputCopy"/>
+							Click="Base64OutputCopy" />
                     </Grid>
                     <Grid
 						Grid.Row="3"
-						Grid.Column="1" Grid.ColumnSpan="2">
+						Grid.Column="1"
+						Grid.ColumnSpan="2">
                         <TextBox
 							x:Name="Base64Output_Box"
 							Style="{StaticResource TextBoxStyle}"
-                            BorderBrush="#C8C8C8" />
+							BorderBrush="#C8C8C8" />
                     </Grid>
                 </Grid>
             </StackPanel>

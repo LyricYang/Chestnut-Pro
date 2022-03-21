@@ -268,7 +268,7 @@
 									Text="Key Metrics"
 									Margin="10 20"
 									FontWeight="SemiBold"
-                                    FontSize="18" />
+									FontSize="18" />
                                 <Grid
 									Height="150">
                                     <Grid.ColumnDefinitions>
@@ -550,7 +550,9 @@
 						Foreground="White"
 						Background="{x:Null}">
                         <Calendar.BlackoutDates>
-                            <CalendarDateRange Start="2/1/2022" End="2/23/2022"></CalendarDateRange>
+                            <CalendarDateRange
+								Start="2/1/2022"
+								End="2/23/2022"></CalendarDateRange>
                         </Calendar.BlackoutDates>
                     </Calendar>
                 </materialDesign:Card>

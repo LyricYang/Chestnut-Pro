@@ -13,32 +13,44 @@
         <vm:ColorPaletteViewModel />
     </UserControl.DataContext>
     <UserControl.Resources>
-        <Style x:Key="TitleTextBlock"
-               TargetType="{x:Type TextBlock}">
-            <Setter Property="FontSize"
-                Value="9" />
-            <Setter Property="Foreground"
-                Value="Black" />
-            <Setter Property="HorizontalAlignment"
-                Value="Center" />
-            <Setter Property="VerticalAlignment"
-                Value="Center" />
-            <Setter Property="Margin"
-                Value="5 0 5 0" />
+        <Style
+			x:Key="TitleTextBlock"
+			TargetType="{x:Type TextBlock}">
+            <Setter
+				Property="FontSize"
+				Value="9" />
+            <Setter
+				Property="Foreground"
+				Value="Black" />
+            <Setter
+				Property="HorizontalAlignment"
+				Value="Center" />
+            <Setter
+				Property="VerticalAlignment"
+				Value="Center" />
+            <Setter
+				Property="Margin"
+				Value="5 0 5 0" />
         </Style>
-        <Style x:Key="ContentButton"
-			   TargetType="{x:Type Button}"
-               BasedOn="{StaticResource MaterialDesignRaisedButton}">
-            <Setter Property="Width"
-                Value="25" />
-            <Setter Property="Height"
-                Value="25" />
-            <Setter Property="BorderThickness"
-                Value="0" />
-            <Setter Property="HorizontalAlignment"
-                Value="Center" />
-            <Setter Property="VerticalAlignment"
-                Value="Center" />
+        <Style
+			x:Key="ContentButton"
+			TargetType="{x:Type Button}"
+			BasedOn="{StaticResource MaterialDesignRaisedButton}">
+            <Setter
+				Property="Width"
+				Value="25" />
+            <Setter
+				Property="Height"
+				Value="25" />
+            <Setter
+				Property="BorderThickness"
+				Value="0" />
+            <Setter
+				Property="HorizontalAlignment"
+				Value="Center" />
+            <Setter
+				Property="VerticalAlignment"
+				Value="Center" />
         </Style>
     </UserControl.Resources>
     <Border
@@ -56,9 +68,10 @@
                     <!--Title-->
                     <TextBlock
 						Text="Color Palette"
-                        Style="{StaticResource ControlTitleTextStyle}"/>
+						Style="{StaticResource ControlTitleTextStyle}" />
                 </Grid>
-                <Grid Margin="0 30 0 0">
+                <Grid
+					Margin="0 30 0 0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition
 							Width="550" />
@@ -79,7 +92,7 @@
                             <ColumnDefinition
 								Width="75" />
                             <ColumnDefinition
-                                Width="*" />
+								Width="*" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition
@@ -87,96 +100,114 @@
                             <RowDefinition
 								Height="480" />
                             <RowDefinition
-                                Height="*" />
+								Height="*" />
                         </Grid.RowDefinitions>
                         <!--Column Title-->
                         <ItemsControl
-                            Grid.Row="0"
+							Grid.Row="0"
 							Grid.Column="2"
-                            ItemsSource="{Binding PaletteColumnHeadersCollection}">
+							ItemsSource="{Binding PaletteColumnHeadersCollection}">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <StackPanel Orientation="Horizontal" />
+                                    <StackPanel
+										Orientation="Horizontal" />
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border Height="30" Width="30">
-                                        <TextBlock Text="{Binding HeaderName}"
-                                                       Style="{StaticResource TitleTextBlock}"/>
+                                    <Border
+										Height="30"
+										Width="30">
+                                        <TextBlock
+											Text="{Binding HeaderName}"
+											Style="{StaticResource TitleTextBlock}" />
                                     </Border>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
                         <!--Row Title-->
                         <ItemsControl
-                            Grid.Row="1"
+							Grid.Row="1"
 							Grid.Column="1"
-                            Grid.RowSpan="2"
-                            ItemsSource="{Binding PaletteRowHeadersCollection}">
+							Grid.RowSpan="2"
+							ItemsSource="{Binding PaletteRowHeadersCollection}">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <StackPanel Orientation="Vertical" />
+                                    <StackPanel
+										Orientation="Vertical" />
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border Height="30" Width="75">
-                                        <TextBlock Text="{Binding HeaderName}"
-                                                   Style="{StaticResource TitleTextBlock}"
-                                                   HorizontalAlignment="Left"/>
+                                    <Border
+										Height="30"
+										Width="75">
+                                        <TextBlock
+											Text="{Binding HeaderName}"
+											Style="{StaticResource TitleTextBlock}"
+											HorizontalAlignment="Left" />
                                     </Border>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
                         <!--Content-->
                         <ItemsControl
-                            Grid.Row="1"
-                            Grid.Column="2"
-                            ItemsSource="{Binding PaletteColorsRow1Collection}">
+							Grid.Row="1"
+							Grid.Column="2"
+							ItemsSource="{Binding PaletteColorsRow1Collection}">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <WrapPanel Orientation="Horizontal" />
+                                    <WrapPanel
+										Orientation="Horizontal" />
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border Height="30" Width="30">
+                                    <Border
+										Height="30"
+										Width="30">
                                         <Button
-                                            Style="{StaticResource ContentButton}"
-                                            Background="{Binding ColorHex}"
-                                            ToolTip="{Binding ColorHex}"
-                                            Click="ColorDisplay"/>
+											Style="{StaticResource ContentButton}"
+											Background="{Binding ColorHex}"
+											ToolTip="{Binding ColorHex}"
+											Click="ColorDisplay" />
                                     </Border>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
-                        <Grid Grid.Row="2"
-                              Grid.Column="2">
+                        <Grid
+							Grid.Row="2"
+							Grid.Column="2">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="300" />
-                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition
+									Width="300" />
+                                <ColumnDefinition
+									Width="*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
+                                <RowDefinition
+									Height="*" />
                             </Grid.RowDefinitions>
                             <ItemsControl
-                                Grid.Row="0"
-                                Grid.Column="0"
-                                ItemsSource="{Binding PaletteColorsRow2Collection}">
+								Grid.Row="0"
+								Grid.Column="0"
+								ItemsSource="{Binding PaletteColorsRow2Collection}">
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
-                                        <WrapPanel Orientation="Horizontal" />
+                                        <WrapPanel
+											Orientation="Horizontal" />
                                     </ItemsPanelTemplate>
                                 </ItemsControl.ItemsPanel>
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
-                                        <Border Height="30" Width="30">
+                                        <Border
+											Height="30"
+											Width="30">
                                             <Button
-                                            Style="{StaticResource ContentButton}"
-                                            Background="{Binding ColorHex}"
-                                            ToolTip="{Binding ColorHex}"
-                                            Click="ColorDisplay"/>
+												Style="{StaticResource ContentButton}"
+												Background="{Binding ColorHex}"
+												ToolTip="{Binding ColorHex}"
+												Click="ColorDisplay" />
                                         </Border>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
@@ -291,17 +322,17 @@
 							Height="30"
 							Margin="328,482,52,88"
 							materialDesign:HintAssist.Hint="0.00,0.00,0.00,0.00"
-							materialDesign:TransitionAssist.DisableTransitions="True"/>
+							materialDesign:TransitionAssist.DisableTransitions="True" />
                         <ComboBox
 							x:Name="Color_InputType_Box"
 							materialDesign:HintAssist.Hint="Input"
-                            materialDesign:TextFieldAssist.SuffixText="type"
+							materialDesign:TextFieldAssist.SuffixText="type"
 							Height="30"
-                            Width="213"
-                            HorizontalAlignment="Left"
+							Width="213"
+							HorizontalAlignment="Left"
 							Margin="20,262,0,308">
                             <ComboBoxItem
-                                IsSelected="True"
+								IsSelected="True"
 								Content="RGB" />
                             <ComboBoxItem
 								Content="HSL" />
@@ -313,82 +344,102 @@
                         <ComboBox
 							x:Name="Popular_Color_Box"
 							materialDesign:HintAssist.Hint="Popular"
-                            materialDesign:TextFieldAssist.SuffixText="type"
+							materialDesign:TextFieldAssist.SuffixText="type"
 							Height="30"
-                            Width="214"
-                            HorizontalAlignment="Left"
+							Width="214"
+							HorizontalAlignment="Left"
 							Margin="285,262,0,308"
-                            SelectionChanged="PopularColorChanged"
-                            DropDownClosed="DropDownClosed">
+							SelectionChanged="PopularColorChanged"
+							DropDownClosed="DropDownClosed">
                             <ComboBoxItem
-								Content="2003:	Aqua Sky" Background="#7BC4C4"/>
+								Content="2003:&#x9;Aqua Sky"
+								Background="#7BC4C4" />
                             <ComboBoxItem
-								Content="2004:	Tigerlily" Background="#E2583E"/>
+								Content="2004:&#x9;Tigerlily"
+								Background="#E2583E" />
                             <ComboBoxItem
-								Content="2005:	Blue Turquoise" Background="#53B0AE"/>
+								Content="2005:&#x9;Blue Turquoise"
+								Background="#53B0AE" />
                             <ComboBoxItem
-								Content="2006:	Sand Dollar" Background="#DECDBE"/>
+								Content="2006:&#x9;Sand Dollar"
+								Background="#DECDBE" />
                             <ComboBoxItem
-								Content="2007:	Chili Pepper" Background="#9B1B30"/>
+								Content="2007:&#x9;Chili Pepper"
+								Background="#9B1B30" />
                             <ComboBoxItem
-								Content="2008:	Blue Iris" Background="#5A5B9F"/>
+								Content="2008:&#x9;Blue Iris"
+								Background="#5A5B9F" />
                             <ComboBoxItem
-								Content="2009:	Mimosa" Background="#F0C05A"/>
+								Content="2009:&#x9;Mimosa"
+								Background="#F0C05A" />
                             <ComboBoxItem
-								Content="2010:	Turquoise" Background="#45B5AA"/>
+								Content="2010:&#x9;Turquoise"
+								Background="#45B5AA" />
                             <ComboBoxItem
-								Content="2011:	Honeysuckle" Background="#D94F70"/>
+								Content="2011:&#x9;Honeysuckle"
+								Background="#D94F70" />
                             <ComboBoxItem
-								Content="2012:	Tangerine Tango" Background="#DD4124"/>
+								Content="2012:&#x9;Tangerine Tango"
+								Background="#DD4124" />
                             <ComboBoxItem
-								Content="2013:	Emerald" Background="#009473"/>
+								Content="2013:&#x9;Emerald"
+								Background="#009473" />
                             <ComboBoxItem
-								Content="2014:	Radiant Orchid" Background="#B163A3"/>
+								Content="2014:&#x9;Radiant Orchid"
+								Background="#B163A3" />
                             <ComboBoxItem
-								Content="2015:	Marsala" Background="#955251"/>
+								Content="2015:&#x9;Marsala"
+								Background="#955251" />
                             <ComboBoxItem
-								Content="2016:	Serenity" Background="#92A8D1"/>
+								Content="2016:&#x9;Serenity"
+								Background="#92A8D1" />
                             <ComboBoxItem
-								Content="2016:	Rose Quartz" Background="#F7CAC9"/>
+								Content="2016:&#x9;Rose Quartz"
+								Background="#F7CAC9" />
                             <ComboBoxItem
-								Content="2017:	Greenery" Background="#88B04B"/>
+								Content="2017:&#x9;Greenery"
+								Background="#88B04B" />
                             <ComboBoxItem
-								Content="2018:	ULTRA VIOLET" Background="#5F4B8B"/>
+								Content="2018:&#x9;ULTRA VIOLET"
+								Background="#5F4B8B" />
                             <ComboBoxItem
-								Content="2019:	Living Coral" Background="#FF6F61"/>
+								Content="2019:&#x9;Living Coral"
+								Background="#FF6F61" />
                             <ComboBoxItem
-								Content="2020:	Classic Blue" Background="#0F4C81"/>
+								Content="2020:&#x9;Classic Blue"
+								Background="#0F4C81" />
                             <ComboBoxItem
-								Content="2021:	Ultimate Gray" Background="#939597"/>
+								Content="2021:&#x9;Ultimate Gray"
+								Background="#939597" />
                             <ComboBoxItem
-								Content="2021:	Illuminating" Background="#F5DF4D"/>
+								Content="2021:&#x9;Illuminating"
+								Background="#F5DF4D" />
                             <ComboBoxItem
-								Content="2022:	Very Peri" Background="#696AAD"/>
+								Content="2022:&#x9;Very Peri"
+								Background="#696AAD" />
                         </ComboBox>
                         <Button
 							Style="{StaticResource MaterialDesignRaisedButton}"
 							materialDesign:ButtonAssist.CornerRadius="10"
-                            Height="30"
-                            Width="80"
+							Height="30"
+							Width="80"
 							ToolTip="MaterialDesignRaisedButton with Round Corners"
-                            Content="Clear"
-                            FontSize="12"
-                            Click="ColorPaletteClear"
-                            HorizontalAlignment="Right"
-                            Margin="0,565,144,5">
-                        </Button>
+							Content="Clear"
+							FontSize="12"
+							Click="ColorPaletteClear"
+							HorizontalAlignment="Right"
+							Margin="0,565,144,5"></Button>
                         <Button
 							Style="{StaticResource MaterialDesignRaisedButton}"
 							materialDesign:ButtonAssist.CornerRadius="10"
-                            Height="30"
-                            Width="80"
-                            FontSize="12"
+							Height="30"
+							Width="80"
+							FontSize="12"
 							ToolTip="MaterialDesignRaisedButton with Round Corners"
-                            Content="Convert"
-                            Click="RGBConvert"
-                            HorizontalAlignment="Right"
-                            Margin="0,565,51,5">
-                        </Button>
+							Content="Convert"
+							Click="RGBConvert"
+							HorizontalAlignment="Right"
+							Margin="0,565,51,5"></Button>
                     </Grid>
                 </Grid>
             </StackPanel>

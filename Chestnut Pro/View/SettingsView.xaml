@@ -5,8 +5,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-    mc:Ignorable="d"
-    d:DesignHeight="850"
+	mc:Ignorable="d"
+	d:DesignHeight="850"
 	d:DesignWidth="1100"
 	Background="Transparent">
     <Border
@@ -22,7 +22,8 @@
                 <Grid
 					Height="60">
                     <!--Title-->
-                    <TextBlock Style="{StaticResource ControlTitleTextStyle}"
+                    <TextBlock
+						Style="{StaticResource ControlTitleTextStyle}"
 						Text="Settings" />
                 </Grid>
                 <Grid>
@@ -41,7 +42,8 @@
                     <Grid
 						Grid.Row="0"
 						Grid.Column="1">
-                        <TextBlock Style="{StaticResource ConfigurationTitleTextStyle}"
+                        <TextBlock
+							Style="{StaticResource ConfigurationTitleTextStyle}"
 							Text="About" />
                     </Grid>
                     <Grid
@@ -49,117 +51,133 @@
 						Grid.Column="1">
                         <StackPanel>
                             <materialDesign:Card
-                                UniformCornerRadius="5"
-                                HorizontalAlignment="Left"
-                                Width="1000"
-                                Background="White">
+								UniformCornerRadius="5"
+								HorizontalAlignment="Left"
+								Width="1000"
+								Background="White">
                                 <StackPanel
-                                    Margin="2">
+									Margin="2">
                                     <Expander
-                                        HorizontalAlignment="Stretch"
-                                        Background="White">
+										HorizontalAlignment="Stretch"
+										Background="White">
                                         <Expander.Header>
-                                            <StackPanel Orientation="Horizontal">
+                                            <StackPanel
+												Orientation="Horizontal">
                                                 <Image
-                                                    Source="\Assets\chestnut.ico"
-                                                    Stretch="Fill"
-                                                    Width="16"
-                                                    Height="16"
-                                                    Margin="0 0 10 0"/>
-                                                <StackPanel Orientation="Vertical">
+													Source="\Assets\chestnut.ico"
+													Stretch="Fill"
+													Width="16"
+													Height="16"
+													Margin="0 0 10 0" />
+                                                <StackPanel
+													Orientation="Vertical">
                                                     <TextBlock
-                                                        Text="Chestnut Pro"
-                                                        FontWeight="Bold"
-                                                        FontSize="12"/>
-                                                    <TextBlock Text="Integrate some commonly used tools"/>
+														Text="Chestnut Pro"
+														FontWeight="Bold"
+														FontSize="12" />
+                                                    <TextBlock
+														Text="Integrate some commonly used tools" />
                                                 </StackPanel>
                                             </StackPanel>
                                         </Expander.Header>
                                         <Expander.Content>
                                             <StackPanel
-                                                Orientation="Vertical"
-                                                TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
-                                                Margin="24,8,24,16">
+												Orientation="Vertical"
+												TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+												Margin="24,8,24,16">
                                                 <TextBlock
-                                                    TextWrapping="Wrap">
-                                                    <Span Foreground="Brown"><Bold>Chestnut Pro</Bold></Span> integrate tools commonly used
+													TextWrapping="Wrap">
+													<Span
+														Foreground="Brown">
+														<Bold>Chestnut Pro</Bold>
+													</Span> integrate tools commonly used
                                                     by soft engineer in the development, such as color palette,
                                                     number base converter, tsv file and csv file converter.
-                                                    No need to bookmark various tool sites.<LineBreak/><LineBreak/>
-                                                    <Bold>Many tools are available.</Bold><LineBreak/>
-                                                    &#x26AC; Number Base<LineBreak/>
-                                                    &#x26AC; GUID Generator<LineBreak/>
-                                                    &#x26AC; Color Palette<LineBreak/>
-                                                    &#x26AC; TSV/CSV Converter<LineBreak/>
-                                                </TextBlock>
+                                                    No need to bookmark various tool sites.<LineBreak /><LineBreak /><Bold>Many tools are available.</Bold><LineBreak />
+                                                    ⚬ Number Base<LineBreak />
+                                                    ⚬ GUID Generator<LineBreak />
+                                                    ⚬ Color Palette<LineBreak />
+                                                    ⚬ TSV/CSV Converter<LineBreak /></TextBlock>
                                             </StackPanel>
                                         </Expander.Content>
                                     </Expander>
                                 </StackPanel>
                             </materialDesign:Card>
                             <materialDesign:Card
-                                UniformCornerRadius="5"
-                                HorizontalAlignment="Left"
-                                Width="1000"
-                                Background="White"
-                                Margin="0 10 0 0">
+								UniformCornerRadius="5"
+								HorizontalAlignment="Left"
+								Width="1000"
+								Background="White"
+								Margin="0 10 0 0">
                                 <StackPanel
-                                    Margin="2">
+									Margin="2">
                                     <Expander
-                                        HorizontalAlignment="Stretch"
-                                        Background="White">
+										HorizontalAlignment="Stretch"
+										Background="White">
                                         <Expander.Header>
-                                            <StackPanel Orientation="Horizontal">
+                                            <StackPanel
+												Orientation="Horizontal">
                                                 <materialDesign:PackIcon
-                                                    Kind="LinkVariant"
-                                                    Height="16"
-                                                    Width="16"
-                                                    HorizontalAlignment="Center"
-                                                    VerticalAlignment="Center"
-                                                    Margin="0 0 10 0"/>
+													Kind="LinkVariant"
+													Height="16"
+													Width="16"
+													HorizontalAlignment="Center"
+													VerticalAlignment="Center"
+													Margin="0 0 10 0" />
                                                 <TextBlock
-                                                    Text="Useful Github Repo"
-                                                    FontWeight="Bold"
-                                                    FontSize="12"/>
+													Text="Useful Github Repo"
+													FontWeight="Bold"
+													FontSize="12" />
                                             </StackPanel>
                                         </Expander.Header>
                                         <Expander.Content>
                                             <WrapPanel
-                                                Orientation="Horizontal"
-                                                TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
-                                                Margin="24,8,24,16">
+												Orientation="Horizontal"
+												TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+												Margin="24,8,24,16">
                                                 <TextBlock
-                                                    Margin="35 0 0 0"
-                                                    FontWeight="Bold">
-                                                    <Hyperlink Foreground="Orange" NavigateUri="https://github.com/LyricYang/Chestnut-Pro" RequestNavigate="Hyperlink_RequestNavigate">
+													Margin="35 0 0 0"
+													FontWeight="Bold">
+													<Hyperlink
+														Foreground="Orange"
+														NavigateUri="https://github.com/LyricYang/Chestnut-Pro"
+														RequestNavigate="Hyperlink_RequestNavigate">
                                                         SourceCode
                                                     </Hyperlink>
                                                 </TextBlock>
                                                 <TextBlock
-                                                    Margin="35 0 0 0"
-                                                    FontWeight="Bold">
-                                                    <Hyperlink NavigateUri="https://github.com/veler/DevToys" RequestNavigate="Hyperlink_RequestNavigate">
+													Margin="35 0 0 0"
+													FontWeight="Bold">
+													<Hyperlink
+														NavigateUri="https://github.com/veler/DevToys"
+														RequestNavigate="Hyperlink_RequestNavigate">
                                                         DevToys
                                                     </Hyperlink>
                                                 </TextBlock>
                                                 <TextBlock
-                                                    Margin="35 0 0 0"
-                                                    FontWeight="Bold">
-                                                    <Hyperlink NavigateUri="https://github.com/microsoft/PowerToys" RequestNavigate="Hyperlink_RequestNavigate">
+													Margin="35 0 0 0"
+													FontWeight="Bold">
+													<Hyperlink
+														NavigateUri="https://github.com/microsoft/PowerToys"
+														RequestNavigate="Hyperlink_RequestNavigate">
                                                         PowerToys
                                                     </Hyperlink>
                                                 </TextBlock>
                                                 <TextBlock
-                                                    Margin="35 0 0 0"
-                                                    FontWeight="Bold">
-                                                    <Hyperlink NavigateUri="https://github.com/icsharpcode/AvalonEdit" RequestNavigate="Hyperlink_RequestNavigate">
+													Margin="35 0 0 0"
+													FontWeight="Bold">
+													<Hyperlink
+														NavigateUri="https://github.com/icsharpcode/AvalonEdit"
+														RequestNavigate="Hyperlink_RequestNavigate">
                                                         AvalonEdit
                                                     </Hyperlink>
                                                 </TextBlock>
                                                 <TextBlock
-                                                    Margin="35 0 0 0"
-                                                    FontWeight="Bold">
-                                                    <Hyperlink NavigateUri="https://github.com/microsoft/monaco-editor" RequestNavigate="Hyperlink_RequestNavigate">
+													Margin="35 0 0 0"
+													FontWeight="Bold">
+													<Hyperlink
+														NavigateUri="https://github.com/microsoft/monaco-editor"
+														RequestNavigate="Hyperlink_RequestNavigate">
                                                         MonacoEditor
                                                     </Hyperlink>
                                                 </TextBlock>

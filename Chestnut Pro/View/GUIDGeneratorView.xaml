@@ -9,54 +9,76 @@
 	d:DesignHeight="850"
 	d:DesignWidth="1100">
     <UserControl.Resources>
-        <Style x:Key="ConfigTag"
-               TargetType="materialDesign:PackIcon">
-            <Setter Property="Height"
-                    Value="25"/>
-            <Setter Property="Width"
-                    Value="25"/>
-            <Setter Property="Foreground"
-                    Value="Black"/>
-            <Setter Property="HorizontalAlignment"
-                    Value="Left"/>
-            <Setter Property="VerticalAlignment"
-                    Value="Center"/>
+        <Style
+			x:Key="ConfigTag"
+			TargetType="materialDesign:PackIcon">
+            <Setter
+				Property="Height"
+				Value="25" />
+            <Setter
+				Property="Width"
+				Value="25" />
+            <Setter
+				Property="Foreground"
+				Value="Black" />
+            <Setter
+				Property="HorizontalAlignment"
+				Value="Left" />
+            <Setter
+				Property="VerticalAlignment"
+				Value="Center" />
         </Style>
-        <Style x:Key="Content"
-               TargetType="{x:Type TextBlock}">
-            <Setter Property="FontSize"
-                    Value="14" />
-            <Setter Property="VerticalAlignment"
-                    Value="Center" />
-            <Setter Property="HorizontalAlignment"
-                    Value="Left" />
+        <Style
+			x:Key="Content"
+			TargetType="{x:Type TextBlock}">
+            <Setter
+				Property="FontSize"
+				Value="14" />
+            <Setter
+				Property="VerticalAlignment"
+				Value="Center" />
+            <Setter
+				Property="HorizontalAlignment"
+				Value="Left" />
         </Style>
-        <Style TargetType="{x:Type CheckBox}"
-               BasedOn="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}">
-            <Setter Property="HorizontalAlignment"
-                    Value="Right"/>
-            <Setter Property="IsChecked"
-                    Value="True"/>
-            <Setter Property="Margin"
-                    Value="0 0 30 0"/>
-            <Setter Property="Width"
-                    Value="80"/>
+        <Style
+			TargetType="{x:Type CheckBox}"
+			BasedOn="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}">
+            <Setter
+				Property="HorizontalAlignment"
+				Value="Right" />
+            <Setter
+				Property="IsChecked"
+				Value="True" />
+            <Setter
+				Property="Margin"
+				Value="0 0 30 0" />
+            <Setter
+				Property="Width"
+				Value="80" />
         </Style>
-        <Style x:Key="CommonButtonStyle"
-           TargetType="{x:Type Button}"
-           BasedOn="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}">
-            <Setter Property="Background"
-                Value="White" />
-            <Setter Property="BorderThickness"
-                Value="1,1,1,1" />
-            <Setter Property="Width"
-                Value="50" />
-            <Setter Property="Height"
-                Value="30" />
-            <Setter Property="HorizontalAlignment"
-                Value="Right" />
-            <Setter Property="BorderBrush"
-                Value="#C8C8C8" />
+        <Style
+			x:Key="CommonButtonStyle"
+			TargetType="{x:Type Button}"
+			BasedOn="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}">
+            <Setter
+				Property="Background"
+				Value="White" />
+            <Setter
+				Property="BorderThickness"
+				Value="1,1,1,1" />
+            <Setter
+				Property="Width"
+				Value="50" />
+            <Setter
+				Property="Height"
+				Value="30" />
+            <Setter
+				Property="HorizontalAlignment"
+				Value="Right" />
+            <Setter
+				Property="BorderBrush"
+				Value="#C8C8C8" />
         </Style>
     </UserControl.Resources>
     <Border
@@ -73,8 +95,8 @@
 					Height="60">
                     <!--Title-->
                     <TextBlock
-                        Style="{StaticResource ControlTitleTextStyle}"
-						Text="GUID Generator"/>
+						Style="{StaticResource ControlTitleTextStyle}"
+						Text="GUID Generator" />
                 </Grid>
                 <!--Configuration-->
                 <Grid>
@@ -97,7 +119,7 @@
 						Grid.Row="0"
 						Grid.Column="1">
                         <TextBlock
-                            Style="{StaticResource ConfigurationTitleTextStyle}"
+							Style="{StaticResource ConfigurationTitleTextStyle}"
 							Text="Configuration" />
                     </Grid>
                     <!--Parameter 1-->
@@ -131,7 +153,7 @@
 											Grid.Row="0"
 											Grid.Column="1">
                                             <materialDesign:PackIcon
-                                                Style="{StaticResource ConfigTag}"
+												Style="{StaticResource ConfigTag}"
 												Kind="FormatVerticalAlignBottom" />
                                         </Grid>
                                         <Grid
@@ -145,7 +167,7 @@
 											Grid.Row="0"
 											Grid.Column="3">
                                             <CheckBox
-                                                x:Name="Hyphens_Button"
+												x:Name="Hyphens_Button"
 												Content="Hyphens" />
                                         </Grid>
                                     </Grid>
@@ -184,7 +206,7 @@
 											Grid.Row="0"
 											Grid.Column="1">
                                             <materialDesign:PackIcon
-                                                Style="{StaticResource ConfigTag}"
+												Style="{StaticResource ConfigTag}"
 												Kind="FormatLetterCaseUpper" />
                                         </Grid>
                                         <Grid
@@ -198,7 +220,7 @@
 											Grid.Row="0"
 											Grid.Column="3">
                                             <CheckBox
-                                                x:Name="Uppercase_Button"
+												x:Name="Uppercase_Button"
 												IsChecked="False"
 												Content="Uppercase" />
                                         </Grid>
@@ -209,7 +231,8 @@
                     </Grid>
                 </Grid>
                 <!--Input&Output-->
-                <Grid Margin="0 30 0 0">
+                <Grid
+					Margin="0 30 0 0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition
 							Width="30" />
@@ -267,7 +290,7 @@
                         <TextBlock
 							Text="GUID(s)"
 							FontSize="14"
-                            FontWeight="DemiBold"
+							FontWeight="DemiBold"
 							Foreground="#1A1A1A"
 							HorizontalAlignment="Left"
 							VerticalAlignment="Bottom" />

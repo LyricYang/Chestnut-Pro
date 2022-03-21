@@ -11,23 +11,31 @@
 	d:DesignWidth="1100"
 	Background="Transparent">
     <UserControl.Resources>
-        <Style x:Key="CommonButtonStyle"
-           TargetType="{x:Type Button}"
-           BasedOn="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}">
-            <Setter Property="Background"
-                Value="White" />
-            <Setter Property="BorderThickness"
-                Value="1,1,1,1" />
-            <Setter Property="Width"
-                Value="50" />
-            <Setter Property="Height"
-                Value="30" />
-            <Setter Property="HorizontalAlignment"
-                Value="Right" />
-            <Setter Property="VerticalAlignment"
-                Value="Bottom" />
-            <Setter Property="BorderBrush"
-                Value="#C8C8C8" />
+        <Style
+			x:Key="CommonButtonStyle"
+			TargetType="{x:Type Button}"
+			BasedOn="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}">
+            <Setter
+				Property="Background"
+				Value="White" />
+            <Setter
+				Property="BorderThickness"
+				Value="1,1,1,1" />
+            <Setter
+				Property="Width"
+				Value="50" />
+            <Setter
+				Property="Height"
+				Value="30" />
+            <Setter
+				Property="HorizontalAlignment"
+				Value="Right" />
+            <Setter
+				Property="VerticalAlignment"
+				Value="Bottom" />
+            <Setter
+				Property="BorderBrush"
+				Value="#C8C8C8" />
         </Style>
     </UserControl.Resources>
     <Border
@@ -44,7 +52,7 @@
 					Height="60">
                     <!--Title-->
                     <TextBlock
-                        Style="{StaticResource ControlTitleTextStyle}"
+						Style="{StaticResource ControlTitleTextStyle}"
 						Text="JSON Formatter" />
                 </Grid>
                 <!--Configuration-->
@@ -66,7 +74,7 @@
 						Grid.Row="0"
 						Grid.Column="1">
                         <TextBlock
-                            Style="{StaticResource ConfigurationTitleTextStyle}"
+							Style="{StaticResource ConfigurationTitleTextStyle}"
 							Text="Configuration" />
                     </Grid>
                     <!--Parameter 1-->
@@ -97,40 +105,39 @@
 												Height="60" />
                                         </Grid.RowDefinitions>
                                         <materialDesign:PackIcon
-                                                Grid.Row="0"
-											    Grid.Column="1"
-												Kind="ArrowExpandHorizontal"
-												Foreground="Black"
-												Height="25"
-												Width="25"
-												HorizontalAlignment="Left"
-												VerticalAlignment="Center" />
+											Grid.Row="0"
+											Grid.Column="1"
+											Kind="ArrowExpandHorizontal"
+											Foreground="Black"
+											Height="25"
+											Width="25"
+											HorizontalAlignment="Left"
+											VerticalAlignment="Center" />
                                         <TextBlock
-                                                Grid.Row="0"
-											    Grid.Column="2"
-												HorizontalAlignment="Left"
-                                                VerticalAlignment="Center"
-												FontSize="14"
-												Text="Indentation"/>
-
+											Grid.Row="0"
+											Grid.Column="2"
+											HorizontalAlignment="Left"
+											VerticalAlignment="Center"
+											FontSize="14"
+											Text="Indentation" />
                                         <ComboBox
-                                            Grid.Row="0"
+											Grid.Row="0"
 											Grid.Column="3"
-                                            x:Name="JsonFormatComboBox"
-                                            materialDesign:HintAssist.Hint="Some item"
-                                            HorizontalAlignment="Right"
-                                            Height="30"
-                                            Width="80"
-                                            Margin="0 0 30 0">
+											x:Name="JsonFormatComboBox"
+											materialDesign:HintAssist.Hint="Some item"
+											HorizontalAlignment="Right"
+											Height="30"
+											Width="80"
+											Margin="0 0 30 0">
                                             <ComboBoxItem
-								                Content="2 spaces"
-								                IsSelected="True" />
+												Content="2 spaces"
+												IsSelected="True" />
                                             <ComboBoxItem
-								                Content="4 spaces" />
+												Content="4 spaces" />
                                             <ComboBoxItem
-								                Content="1 tab" />
+												Content="1 tab" />
                                             <ComboBoxItem
-								                Content="Minified" />
+												Content="Minified" />
                                         </ComboBox>
                                     </Grid>
                                 </StackPanel>
@@ -162,48 +169,55 @@
 						Grid.Row="0"
 						Grid.Column="1">
                         <TextBlock
-                            Style="{StaticResource ConfigurationTitleTextStyle}"
+							Style="{StaticResource ConfigurationTitleTextStyle}"
 							Text="Input"
-                            VerticalAlignment="Bottom"/>
+							VerticalAlignment="Bottom" />
                         <Button
 							Content="{materialDesign:PackIcon CursorDefaultClick}"
 							ToolTip="Convert"
 							Style="{StaticResource CommonButtonStyle}"
 							Margin="0 0 60 0"
-                            Click="JsonFormat"/>
+							Click="JsonFormat" />
                         <Button
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
 							Style="{StaticResource CommonButtonStyle}"
-                            Click="JsonClear"/>
+							Click="JsonClear" />
                     </Grid>
                     <Grid
 						Grid.Row="1"
 						Grid.Column="1">
                         <Border
-		                    BorderBrush="#C8C8C8"
-		                    Background="#FCFCFC"
-		                    BorderThickness="1,1,1,1"
-                            Height="525"
-		                    CornerRadius="5">
-                                <avalonEdit:TextEditor
-                                    Name="JsonInput_Box"
-                                    FontFamily="Consolas"
-                                    SyntaxHighlighting="Json"
-                                    Height="520"
-                                    FontSize="10pt"
-                                    Background="#FCFCFC"/>
+							BorderBrush="#C8C8C8"
+							Background="#FCFCFC"
+							BorderThickness="1,1,1,1"
+							Height="525"
+							CornerRadius="5">
+                            <avalonEdit:TextEditor
+								Name="JsonInput_Box"
+								FontFamily="Consolas"
+								SyntaxHighlighting="Json"
+								Height="520"
+								FontSize="10pt"
+								Background="#FCFCFC" />
                         </Border>
                     </Grid>
-                    <GridSplitter Grid.Row="1" Grid.Column="2" Width="5" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                    <GridSplitter
+						Grid.Row="1"
+						Grid.Column="2"
+						Width="5"
+						HorizontalAlignment="Center"
+						VerticalAlignment="Stretch">
                         <GridSplitter.Template>
-                            <ControlTemplate TargetType="{x:Type GridSplitter}">
+                            <ControlTemplate
+								TargetType="{x:Type GridSplitter}">
                                 <Grid>
                                     <TextBlock
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center"
-                                        Text="⁞" />
-                                    <Rectangle Fill="#00FFFFFF" />
+										HorizontalAlignment="Center"
+										VerticalAlignment="Center"
+										Text="⁞" />
+                                    <Rectangle
+										Fill="#00FFFFFF" />
                                 </Grid>
                             </ControlTemplate>
                         </GridSplitter.Template>
@@ -212,31 +226,31 @@
 						Grid.Row="0"
 						Grid.Column="3">
                         <TextBlock
-                            Style="{StaticResource ConfigurationTitleTextStyle}"
+							Style="{StaticResource ConfigurationTitleTextStyle}"
 							Text="Output"
-                            VerticalAlignment="Bottom"/>
+							VerticalAlignment="Bottom" />
                         <Button
 							Content="{materialDesign:PackIcon ContentCopy}"
 							ToolTip="Copy"
 							Style="{StaticResource CommonButtonStyle}"
-                            Click="JsonCopy"/>
+							Click="JsonCopy" />
                     </Grid>
                     <Grid
 						Grid.Row="1"
 						Grid.Column="3">
                         <Border
-		                    BorderBrush="#C8C8C8"
-		                    Background="#FCFCFC"
-		                    BorderThickness="1,1,1,1"
-                            Height="525"
-		                    CornerRadius="5">
-                                <avalonEdit:TextEditor
-                                    Name="JsonOutput_Box"
-                                    FontFamily="Consolas"
-                                    SyntaxHighlighting="Json"
-                                    Height="520"
-                                    FontSize="10pt"
-                                    Background="#FCFCFC"/>
+							BorderBrush="#C8C8C8"
+							Background="#FCFCFC"
+							BorderThickness="1,1,1,1"
+							Height="525"
+							CornerRadius="5">
+                            <avalonEdit:TextEditor
+								Name="JsonOutput_Box"
+								FontFamily="Consolas"
+								SyntaxHighlighting="Json"
+								Height="520"
+								FontSize="10pt"
+								Background="#FCFCFC" />
                         </Border>
                     </Grid>
                 </Grid>
