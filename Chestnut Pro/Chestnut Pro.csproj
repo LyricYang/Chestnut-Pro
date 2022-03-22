@@ -18,6 +18,8 @@
     <None Remove="Assets\dashboard.png" />
     <None Remove="Assets\guid.png" />
     <None Remove="Assets\home.png" />
+    <None Remove="Assets\indentleft.png" />
+    <None Remove="Assets\indentright.png" />
     <None Remove="Assets\india.png" />
     <None Remove="Assets\jsonformat.png" />
     <None Remove="Assets\number-base.png" />
@@ -53,6 +55,8 @@
   <ItemGroup>
     <Resource Include="Assets\guid.png" />
     <Resource Include="Assets\home.png" />
+    <Resource Include="Assets\indentleft.png" />
+    <Resource Include="Assets\indentright.png" />
     <Resource Include="Assets\india.png" />
     <Resource Include="Assets\jsonformat.png" />
     <Resource Include="Assets\number-base.png" />

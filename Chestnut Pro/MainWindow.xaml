@@ -8,112 +8,114 @@
 	mc:Ignorable="d"
 	Title="Chestnut Pro"
 	Height="888"
-	Width="1330"
+	Width="1160"
     MinHeight="888"
-    MinWidth="1330"
+	MinWidth="1160"
 	x:Name="DashboardWindow"
 	WindowStartupLocation="CenterScreen"
 	ResizeMode="CanResize"
-    Background="#FCFCFC">
+	Background="#FCFCFC">
     <!--Setting the DataContext (Binding Source)-->
     <Window.DataContext>
         <vm:NavigationViewModel />
     </Window.DataContext>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="1313*"/>
-        </Grid.ColumnDefinitions>
         <!--Content Grid-->
-        <Grid Grid.ColumnSpan="2">
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition
-					Width="25" />
+					Width="*" />
                 <ColumnDefinition
-					Width="20" />
-                <ColumnDefinition
-                    Width="160"/>
-                <ColumnDefinition
-					Width="10" />
-                <ColumnDefinition
-					Width="660" />
-                <ColumnDefinition
-					Width="25" />
+					Width="1100" />
             </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition
-					Height="0" />
-                <RowDefinition
-					Height="10" />
-                <RowDefinition
-					Height="55" />
-                <RowDefinition
-					Height="370" />
-                <RowDefinition
-					Height="*" />
-            </Grid.RowDefinitions>
             <!--Menu Search Box-->
             <Grid
-				Grid.Row="2"
-				Grid.Column="1" Grid.ColumnSpan="2">
-                <TextBox
-					x:Name="SearchBox"
-					Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}"
-					Style="{StaticResource SearchBoxStyle}" />
-                <TextBlock
-					Text="Type to search..."
-					Style="{StaticResource SearchTextStyle}" />
+                Width="190"
+				Grid.Row="0"
+				Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="55" />
+                    <RowDefinition
+						Height="370" />
+                    <RowDefinition
+						Height="*" />
+                </Grid.RowDefinitions>
+                <Grid
+					Grid.Row="0"
+					Grid.Column="0"
+					Margin="2 10 0 0">
+                    <Button
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+						Background="Transparent"
+						BorderBrush="Transparent"
+						Click="CollapseClick">
+                        <Image
+							Height="16"
+							Width="16"
+							Source="\Assets\indentleft.png" />
+                    </Button>
+                    <TextBox
+						x:Name="SearchBox"
+						Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}"
+						Style="{StaticResource SearchBoxStyle}"
+						HorizontalAlignment="Right"
+						Margin="0 0 5 0" />
+                    <TextBlock
+						Text="Type to search..."
+						Style="{StaticResource SearchTextStyle}"
+						HorizontalAlignment="Center" />
+                </Grid>
+                <!--Menu-->
+                <ItemsControl
+					Grid.Row="1"
+					Grid.Column="0"
+					ItemsSource="{Binding SourceCollection}"
+					Margin="5 0 0 0">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <RadioButton
+									Content="{Binding MenuName}"
+									Tag="{Binding MenuImage}"
+									CommandParameter="{Binding MenuName}"
+									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
+									Style="{StaticResource MenuButtonStyle}"
+									GroupName="MenuGroup" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <Grid
+					Grid.Row="2"
+					Grid.Column="0">
+                    <StackPanel>
+                        <RadioButton
+							Content="Dashboard"
+							Tag="\Assets\dashboard.png"
+							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.DashboardCommand}"
+							Style="{StaticResource MenuButtonStyle}"
+							GroupName="MenuGroup"
+							Margin="5 300 0 0" />
+                        <RadioButton
+							Content="Settings"
+							Tag="\Assets\settings.png"
+							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.SettingsCommand}"
+							Style="{StaticResource MenuButtonStyle}"
+							GroupName="MenuGroup"
+							Margin="5 2 0 0" />
+                    </StackPanel>
+                </Grid>
             </Grid>
-            <!--Menu-->
-            <ItemsControl
-                Grid.Row="3"
-				Grid.Column="1" Grid.ColumnSpan="2"
-                ItemsSource="{Binding SourceCollection}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <RadioButton
-								Content="{Binding MenuName}"
-								Tag="{Binding MenuImage}"
-								CommandParameter="{Binding MenuName}"
-								Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
-								Style="{StaticResource MenuButtonStyle}"
-								GroupName="MenuGroup" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
             <!--Page Container-->
-            <Grid
-				Grid.Row="2"
-				Grid.Column="4"
-				Grid.RowSpan="2"
-				Background="Transparent">
-                <ContentControl
-					x:Name="Pages"
-					Content="{Binding SelectedViewModel}"
-					Margin="0,0,-440,-415"
-					Grid.ColumnSpan="2" />
-            </Grid>
-            <Grid
-                Grid.Row="4"
-				Grid.Column="1" Grid.ColumnSpan="2">
-                <StackPanel>
-                    <RadioButton
-						Content="Dashboard"
-						Tag="\Assets\dashboard.png"
-						Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.DashboardCommand}"
-						Style="{StaticResource MenuButtonStyle}"
-						GroupName="MenuGroup"
-                        Margin="0 300 0 0"/>
-                    <RadioButton
-						Content="Settings"
-						Tag="\Assets\settings.png"
-						Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.SettingsCommand}"
-						Style="{StaticResource MenuButtonStyle}"
-						GroupName="MenuGroup"/>
-                </StackPanel>
-            </Grid>
+            <ContentControl
+				Grid.Row="0"
+				Grid.Column="1"
+				Grid.RowSpan="3"
+				x:Name="Pages"
+				Content="{Binding SelectedViewModel}"
+				Margin="0,10,0,0" />
         </Grid>
     </Grid>
 </Window>
