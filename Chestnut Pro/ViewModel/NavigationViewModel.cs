@@ -33,15 +33,15 @@
             // get added, removed, or when the whole list is refreshed.
             ObservableCollection<MenuItems> menuItems = new ()
             {
-                new () { MenuName = "All Tools",         MenuImage = @"Assets/tools-hardware.png" },
-                new () { MenuName = "Number Base",       MenuImage = @"Assets/number-base.png" },
-                new () { MenuName = "GUID Generator",    MenuImage = @"Assets/guid.png" },
-                new () { MenuName = "Base64 Generator",  MenuImage = @"Assets/base64.png" },
-                new () { MenuName = "Epoch Converter",   MenuImage = @"Assets/timestamp.png" },
-                new () { MenuName = "JSON Formatter",    MenuImage = @"Assets/jsonformat.png" },
-                new () { MenuName = "XML Formatter",     MenuImage = @"Assets/xml.png" },
-                new () { MenuName = "TSV/CSV Converter", MenuImage = @"Assets/csv.png" },
-                new () { MenuName = "Color Palette",     MenuImage = @"Assets/palette.png" },
+                new () { MenuName = "All Tools",  MenuImage = @"Assets/tools-hardware.png" },
+                new () { MenuName = "NumberBase", MenuImage = @"Assets/number-base.png" },
+                new () { MenuName = "Epoch",      MenuImage = @"Assets/timestamp.png" },
+                new () { MenuName = "TSV/CSV",    MenuImage = @"Assets/csv.png" },
+                new () { MenuName = "Palette",    MenuImage = @"Assets/palette.png" },
+                new () { MenuName = "GUID",       MenuImage = @"Assets/guid.png" },
+                new () { MenuName = "Base64",     MenuImage = @"Assets/base64.png" },
+                new () { MenuName = "JSON",       MenuImage = @"Assets/jsonformat.png" },
+                new () { MenuName = "XML",        MenuImage = @"Assets/xml.png" },
             };
 
             MenuItemsCollection = new CollectionViewSource { Source = menuItems };
@@ -119,35 +119,35 @@
                 case "All Tools":
                     SelectedViewModel = new AllToolsViewModel();
                     break;
-                case "Number Base":
+                case "NumberBase":
                     SelectedViewModel = new NumberBaseViewModel();
                     break;
-                case "GUID Generator":
+                case "GUID":
                     SelectedViewModel = new GUIDGeneratorViewModel();
                     break;
-                case "Base64 Generator":
+                case "Base64":
                     SelectedViewModel = new Base64ViewModel();
                     break;
-                case "Color Palette":
+                case "Palette":
                     SelectedViewModel = new ColorPaletteViewModel();
                     break;
-                case "TSV/CSV Converter":
+                case "TSV/CSV":
                     SelectedViewModel = new TSVCSVViewModel();
                     break;
-                case "JSON Formatter":
+                case "JSON":
                     SelectedViewModel = new JsonFormatterViewModel();
                     break;
-                case "XML Formatter":
+                case "XML":
                     SelectedViewModel = new XmlFormatterViewModel();
                     break;
-                case "Epoch Converter":
+                case "Epoch":
                     SelectedViewModel = new EpochViewModel();
                     break;
                 case "Dashboard":
                     SelectedViewModel = new DashboardViewModel();
                     break;
                 default:
-                    SelectedViewModel = new DashboardViewModel();
+                    SelectedViewModel = new AllToolsViewModel();
                     break;
             }
         }
