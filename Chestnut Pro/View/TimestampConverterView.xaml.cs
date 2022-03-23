@@ -39,7 +39,7 @@
         }
 
         /// <summary>
-        ///
+        /// Unix to date time
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -54,6 +54,11 @@
             }
         }
 
+        /// <summary>
+        /// Date time to unix timestamp
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DateTimeToUnix(object sender, System.Windows.RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(DatePick?.Text) && !string.IsNullOrEmpty(TimePick?.Text))
@@ -62,6 +67,45 @@
                 var datetime = DateTime.Parse(timePicker).ToUniversalTime();
                 var timestamp = (datetime.Ticks - 621355968000000000) / 10000;
                 UnixTimestamp.Text = timestamp.ToString();
+            }
+        }
+
+        /// <summary>
+        /// calculate difference between days
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CalculateDifference(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(FromDate?.Text) && !string.IsNullOrEmpty(ToDate?.Text))
+            {
+                var fromDate = DateTime.Parse(FromDate.Text);
+                var toDate = DateTime.Parse(ToDate.Text);
+
+                if (toDate > fromDate)
+                {
+                    Difference.Text = (toDate - fromDate).TotalDays.ToString();
+                }
+            }
+        }
+
+        private void CalculateFromToDate(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(Difference?.Text))
+            {
+                var diff = Convert.ToInt32(Difference.Text);
+                if (!string.IsNullOrEmpty(FromDate?.Text))
+                {
+                    var fromDate = DateTime.Parse(FromDate.Text);
+                    var toDate = fromDate.AddDays(diff);
+                    ToDate.Text = toDate.ToString("MM/dd/yyyy");
+                }
+                else if (!string.IsNullOrEmpty(ToDate?.Text))
+                {
+                    var toDate = DateTime.Parse(ToDate.Text);
+                    var fromDate = toDate.AddDays(-diff);
+                    FromDate.Text = fromDate.ToString("MM/dd/yyyy");
+                }
             }
         }
     }
