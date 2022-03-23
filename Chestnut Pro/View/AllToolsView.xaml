@@ -237,21 +237,22 @@
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>
-                        <!--JSON Converter-->
+                        <!--XML Formatter-->
                         <materialDesign:Card
 							Style="{StaticResource ToolCard}"
 							Margin="30">
                             <StackPanel
 								Margin="10">
                                 <materialDesign:PackIcon
-									Kind="CodeJson" />
+									Kind="Xml" />
                                 <TextBlock
 									Style="{StaticResource Title}"
-									Text="JSON Converter" />
+									Text="XML Formatter" />
                                 <TextBlock
 									Style="{StaticResource Content}"
-									Text="Indent or minify JSON&#xA;data" />
-                                <Button>
+									Text="Indent or minify XML&#xA;data" />
+                                <Button
+                                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.XMLFormatterCommand}">
                                     <materialDesign:PackIcon
 										Kind="DotsHorizontal" />
                                 </Button>

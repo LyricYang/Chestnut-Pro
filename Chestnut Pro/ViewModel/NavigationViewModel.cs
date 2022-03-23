@@ -265,6 +265,26 @@
             }
         }
 
+        // ============================== Show XML Formatter View =============================================
+        public void XMLFormatterView()
+        {
+            SelectedViewModel = new XMLFormatterViewModel();
+        }
+
+        // This PC button Command
+        private ICommand _XMLFormatterCommand;
+        public ICommand XMLFormatterCommand
+        {
+            get
+            {
+                if (_XMLFormatterCommand == null)
+                {
+                    _XMLFormatterCommand = new RelayCommand(param => XMLFormatterView());
+                }
+                return _XMLFormatterCommand;
+            }
+        }
+
         // ============================== Show TSV/CSV Converter View =============================================
         public void TSVCSVConverterView()
         {
