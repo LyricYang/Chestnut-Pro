@@ -6,9 +6,9 @@ namespace Chestnut_Pro.View
     /// <summary>
     /// Interaction logic for HomeView.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class DashboardView : UserControl
     {
-        public HomeView()
+        public DashboardView()
         {
             InitializeComponent();
         }

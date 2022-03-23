@@ -2,9 +2,9 @@
 {
     using System.ComponentModel;
 
-    public class TimestampConverterViewModel : INotifyPropertyChanged
+    public class EpochViewModel : INotifyPropertyChanged
     {
-        public TimestampConverterViewModel()
+        public EpochViewModel()
         {
         }
 

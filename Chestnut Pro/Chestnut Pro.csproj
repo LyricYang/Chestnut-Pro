@@ -72,10 +72,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="View\AllToolsView.xaml.cs">
+    <Compile Update="View\Common\AllToolsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\SettingsView.xaml.cs">
+    <Compile Update="View\Common\SettingsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -87,26 +87,26 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="View\AllToolsView.xaml">
+    <Page Update="View\Common\AllToolsView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\XmlFormatterView.xaml">
+    <Page Update="View\Formatter\XmlFormatterView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\TimestampConverterView.xaml">
+    <Page Update="View\Converter\EpochView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\JsonFormatterView.xaml">
+    <Page Update="View\Formatter\JsonFormatterView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Base64View.xaml">
+    <Page Update="View\Encode\Base64View.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
-    <Page Update="View\SettingsView.xaml">
+    <Page Update="View\Common\SettingsView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>

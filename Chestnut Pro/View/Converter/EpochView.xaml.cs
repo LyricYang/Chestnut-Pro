@@ -6,14 +6,14 @@
     /// <summary>
     /// Interaction logic for DocumentView.xaml
     /// </summary>
-    public partial class TimestampConverterView : UserControl
+    public partial class EpochView : UserControl
     {
         System.Windows.Threading.DispatcherTimer Timer = new System.Windows.Threading.DispatcherTimer();
 
         /// <summary>
         /// The Constructor
         /// </summary>
-        public TimestampConverterView()
+        public EpochView()
         {
             InitializeComponent();
             Timer.Tick += new EventHandler(TimeClick);

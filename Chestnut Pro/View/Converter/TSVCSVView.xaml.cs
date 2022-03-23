@@ -11,12 +11,12 @@
     /// <summary>
     /// Interaction logic for TSVCSVConverterView.xaml
     /// </summary>
-    public partial class TSVCSVConverterView : UserControl
+    public partial class TSVCSVView : UserControl
     {
         private const string TSV = ".tsv";
         private const string CSV = ".csv";
 
-        public TSVCSVConverterView()
+        public TSVCSVView()
         {
             InitializeComponent();
         }

@@ -2,9 +2,9 @@
 {
     using System.ComponentModel;
 
-    public class XMLFormatterViewModel : INotifyPropertyChanged
+    public class XmlFormatterViewModel : INotifyPropertyChanged
     {
-        public XMLFormatterViewModel()
+        public XmlFormatterViewModel()
         {
         }
 

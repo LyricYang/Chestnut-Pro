@@ -2,9 +2,9 @@
 {
     using System.ComponentModel;
 
-    public class TSVCSVConverterViewModel : INotifyPropertyChanged
+    public class TSVCSVViewModel : INotifyPropertyChanged
     {
-        public TSVCSVConverterViewModel()
+        public TSVCSVViewModel()
         {
         }
 

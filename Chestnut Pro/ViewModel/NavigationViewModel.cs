@@ -132,22 +132,22 @@
                     SelectedViewModel = new ColorPaletteViewModel();
                     break;
                 case "TSV/CSV Converter":
-                    SelectedViewModel = new TSVCSVConverterViewModel();
+                    SelectedViewModel = new TSVCSVViewModel();
                     break;
                 case "JSON Formatter":
                     SelectedViewModel = new JsonFormatterViewModel();
                     break;
                 case "XML Formatter":
-                    SelectedViewModel = new XMLFormatterViewModel();
+                    SelectedViewModel = new XmlFormatterViewModel();
                     break;
                 case "Epoch Converter":
-                    SelectedViewModel = new TimestampConverterViewModel();
+                    SelectedViewModel = new EpochViewModel();
                     break;
                 case "Dashboard":
-                    SelectedViewModel = new HomeViewModel();
+                    SelectedViewModel = new DashboardViewModel();
                     break;
                 default:
-                    SelectedViewModel = new HomeViewModel();
+                    SelectedViewModel = new DashboardViewModel();
                     break;
             }
         }
@@ -268,7 +268,7 @@
         // ============================== Show XML Formatter View =============================================
         public void XMLFormatterView()
         {
-            SelectedViewModel = new XMLFormatterViewModel();
+            SelectedViewModel = new XmlFormatterViewModel();
         }
 
         // This PC button Command
@@ -288,7 +288,7 @@
         // ============================== Show TSV/CSV Converter View =============================================
         public void TSVCSVConverterView()
         {
-            SelectedViewModel = new TSVCSVConverterViewModel();
+            SelectedViewModel = new TSVCSVViewModel();
         }
 
         // This PC button Command
@@ -328,7 +328,7 @@
         // ============================== Show Settings View =============================================
         public void DashboardView()
         {
-            SelectedViewModel = new HomeViewModel();
+            SelectedViewModel = new DashboardViewModel();
         }
 
         // This PC button Command
@@ -348,7 +348,7 @@
         // ============================== Show Settings View =============================================
         public void EpochConverterView()
         {
-            SelectedViewModel = new TimestampConverterViewModel();
+            SelectedViewModel = new EpochViewModel();
         }
 
         // This PC button Command

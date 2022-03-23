@@ -9,7 +9,7 @@
     using LiveCharts.Defaults;
     using LiveCharts.Wpf;
 
-    public class HomeViewModel : INotifyPropertyChanged
+    public class DashboardViewModel : INotifyPropertyChanged
     {
         public SeriesCollection SeriesCollection { get; set; }
         public SeriesCollection LastHourSeries { get; set; }
@@ -18,7 +18,7 @@
         public Func<double, string> Formatter { get; set; }
 
 
-        public HomeViewModel()
+        public DashboardViewModel()
         {
             dynamic data = FileUtils.ReadJsonFile(AppDomain.CurrentDomain.BaseDirectory + Constants.JSON_DATA_FILE_PATH);
             // overhead
