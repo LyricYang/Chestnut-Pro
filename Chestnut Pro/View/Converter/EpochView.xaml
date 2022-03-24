@@ -47,6 +47,8 @@
 							Height="50" />
                         <RowDefinition
 							Height="60" />
+                        <RowDefinition
+							Height="400" />
                     </Grid.RowDefinitions>
                     <!--Configuration Title-->
                     <TextBlock

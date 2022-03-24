@@ -39,6 +39,7 @@
                 new () { MenuName = "TSV/CSV",    MenuImage = @"Assets/csv.png" },
                 new () { MenuName = "Palette",    MenuImage = @"Assets/palette.png" },
                 new () { MenuName = "GUID",       MenuImage = @"Assets/guid.png" },
+                new () { MenuName = "Chart",      MenuImage = @"Assets/chart.png" },
                 new () { MenuName = "Base64",     MenuImage = @"Assets/base64.png" },
                 new () { MenuName = "JSON",       MenuImage = @"Assets/jsonformat.png" },
                 new () { MenuName = "XML",        MenuImage = @"Assets/xml.png" },
@@ -124,6 +125,9 @@
                     break;
                 case "GUID":
                     SelectedViewModel = new GUIDGeneratorViewModel();
+                    break;
+                case "Chart":
+                    SelectedViewModel = new ChartGeneratorViewModel();
                     break;
                 case "Base64":
                     SelectedViewModel = new Base64ViewModel();

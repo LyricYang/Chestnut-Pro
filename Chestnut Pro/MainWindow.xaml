@@ -37,7 +37,7 @@
                     <RowDefinition
 						Height="55" />
                     <RowDefinition
-						Height="370" />
+						Height="600" />
                     <RowDefinition
 						Height="*" />
                 </Grid.RowDefinitions>
@@ -97,7 +97,7 @@
 							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.DashboardCommand}"
 							Style="{StaticResource MenuButtonStyle}"
 							GroupName="MenuGroup"
-							Margin="5 300 0 0" />
+							Margin="5 70 0 0" />
                         <RadioButton
 							Content="Settings"
 							Tag="\Assets\settings.png"

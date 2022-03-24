@@ -8,14 +8,19 @@ namespace Chestnut_Pro.Model
 {
     public class ChartModel
     {
-        public ChartModel(DateTime dateTime, int v)
+        public ChartModel(string source, string destination, int v)
         {
-            DateTime = dateTime;
+            this.Source = source;
+            this.Destination = destination;
             this.Value = v;
         }
 
-        public DateTime DateTime { get; set; }
+        public string Source { get; set; }
+
+        public string Destination { get; set; }
 
         public int Value { get; set; }
+
+        public bool Visiable { get; set; } = true;
     }
 }

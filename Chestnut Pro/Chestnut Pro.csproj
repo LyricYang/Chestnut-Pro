@@ -12,6 +12,7 @@
   <ItemGroup>
     <None Remove="Assets\avatar1.jpg" />
     <None Remove="Assets\base64.png" />
+    <None Remove="Assets\chart.png" />
     <None Remove="Assets\chestnut.ico" />
     <None Remove="Assets\china.png" />
     <None Remove="Assets\csv.png" />
@@ -37,6 +38,7 @@
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="MaterialDesignColors" Version="2.0.4" />
     <PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1150.38" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
@@ -44,6 +46,7 @@
     <Resource Include="Assets\avatar1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\chart.png" />
     <Resource Include="Assets\chestnut.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -84,6 +87,9 @@
     <None Update="Data\Data.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Data\test.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -109,6 +115,9 @@
     <Page Update="View\Common\SettingsView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Generator\ChartGeneratorView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
   </ItemGroup>
 
