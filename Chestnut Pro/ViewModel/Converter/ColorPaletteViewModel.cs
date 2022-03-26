@@ -293,7 +293,6 @@
 
             PaletteColorsRow2Collection = new()
             {
-
                 new() { ColorHex = "#efebe9" },
                 new() { ColorHex = "#d7ccc8" },
                 new() { ColorHex = "#bcaaa4" },

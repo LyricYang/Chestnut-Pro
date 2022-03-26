@@ -1,26 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Chestnut_Pro.Model
+﻿namespace Chestnut_Pro.Model
 {
-    public class ChartModel
+    using System.ComponentModel;
+    using System.Runtime.CompilerServices;
+
+    public class ChartModel : INotifyPropertyChanged
     {
-        public ChartModel(string source, string destination, int v)
+        private string source;
+        public string Source
         {
-            this.Source = source;
-            this.Destination = destination;
-            this.Value = v;
+            get { return source; }
+            set { source = value; RaiseProperChanged(); }
         }
 
-        public string Source { get; set; }
+        private string destination;
+        public string Destination
+        {
+            get { return destination; }
+            set { destination = value; RaiseProperChanged(); }
+        }
 
-        public string Destination { get; set; }
+        public int? value;
+        public int? Value
+        {
+            get { return value; }
+            set { this.value = value; RaiseProperChanged(); }
+        }
 
-        public int Value { get; set; }
+        private bool visible;
+        public bool Visible
+        {
+            get { return visible; }
+            set { visible = value; RaiseProperChanged(); }
+        }
 
-        public bool Visiable { get; set; } = true;
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void RaiseProperChanged([CallerMemberName] string caller = "")
+        {
+
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(caller));
+            }
+        }
     }
 }

@@ -5,10 +5,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:vm="clr-namespace:Chestnut_Pro.ViewModel"
     xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
 	mc:Ignorable="d"
 	d:DesignHeight="850"
-	d:DesignWidth="1100">
+	d:DesignWidth="1100"
+    x:Name="chart">
+    <UserControl.DataContext>
+        <vm:ChartGeneratorViewModel />
+    </UserControl.DataContext>
     <Border
 		BorderBrush="#C8C8C8"
 		Background="#FCFCFC"
@@ -38,7 +43,7 @@
                         <RowDefinition
 							Height="50" />
                         <RowDefinition
-							Height="220" />
+							Height="250" />
                         <RowDefinition
 							Height="40" />
                         <RowDefinition
@@ -50,47 +55,91 @@
                         <TextBlock
 							Style="{StaticResource ConfigurationTitleTextStyle}"
 							Text="Data Source" />
+                        <TextBlock
+							Style="{StaticResource ConfigurationTitleTextStyle}"
+							Text="Configuration"
+							Margin="520 0 0 0" />
                     </Grid>
                     <Grid
 						Grid.Row="1"
 						Grid.Column="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition
-							Width="500" />
+								Width="500" />
                             <ColumnDefinition
-							Width="*" />
+								Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Border
-                            Grid.Row="0"
-						    Grid.Column="0"
-						    BorderBrush="#C8C8C8"
-						    BorderThickness="1,1,1,1"
-						    CornerRadius="5">
-                            <DataGrid
-                                Name="SouceData"
-                                Height="210"
-                                Width="500"
-                                HorizontalAlignment="Left"
-                                Margin="2 2 2 2"
-                                VerticalAlignment="Top"/>
-                        </Border>
+                        <Grid
+							Grid.Row="0"
+							Grid.Column="0">
+                            <StackPanel>
+                                <Border
+									BorderBrush="#C8C8C8"
+									BorderThickness="1,1,1,1"
+									CornerRadius="5">
+                                    <DataGrid
+										Name="SourceData"
+										Height="200"
+										Width="500"
+										HorizontalAlignment="Left"
+										Margin="2 2 2 2"
+										VerticalAlignment="Top"
+                                        ItemsSource="{Binding Path=Data}"
+                                        MouseDoubleClick="DoubleClickDeleteRow"
+                                        AutoGenerateColumns="False">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Binding="{Binding Source}" Header="Source" Width="160" />
+                                            <DataGridTextColumn Binding="{Binding Destination}" Header="Destination" Width="160" />
+                                            <DataGridTextColumn Binding="{Binding Value}" Header="Value" Width="80" />
+                                            <DataGridCheckBoxColumn Binding="{Binding Visible}" Header="Visible" Width="80"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+
+                                </Border>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox
+										Content="Select All"
+										IsChecked="True"
+										VerticalAlignment="Bottom"
+										Margin="0 10 10 0"
+										Click="SelectAll" />
+                                    <CheckBox
+										Content="Clear All"
+										VerticalAlignment="Bottom"
+										Margin="10 10 10 0"
+										Click="ClearAll" />
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                        <Button
+							Grid.Row="0"
+							Grid.Column="1"
+							Style="{StaticResource MaterialDesignRaisedButton}"
+							materialDesign:ButtonAssist.CornerRadius="10"
+							Height="30"
+							Width="80"
+							FontSize="12"
+							ToolTip="MaterialDesignRaisedButton with Round Corners"
+							Content="Convert"
+							Click="DisplayChart"
+							HorizontalAlignment="Right" />
                     </Grid>
                     <TextBlock
-                        Grid.Row="2"
+						Grid.Row="2"
 						Grid.Column="1"
 						Style="{StaticResource ConfigurationTitleTextStyle}"
-						Text="Display"
-                        VerticalAlignment="Bottom"/>
+						Text="Display" />
                     <Border
-                        Grid.Row="3"
+						Grid.Row="3"
 						Grid.Column="1"
 						BorderBrush="#C8C8C8"
 						BorderThickness="1,1,1,1"
 						Height="400"
+						VerticalAlignment="Top"
 						CornerRadius="5">
                         <wv2:WebView2
-                            x:Name="chartView"
-                            Margin="2 2 2 2"/>
+							x:Name="chartView"
+							Margin="2 2 2 2" />
                     </Border>
                 </Grid>
             </StackPanel>
