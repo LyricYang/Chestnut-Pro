@@ -50,6 +50,8 @@
             {
                 string text = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "/Data/template.html");
                 text = text.Replace("%%data%%", data.ToString())
+                    .Replace("%%chart-width%%", ChartWidth.Text)
+                    .Replace("%%chart-height%%", ChartHeight.Text)
                     .Replace("%%width%%", NodeWidth.Text)
                     .Replace("%%name%%", $"'{FontName.Text}'")
                     .Replace("%%size%%", FontSize.Text)

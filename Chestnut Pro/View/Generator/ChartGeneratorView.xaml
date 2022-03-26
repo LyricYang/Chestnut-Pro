@@ -258,6 +258,31 @@
                                             <ComboBoxItem
 												Content="Calibri" />
                                         </ComboBox>
+                                        <TextBlock
+											VerticalAlignment="Bottom"
+											Margin="35 0 10 0"
+											FontWeight="Bold"
+											xml:space="preserve">Chart Size     :</TextBlock>
+                                        <TextBox
+											x:Name="ChartWidth"
+											Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+											Width="50"
+											VerticalAlignment="Bottom"
+                                            materialDesign:TextFieldAssist.SuffixText="px"
+											materialDesign:HintAssist.Hint="Width"
+											Margin="0 15 0 0"
+											FontSize="11"
+											Text="900" />
+                                        <TextBox
+											x:Name="ChartHeight"
+											Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+											Width="50"
+											VerticalAlignment="Bottom"
+                                            materialDesign:TextFieldAssist.SuffixText="px"
+											materialDesign:HintAssist.Hint="Height"
+											Margin="20 15 0 0"
+											FontSize="11"
+											Text="350" />
                                         <CheckBox
                                             x:Name="NodeBold"
 											Style="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}"
