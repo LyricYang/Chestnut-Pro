@@ -8,7 +8,10 @@
     using System.Text;
     using System.Windows;
     using System.Windows.Controls;
+    using Microsoft.Win32;
     using System.Windows.Input;
+    using System.IO;
+    using Chestnut_Pro.Service;
 
     /// <summary>
     /// Interaction logic for DownloadView.xaml
@@ -45,8 +48,17 @@
 
             if (chartView != null && chartView.CoreWebView2 != null)
             {
-                string text = System.IO.File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "/Data/template.html");
-                chartView.CoreWebView2.NavigateToString(text.Replace("%%data%%", data.ToString()));
+                string text = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "/Data/template.html");
+                text = text.Replace("%%data%%", data.ToString())
+                    .Replace("%%width%%", NodeWidth.Text)
+                    .Replace("%%name%%", $"'{FontName.Text}'")
+                    .Replace("%%size%%", FontSize.Text)
+                    .Replace("%%node%%", NodePad.Text)
+                    .Replace("%%label%%", LabelPad.Text)
+                    .Replace("%%bold%%", NodeBold.IsChecked?? false ? "true" : "false")
+                    .Replace("%%italic%%", NodeItalic.IsChecked?? false ? "true" : "false");
+
+                chartView.CoreWebView2.NavigateToString(text);
             }
         }
 
@@ -85,6 +97,45 @@
             {
                 var chart = SourceData.SelectedItem as ChartModel;
                 vm.Data.Remove(chart);
+            }
+        }
+
+        private void BrowseFile(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                if (openFileDialog.ShowDialog() == true)
+                {
+                    var file = openFileDialog.FileName;
+                    if (Path.GetExtension(file) == ".csv")
+                    {
+                        FilePath.Text = file;
+                        var source = new ObservableCollection<ChartModel>();
+                        foreach (var row in FileUtils.GetFileContent(file))
+                        {
+                            var cols = row.Split(',');
+                            source.Add(new ChartModel()
+                            {
+                                Source = cols[0],
+                                Destination = cols[1],
+                                Value = Convert.ToInt32(cols[2]),
+                                Visible = true,
+                            });
+                        }
+                        var vm = DataContext as ChartGeneratorViewModel;
+                        vm.Data = source;
+                        SourceData.ItemsSource = vm.Data;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please upload csv file!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

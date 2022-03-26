@@ -4,7 +4,7 @@
 <body>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-    <div id="sankey_multiple" style="width: 900px; height: 300px; position: absolute; margin: auto; top: 0; bottom: 0; left: 0; right: 0;"></div>
+    <div id="sankey_multiple" style="width: 900px; height: 350px; position: absolute; margin: auto; top: 0; bottom: 0; left: 0; right: 0;"></div>
 
     <script type="text/javascript">
         google.charts.load("current", { packages: ["sankey"] });
@@ -20,7 +20,20 @@
 
             // Set chart options
             var options = {
-                width: 600,
+                width: 900,
+                sankey: {
+                    node: {
+                        label: {
+                            fontName: %%name%%,
+                            fontSize: %%size%%,
+                            bold: %%bold%%,
+                            italic: %%italic%%,
+                        },
+                        width: %%width%%,
+                        labelPadding: %%label%%,
+                        nodePadding: %%node%%
+                    }
+                },
             };
 
             // Instantiate and draw our chart, passing in some options.
