@@ -64,184 +64,242 @@
                 </Grid>
                 <!--Menu-->
                 <Grid
-                    Grid.Row="1"
-                    Grid.Column="0">
-                    <StackPanel Orientation="Vertical">
-                        <RadioButton
-							Content="All Tools"
-                            FontWeight="Bold"
-							Tag="\Assets\tools-hardware.png"
-							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.AllToolsCommand}"
-							Style="{StaticResource MenuButtonStyle}"
-							GroupName="MenuGroup"
-                            Margin="5 0 0 0"/>
-                        <Line Stretch="Fill" Stroke="#C8C8C8" X2="1" Margin="5"/>
-                        <!--Converter-->
-                        <Expander HorizontalAlignment="Stretch">
-                            <Expander.Header>
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="ChevronDoubleLeft" VerticalAlignment="Bottom"/>
-                                    <TextBlock Text="Converter" FontWeight="Bold" Margin="5 0 5 0" FontSize="16"/>
-                                    <materialDesign:PackIcon Kind="ChevronDoubleRight" VerticalAlignment="Bottom"/>
-                                </StackPanel>
-                            </Expander.Header>
-                            <Expander.Content>
-                                <ItemsControl
-							ItemsSource="{Binding ConverterCollection}"
-							Margin="5 0 0 0">
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <StackPanel>
-                                                <RadioButton
-											Content="{Binding MenuName}"
-											Tag="{Binding MenuImage}"
-											CommandParameter="{Binding MenuName}"
-											Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
-											Style="{StaticResource MenuButtonStyle}"
-											GroupName="MenuGroup" />
-                                            </StackPanel>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </Expander.Content>
-                        </Expander>
-                        <!--Generator-->
-                        <Expander HorizontalAlignment="Stretch">
-                            <Expander.Header>
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="ChevronDoubleLeft" VerticalAlignment="Bottom"/>
-                                    <TextBlock Text="Generator" FontWeight="Bold" Margin="5 0 5 0" FontSize="16"/>
-                                    <materialDesign:PackIcon Kind="ChevronDoubleRight" VerticalAlignment="Bottom"/>
-                                </StackPanel>
-                            </Expander.Header>
-                            <Expander.Content>
-                                <ItemsControl
-							ItemsSource="{Binding GeneratorCollection}"
-							Margin="5 0 0 0">
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <StackPanel>
-                                                <RadioButton
-											Content="{Binding MenuName}"
-											Tag="{Binding MenuImage}"
-											CommandParameter="{Binding MenuName}"
-											Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
-											Style="{StaticResource MenuButtonStyle}"
-											GroupName="MenuGroup" />
-                                            </StackPanel>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </Expander.Content>
-                        </Expander>
-                        <!--Formatter-->
-                        <Expander HorizontalAlignment="Stretch">
-                            <Expander.Header>
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="ChevronDoubleLeft" VerticalAlignment="Bottom"/>
-                                    <TextBlock Text="Formatter" FontWeight="Bold" Margin="5 0 5 0" FontSize="16"/>
-                                    <materialDesign:PackIcon Kind="ChevronDoubleRight" VerticalAlignment="Bottom"/>
-                                </StackPanel>
-                            </Expander.Header>
-                            <Expander.Content>
-                                <ItemsControl
-							ItemsSource="{Binding FormatterCollection}"
-							Margin="5 0 0 0">
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <StackPanel>
-                                                <RadioButton
-											Content="{Binding MenuName}"
-											Tag="{Binding MenuImage}"
-											CommandParameter="{Binding MenuName}"
-											Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
-											Style="{StaticResource MenuButtonStyle}"
-											GroupName="MenuGroup" />
-                                            </StackPanel>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </Expander.Content>
-                        </Expander>
-                        <!--Encoder-->
-                        <Expander HorizontalAlignment="Stretch">
-                            <Expander.Header>
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="ChevronDoubleLeft" VerticalAlignment="Bottom"/>
-                                    <TextBlock Text="Encoder" FontWeight="Bold" Margin="5 0 5 0" FontSize="16"/>
-                                    <materialDesign:PackIcon Kind="ChevronDoubleRight" VerticalAlignment="Bottom"/>
-                                </StackPanel>
-                            </Expander.Header>
-                            <Expander.Content>
-                                <ItemsControl
-							ItemsSource="{Binding EncoderCollection}"
-							Margin="5 0 0 0">
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <StackPanel>
-                                                <RadioButton
-											Content="{Binding MenuName}"
-											Tag="{Binding MenuImage}"
-											CommandParameter="{Binding MenuName}"
-											Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
-											Style="{StaticResource MenuButtonStyle}"
-											GroupName="MenuGroup" />
-                                            </StackPanel>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </Expander.Content>
-                        </Expander>
-                        <!--Chart-->
-                        <Expander HorizontalAlignment="Stretch">
-                            <Expander.Header>
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="ChevronDoubleLeft" VerticalAlignment="Bottom"/>
-                                    <TextBlock Text="Chart" FontWeight="Bold" Margin="5 0 5 0" FontSize="16"/>
-                                    <materialDesign:PackIcon Kind="ChevronDoubleRight" VerticalAlignment="Bottom"/>
-                                </StackPanel>
-                            </Expander.Header>
-                            <Expander.Content>
-                                <ItemsControl
-							ItemsSource="{Binding ChartCollection}"
-							Margin="5 0 0 0">
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <StackPanel>
-                                                <RadioButton
-											Content="{Binding MenuName}"
-											Tag="{Binding MenuImage}"
-											CommandParameter="{Binding MenuName}"
-											Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
-											Style="{StaticResource MenuButtonStyle}"
-											GroupName="MenuGroup" />
-                                            </StackPanel>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </Expander.Content>
-                        </Expander>
-                    </StackPanel>
+					Grid.Row="1"
+					Grid.Column="0">
+                    <ScrollViewer
+						Style="{StaticResource ScrollViewerStyle}">
+                        <StackPanel
+							Orientation="Vertical">
+                            <RadioButton
+								Content="All Tools"
+								FontWeight="Bold"
+								Tag="\Assets\tools-hardware.png"
+								Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.AllToolsCommand}"
+								Style="{StaticResource MenuButtonStyle}"
+								GroupName="MenuGroup"
+								Margin="5 0 0 0" />
+                            <Line
+								Stretch="Fill"
+								Stroke="#C8C8C8"
+								X2="1"
+								Margin="5" />
+                            <!--Converter-->
+                            <Expander
+								HorizontalAlignment="Stretch">
+                                <Expander.Header>
+                                    <StackPanel
+										Orientation="Horizontal">
+                                        <materialDesign:PackIcon
+											Kind="ChevronDoubleLeft"
+											VerticalAlignment="Bottom" />
+                                        <TextBlock
+											Text="Converter"
+											FontWeight="Bold"
+											Margin="5 0 5 0"
+											FontSize="16" />
+                                        <materialDesign:PackIcon
+											Kind="ChevronDoubleRight"
+											VerticalAlignment="Bottom" />
+                                    </StackPanel>
+                                </Expander.Header>
+                                <Expander.Content>
+                                    <ItemsControl
+										ItemsSource="{Binding ConverterCollection}"
+										Margin="5 0 0 0">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel>
+                                                    <RadioButton
+														Content="{Binding MenuName}"
+														Tag="{Binding MenuImage}"
+														CommandParameter="{Binding MenuName}"
+														Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
+														Style="{StaticResource MenuButtonStyle}"
+														GroupName="MenuGroup" />
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </Expander.Content>
+                            </Expander>
+                            <!--Generator-->
+                            <Expander
+								HorizontalAlignment="Stretch">
+                                <Expander.Header>
+                                    <StackPanel
+										Orientation="Horizontal">
+                                        <materialDesign:PackIcon
+											Kind="ChevronDoubleLeft"
+											VerticalAlignment="Bottom" />
+                                        <TextBlock
+											Text="Generator"
+											FontWeight="Bold"
+											Margin="5 0 5 0"
+											FontSize="16" />
+                                        <materialDesign:PackIcon
+											Kind="ChevronDoubleRight"
+											VerticalAlignment="Bottom" />
+                                    </StackPanel>
+                                </Expander.Header>
+                                <Expander.Content>
+                                    <ItemsControl
+										ItemsSource="{Binding GeneratorCollection}"
+										Margin="5 0 0 0">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel>
+                                                    <RadioButton
+														Content="{Binding MenuName}"
+														Tag="{Binding MenuImage}"
+														CommandParameter="{Binding MenuName}"
+														Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
+														Style="{StaticResource MenuButtonStyle}"
+														GroupName="MenuGroup" />
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </Expander.Content>
+                            </Expander>
+                            <!--Formatter-->
+                            <Expander
+								HorizontalAlignment="Stretch">
+                                <Expander.Header>
+                                    <StackPanel
+										Orientation="Horizontal">
+                                        <materialDesign:PackIcon
+											Kind="ChevronDoubleLeft"
+											VerticalAlignment="Bottom" />
+                                        <TextBlock
+											Text="Formatter"
+											FontWeight="Bold"
+											Margin="5 0 5 0"
+											FontSize="16" />
+                                        <materialDesign:PackIcon
+											Kind="ChevronDoubleRight"
+											VerticalAlignment="Bottom" />
+                                    </StackPanel>
+                                </Expander.Header>
+                                <Expander.Content>
+                                    <ItemsControl
+										ItemsSource="{Binding FormatterCollection}"
+										Margin="5 0 0 0">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel>
+                                                    <RadioButton
+														Content="{Binding MenuName}"
+														Tag="{Binding MenuImage}"
+														CommandParameter="{Binding MenuName}"
+														Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
+														Style="{StaticResource MenuButtonStyle}"
+														GroupName="MenuGroup" />
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </Expander.Content>
+                            </Expander>
+                            <!--Encoder-->
+                            <Expander
+								HorizontalAlignment="Stretch">
+                                <Expander.Header>
+                                    <StackPanel
+										Orientation="Horizontal">
+                                        <materialDesign:PackIcon
+											Kind="ChevronDoubleLeft"
+											VerticalAlignment="Bottom" />
+                                        <TextBlock
+											Text="Encoder"
+											FontWeight="Bold"
+											Margin="5 0 5 0"
+											FontSize="16" />
+                                        <materialDesign:PackIcon
+											Kind="ChevronDoubleRight"
+											VerticalAlignment="Bottom" />
+                                    </StackPanel>
+                                </Expander.Header>
+                                <Expander.Content>
+                                    <ItemsControl
+										ItemsSource="{Binding EncoderCollection}"
+										Margin="5 0 0 0">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel>
+                                                    <RadioButton
+														Content="{Binding MenuName}"
+														Tag="{Binding MenuImage}"
+														CommandParameter="{Binding MenuName}"
+														Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
+														Style="{StaticResource MenuButtonStyle}"
+														GroupName="MenuGroup" />
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </Expander.Content>
+                            </Expander>
+                            <!--Chart-->
+                            <Expander
+								HorizontalAlignment="Stretch">
+                                <Expander.Header>
+                                    <StackPanel
+										Orientation="Horizontal">
+                                        <materialDesign:PackIcon
+											Kind="ChevronDoubleLeft"
+											VerticalAlignment="Bottom" />
+                                        <TextBlock
+											Text="Chart"
+											FontWeight="Bold"
+											Margin="5 0 5 0"
+											FontSize="16" />
+                                        <materialDesign:PackIcon
+											Kind="ChevronDoubleRight"
+											VerticalAlignment="Bottom" />
+                                    </StackPanel>
+                                </Expander.Header>
+                                <Expander.Content>
+                                    <ItemsControl
+										ItemsSource="{Binding ChartCollection}"
+										Margin="5 0 0 0">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel>
+                                                    <RadioButton
+														Content="{Binding MenuName}"
+														Tag="{Binding MenuImage}"
+														CommandParameter="{Binding MenuName}"
+														Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
+														Style="{StaticResource MenuButtonStyle}"
+														GroupName="MenuGroup" />
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </Expander.Content>
+                            </Expander>
+                        </StackPanel>
+                    </ScrollViewer>
                 </Grid>
                 <!--Settings-->
                 <Grid
 					Grid.Row="2"
 					Grid.Column="0">
                     <StackPanel>
-                        <RadioButton
+                        <!--<RadioButton
 							Content="Dashboard"
 							Tag="\Assets\dashboard.png"
 							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.DashboardCommand}"
 							Style="{StaticResource MenuButtonStyle}"
 							GroupName="MenuGroup"
-							Margin="5 70 0 0" />
+							Margin="5 70 0 0" />-->
                         <RadioButton
 							Content="Settings"
 							Tag="\Assets\settings.png"
 							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.SettingsCommand}"
 							Style="{StaticResource MenuButtonStyle}"
 							GroupName="MenuGroup"
-							Margin="5 2 0 0" />
+							Margin="5 110 0 0" />
                     </StackPanel>
                 </Grid>
             </Grid>
