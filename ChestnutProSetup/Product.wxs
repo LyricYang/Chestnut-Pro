@@ -15,9 +15,9 @@
 		<!-- Install Directory -->
 		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
 		<!-- License -->
-		<!--<WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)MICROSOFT SOFTWARE LICENSE TERMS MICROSOFT AZURE INFORMATION PROTECTION.rtf" />
-		<WixVariable Id="WixUIBannerBmp" Value="$(var.ProjectDir)Images\banner.bmp" />
-		<WixVariable Id="WixUIDialogBmp" Value="$(var.ProjectDir)Images\dialog.bmp" />-->
+		<WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)\resource\MIT-license.rtf" />
+		<!--<WixVariable Id="WixUIBannerBmp" Value="$(var.ProjectDir)Images\banner.bmp" />-->
+		<!--<WixVariable Id="WixUIDialogBmp" Value="$(var.ProjectDir)Images\dialog.bmp" />-->
 		<!-- Icon -->
 		<!--<Icon Id="icon.ico" SourceFile="$(var.ProjectDir)Images\icon.ico" />
 		<Property Id="ARPPRODUCTICON" Value="icon.ico" />-->
@@ -40,7 +40,7 @@
 	<!-- Directory: install related folder -->
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
-			<Directory Id="ProgramFilesFolder">
+			<Directory Id="LocalAppDataFolder">
 				<Directory Id="INSTALLFOLDER" Name="ChestnutPro">
 					<Directory Id="DataFolder" Name="Data" />
 				</Directory>
