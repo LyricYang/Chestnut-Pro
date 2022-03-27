@@ -16,13 +16,29 @@
         /// CollectionViewSource enables XAML code to set the commonly used CollectionView properties,
         /// passing these settings to the underlying view.
         /// </summary>
-        private CollectionViewSource MenuItemsCollection;
+        private CollectionViewSource ConverterItemsCollection;
+
+        private CollectionViewSource GeneratorItemsCollection;
+
+        private CollectionViewSource FormatterItemsCollection;
+
+        private CollectionViewSource EncoderItemsCollection;
+
+        private CollectionViewSource ChartItemsCollection;
 
         /// <summary>
         /// ICollectionView enables collections to have the functionalities of current record management,
         /// custom sorting, filtering, and grouping.
         /// </summary>
-        public ICollectionView SourceCollection => MenuItemsCollection.View;
+        public ICollectionView ConverterCollection => ConverterItemsCollection.View;
+
+        public ICollectionView GeneratorCollection => GeneratorItemsCollection.View;
+
+        public ICollectionView FormatterCollection => FormatterItemsCollection.View;
+
+        public ICollectionView EncoderCollection => EncoderItemsCollection.View;
+
+        public ICollectionView ChartCollection => ChartItemsCollection.View;
 
         /// <summary>
         /// The Constructor
@@ -33,20 +49,56 @@
             // get added, removed, or when the whole list is refreshed.
             ObservableCollection<MenuItems> menuItems = new ()
             {
-                new () { MenuName = "All Tools",  MenuImage = @"Assets/tools-hardware.png" },
-                new () { MenuName = "NumberBase", MenuImage = @"Assets/number-base.png" },
-                new () { MenuName = "Epoch",      MenuImage = @"Assets/timestamp.png" },
-                new () { MenuName = "TSV/CSV",    MenuImage = @"Assets/csv.png" },
-                new () { MenuName = "Palette",    MenuImage = @"Assets/palette.png" },
-                new () { MenuName = "GUID",       MenuImage = @"Assets/guid.png" },
                 new () { MenuName = "Chart",      MenuImage = @"Assets/chart.png" },
-                new () { MenuName = "Base64",     MenuImage = @"Assets/base64.png" },
-                new () { MenuName = "JSON",       MenuImage = @"Assets/jsonformat.png" },
-                new () { MenuName = "XML",        MenuImage = @"Assets/xml.png" },
+            };
+            // Converter Views
+            ObservableCollection<MenuItems> converterItems = new()
+            {
+                new() { MenuName = "NumberBase", MenuImage = @"Assets/number-base.png" },
+                new() { MenuName = "Epoch", MenuImage = @"Assets/timestamp.png" },
+                new() { MenuName = "TSV/CSV", MenuImage = @"Assets/csv.png" },
             };
 
-            MenuItemsCollection = new CollectionViewSource { Source = menuItems };
-            MenuItemsCollection.Filter += MenuItems_Filter;
+            ConverterItemsCollection = new CollectionViewSource { Source = converterItems };
+            ConverterItemsCollection.Filter += MenuItems_Filter;
+
+            // Generator Views
+            ObservableCollection<MenuItems> generatorItems = new()
+            {
+                new() { MenuName = "GUID", MenuImage = @"Assets/guid.png" },
+                new() { MenuName = "Palette", MenuImage = @"Assets/palette.png" },
+            };
+
+            GeneratorItemsCollection = new CollectionViewSource { Source = generatorItems };
+            GeneratorItemsCollection.Filter += MenuItems_Filter;
+
+            // Formatter Views
+            ObservableCollection<MenuItems> formatterItems = new()
+            {
+                new() { MenuName = "JSON", MenuImage = @"Assets/jsonformat.png" },
+                new() { MenuName = "XML", MenuImage = @"Assets/xml.png" },
+            };
+
+            FormatterItemsCollection = new CollectionViewSource { Source = formatterItems };
+            FormatterItemsCollection.Filter += MenuItems_Filter;
+
+            // Encoder Views
+            ObservableCollection<MenuItems> encoderItems = new()
+            {
+                new() { MenuName = "Base64", MenuImage = @"Assets/base64.png" },
+            };
+
+            EncoderItemsCollection = new CollectionViewSource { Source = encoderItems };
+            EncoderItemsCollection.Filter += MenuItems_Filter;
+
+            // Chart Views
+            ObservableCollection<MenuItems> chartItems = new()
+            {
+                new() { MenuName = "Sankey Chart", MenuImage = @"Assets/chart.png" },
+            };
+
+            ChartItemsCollection = new CollectionViewSource { Source = chartItems };
+            ChartItemsCollection.Filter += MenuItems_Filter;
 
             // Set Home Page
             SelectedViewModel = new AllToolsView();
@@ -74,7 +126,11 @@
             set
             {
                 filterText = value;
-                MenuItemsCollection.View.Refresh();
+                ConverterItemsCollection.View.Refresh();
+                FormatterItemsCollection.View.Refresh();
+                GeneratorItemsCollection.View.Refresh();
+                EncoderItemsCollection.View.Refresh();
+                ChartItemsCollection.View.Refresh();
                 OnPropertyChanged(nameof(FilterText));
             }
         }
@@ -126,7 +182,7 @@
                 case "GUID":
                     SelectedViewModel = new GUIDGeneratorViewModel();
                     break;
-                case "Chart":
+                case "Sankey Chart":
                     SelectedViewModel = new ChartGeneratorViewModel();
                     break;
                 case "Base64":
@@ -346,6 +402,26 @@
                     _DashboardCommand = new RelayCommand(param => DashboardView());
                 }
                 return _DashboardCommand;
+            }
+        }
+
+        // ============================== Show Settings View =============================================
+        public void AllToolsView()
+        {
+            SelectedViewModel = new AllToolsViewModel();
+        }
+
+        // This PC button Command
+        private ICommand _AllToolsCommand;
+        public ICommand AllToolsCommand
+        {
+            get
+            {
+                if (_AllToolsCommand == null)
+                {
+                    _AllToolsCommand = new RelayCommand(param => AllToolsView());
+                }
+                return _AllToolsCommand;
             }
         }
 

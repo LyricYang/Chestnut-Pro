@@ -11,7 +11,7 @@
     {
         DispatcherTimer timer;
         bool hidden = true;
-        double maxWidth = 1320;
+        double maxWidth = 1360;
         double minWidth = 1160;
 
         public MainWindow()
@@ -31,7 +31,7 @@
         {
             if (hidden)
             {
-                DashboardWindow.Width += 40;
+                DashboardWindow.Width += 100;
                 if (DashboardWindow.Width >= maxWidth)
                 {
                     timer.Stop();
@@ -40,7 +40,7 @@
             }
             else
             {
-                DashboardWindow.Width -= 40;
+                DashboardWindow.Width -= 100;
                 if (DashboardWindow.Width <= minWidth)
                 {
                     timer.Stop();
