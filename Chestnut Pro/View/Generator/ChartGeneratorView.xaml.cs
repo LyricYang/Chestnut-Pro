@@ -4,7 +4,6 @@
     using Chestnut_Pro.ViewModel;
     using System;
     using System.Collections.ObjectModel;
-    using System.Data;
     using System.Text;
     using System.Windows;
     using System.Windows.Controls;
@@ -27,81 +26,135 @@
             InitializeAsync();
         }
 
-
+        /// <summary>
+        /// Initialize WebView2
+        /// </summary>
         async void InitializeAsync()
         {
             await chartView.EnsureCoreWebView2Async(null);
         }
 
+        /// <summary>
+        /// Display Chart
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DisplayChart(object sender, RoutedEventArgs e)
         {
-            var items = SourceData.Items.SourceCollection;
-            var data = new StringBuilder();
-            foreach (var item in items)
+            try
             {
-                var row = item as ChartModel;
-                if (row.Visible)
+                var items = SourceData.Items.SourceCollection;
+                var data = new StringBuilder();
+                foreach (var item in items)
                 {
-                    data.AppendLine($"['{row.Source}', '{row.Destination}', {row.Value}],");
+                    var row = item as ChartModel;
+                    if (row.Visible)
+                    {
+                        data.AppendLine($"['{row.Source}', '{row.Destination}', {row.Value}],");
+                    }
+                }
+
+                if (chartView != null && chartView.CoreWebView2 != null)
+                {
+                    string text = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "/Data/template.html");
+                    text = text.Replace("%%data%%", data.ToString())
+                        .Replace("%%chart-width%%", ChartWidth.Text)
+                        .Replace("%%chart-height%%", ChartHeight.Text)
+                        .Replace("%%width%%", NodeWidth.Text)
+                        .Replace("%%name%%", $"'{FontName.Text}'")
+                        .Replace("%%size%%", FontSize.Text)
+                        .Replace("%%node%%", NodePad.Text)
+                        .Replace("%%label%%", LabelPad.Text)
+                        .Replace("%%bold%%", NodeBold.IsChecked ?? false ? "true" : "false")
+                        .Replace("%%italic%%", NodeItalic.IsChecked ?? false ? "true" : "false");
+
+                    chartView.CoreWebView2.NavigateToString(text);
                 }
             }
-
-            if (chartView != null && chartView.CoreWebView2 != null)
+            catch (Exception ex)
             {
-                string text = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "/Data/template.html");
-                text = text.Replace("%%data%%", data.ToString())
-                    .Replace("%%chart-width%%", ChartWidth.Text)
-                    .Replace("%%chart-height%%", ChartHeight.Text)
-                    .Replace("%%width%%", NodeWidth.Text)
-                    .Replace("%%name%%", $"'{FontName.Text}'")
-                    .Replace("%%size%%", FontSize.Text)
-                    .Replace("%%node%%", NodePad.Text)
-                    .Replace("%%label%%", LabelPad.Text)
-                    .Replace("%%bold%%", NodeBold.IsChecked?? false ? "true" : "false")
-                    .Replace("%%italic%%", NodeItalic.IsChecked?? false ? "true" : "false");
-
-                chartView.CoreWebView2.NavigateToString(text);
+                MessageBox.Show(ex.Message);
             }
         }
 
+        /// <summary>
+        /// Select All
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectAll(object sender, RoutedEventArgs e)
         {
-            var vm = DataContext as ChartGeneratorViewModel;
-            var checkbox = sender as CheckBox;
-
-            if (vm != null)
+            try
             {
-                foreach (var item in vm.Data)
+                var vm = DataContext as ChartGeneratorViewModel;
+                var checkbox = sender as CheckBox;
+
+                if (vm != null)
                 {
-                    if (checkbox?.IsChecked ?? true)
+                    foreach (var item in vm.Data)
                     {
-                        item.Visible = true;
-                    }
-                    else
-                    {
-                        item.Visible = false;
+                        if (checkbox?.IsChecked ?? true)
+                        {
+                            item.Visible = true;
+                        }
+                        else
+                        {
+                            item.Visible = false;
+                        }
                     }
                 }
             }
-        }
-
-        private void ClearAll(object sender, RoutedEventArgs e)
-        {
-            SourceData.ItemsSource = new ObservableCollection<ChartModel>();
-            ((CheckBox)sender).IsChecked = false;
-        }
-
-
-        private void DoubleClickDeleteRow(object sender, MouseButtonEventArgs e)
-        {
-            var vm = DataContext as ChartGeneratorViewModel;
-            if (vm != null)
+            catch(Exception ex)
             {
-                var chart = SourceData.SelectedItem as ChartModel;
-                vm.Data.Remove(chart);
+                MessageBox.Show(ex.Message);
             }
         }
 
+        /// <summary>
+        /// Clear All
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClearAll(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                SourceData.ItemsSource = new ObservableCollection<ChartModel>();
+                ((CheckBox)sender).IsChecked = false;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Double click to delete row
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DoubleClickDeleteRow(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                var vm = DataContext as ChartGeneratorViewModel;
+                if (vm != null)
+                {
+                    var chart = SourceData.SelectedItem as ChartModel;
+                    vm.Data.Remove(chart);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
+
+        /// <summary>
+        /// Browse file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BrowseFile(object sender, RoutedEventArgs e)
         {
             try

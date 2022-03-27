@@ -66,7 +66,7 @@
 			<Component Id="ICSharpCode.AvalonEdit.dll" Guid="58e8d8a4-2eb3-4b30-86cc-df2f96915b1d">
 				<File Id="ICSharpCode.AvalonEdit.dll" Name="ICSharpCode.AvalonEdit.dll" Source="$(var.Chestnut Pro_TargetDir)ICSharpCode.AvalonEdit.dll" />
 			</Component>
-			<Component Id="LiveCharts.Wpf.dll" Guid="941ed3ee-aaa1-4c1e-a69a-89895c075d1d">
+			<Component Id="LiveCharts.Wpf.dll" Guid="6bed7ee0-2f30-4c96-90c6-21a9aac172be">
 				<File Id="LiveCharts.Wpf.dll" Name="LiveCharts.Wpf.dll" Source="$(var.Chestnut Pro_TargetDir)LiveCharts.Wpf.dll" />
 			</Component>
 			<Component Id="LiveCharts.dll" Guid="2f8fb89b-50f6-459b-b048-1cc6e4c68ca1">
@@ -81,6 +81,18 @@
 			<Component Id="Chestnut_Pro.runtimeconfig.json" Guid="16d66774-6cbe-4fa4-bb86-0cd49fa173d9">
 				<File Id="Chestnut_Pro.runtimeconfig.json" Name="Chestnut Pro.runtimeconfig.json" Source="$(var.Chestnut Pro_TargetDir)Chestnut Pro.runtimeconfig.json" />
 			</Component>
+			<Component Id="Microsoft.Web.WebView2.Core.dll" Guid="d2bd68d6-1444-4247-b6d6-01500eb49265">
+				<File Id="Microsoft.Web.WebView2.Core.dll" Name="Microsoft.Web.WebView2.Core.dll" Source="$(var.Chestnut Pro_TargetDir)Microsoft.Web.WebView2.Core.dll" />
+			</Component>
+			<Component Id="Microsoft.Web.WebView2.WinForms.dll" Guid="2402cb69-3a2e-4afb-86b0-00021d548a6e">
+				<File Id="Microsoft.Web.WebView2.WinForms.dll" Name="Microsoft.Web.WebView2.WinForms.dll" Source="$(var.Chestnut Pro_TargetDir)Microsoft.Web.WebView2.WinForms.dll" />
+			</Component>
+			<Component Id="Microsoft.Web.WebView2.Wpf.dll" Guid="999f7f6a-6d6c-43b2-a305-9c0d6ad7a334">
+				<File Id="Microsoft.Web.WebView2.Wpf.dll" Name="Microsoft.Web.WebView2.Wpf.dll" Source="$(var.Chestnut Pro_TargetDir)Microsoft.Web.WebView2.Wpf.dll" />
+			</Component>
+			<Component Id="WebView2Loader.dll" Guid="57765638-bdb6-4073-ab21-3df1b26248df">
+				<File Id="WebView2Loader.dll" Name="WebView2Loader.dll" Source="$(var.Chestnut Pro_TargetDir)\runtimes\win-x64\native\WebView2Loader.dll" />
+			</Component>
 		</ComponentGroup>
 	</Fragment>
 
@@ -89,6 +101,12 @@
 		<ComponentGroup Id="DataFileComponents" Directory="DataFolder">
 			<Component Id="Data.json" Guid="ACA72C4F-6364-4EBF-99BC-3F96ABA935D4">
 				<File Id="Data.json" Name="Data.json" Source="$(var.Chestnut Pro_TargetDir)\Data\Data.json" />
+			</Component>
+			<Component Id="sankeydemo.csv" Guid="d8e005a7-f5fa-4f81-be93-0709b8307124">
+				<File Id="sankeydemo.csv" Name="sankeydemo.csv" Source="$(var.Chestnut Pro_TargetDir)\Data\sankeydemo.csv" />
+			</Component>
+			<Component Id="template.html" Guid="9b241bf6-441f-454a-a61d-077c63cc941f">
+				<File Id="template.html" Name="template.html" Source="$(var.Chestnut Pro_TargetDir)\Data\template.html" />
 			</Component>
 		</ComponentGroup>
 	</Fragment>

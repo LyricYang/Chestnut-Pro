@@ -287,7 +287,7 @@
                                             x:Name="NodeBold"
 											Style="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}"
 											Height="25"
-											Width="80"
+											Width="95"
 											VerticalAlignment="Bottom"
 											Margin="30 20 0 0"
 											Content="Blod" />
@@ -295,9 +295,9 @@
                                             x:Name="NodeItalic"
 											Style="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}"
 											Height="25"
-											Width="80"
+											Width="95"
 											VerticalAlignment="Bottom"
-											Margin="15 0 0 0"
+											Margin="10 0 0 0"
 											Content="Italic" />
                                     </WrapPanel>
                                 </Border>
