@@ -47,6 +47,7 @@
     <Resource Include="Assets\avatar1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\base64.png" />
     <Resource Include="Assets\chart.png" />
     <Resource Include="Assets\chestnut.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -64,7 +65,6 @@
     <Resource Include="Assets\india.png" />
     <Resource Include="Assets\jsonformat.png" />
     <Resource Include="Assets\number-base.png" />
-    <Resource Include="Assets\base64.png" />
     <Resource Include="Assets\palette.png" />
     <Resource Include="Assets\settings.png" />
     <Resource Include="Assets\timestamp.png">
