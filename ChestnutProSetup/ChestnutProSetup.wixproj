@@ -23,6 +23,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ChestnutProSetup.wax" />
+    <Content Include="resource\Banner.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resource\Dialog.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="resource\MIT-license.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

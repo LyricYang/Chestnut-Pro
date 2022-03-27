@@ -15,9 +15,9 @@
 		<!-- Install Directory -->
 		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
 		<!-- License -->
-		<WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)\resource\MIT-license.rtf" />
-		<!--<WixVariable Id="WixUIBannerBmp" Value="$(var.ProjectDir)Images\banner.bmp" />-->
-		<!--<WixVariable Id="WixUIDialogBmp" Value="$(var.ProjectDir)Images\dialog.bmp" />-->
+		<WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)resource\MIT-license.rtf" />
+		<WixVariable Id="WixUIBannerBmp" Value="$(var.ProjectDir)resource\Banner.bmp" />
+		<WixVariable Id="WixUIDialogBmp" Value="$(var.ProjectDir)resource\Dialog.bmp" />
 		<!-- Icon -->
 		<!--<Icon Id="icon.ico" SourceFile="$(var.ProjectDir)Images\icon.ico" />
 		<Property Id="ARPPRODUCTICON" Value="icon.ico" />-->
