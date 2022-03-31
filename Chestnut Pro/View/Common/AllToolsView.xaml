@@ -107,6 +107,48 @@
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>
+                        <!--Unix Timestamp-->
+                        <materialDesign:Card
+							Style="{StaticResource ToolCard}"
+							Margin="30">
+                            <StackPanel
+								Margin="10">
+                                <materialDesign:PackIcon
+									Kind="MapClock" />
+                                <TextBlock
+									Style="{StaticResource Title}"
+									Text="Epoch Converter" />
+                                <TextBlock
+									Style="{StaticResource Content}"
+									Text="Convert epoch to&#xA;human-readable date" />
+                                <Button
+									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.EpochConverterCommand}">
+                                    <materialDesign:PackIcon
+										Kind="DotsHorizontal" />
+                                </Button>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <!--TSV <> CSV-->
+                        <materialDesign:Card
+							Style="{StaticResource ToolCard}"
+							Margin="30">
+                            <StackPanel
+								Margin="10">
+                                <materialDesign:PackIcon
+									Kind="FileSwap" />
+                                <TextBlock
+									Style="{StaticResource Title}"
+									Text="TSV/CSV Converter" />
+                                <TextBlock
+									Style="{StaticResource Content}"
+									Text="Convert csv and tsv&#xA;to each other" />
+                                <Button
+									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.TsvCsvConverterCommand}">
+                                    <materialDesign:PackIcon
+										Kind="DotsHorizontal" />
+                                </Button>
+                            </StackPanel>
+                        </materialDesign:Card>
                         <!--GUID Generator-->
                         <materialDesign:Card
 							Style="{StaticResource ToolCard}"
@@ -128,22 +170,26 @@
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>
-                        <!--Base 64 Encoder / Decoder-->
+                    </WrapPanel>
+                    <!--Row 2-->
+                    <WrapPanel
+						HorizontalAlignment="Left">
+                        <!--RGB Converter-->
                         <materialDesign:Card
 							Style="{StaticResource ToolCard}"
-							Margin="30">
+							Margin="40 30 30 30">
                             <StackPanel
 								Margin="10">
                                 <materialDesign:PackIcon
-									Kind="Cpu64Bit" />
+									Kind="Palette" />
                                 <TextBlock
 									Style="{StaticResource Title}"
-									Text="Base 64 Encoder" />
+									Text="RGB Color Converter" />
                                 <TextBlock
 									Style="{StaticResource Content}"
-									Text="Encode and decode&#xA;Base64 data" />
+									Text="Convert RGB to CMYK&#xA;and Picture" />
                                 <Button
-									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.Base64GeneratorCommand}">
+									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.ColorPaletteCommand}">
                                     <materialDesign:PackIcon
 										Kind="DotsHorizontal" />
                                 </Button>
@@ -170,73 +216,6 @@
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>
-                    </WrapPanel>
-                    <!--Row 2-->
-                    <WrapPanel
-						HorizontalAlignment="Left">
-                        <!--TSV <> CSV-->
-                        <materialDesign:Card
-							Style="{StaticResource ToolCard}"
-							Margin="40 30 30 30">
-                            <StackPanel
-								Margin="10">
-                                <materialDesign:PackIcon
-									Kind="FileSwap" />
-                                <TextBlock
-									Style="{StaticResource Title}"
-									Text="TSV/CSV Converter" />
-                                <TextBlock
-									Style="{StaticResource Content}"
-									Text="Convert csv and tsv&#xA;to each other" />
-                                <Button
-									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.TsvCsvConverterCommand}">
-                                    <materialDesign:PackIcon
-										Kind="DotsHorizontal" />
-                                </Button>
-                            </StackPanel>
-                        </materialDesign:Card>
-                        <!--RGB Converter-->
-                        <materialDesign:Card
-							Style="{StaticResource ToolCard}"
-							Margin="30">
-                            <StackPanel
-								Margin="10">
-                                <materialDesign:PackIcon
-									Kind="Palette" />
-                                <TextBlock
-									Style="{StaticResource Title}"
-									Text="RGB Color Converter" />
-                                <TextBlock
-									Style="{StaticResource Content}"
-									Text="Convert RGB to CMYK&#xA;and Picture" />
-                                <Button
-									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.ColorPaletteCommand}">
-                                    <materialDesign:PackIcon
-										Kind="DotsHorizontal" />
-                                </Button>
-                            </StackPanel>
-                        </materialDesign:Card>
-                        <!--Unix Timestamp-->
-                        <materialDesign:Card
-							Style="{StaticResource ToolCard}"
-							Margin="30">
-                            <StackPanel
-								Margin="10">
-                                <materialDesign:PackIcon
-									Kind="MapClock" />
-                                <TextBlock
-									Style="{StaticResource Title}"
-									Text="Epoch Converter" />
-                                <TextBlock
-									Style="{StaticResource Content}"
-									Text="Convert epoch to&#xA;human-readable date" />
-                                <Button
-									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.EpochConverterCommand}">
-                                    <materialDesign:PackIcon
-										Kind="DotsHorizontal" />
-                                </Button>
-                            </StackPanel>
-                        </materialDesign:Card>
                         <!--XML Formatter-->
                         <materialDesign:Card
 							Style="{StaticResource ToolCard}"
@@ -258,25 +237,47 @@
                                 </Button>
                             </StackPanel>
                         </materialDesign:Card>
+                        <!--Base 64 Encoder / Decoder-->
+                        <materialDesign:Card
+							Style="{StaticResource ToolCard}"
+							Margin="30">
+                            <StackPanel
+								Margin="10">
+                                <materialDesign:PackIcon
+									Kind="Cpu64Bit" />
+                                <TextBlock
+									Style="{StaticResource Title}"
+									Text="Base 64 Encoder" />
+                                <TextBlock
+									Style="{StaticResource Content}"
+									Text="Encode and decode&#xA;Base64 data" />
+                                <Button
+									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.Base64GeneratorCommand}">
+                                    <materialDesign:PackIcon
+										Kind="DotsHorizontal" />
+                                </Button>
+                            </StackPanel>
+                        </materialDesign:Card>
                     </WrapPanel>
                     <!--Row 3-->
                     <WrapPanel
 						HorizontalAlignment="Left">
-                        <!--Markdown Preview-->
+                        <!--Sankey Chart-->
                         <materialDesign:Card
 							Style="{StaticResource ToolCard}"
 							Margin="40 30 30 30">
                             <StackPanel
 								Margin="10">
                                 <materialDesign:PackIcon
-									Kind="LanguageMarkdown" />
+									Kind="Finance" />
                                 <TextBlock
 									Style="{StaticResource Title}"
-									Text="Markdown Preview" />
+									Text="Sankey Chart" />
                                 <TextBlock
 									Style="{StaticResource Content}"
-									Text="Preview a Markdown&#xA;document" />
-                                <Button>
+									Text="Generate sankey&#xA;diagram" />
+                                <Button
+                                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.SankeyChartCommand}">
                                     <materialDesign:PackIcon
 										Kind="DotsHorizontal" />
                                 </Button>

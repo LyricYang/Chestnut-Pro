@@ -444,5 +444,25 @@
                 return _EpochConverterCommand;
             }
         }
+
+        // ============================== Show Settings View =============================================
+        public void SankeyChartView()
+        {
+            SelectedViewModel = new ChartGeneratorViewModel();
+        }
+
+        // This PC button Command
+        private ICommand _SankeyChartCommand;
+        public ICommand SankeyChartCommand
+        {
+            get
+            {
+                if (_SankeyChartCommand == null)
+                {
+                    _SankeyChartCommand = new RelayCommand(param => SankeyChartView());
+                }
+                return _SankeyChartCommand;
+            }
+        }
     }
 }
