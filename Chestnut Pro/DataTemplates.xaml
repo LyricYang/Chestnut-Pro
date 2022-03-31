@@ -59,4 +59,8 @@
 		DataType="{x:Type viewmodel:ChartGeneratorViewModel}">
         <view:ChartGeneratorView />
     </DataTemplate>
+    <DataTemplate
+		DataType="{x:Type viewmodel:HashGeneratorViewModel}">
+        <view:HashGeneratorView />
+    </DataTemplate>
 </ResourceDictionary>

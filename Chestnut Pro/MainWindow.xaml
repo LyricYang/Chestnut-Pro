@@ -111,6 +111,7 @@
                                                 <StackPanel>
                                                     <RadioButton
 														Content="{Binding MenuName}"
+                                                        ToolTip="{Binding MenuName}"
 														Tag="{Binding MenuImage}"
 														CommandParameter="{Binding MenuName}"
 														Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
@@ -150,6 +151,7 @@
                                                 <StackPanel>
                                                     <RadioButton
 														Content="{Binding MenuName}"
+                                                        ToolTip="{Binding MenuName}"
 														Tag="{Binding MenuImage}"
 														CommandParameter="{Binding MenuName}"
 														Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
@@ -189,6 +191,7 @@
                                                 <StackPanel>
                                                     <RadioButton
 														Content="{Binding MenuName}"
+                                                        ToolTip="{Binding MenuName}"
 														Tag="{Binding MenuImage}"
 														CommandParameter="{Binding MenuName}"
 														Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
@@ -228,6 +231,7 @@
                                                 <StackPanel>
                                                     <RadioButton
 														Content="{Binding MenuName}"
+                                                        ToolTip="{Binding MenuName}"
 														Tag="{Binding MenuImage}"
 														CommandParameter="{Binding MenuName}"
 														Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
@@ -267,6 +271,7 @@
                                                 <StackPanel>
                                                     <RadioButton
 														Content="{Binding MenuName}"
+                                                        ToolTip="{Binding MenuName}"
 														Tag="{Binding MenuImage}"
 														CommandParameter="{Binding MenuName}"
 														Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"

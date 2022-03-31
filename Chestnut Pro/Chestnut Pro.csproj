@@ -19,6 +19,7 @@
     <None Remove="Assets\csv.png" />
     <None Remove="Assets\dashboard.png" />
     <None Remove="Assets\guid.png" />
+    <None Remove="Assets\hash.png" />
     <None Remove="Assets\home.png" />
     <None Remove="Assets\indentleft.png" />
     <None Remove="Assets\indentright.png" />
@@ -59,6 +60,9 @@
 
   <ItemGroup>
     <Resource Include="Assets\guid.png" />
+    <Resource Include="Assets\hash.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\home.png" />
     <Resource Include="Assets\indentleft.png" />
     <Resource Include="Assets\indentright.png" />
@@ -120,7 +124,10 @@
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Generator\ChartGeneratorView.xaml">
+    <Page Update="View\Chart\ChartGeneratorView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="View\Generator\HashGeneratorView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
   </ItemGroup>

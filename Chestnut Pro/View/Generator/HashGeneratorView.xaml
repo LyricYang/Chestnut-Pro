@@ -1,0 +1,443 @@
+﻿<UserControl
+	x:Class="Chestnut_Pro.View.HashGeneratorView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+	mc:Ignorable="d"
+	d:DesignHeight="850"
+	d:DesignWidth="1100">
+    <UserControl.Resources>
+        <Style
+			x:Key="ConfigTag"
+			TargetType="materialDesign:PackIcon">
+            <Setter
+				Property="Height"
+				Value="25" />
+            <Setter
+				Property="Width"
+				Value="25" />
+            <Setter
+				Property="Foreground"
+				Value="Black" />
+            <Setter
+				Property="HorizontalAlignment"
+				Value="Left" />
+            <Setter
+				Property="VerticalAlignment"
+				Value="Center" />
+        </Style>
+        <Style
+			x:Key="InputOutputTitle"
+			TargetType="{x:Type TextBlock}">
+            <Setter
+				Property="IsEnabled"
+				Value="False" />
+            <Setter
+				Property="FontSize"
+				Value="14" />
+            <Setter
+				Property="Foreground"
+				Value="#1A1A1A" />
+            <Setter
+				Property="HorizontalAlignment"
+				Value="Left" />
+            <Setter
+				Property="VerticalAlignment"
+				Value="Bottom" />
+        </Style>
+        <Style
+			x:Key="OutputContent"
+			TargetType="{x:Type TextBox}"
+			BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}">
+            <Setter
+				Property="FontWeight"
+				Value="DemiBold" />
+            <Setter
+				Property="Height"
+				Value="40" />
+            <Setter
+				Property="VerticalAlignment"
+				Value="Center" />
+            <Setter
+				Property="IsEnabled"
+				Value="False" />
+        </Style>
+        <Style
+			x:Key="Content"
+			TargetType="{x:Type TextBlock}">
+            <Setter
+				Property="FontSize"
+				Value="14" />
+            <Setter
+				Property="VerticalAlignment"
+				Value="Center" />
+            <Setter
+				Property="HorizontalAlignment"
+				Value="Left" />
+        </Style>
+        <Style
+			TargetType="{x:Type CheckBox}"
+			BasedOn="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}">
+            <Setter
+				Property="HorizontalAlignment"
+				Value="Right" />
+            <Setter
+				Property="IsChecked"
+				Value="True" />
+            <Setter
+				Property="Margin"
+				Value="0 0 30 0" />
+            <Setter
+				Property="Width"
+				Value="80" />
+        </Style>
+        <Style
+			x:Key="CommonButtonStyle"
+			TargetType="{x:Type Button}"
+			BasedOn="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}">
+            <Setter
+				Property="Background"
+				Value="White" />
+            <Setter
+				Property="BorderThickness"
+				Value="1,1,1,1" />
+            <Setter
+				Property="Width"
+				Value="50" />
+            <Setter
+				Property="Height"
+				Value="30" />
+            <Setter
+				Property="HorizontalAlignment"
+				Value="Right" />
+            <Setter
+				Property="BorderBrush"
+				Value="#C8C8C8" />
+        </Style>
+    </UserControl.Resources>
+    <Border
+		BorderBrush="#C8C8C8"
+		Background="#FCFCFC"
+		BorderThickness="1,1,1,1"
+		CornerRadius="5">
+        <Grid
+			Margin="5">
+            <StackPanel
+				Background="#FCFCFC">
+                <!--Header-->
+                <Grid
+					Height="60">
+                    <!--Title-->
+                    <TextBlock
+						Style="{StaticResource ControlTitleTextStyle}"
+						Text="Hash Generator" />
+                </Grid>
+                <!--Configuration-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+							Width="30" />
+                        <ColumnDefinition
+							Width="1000" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+							Height="50" />
+                        <RowDefinition
+							Height="80" />
+                        <RowDefinition
+							Height="80" />
+                    </Grid.RowDefinitions>
+                    <!--Content Title-->
+                    <Grid
+						Grid.Row="0"
+						Grid.Column="1">
+                        <TextBlock
+							Style="{StaticResource ConfigurationTitleTextStyle}"
+							Text="Configuration" />
+                    </Grid>
+                    <!--Parameter 1-->
+                    <Grid
+						Grid.Row="1"
+						Grid.Column="1">
+                        <WrapPanel
+							HorizontalAlignment="Left">
+                            <Border
+								BorderBrush="#C8C8C8"
+								Background="White"
+								BorderThickness="1,1,1,1"
+								CornerRadius="5">
+                                <StackPanel>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition
+												Width="25" />
+                                            <ColumnDefinition
+												Width="100" />
+                                            <ColumnDefinition
+												Width="300" />
+                                            <ColumnDefinition
+												Width="580" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition
+												Height="60" />
+                                        </Grid.RowDefinitions>
+                                        <Grid
+											Grid.Row="0"
+											Grid.Column="1">
+                                            <materialDesign:PackIcon
+												Style="{StaticResource ConfigTag}"
+												Kind="FormatLetterCaseUpper" />
+                                        </Grid>
+                                        <Grid
+											Grid.Row="0"
+											Grid.Column="2">
+                                            <TextBlock
+												Style="{StaticResource Content}"
+												Text="Uppercase" />
+                                        </Grid>
+                                        <Grid
+											Grid.Row="0"
+											Grid.Column="3">
+                                            <CheckBox
+												x:Name="Uppercase_Button"
+												IsChecked="False"
+												Content="Uppercase" />
+                                        </Grid>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
+                        </WrapPanel>
+                    </Grid>
+                    <!--Parameter 2-->
+                    <Grid
+						Grid.Row="2"
+						Grid.Column="1">
+                        <WrapPanel
+							HorizontalAlignment="Left">
+                            <Border
+								BorderBrush="#C8C8C8"
+								Background="White"
+								BorderThickness="1,1,1,1"
+								CornerRadius="5">
+                                <StackPanel>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition
+												Width="25" />
+                                            <ColumnDefinition
+												Width="100" />
+                                            <ColumnDefinition
+												Width="200" />
+                                            <ColumnDefinition
+												Width="680" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition
+												Height="60" />
+                                        </Grid.RowDefinitions>
+                                        <Grid
+											Grid.Row="0"
+											Grid.Column="1">
+                                            <materialDesign:PackIcon
+												Style="{StaticResource ConfigTag}"
+												Kind="FormatListBulletedType" />
+                                        </Grid>
+                                        <Grid
+											Grid.Row="0"
+											Grid.Column="2">
+                                            <TextBlock
+												Style="{StaticResource Content}"
+												Text="Output Type" />
+                                        </Grid>
+                                        <Grid
+											Grid.Row="0"
+											Grid.Column="3">
+                                            <ComboBox
+												Grid.Row="0"
+												Grid.Column="3"
+												x:Name="NumberTypeBox"
+												Width="80"
+												materialDesign:HintAssist.Hint="Decimal"
+												HorizontalAlignment="Right"
+												VerticalAlignment="Center"
+												Margin="0 0 30 0">
+                                                <ComboBoxItem
+													Content="Hex"
+                                                    IsSelected="True"/>
+                                                <ComboBoxItem
+													Content="Base64" />
+                                            </ComboBox>
+                                        </Grid>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
+                        </WrapPanel>
+                    </Grid>
+                </Grid>
+                <!--Input&Output-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+							Width="30" />
+                        <ColumnDefinition
+							Width="1000" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+							Height="40" />
+                        <RowDefinition
+							Height="120" />
+                        <RowDefinition
+							Height="60" />
+                        <RowDefinition
+							Height="40" />
+                        <RowDefinition
+							Height="40" />
+                        <RowDefinition
+							Height="40" />
+                        <RowDefinition
+							Height="40" />
+                        <RowDefinition
+							Height="40" />
+                        <RowDefinition
+							Height="40" />
+                        <RowDefinition
+							Height="40" />
+                    </Grid.RowDefinitions>
+                    <Grid
+						Grid.Row="0"
+						Grid.Column="1">
+                        <TextBlock
+							Style="{StaticResource ConfigurationTitleTextStyle}"
+							Text="Input" />
+                        <Button
+							Style="{StaticResource CommonButtonStyle}"
+							Content="{materialDesign:PackIcon FormatLetterStartsWith}"
+							ToolTip="Convert"
+                            Margin="0 0 120 0" />
+                        <Button
+							Content="{materialDesign:PackIcon ContentCopy}"
+							ToolTip="Copy"
+							Style="{StaticResource CommonButtonStyle}"
+							Margin="0 0 60 0"/>
+                        <Button
+							Content="{materialDesign:PackIcon Close}"
+							ToolTip="Clear"
+							Style="{StaticResource CommonButtonStyle}" />
+                    </Grid>
+                    <StackPanel
+						Grid.Row="1"
+						Grid.Column="1">
+                        <TextBox
+							x:Name="SourceInput"
+							materialDesign:HintAssist.Hint="Text Input"
+							Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                            Height="120"
+                            BorderBrush="#C8C8C8"
+							VerticalAlignment="Center" />
+                    </StackPanel>
+                    <!--MD5-->
+                    <Grid
+						Grid.Row="2"
+						Grid.Column="1">
+                        <TextBlock
+							Style="{StaticResource InputOutputTitle}"
+							Text="MD5" />
+                    </Grid>
+                    <Grid
+						Grid.Row="3"
+						Grid.Column="1">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox
+								x:Name="MD5Output"
+                                Width="925"
+								Style="{StaticResource OutputContent}" />
+                            <Button
+								Content="{materialDesign:PackIcon ContentCopy}"
+                                Style="{StaticResource CommonButtonStyle}"
+                                VerticalAlignment="Bottom"
+                                Margin="25 0 0 0"
+								ToolTip="Copy"/>
+                        </StackPanel>
+                    </Grid>
+                    <!--SHA1-->
+                    <Grid
+						Grid.Row="4"
+						Grid.Column="1">
+                        <TextBlock
+							Style="{StaticResource InputOutputTitle}"
+							Text="SHA1" />
+                    </Grid>
+                    <Grid
+						Grid.Row="5"
+						Grid.Column="1">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox
+								x:Name="SHA1Output"
+                                Width="925"
+								Style="{StaticResource OutputContent}" />
+                            <Button
+								Content="{materialDesign:PackIcon ContentCopy}"
+                                Style="{StaticResource CommonButtonStyle}"
+                                VerticalAlignment="Bottom"
+                                Margin="25 0 0 0"
+								ToolTip="Copy"/>
+                        </StackPanel>
+                    </Grid>
+                    <!--SHA256-->
+                    <Grid
+						Grid.Row="6"
+						Grid.Column="1">
+                        <TextBlock
+							Style="{StaticResource InputOutputTitle}"
+							Text="SHA256" />
+                    </Grid>
+                    <Grid
+						Grid.Row="7"
+						Grid.Column="1">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox
+								x:Name="SHA256Output"
+                                Width="925"
+								Style="{StaticResource OutputContent}" />
+                            <Button
+								Content="{materialDesign:PackIcon ContentCopy}"
+                                Style="{StaticResource CommonButtonStyle}"
+                                VerticalAlignment="Bottom"
+                                Margin="25 0 0 0"
+								ToolTip="Copy"/>
+                        </StackPanel>
+                    </Grid>
+                    <!--SHA512-->
+                    <Grid
+						Grid.Row="8"
+						Grid.Column="1">
+                        <TextBlock
+							Style="{StaticResource InputOutputTitle}"
+							Text="SHA512" />
+                    </Grid>
+                    <Grid
+						Grid.Row="9"
+						Grid.Column="1">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox
+								x:Name="SHA512Output"
+                                Width="925"
+								Style="{StaticResource OutputContent}" />
+                            <Button
+								Content="{materialDesign:PackIcon ContentCopy}"
+                                Style="{StaticResource CommonButtonStyle}"
+                                VerticalAlignment="Bottom"
+                                Margin="25 0 0 0"
+								ToolTip="Copy"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

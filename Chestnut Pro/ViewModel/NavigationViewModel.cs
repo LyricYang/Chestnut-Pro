@@ -66,6 +66,7 @@
             ObservableCollection<MenuItems> generatorItems = new()
             {
                 new() { MenuName = "GUID", MenuImage = @"Assets/guid.png" },
+                new() { MenuName = "Hash", MenuImage = @"Assets/hash.png" },
                 new() { MenuName = "Palette", MenuImage = @"Assets/palette.png" },
             };
 
@@ -205,6 +206,9 @@
                     break;
                 case "Dashboard":
                     SelectedViewModel = new DashboardViewModel();
+                    break;
+                case "Hash":
+                    SelectedViewModel = new HashGeneratorViewModel();
                     break;
                 default:
                     SelectedViewModel = new AllToolsViewModel();
@@ -462,6 +466,26 @@
                     _SankeyChartCommand = new RelayCommand(param => SankeyChartView());
                 }
                 return _SankeyChartCommand;
+            }
+        }
+
+        // ============================== Show Settings View =============================================
+        public void HashGeneratorView()
+        {
+            SelectedViewModel = new HashGeneratorViewModel();
+        }
+
+        // This PC button Command
+        private ICommand _HashGeneratorCommand;
+        public ICommand HashGeneratorCommand
+        {
+            get
+            {
+                if (_HashGeneratorCommand == null)
+                {
+                    _HashGeneratorCommand = new RelayCommand(param => HashGeneratorView());
+                }
+                return _HashGeneratorCommand;
             }
         }
     }
