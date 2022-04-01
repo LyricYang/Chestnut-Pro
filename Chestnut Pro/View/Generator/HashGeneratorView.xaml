@@ -259,7 +259,7 @@
                                             <ComboBox
 												Grid.Row="0"
 												Grid.Column="3"
-												x:Name="NumberTypeBox"
+												x:Name="OutputTypeSelected"
 												Width="80"
 												materialDesign:HintAssist.Hint="Decimal"
 												HorizontalAlignment="Right"
@@ -318,16 +318,19 @@
 							Style="{StaticResource CommonButtonStyle}"
 							Content="{materialDesign:PackIcon FormatLetterStartsWith}"
 							ToolTip="Convert"
-                            Margin="0 0 120 0" />
+                            Margin="0 0 120 0"
+                            Click="CalculateHash"/>
                         <Button
 							Content="{materialDesign:PackIcon ContentCopy}"
 							ToolTip="Copy"
 							Style="{StaticResource CommonButtonStyle}"
-							Margin="0 0 60 0"/>
+							Margin="0 0 60 0"
+                            Click="CopySource"/>
                         <Button
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
-							Style="{StaticResource CommonButtonStyle}" />
+							Style="{StaticResource CommonButtonStyle}"
+                            Click="ClearSource"/>
                     </Grid>
                     <StackPanel
 						Grid.Row="1"
@@ -361,7 +364,8 @@
                                 Style="{StaticResource CommonButtonStyle}"
                                 VerticalAlignment="Bottom"
                                 Margin="25 0 0 0"
-								ToolTip="Copy"/>
+								ToolTip="Copy"
+                                Click="CopyMD5"/>
                         </StackPanel>
                     </Grid>
                     <!--SHA1-->
@@ -370,7 +374,7 @@
 						Grid.Column="1">
                         <TextBlock
 							Style="{StaticResource InputOutputTitle}"
-							Text="SHA1" />
+							Text="SHA1"/>
                     </Grid>
                     <Grid
 						Grid.Row="5"
@@ -385,7 +389,8 @@
                                 Style="{StaticResource CommonButtonStyle}"
                                 VerticalAlignment="Bottom"
                                 Margin="25 0 0 0"
-								ToolTip="Copy"/>
+								ToolTip="Copy"
+                                Click="CopySha1"/>
                         </StackPanel>
                     </Grid>
                     <!--SHA256-->
@@ -409,7 +414,8 @@
                                 Style="{StaticResource CommonButtonStyle}"
                                 VerticalAlignment="Bottom"
                                 Margin="25 0 0 0"
-								ToolTip="Copy"/>
+								ToolTip="Copy"
+                                Click="CopySha256"/>
                         </StackPanel>
                     </Grid>
                     <!--SHA512-->
@@ -433,7 +439,8 @@
                                 Style="{StaticResource CommonButtonStyle}"
                                 VerticalAlignment="Bottom"
                                 Margin="25 0 0 0"
-								ToolTip="Copy"/>
+								ToolTip="Copy"
+                                Click="CopySha512"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
