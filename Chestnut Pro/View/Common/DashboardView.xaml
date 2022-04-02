@@ -12,7 +12,7 @@
 	Background="Transparent">
     <Border
 		BorderBrush="#C8C8C8"
-		Background="#FCFCFC"
+		Background="#ececea"
 		BorderThickness="1,1,1,1"
 		CornerRadius="5">
         <Grid
@@ -38,7 +38,7 @@
             <Grid
 				Grid.Column="0">
                 <StackPanel
-					Background="#FCFCFC">
+					Background="#ececea">
                     <!--Header-->
                     <Grid
 						Height="60">

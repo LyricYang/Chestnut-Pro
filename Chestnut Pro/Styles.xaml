@@ -41,7 +41,7 @@
         <Setter Property="FontSize"
                 Value="14" />
         <Setter Property="Background"
-                Value="#FCFCFC" />
+                Value="#ececea" />
         <Setter Property="Foreground"
                 Value="#303030" />
         <Setter Property="Padding"
@@ -99,6 +99,8 @@
            TargetType="RadioButton">
         <Setter Property="Height"
                 Value="35" />
+        <Setter Property="Margin"
+                Value="0 2 0 0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RadioButton">
@@ -129,7 +131,7 @@
                         <Border x:Name="Highlighter"
                                 Height="20"
                                 Width="4"
-                                Background="#FF464678"
+                                Background="#7b8b6f"
                                 CornerRadius="2"
                                 HorizontalAlignment="Left"
                                 Margin="0,0,5,0"
@@ -140,13 +142,13 @@
                                  Value="True">
                             <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#EAEAEA" />
+                                    Value="#b5c4b1" />
                         </Trigger>
                         <Trigger Property="IsChecked"
                                  Value="True">
                             <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#EAEAEA" />
+                                    Value="#b5c4b1" />
                             <Setter Property="Visibility"
                                     TargetName="Highlighter"
                                     Value="Visible" />
@@ -166,7 +168,7 @@
                     <Border x:Name="rectangle"
                                 SnapsToDevicePixels="True"
                                 CornerRadius="3"
-                            Background="#673ab7"
+                            Background="#656565"
                                 Height="{TemplateBinding Height}"
                                 Width="{TemplateBinding Width}"/>
                 </ControlTemplate>
@@ -188,7 +190,7 @@
                             <Track x:Name="PART_Track"
                                IsDirectionReversed="true"
                                IsEnabled="{TemplateBinding IsMouseOver}"
-                               Width="6"
+                               Width="3"
                                HorizontalAlignment="Center">
                                 <Track.DecreaseRepeatButton>
                                     <RepeatButton Opacity="0" Command="{x:Static ScrollBar.PageUpCommand}" />

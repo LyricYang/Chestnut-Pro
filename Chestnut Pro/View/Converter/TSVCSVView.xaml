@@ -16,7 +16,7 @@
 			BasedOn="{StaticResource MaterialDesignOutlinedButton}">
             <Setter
 				Property="Background"
-				Value="White" />
+				Value="#FCFCFC" />
             <Setter
 				Property="BorderThickness"
 				Value="1,1,1,1" />
@@ -43,6 +43,12 @@
             <Setter
 				Property="FontSize"
 				Value="12" />
+            <Setter
+                Property="Background"
+                Value="#7b8b6f"/>
+            <Setter
+                Property="BorderBrush"
+                Value="#7b8b6f"/>
             <Setter
 				Property="Width"
 				Value="75" />
@@ -190,7 +196,7 @@
 										ToolTip="MaterialDesignFlatLightButton"
 										FontWeight="Bold"
 										FontStyle="Oblique"
-										Foreground="#FF673AB7"
+										Foreground="#7b8b6f"
 										Content="Browse file"
 										Click="BrowseTSVFile"
 										Margin="0 20 0 0" />
@@ -249,7 +255,7 @@
 										ToolTip="MaterialDesignFlatLightButton"
 										FontWeight="Bold"
 										FontStyle="Oblique"
-										Foreground="#FF673AB7"
+										Foreground="#7b8b6f"
 										Content="Browse file"
 										Click="BrowseCSVFile"
 										Margin="0 20 0 0" />

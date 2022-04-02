@@ -80,7 +80,8 @@
 										VerticalAlignment="Top"
 										ItemsSource="{Binding Path=Data}"
 										MouseDoubleClick="DoubleClickDeleteRow"
-										AutoGenerateColumns="False">
+										AutoGenerateColumns="False"
+                                        Background="{x:Null}">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn
 												Binding="{Binding Source}"
@@ -106,6 +107,7 @@
                                     <CheckBox
 										Content="Select All"
 										IsChecked="True"
+                                        Background="#7b8b6f"
 										VerticalAlignment="Bottom"
 										Margin="0 10 10 0"
 										Click="SelectAll" />
@@ -159,7 +161,7 @@
 											x:Name="NodeWidth"
 											Style="{StaticResource MaterialDesignFloatingHintComboBox}"
 											materialDesign:TextFieldAssist.PrefixText="x "
-											materialDesign:TextFieldAssist.UnderlineBrush="#FF673AB7"
+											materialDesign:TextFieldAssist.UnderlineBrush="#7b8b6f"
 											materialDesign:ColorZoneAssist.Mode="SecondaryLight"
 											materialDesign:HintAssist.Hint="Width"
 											HorizontalAlignment="Left"
@@ -190,7 +192,7 @@
 											x:Name="FontSize"
 											Style="{StaticResource MaterialDesignFloatingHintComboBox}"
 											materialDesign:TextFieldAssist.PrefixText="x "
-											materialDesign:TextFieldAssist.UnderlineBrush="#FF673AB7"
+											materialDesign:TextFieldAssist.UnderlineBrush="#7b8b6f"
 											materialDesign:ColorZoneAssist.Mode="SecondaryLight"
 											materialDesign:HintAssist.Hint="Size"
 											HorizontalAlignment="Left"
@@ -245,7 +247,7 @@
                                         <ComboBox
 											x:Name="FontName"
 											Style="{StaticResource MaterialDesignFloatingHintComboBox}"
-											materialDesign:TextFieldAssist.UnderlineBrush="#FF673AB7"
+											materialDesign:TextFieldAssist.UnderlineBrush="#7b8b6f"
 											materialDesign:ColorZoneAssist.Mode="SecondaryLight"
 											HorizontalAlignment="Left"
 											Margin="0 15 0 0"
@@ -309,6 +311,8 @@
 									Content="Convert"
 									Click="DisplayChart"
 									Margin="0 10 0 0"
+                                    Background="#7b8b6f"
+                                    BorderBrush="#7b8b6f"
 									HorizontalAlignment="Right" />
                             </StackPanel>
                         </Grid>

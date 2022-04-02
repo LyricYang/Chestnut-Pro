@@ -188,6 +188,7 @@
 											Style="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}"
 											IsChecked="True"
 											Margin="0 0 30 0"
+                                            Background="#7b8b6f"
 											Content="Format" />
                                     </Grid>
                                 </StackPanel>

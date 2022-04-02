@@ -297,47 +297,8 @@
                                 <TextBlock
 									Style="{StaticResource Content}"
 									Text="Calculate MD5, SHA1,&#xA;SHA256 and SHA512" />
-                                <Button>
-                                    <materialDesign:PackIcon
-										Kind="DotsHorizontal" />
-                                </Button>
-                            </StackPanel>
-                        </materialDesign:Card>
-                        <!--Text Comparer-->
-                        <materialDesign:Card
-							Style="{StaticResource ToolCard}"
-							Margin="30">
-                            <StackPanel
-								Margin="10">
-                                <materialDesign:PackIcon
-									Kind="FileCompare" />
-                                <TextBlock
-									Style="{StaticResource Title}"
-									Text="Text Comparer" />
-                                <TextBlock
-									Style="{StaticResource Content}"
-									Text="Compare two texts&#xA;" />
-                                <Button>
-                                    <materialDesign:PackIcon
-										Kind="DotsHorizontal" />
-                                </Button>
-                            </StackPanel>
-                        </materialDesign:Card>
-                        <!--JSON Converter-->
-                        <materialDesign:Card
-							Style="{StaticResource ToolCard}"
-							Margin="30">
-                            <StackPanel
-								Margin="10">
-                                <materialDesign:PackIcon
-									Kind="CodeJson" />
-                                <TextBlock
-									Style="{StaticResource Title}"
-									Text="JSON Converter" />
-                                <TextBlock
-									Style="{StaticResource Content}"
-									Text="Indent or minify JSON&#xA;data" />
-                                <Button>
+                                <Button
+                                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.HashGeneratorCommand}">
                                     <materialDesign:PackIcon
 										Kind="DotsHorizontal" />
                                 </Button>
