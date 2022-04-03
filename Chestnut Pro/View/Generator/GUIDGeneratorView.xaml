@@ -259,8 +259,7 @@
 							VerticalAlignment="Bottom"
 							ToolTip="Generator"
 							Content="Generate GUID(s)"
-							Click="GUIDGenerate"
-							IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+							Click="GUIDGenerate" />
                         <ComboBox
 							x:Name="GUIDCount_Box"
 							Style="{StaticResource MaterialDesignFloatingHintComboBox}"

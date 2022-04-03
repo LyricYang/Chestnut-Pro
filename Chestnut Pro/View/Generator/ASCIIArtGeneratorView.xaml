@@ -294,7 +294,8 @@
                         <Button
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
-							Style="{StaticResource CommonButtonStyle}"/>
+							Style="{StaticResource CommonButtonStyle}"
+                            Click="InputClear"/>
                     </Grid>
                     <StackPanel
 						Grid.Row="1"
