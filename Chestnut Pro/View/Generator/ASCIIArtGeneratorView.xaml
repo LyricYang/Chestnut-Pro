@@ -1,10 +1,11 @@
 ﻿<UserControl
-	x:Class="Chestnut_Pro.View.GUIDGeneratorView"
+	x:Class="Chestnut_Pro.View.ASCIIArtGeneratorView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
 	mc:Ignorable="d"
 	d:DesignHeight="850"
 	d:DesignWidth="1100">
@@ -27,6 +28,42 @@
             <Setter
 				Property="VerticalAlignment"
 				Value="Center" />
+        </Style>
+        <Style
+			x:Key="InputOutputTitle"
+			TargetType="{x:Type TextBlock}">
+            <Setter
+				Property="IsEnabled"
+				Value="False" />
+            <Setter
+				Property="FontSize"
+				Value="14" />
+            <Setter
+				Property="Foreground"
+				Value="#1A1A1A" />
+            <Setter
+				Property="HorizontalAlignment"
+				Value="Left" />
+            <Setter
+				Property="VerticalAlignment"
+				Value="Bottom" />
+        </Style>
+        <Style
+			x:Key="OutputContent"
+			TargetType="{x:Type TextBox}"
+			BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}">
+            <Setter
+				Property="FontWeight"
+				Value="DemiBold" />
+            <Setter
+				Property="Height"
+				Value="40" />
+            <Setter
+				Property="VerticalAlignment"
+				Value="Center" />
+            <Setter
+				Property="IsEnabled"
+				Value="False" />
         </Style>
         <Style
 			x:Key="Content"
@@ -96,7 +133,7 @@
                     <!--Title-->
                     <TextBlock
 						Style="{StaticResource ControlTitleTextStyle}"
-						Text="GUID Generator" />
+						Text="ASCII Art Generator" />
                 </Grid>
                 <!--Configuration-->
                 <Grid>
@@ -111,8 +148,6 @@
 							Height="50" />
                         <RowDefinition
 							Height="80" />
-                        <RowDefinition
-							Height="80" />
                     </Grid.RowDefinitions>
                     <!--Content Title-->
                     <Grid
@@ -122,7 +157,7 @@
 							Style="{StaticResource ConfigurationTitleTextStyle}"
 							Text="Configuration" />
                     </Grid>
-                    <!--Parameter 1-->
+                    <!--Parameter 2-->
                     <Grid
 						Grid.Row="1"
 						Grid.Column="1">
@@ -154,75 +189,71 @@
 											Grid.Column="1">
                                             <materialDesign:PackIcon
 												Style="{StaticResource ConfigTag}"
-												Kind="FormatVerticalAlignBottom" />
+												Kind="FormatFont" />
                                         </Grid>
                                         <Grid
 											Grid.Row="0"
 											Grid.Column="2">
                                             <TextBlock
 												Style="{StaticResource Content}"
-												Text="Hyphens" />
+												Text="Fonts" />
                                         </Grid>
                                         <Grid
 											Grid.Row="0"
 											Grid.Column="3">
-                                            <CheckBox
-												x:Name="Hyphens_Button"
-												Content="Hyphens" />
-                                        </Grid>
-                                    </Grid>
-                                </StackPanel>
-                            </Border>
-                        </WrapPanel>
-                    </Grid>
-                    <!--Parameter 2-->
-                    <Grid
-						Grid.Row="2"
-						Grid.Column="1">
-                        <WrapPanel
-							HorizontalAlignment="Left">
-                            <Border
-								BorderBrush="#C8C8C8"
-								Background="White"
-								BorderThickness="1,1,1,1"
-								CornerRadius="5">
-                                <StackPanel>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition
-												Width="25" />
-                                            <ColumnDefinition
-												Width="100" />
-                                            <ColumnDefinition
-												Width="300" />
-                                            <ColumnDefinition
-												Width="580" />
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition
-												Height="60" />
-                                        </Grid.RowDefinitions>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="1">
-                                            <materialDesign:PackIcon
-												Style="{StaticResource ConfigTag}"
-												Kind="FormatLetterCaseUpper" />
-                                        </Grid>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="2">
-                                            <TextBlock
-												Style="{StaticResource Content}"
-												Text="Uppercase" />
-                                        </Grid>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="3">
-                                            <CheckBox
-												x:Name="Uppercase_Button"
-												IsChecked="False"
-												Content="Uppercase" />
+                                            <ComboBox
+												Grid.Row="0"
+												Grid.Column="3"
+												x:Name="FontSelect"
+												Width="80"
+												materialDesign:HintAssist.Hint="Decimal"
+												HorizontalAlignment="Right"
+												VerticalAlignment="Center"
+												Margin="0 0 30 0">
+                                                <ComboBoxItem
+													Content="Standard"
+                                                    IsSelected="True"/>
+                                                <ComboBoxItem
+													Content="Alpha" />
+                                                <ComboBoxItem
+													Content="Acrobatic" />
+                                                <ComboBoxItem
+													Content="Avatar" />
+                                                <ComboBoxItem
+													Content="Big" />
+                                                <ComboBoxItem
+													Content="Blocks" />
+                                                <ComboBoxItem
+													Content="Bulbhead" />
+                                                <ComboBoxItem
+													Content="Cards" />
+                                                <ComboBoxItem
+													Content="CatWalk" />
+                                                <ComboBoxItem
+													Content="Doom" />
+                                                <ComboBoxItem
+													Content="Epic" />
+                                                <ComboBoxItem
+													Content="Graceful" />
+                                                <ComboBoxItem
+													Content="Graffiti" />
+                                                <ComboBoxItem
+													Content="Impossible" />
+                                                <ComboBoxItem
+													Content="Isometric3" />
+                                                <ComboBoxItem
+													Content="Merlin1" />
+                                                <ComboBoxItem
+													Content="Modular" />
+                                                <ComboBoxItem
+													Content="Slant" />
+                                                <ComboBoxItem
+													Content="Small Slant" />
+                                                <ComboBoxItem
+													Content="SubZero" />
+                                                <ComboBoxItem
+													Content="Sweet" />
+                                            </ComboBox>
                                         </Grid>
                                     </Grid>
                                 </StackPanel>
@@ -231,8 +262,7 @@
                     </Grid>
                 </Grid>
                 <!--Input&Output-->
-                <Grid
-					Margin="0 30 0 0">
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition
 							Width="30" />
@@ -243,85 +273,66 @@
                         <RowDefinition
 							Height="40" />
                         <RowDefinition
+							Height="120" />
+                        <RowDefinition
 							Height="40" />
                         <RowDefinition
-							Height="400" />
+							Height="*" />
                     </Grid.RowDefinitions>
                     <Grid
 						Grid.Row="0"
 						Grid.Column="1">
-                        <Button
-							Style="{StaticResource MaterialDesignRaisedButton}"
-							Width="150"
-                            Background="#7b8b6f"
-                            BorderBrush="#7b8b6f"
-							HorizontalAlignment="Left"
-							VerticalAlignment="Bottom"
-							ToolTip="Generator"
-							Content="Generate GUID(s)"
-							Click="GUIDGenerate"
-							IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
-                        <ComboBox
-							x:Name="GUIDCount_Box"
-							Style="{StaticResource MaterialDesignFloatingHintComboBox}"
-							materialDesign:TextFieldAssist.HasClearButton="True"
-							materialDesign:TextFieldAssist.PrefixText="X "
-							materialDesign:TextFieldAssist.UnderlineBrush="#FF673AB7"
-							materialDesign:ColorZoneAssist.Mode="SecondaryLight"
-							materialDesign:HintAssist.Hint="Size"
-							materialDesign:HintAssist.HelperText="Select size to generate"
-							HorizontalAlignment="Left"
-							Margin="160 0 0 0"
-							Width="100">
-                            <ComboBoxItem
-								Content="1"
-								IsSelected="True" />
-                            <ComboBoxItem
-								Content="2" />
-                            <ComboBoxItem
-								Content="3" />
-                            <ComboBoxItem
-								Content="4" />
-                            <ComboBoxItem
-								Content="5" />
-                        </ComboBox>
-                    </Grid>
-                    <Grid
-						Grid.Row="1"
-						Grid.Column="1">
                         <TextBlock
-							Text="GUID(s)"
-							FontSize="14"
-							FontWeight="DemiBold"
-							Foreground="#1A1A1A"
-							HorizontalAlignment="Left"
-							VerticalAlignment="Bottom" />
+							Style="{StaticResource ConfigurationTitleTextStyle}"
+							Text="Input" />
                         <Button
-							Content="{materialDesign:PackIcon ContentCopy}"
-							ToolTip="Copy"
 							Style="{StaticResource CommonButtonStyle}"
-							Margin="0 0 60 0"
-							Click="GUIDCopy" />
+							Content="{materialDesign:PackIcon FormatLetterStartsWith}"
+							ToolTip="Convert"
+                            Margin="0 0 60 0"
+                            Click="ASCIIGenerate"/>
                         <Button
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
-							Style="{StaticResource CommonButtonStyle}"
-							Click="GUIDClear" />
+							Style="{StaticResource CommonButtonStyle}"/>
                     </Grid>
+                    <StackPanel
+						Grid.Row="1"
+						Grid.Column="1">
+                        <TextBox
+							x:Name="SourceInput"
+							materialDesign:HintAssist.Hint="Text Input"
+							Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                            Height="120"
+                            BorderBrush="#C8C8C8"
+							VerticalAlignment="Center"
+                            TextWrapping="Wrap"
+                            AcceptsReturn="True"
+                            Text="Chestnut Pro"/>
+                    </StackPanel>
                     <Grid
 						Grid.Row="2"
 						Grid.Column="1">
-                        <TextBox
-							x:Name="GUIDOutput_Box"
-							Style="{StaticResource MaterialDesignOutlinedTextBox}"
-							VerticalAlignment="Top"
-							FontSize="14"
-							Height="390"
-							Margin="0 10 0 0"
-							AcceptsReturn="True"
-							TextWrapping="Wrap"
-							VerticalScrollBarVisibility="Auto"/>
+                        <TextBlock
+							Style="{StaticResource ConfigurationTitleTextStyle}"
+							Text="Output" />
                     </Grid>
+                    <Border
+                        Grid.Row="3"
+						Grid.Column="1"
+						BorderBrush="#C8C8C8"
+						Background="#FCFCFC"
+						BorderThickness="1,1,1,1"
+						Height="400"
+						CornerRadius="5">
+                        <avalonEdit:TextEditor
+							Name="AsciiArtOutput"
+							FontFamily="Consolas"
+							SyntaxHighlighting="Json"
+							FontSize="12pt"
+							Background="#FCFCFC"
+                            Margin="5"/>
+                    </Border>
                 </Grid>
             </StackPanel>
         </Grid>

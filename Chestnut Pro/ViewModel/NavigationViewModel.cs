@@ -67,6 +67,7 @@
             {
                 new() { MenuName = "GUID", MenuImage = @"Assets/guid.png" },
                 new() { MenuName = "Hash", MenuImage = @"Assets/hash.png" },
+                new() { MenuName = "ASCII Art", MenuImage = @"Assets/ascii.png" },
                 new() { MenuName = "Palette", MenuImage = @"Assets/palette.png" },
             };
 
@@ -209,6 +210,9 @@
                     break;
                 case "Hash":
                     SelectedViewModel = new HashGeneratorViewModel();
+                    break;
+                case "ASCII Art":
+                    SelectedViewModel = new ASCIIArtGeneratorViewModel();
                     break;
                 default:
                     SelectedViewModel = new AllToolsViewModel();
@@ -486,6 +490,26 @@
                     _HashGeneratorCommand = new RelayCommand(param => HashGeneratorView());
                 }
                 return _HashGeneratorCommand;
+            }
+        }
+
+        // ============================== Show Settings View =============================================
+        public void ASCIIArtGeneratorView()
+        {
+            SelectedViewModel = new ASCIIArtGeneratorViewModel();
+        }
+
+        // This PC button Command
+        private ICommand _ASCIIArtGeneratorCommand;
+        public ICommand ASCIIArtGeneratorCommand
+        {
+            get
+            {
+                if (_ASCIIArtGeneratorCommand == null)
+                {
+                    _ASCIIArtGeneratorCommand = new RelayCommand(param => ASCIIArtGeneratorView());
+                }
+                return _ASCIIArtGeneratorCommand;
             }
         }
     }

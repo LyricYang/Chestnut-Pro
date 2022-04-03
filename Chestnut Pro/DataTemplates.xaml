@@ -63,4 +63,8 @@
 		DataType="{x:Type viewmodel:HashGeneratorViewModel}">
         <view:HashGeneratorView />
     </DataTemplate>
+    <DataTemplate
+		DataType="{x:Type viewmodel:ASCIIArtGeneratorViewModel}">
+        <view:ASCIIArtGeneratorView />
+    </DataTemplate>
 </ResourceDictionary>

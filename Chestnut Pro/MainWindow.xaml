@@ -49,7 +49,7 @@
                         <Image
 							Height="16"
 							Width="16"
-							Source="\Assets\indentleft.png" />
+							Source="\Assets\collapse.png" />
                     </Button>
                     <TextBox
 						x:Name="SearchBox"

@@ -22,7 +22,7 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void GUIDCopy(object sender, System.Windows.RoutedEventArgs e)
+        private void GUIDCopy(object sender, RoutedEventArgs e)
         {
             Clipboard.SetText(GUIDOutput_Box.Text);
         }
@@ -32,7 +32,7 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void GUIDClear(object sender, System.Windows.RoutedEventArgs e)
+        private void GUIDClear(object sender, RoutedEventArgs e)
         {
             GUIDOutput_Box.Text = string.Empty;
         }
@@ -42,7 +42,7 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void GUIDGenerate(object sender, System.Windows.RoutedEventArgs e)
+        private void GUIDGenerate(object sender, RoutedEventArgs e)
         {
             var hyphens = Hyphens_Button.IsChecked ?? true;
             var upper = Uppercase_Button.IsChecked ?? false;
@@ -56,7 +56,6 @@
             }
             output = hyphens ? output : output.Replace("-", "");
             output = upper ? output.ToUpper() : output;
-
             GUIDOutput_Box.Text = output;
         }
     }
