@@ -1,11 +1,10 @@
-﻿
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Windows.Data;
-using Chestnut_Pro.Model;
-
-namespace Chestnut_Pro.ViewModel
+﻿namespace Chestnut_Pro.ViewModel
 {
+    using System.ComponentModel;
+
+    /// <summary>
+    /// ASCII Art Generator View Model
+    /// </summary>
     public class ASCIIArtGeneratorViewModel : INotifyPropertyChanged
     {
         public ASCIIArtGeneratorViewModel()

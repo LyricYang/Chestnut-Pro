@@ -9,6 +9,9 @@
     using LiveCharts.Defaults;
     using LiveCharts.Wpf;
 
+    /// <summary>
+    /// Dashboard View Model
+    /// </summary>
     public class DashboardViewModel : INotifyPropertyChanged
     {
         public SeriesCollection SeriesCollection { get; set; }

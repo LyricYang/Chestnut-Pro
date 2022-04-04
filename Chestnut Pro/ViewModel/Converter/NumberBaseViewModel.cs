@@ -1,11 +1,10 @@
-﻿
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Windows.Data;
-using Chestnut_Pro.Model;
-
-namespace Chestnut_Pro.ViewModel
+﻿namespace Chestnut_Pro.ViewModel
 {
+    using System.ComponentModel;
+
+    /// <summary>
+    /// Number Base View Model
+    /// </summary>
     public class NumberBaseViewModel : INotifyPropertyChanged
     {
         public NumberBaseViewModel()
@@ -13,10 +12,5 @@ namespace Chestnut_Pro.ViewModel
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string propName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
-        }
-
     }
 }

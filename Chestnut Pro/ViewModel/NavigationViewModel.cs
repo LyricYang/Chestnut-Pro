@@ -47,10 +47,7 @@
         {
             // ObservableCollection represents a dynamic data collection that provides notifications when items
             // get added, removed, or when the whole list is refreshed.
-            ObservableCollection<MenuItems> menuItems = new ()
-            {
-                new () { MenuName = "Chart",      MenuImage = @"Assets/chart.png" },
-            };
+
             // Converter Views
             ObservableCollection<MenuItems> converterItems = new()
             {
@@ -205,9 +202,6 @@
                 case "Epoch":
                     SelectedViewModel = new EpochViewModel();
                     break;
-                case "Dashboard":
-                    SelectedViewModel = new DashboardViewModel();
-                    break;
                 case "Hash":
                     SelectedViewModel = new HashGeneratorViewModel();
                     break;
@@ -313,7 +307,7 @@
             }
         }
 
-        // ============================== Show Json Formatter View =============================================
+        // ============================== Show JSON Formatter View =============================================
         public void JsonFormatterView()
         {
             SelectedViewModel = new JsonFormatterViewModel();
@@ -393,7 +387,7 @@
             }
         }
 
-        // ============================== Show Settings View =============================================
+        // ============================== Show Dashboard View =============================================
         public void DashboardView()
         {
             SelectedViewModel = new DashboardViewModel();
@@ -413,7 +407,7 @@
             }
         }
 
-        // ============================== Show Settings View =============================================
+        // ============================== Show All Tools View =============================================
         public void AllToolsView()
         {
             SelectedViewModel = new AllToolsViewModel();
@@ -433,7 +427,7 @@
             }
         }
 
-        // ============================== Show Settings View =============================================
+        // ============================== Show Epoch View =============================================
         public void EpochConverterView()
         {
             SelectedViewModel = new EpochViewModel();
@@ -453,7 +447,7 @@
             }
         }
 
-        // ============================== Show Settings View =============================================
+        // ============================== Show Sankey Chart View =============================================
         public void SankeyChartView()
         {
             SelectedViewModel = new ChartGeneratorViewModel();
@@ -473,7 +467,7 @@
             }
         }
 
-        // ============================== Show Settings View =============================================
+        // ============================== Show Hash View =============================================
         public void HashGeneratorView()
         {
             SelectedViewModel = new HashGeneratorViewModel();
@@ -493,7 +487,7 @@
             }
         }
 
-        // ============================== Show Settings View =============================================
+        // ============================== Show ASCII Art View =============================================
         public void ASCIIArtGeneratorView()
         {
             SelectedViewModel = new ASCIIArtGeneratorViewModel();

@@ -3,10 +3,12 @@
     using System;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
-    using System.Data;
     using Chestnut_Pro.Model;
     using Chestnut_Pro.Service;
 
+    /// <summary>
+    /// Chart Generator View Model
+    /// </summary>
     public class ChartGeneratorViewModel : INotifyPropertyChanged
     {
         private ObservableCollection<ChartModel> _data;

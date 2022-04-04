@@ -2,6 +2,9 @@
 {
     using System.ComponentModel;
 
+    /// <summary>
+    /// JSON Formatter View Model
+    /// </summary>
     public class JsonFormatterViewModel : INotifyPropertyChanged
     {
         public JsonFormatterViewModel()
@@ -9,10 +12,5 @@
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string propName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
-        }
-
     }
 }

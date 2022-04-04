@@ -2,6 +2,9 @@
 {
     using System.ComponentModel;
 
+    /// <summary>
+    /// Epoch View Model
+    /// </summary>
     public class EpochViewModel : INotifyPropertyChanged
     {
         public EpochViewModel()
@@ -9,10 +12,5 @@
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string propName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
-        }
-
     }
 }

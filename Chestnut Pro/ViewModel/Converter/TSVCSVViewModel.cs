@@ -2,6 +2,9 @@
 {
     using System.ComponentModel;
 
+    /// <summary>
+    /// TSV CSV Converter View Model
+    /// </summary>
     public class TSVCSVViewModel : INotifyPropertyChanged
     {
         public TSVCSVViewModel()

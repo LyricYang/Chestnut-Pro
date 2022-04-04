@@ -2,6 +2,9 @@
 {
     using System.ComponentModel;
 
+    /// <summary>
+    /// All Tools View Model
+    /// </summary>
     public class AllToolsViewModel : INotifyPropertyChanged
     {
 
