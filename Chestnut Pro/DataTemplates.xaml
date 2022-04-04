@@ -4,22 +4,28 @@
     xmlns:viewmodel="clr-namespace:Chestnut_Pro.ViewModel"
     xmlns:view="clr-namespace:Chestnut_Pro.View">
     <!--Data Templates apply Views to ViewModel objects displayed in the UI-->
-    <!--Home Page-->
+    <!--Dashboard Page-->
     <DataTemplate
 		DataType="{x:Type viewmodel:DashboardViewModel}">
         <view:DashboardView />
     </DataTemplate>
+    <!--Settings Page-->
+    <DataTemplate
+		DataType="{x:Type viewmodel:SettingsViewModel}">
+        <view:SettingsView />
+    </DataTemplate>
+
     <!--All tools Page-->
     <DataTemplate
 		DataType="{x:Type viewmodel:AllToolsViewModel}">
         <view:AllToolsView />
     </DataTemplate>
-    <!--Number Base Convert Page-->
+    <!--Number Base Page-->
     <DataTemplate
 		DataType="{x:Type viewmodel:NumberBaseViewModel}">
         <view:NumberBaseView />
     </DataTemplate>
-    <!--Number Base Convert Page-->
+    <!--Base64 Page-->
     <DataTemplate
 		DataType="{x:Type viewmodel:Base64ViewModel}">
         <view:Base64View />
@@ -34,35 +40,37 @@
 		DataType="{x:Type viewmodel:ColorPaletteViewModel}">
         <view:ColorPaletteView />
     </DataTemplate>
-    <!--Color Palette Page-->
+    <!--TSV CSV Converter Page-->
     <DataTemplate
 		DataType="{x:Type viewmodel:TSVCSVViewModel}">
         <view:TSVCSVView />
     </DataTemplate>
+    <!--JSON Fomatter Page-->
     <DataTemplate
 		DataType="{x:Type viewmodel:JsonFormatterViewModel}">
         <view:JsonFormatterView />
     </DataTemplate>
+    <!--XML Formatter Page-->
     <DataTemplate
 		DataType="{x:Type viewmodel:XmlFormatterViewModel}">
         <view:XmlFormatterView />
     </DataTemplate>
-    <DataTemplate
-		DataType="{x:Type viewmodel:SettingsViewModel}">
-        <view:SettingsView />
-    </DataTemplate>
+    <!--Epoch Page-->
     <DataTemplate
 		DataType="{x:Type viewmodel:EpochViewModel}">
         <view:EpochView />
     </DataTemplate>
+    <!--Chart Page-->
     <DataTemplate
 		DataType="{x:Type viewmodel:ChartGeneratorViewModel}">
         <view:ChartGeneratorView />
     </DataTemplate>
+    <!--Hash Generator Page-->
     <DataTemplate
 		DataType="{x:Type viewmodel:HashGeneratorViewModel}">
         <view:HashGeneratorView />
     </DataTemplate>
+    <!--ASCII Art Page-->
     <DataTemplate
 		DataType="{x:Type viewmodel:ASCIIArtGeneratorViewModel}">
         <view:ASCIIArtGeneratorView />

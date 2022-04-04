@@ -307,7 +307,7 @@
 							Text="Input" />
                         <Button
 							Style="{StaticResource CommonButtonStyle}"
-							Content="{materialDesign:PackIcon FormatLetterStartsWith}"
+							Content="{materialDesign:PackIcon CursorDefaultClick}"
 							ToolTip="Convert"
 							Click="ConvertNumberBase" />
                     </Grid>

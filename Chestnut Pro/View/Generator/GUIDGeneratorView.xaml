@@ -318,8 +318,7 @@
 							Height="390"
 							Margin="0 10 0 0"
 							AcceptsReturn="True"
-							TextWrapping="Wrap"
-							VerticalScrollBarVisibility="Auto"/>
+							TextWrapping="Wrap"/>
                     </Grid>
                 </Grid>
             </StackPanel>

@@ -287,7 +287,7 @@
 							Text="Input" />
                         <Button
 							Style="{StaticResource CommonButtonStyle}"
-							Content="{materialDesign:PackIcon FormatLetterStartsWith}"
+							Content="{materialDesign:PackIcon CursorDefaultClick}"
 							ToolTip="Convert"
                             Margin="0 0 60 0"
                             Click="ASCIIGenerate"/>

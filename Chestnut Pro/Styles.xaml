@@ -2,54 +2,54 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
                     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
-
+    <!--Line Chart-->
     <Style TargetType="lvc:LineSeries">
-        <Setter Property="StrokeThickness" Value="3"></Setter>
-        <Setter Property="Stroke" Value="White"></Setter>
-        <Setter Property="Fill" Value="#4EFFFFFF"></Setter>
-        <Setter Property="PointGeometrySize" Value="0"></Setter>
-        <Setter Property="LineSmoothness" Value="0"></Setter>
+        <Setter Property="StrokeThickness" Value="3" />
+        <Setter Property="Stroke" Value="White" />
+        <Setter Property="Fill" Value="#4EFFFFFF" />
+        <Setter Property="PointGeometrySize" Value="0" />
+        <Setter Property="LineSmoothness" Value="0" />
     </Style>
-
     <Style TargetType="lvc:Axis">
-        <Setter Property="ShowLabels" Value="False"></Setter>
-        <Setter Property="IsEnabled" Value="False"></Setter>
+        <Setter Property="ShowLabels" Value="False" />
+        <Setter Property="IsEnabled" Value="False" />
     </Style>
-
-    <Style x:Key="ToolCard"
-           TargetType="materialDesign:Card">
-        <Setter Property="UniformCornerRadius"
-                Value="10" />
-        <Setter Property="Height"
-                Value="320" />
-        <Setter Property="Width"
-                Value="200" />
-        <Setter Property="Background"
-                Value="white" />
+    <!--Tool Card-->
+    <Style x:Key="ToolCard" TargetType="materialDesign:Card">
+        <Setter Property="UniformCornerRadius" Value="10" />
+        <Setter Property="Height" Value="320" />
+        <Setter Property="Width" Value="200" />
+        <Setter Property="Background" Value="white" />
     </Style>
-
-    <Style x:Key="SearchBoxStyle"
-           TargetType="{x:Type TextBox}">
-        <Setter Property="Height"
-                Value="35" />
-        <Setter Property="BorderBrush"
-                Value="#C8C8C8"/>
-        <Setter Property="BorderThickness"
-                Value="1,1,1,1"/>
-        <Setter Property="Width"
-                Value="160" />
-        <Setter Property="FontSize"
-                Value="14" />
-        <Setter Property="Background"
-                Value="#ececea" />
-        <Setter Property="Foreground"
-                Value="#303030" />
-        <Setter Property="Padding"
-                Value="8,7,0,0" />
-        <Setter Property="CaretBrush"
-                Value="Black" />
-        <Setter Property="VerticalAlignment"
-                Value="Top" />
+    <!--Control Title Text Block-->
+    <Style x:Key="ControlTitleTextStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="#1A1A1A" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="30,20,0,0" />
+    </Style>
+    <!--Configuration Title Text Block-->
+    <Style x:Key="ConfigurationTitleTextStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="DemiBold" />
+        <Setter Property="Foreground" Value="#1A1A1A" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <!--Search Text Box-->
+    <Style x:Key="SearchBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="Height" Value="35" />
+        <Setter Property="BorderBrush" Value="#C8C8C8" />
+        <Setter Property="BorderThickness" Value="1,1,1,1" />
+        <Setter Property="Width" Value="160" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Background" Value="#ececea" />
+        <Setter Property="Foreground" Value="#303030" />
+        <Setter Property="Padding" Value="8,7,0,0" />
+        <Setter Property="CaretBrush" Value="Black" />
+        <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
@@ -69,38 +69,25 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-    <Style x:Key="SearchTextStyle"
-           TargetType="{x:Type TextBlock}">
-        <Setter Property="IsHitTestVisible"
-                Value="False" />
-        <Setter Property="Visibility"
-                Value="Collapsed" />
-        <Setter Property="FontSize"
-                Value="14" />
-        <Setter Property="Foreground"
-                Value="#A2AAB3" />
-        <Setter Property="HorizontalAlignment"
-                Value="Left" />
-        <Setter Property="VerticalAlignment"
-                Value="Top" />
-        <Setter Property="Margin"
-                Value="10,8,0,0" />
+    <!--Search Text Block-->
+    <Style x:Key="SearchTextStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Visibility" Value="Collapsed" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="#A2AAB3" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Margin" Value="10,8,0,0" />
         <Style.Triggers>
-            <DataTrigger Binding="{Binding Text, ElementName=SearchBox}"
-                         Value="">
-                <Setter Property="Visibility"
-                        Value="Visible" />
+            <DataTrigger Binding="{Binding Text, ElementName=SearchBox}" Value="">
+                <Setter Property="Visibility" Value="Visible" />
             </DataTrigger>
         </Style.Triggers>
     </Style>
-
-    <Style x:Key="MenuButtonStyle"
-           TargetType="RadioButton">
-        <Setter Property="Height"
-                Value="35" />
-        <Setter Property="Margin"
-                Value="0 2 0 0"/>
+    <!--Menu Button-->
+    <Style x:Key="MenuButtonStyle" TargetType="RadioButton">
+        <Setter Property="Height" Value="35" />
+        <Setter Property="Margin" Value="0 2 0 0" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RadioButton">
@@ -138,60 +125,53 @@
                                 Visibility="Collapsed" />
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver"
-                                 Value="True">
-                            <Setter Property="Background"
-                                    TargetName="border"
-                                    Value="#b5c4b1" />
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="#b5c4b1" />
                         </Trigger>
-                        <Trigger Property="IsChecked"
-                                 Value="True">
-                            <Setter Property="Background"
-                                    TargetName="border"
-                                    Value="#b5c4b1" />
-                            <Setter Property="Visibility"
-                                    TargetName="Highlighter"
-                                    Value="Visible" />
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="#b5c4b1" />
+                            <Setter Property="Visibility" TargetName="Highlighter" Value="Visible" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-
+    <!--Scroll Bar Thumb-->
     <Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
-        <Setter Property="OverridesDefaultStyle" Value="true"/>
-        <Setter Property="IsTabStop" Value="false"/>
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="IsTabStop" Value="false" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Thumb}">
                     <Border x:Name="rectangle"
-                                SnapsToDevicePixels="True"
-                                CornerRadius="3"
+                            SnapsToDevicePixels="True"
+                            CornerRadius="3"
                             Background="#656565"
-                                Height="{TemplateBinding Height}"
-                                Width="{TemplateBinding Width}"/>
+                            Height="{TemplateBinding Height}"
+                            Width="{TemplateBinding Width}" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-
     <Style x:Key="ScrollBarStyle" TargetType="{x:Type ScrollBar}">
-        <Setter Property="Stylus.IsPressAndHoldEnabled" Value="false"/>
-        <Setter Property="Stylus.IsFlicksEnabled" Value="false"/>
-        <Setter Property="Width" Value="14"/>
+        <Setter Property="Stylus.IsPressAndHoldEnabled" Value="false" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="false" />
+        <Setter Property="Width" Value="14" />
         <Setter Property="Margin" Value="-14 0 0 0" />
-        <Setter Property="MinWidth" Value="{Binding Width, RelativeSource={RelativeSource Self}}"/>
+        <Setter Property="MinWidth" Value="{Binding Width, RelativeSource={RelativeSource Self}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ScrollBar}">
-                    <Grid x:Name="Bg" SnapsToDevicePixels="true" Background="Transparent">
+                    <Grid x:Name="Bg"
+                          SnapsToDevicePixels="true"
+                          Background="Transparent">
                         <Border Padding="0 4">
                             <Track x:Name="PART_Track"
-                               IsDirectionReversed="true"
-                               IsEnabled="{TemplateBinding IsMouseOver}"
-                               Width="3"
-                               HorizontalAlignment="Center">
+                                   IsDirectionReversed="true"
+                                   IsEnabled="{TemplateBinding IsMouseOver}"
+                                   Width="3"
+                                   HorizontalAlignment="Center">
                                 <Track.DecreaseRepeatButton>
                                     <RepeatButton Opacity="0" Command="{x:Static ScrollBar.PageUpCommand}" />
                                 </Track.DecreaseRepeatButton>
@@ -209,24 +189,24 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="Orientation" Value="Horizontal">
-                <Setter Property="Width" Value="Auto"/>
-                <Setter Property="MinWidth" Value="0"/>
-                <Setter Property="Height" Value="14"/>
-                <Setter Property="MinHeight" Value="{Binding Height, RelativeSource={RelativeSource Self}}"/>
+                <Setter Property="Width" Value="Auto" />
+                <Setter Property="MinWidth" Value="0" />
+                <Setter Property="Height" Value="14" />
+                <Setter Property="MinHeight" Value="{Binding Height, RelativeSource={RelativeSource Self}}" />
                 <Setter Property="Margin" Value="0 -14 0 0" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type ScrollBar}">
                             <Grid x:Name="Bg" SnapsToDevicePixels="true">
                                 <Track x:Name="PART_Track"
-                                    IsEnabled="{TemplateBinding IsMouseOver}"
-                                    Width="6"
-                                    HorizontalAlignment="Center">
+                                       IsEnabled="{TemplateBinding IsMouseOver}"
+                                       Width="6"
+                                       HorizontalAlignment="Center">
                                     <Track.DecreaseRepeatButton>
-                                        <RepeatButton Opacity="0" Command="{x:Static ScrollBar.PageLeftCommand}"/>
+                                        <RepeatButton Opacity="0" Command="{x:Static ScrollBar.PageLeftCommand}" />
                                     </Track.DecreaseRepeatButton>
                                     <Track.IncreaseRepeatButton>
-                                        <RepeatButton Opacity="0" Command="{x:Static ScrollBar.PageRightCommand}"/>
+                                        <RepeatButton Opacity="0" Command="{x:Static ScrollBar.PageRightCommand}" />
                                     </Track.IncreaseRepeatButton>
                                     <Track.Thumb>
                                         <Thumb Style="{StaticResource ScrollBarThumb}" />
@@ -239,22 +219,32 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
     <Style x:Key="ScrollViewerStyle" TargetType="{x:Type ScrollViewer}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ScrollViewer}">
                     <Grid x:Name="Grid" Background="{TemplateBinding Background}">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <Rectangle x:Name="Corner" Grid.Column="1" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Grid.Row="1"/>
-                        <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" CanHorizontallyScroll="False" CanVerticallyScroll="False" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Grid.Column="0" Margin="{TemplateBinding Padding}" Grid.Row="0"/>
+                        <Rectangle x:Name="Corner"
+                                   Grid.Column="1"
+                                   Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"
+                                   Grid.Row="1" />
+                        <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
+                                                CanContentScroll="{TemplateBinding CanContentScroll}"
+                                                CanHorizontallyScroll="False"
+                                                CanVerticallyScroll="False"
+                                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                Content="{TemplateBinding Content}"
+                                                Grid.Column="0"
+                                                Margin="{TemplateBinding Padding}"
+                                                Grid.Row="0" />
                         <ScrollBar x:Name="PART_VerticalScrollBar"
                                    Opacity="0.2"
                                    AutomationProperties.AutomationId="VerticalScrollBar"
@@ -266,7 +256,7 @@
                                    Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
                                    Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
                                    ViewportSize="{TemplateBinding ViewportHeight}"
-                                   Style="{StaticResource ScrollBarStyle}"/>
+                                   Style="{StaticResource ScrollBarStyle}" />
                         <ScrollBar x:Name="PART_HorizontalScrollBar"
                                    Opacity="0.2"
                                    AutomationProperties.AutomationId="HorizontalScrollBar"
@@ -279,7 +269,7 @@
                                    Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
                                    Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
                                    ViewportSize="{TemplateBinding ViewportWidth}"
-                                   Style="{StaticResource ScrollBarStyle}"/>
+                                   Style="{StaticResource ScrollBarStyle}" />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <EventTrigger RoutedEvent="MouseEnter">
@@ -302,35 +292,5 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>
-
-    <Style x:Key="ConfigurationTitleTextStyle"
-           TargetType="{x:Type TextBlock}">
-        <Setter Property="FontSize"
-                Value="14" />
-        <Setter Property="FontWeight"
-                Value="DemiBold" />
-        <Setter Property="Foreground"
-                Value="#1A1A1A" />
-        <Setter Property="HorizontalAlignment"
-                Value="Left" />
-        <Setter Property="VerticalAlignment"
-                Value="Center" />
-    </Style>
-
-    <Style x:Key="ControlTitleTextStyle"
-           TargetType="{x:Type TextBlock}">
-        <Setter Property="FontSize"
-                Value="24" />
-        <Setter Property="FontWeight"
-                Value="Bold" />
-        <Setter Property="Foreground"
-                Value="#1A1A1A" />
-        <Setter Property="HorizontalAlignment"
-                Value="Left" />
-        <Setter Property="VerticalAlignment"
-                Value="Center" />
-        <Setter Property="Margin"
-                Value="30,20,0,0" />
     </Style>
 </ResourceDictionary>
