@@ -10,75 +10,23 @@
 	d:DesignWidth="1100">
     <UserControl.Resources>
         <Style
-			x:Key="ConfigTag"
-			TargetType="materialDesign:PackIcon">
-            <Setter
-				Property="Height"
-				Value="25" />
-            <Setter
-				Property="Width"
-				Value="25" />
-            <Setter
-				Property="Foreground"
-				Value="Black" />
-            <Setter
-				Property="HorizontalAlignment"
-				Value="Left" />
-            <Setter
-				Property="VerticalAlignment"
-				Value="Center" />
-        </Style>
-        <Style
-			x:Key="Content"
-			TargetType="{x:Type TextBlock}">
-            <Setter
-				Property="FontSize"
-				Value="14" />
-            <Setter
-				Property="VerticalAlignment"
-				Value="Center" />
-            <Setter
-				Property="HorizontalAlignment"
-				Value="Left" />
-        </Style>
-        <Style
 			TargetType="{x:Type CheckBox}"
 			BasedOn="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}">
-            <Setter
-				Property="HorizontalAlignment"
-				Value="Right" />
-            <Setter
-				Property="IsChecked"
-				Value="True" />
-            <Setter
-				Property="Margin"
-				Value="0 0 30 0" />
-            <Setter
-				Property="Width"
-				Value="80" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="IsChecked" Value="True" />
+            <Setter Property="Margin" Value="0 0 30 0" />
+            <Setter Property="Width" Value="80" />
         </Style>
         <Style
 			x:Key="CommonButtonStyle"
 			TargetType="{x:Type Button}"
 			BasedOn="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}">
-            <Setter
-				Property="Background"
-				Value="White" />
-            <Setter
-				Property="BorderThickness"
-				Value="1,1,1,1" />
-            <Setter
-				Property="Width"
-				Value="50" />
-            <Setter
-				Property="Height"
-				Value="30" />
-            <Setter
-				Property="HorizontalAlignment"
-				Value="Right" />
-            <Setter
-				Property="BorderBrush"
-				Value="#C8C8C8" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderThickness" Value="1,1,1,1" />
+            <Setter Property="Width" Value="50" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="BorderBrush" Value="#C8C8C8" />
         </Style>
     </UserControl.Resources>
     <Border
@@ -93,159 +41,119 @@
                 <!--Header-->
                 <Grid
 					Height="60">
-                    <!--Title-->
                     <TextBlock
 						Style="{StaticResource ControlTitleTextStyle}"
 						Text="GUID Generator" />
                 </Grid>
-                <!--Configuration-->
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition
-							Width="30" />
-                        <ColumnDefinition
-							Width="1000" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="1000" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition
-							Height="50" />
-                        <RowDefinition
-							Height="80" />
-                        <RowDefinition
-							Height="80" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="80" />
                     </Grid.RowDefinitions>
                     <!--Content Title-->
-                    <Grid
-						Grid.Row="0"
-						Grid.Column="1">
-                        <TextBlock
-							Style="{StaticResource ConfigurationTitleTextStyle}"
-							Text="Configuration" />
-                    </Grid>
-                    <!--Parameter 1-->
-                    <Grid
-						Grid.Row="1"
-						Grid.Column="1">
-                        <WrapPanel
+                    <TextBlock
+                        Grid.Row="0"
+						Grid.Column="1"
+						Style="{StaticResource ConfigurationTitleTextStyle}"
+						Text="Configuration" />
+                    <!--Configuration:Hyphens-->
+                    <WrapPanel
+                            Grid.Row="1"
+						    Grid.Column="1"
 							HorizontalAlignment="Left">
-                            <Border
+                        <Border
 								BorderBrush="#C8C8C8"
 								Background="White"
 								BorderThickness="1,1,1,1"
 								CornerRadius="5">
-                                <StackPanel>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition
-												Width="25" />
-                                            <ColumnDefinition
-												Width="100" />
-                                            <ColumnDefinition
-												Width="200" />
-                                            <ColumnDefinition
-												Width="680" />
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition
-												Height="60" />
-                                        </Grid.RowDefinitions>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="1">
-                                            <materialDesign:PackIcon
-												Style="{StaticResource ConfigTag}"
-												Kind="FormatVerticalAlignBottom" />
-                                        </Grid>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="2">
-                                            <TextBlock
-												Style="{StaticResource Content}"
-												Text="Hyphens" />
-                                        </Grid>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="3">
-                                            <CheckBox
-												x:Name="Hyphens_Button"
-												Content="Hyphens" />
-                                        </Grid>
-                                    </Grid>
-                                </StackPanel>
-                            </Border>
-                        </WrapPanel>
-                    </Grid>
-                    <!--Parameter 2-->
-                    <Grid
-						Grid.Row="2"
-						Grid.Column="1">
-                        <WrapPanel
-							HorizontalAlignment="Left">
-                            <Border
-								BorderBrush="#C8C8C8"
-								Background="White"
-								BorderThickness="1,1,1,1"
-								CornerRadius="5">
-                                <StackPanel>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition
-												Width="25" />
-                                            <ColumnDefinition
-												Width="100" />
-                                            <ColumnDefinition
-												Width="300" />
-                                            <ColumnDefinition
-												Width="580" />
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition
-												Height="60" />
-                                        </Grid.RowDefinitions>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="1">
-                                            <materialDesign:PackIcon
-												Style="{StaticResource ConfigTag}"
-												Kind="FormatLetterCaseUpper" />
-                                        </Grid>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="2">
-                                            <TextBlock
-												Style="{StaticResource Content}"
-												Text="Uppercase" />
-                                        </Grid>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="3">
-                                            <CheckBox
-												x:Name="Uppercase_Button"
-												IsChecked="False"
-												Content="Uppercase" />
-                                        </Grid>
-                                    </Grid>
-                                </StackPanel>
-                            </Border>
-                        </WrapPanel>
-                    </Grid>
+                            <StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="25" />
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="200" />
+                                        <ColumnDefinition Width="680" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60" />
+                                    </Grid.RowDefinitions>
+                                    <materialDesign:PackIcon
+                                        Grid.Row="0"
+										Grid.Column="1"
+										Style="{StaticResource ConfigTag}"
+										Kind="FormatVerticalAlignBottom" />
+                                    <TextBlock
+                                        Grid.Row="0"
+										Grid.Column="2"
+										Style="{StaticResource Content}"
+										Text="Hyphens" />
+                                    <CheckBox
+                                        Grid.Row="0"
+										Grid.Column="3"
+										x:Name="Hyphens_Button"
+										Content="Hyphens" />
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </WrapPanel>
+                    <!--Configuration:Uppercase-->
+                    <WrapPanel
+                        Grid.Row="2"
+						Grid.Column="1"
+						HorizontalAlignment="Left">
+                        <Border
+							BorderBrush="#C8C8C8"
+							Background="White"
+							BorderThickness="1,1,1,1"
+							CornerRadius="5">
+                            <StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="25" />
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="300" />
+                                        <ColumnDefinition Width="580" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60" />
+                                    </Grid.RowDefinitions>
+                                    <materialDesign:PackIcon
+                                        Grid.Row="0"
+										Grid.Column="1"
+										Style="{StaticResource ConfigTag}"
+										Kind="FormatLetterCaseUpper" />
+                                    <TextBlock
+                                        Grid.Row="0"
+										Grid.Column="2"
+										Style="{StaticResource Content}"
+										Text="Uppercase" />
+                                    <CheckBox
+                                        Grid.Row="0"
+										Grid.Column="3"
+										x:Name="Uppercase_Button"
+										IsChecked="False"
+										Content="Uppercase" />
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </WrapPanel>
                 </Grid>
                 <!--Input&Output-->
                 <Grid
 					Margin="0 30 0 0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition
-							Width="30" />
-                        <ColumnDefinition
-							Width="1000" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="1000" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="400" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="400" />
                     </Grid.RowDefinitions>
                     <Grid
 						Grid.Row="0"
@@ -307,20 +215,19 @@
 							Style="{StaticResource CommonButtonStyle}"
 							Click="GUIDClear" />
                     </Grid>
-                    <Grid
-						Grid.Row="2"
-						Grid.Column="1">
-                        <TextBox
-							x:Name="GUIDOutput_Box"
-							Style="{StaticResource MaterialDesignOutlinedTextBox}"
-							VerticalAlignment="Top"
-							FontSize="14"
-							Height="390"
-							Margin="0 10 0 0"
-							AcceptsReturn="True"
-							TextWrapping="Wrap"/>
+                    <TextBox
+                        Grid.Row="2"
+						Grid.Column="1"
+						x:Name="GUIDOutput_Box"
+						Style="{StaticResource MaterialDesignOutlinedTextBox}"
+						VerticalAlignment="Top"
+						FontSize="14"
+						Height="390"
+						Margin="0 10 0 0"
+						AcceptsReturn="True"
+						TextWrapping="Wrap"
+                        IsEnabled="False"/>
                     </Grid>
-                </Grid>
             </StackPanel>
         </Grid>
     </Border>

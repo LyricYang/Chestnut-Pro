@@ -11,111 +11,32 @@
 	d:DesignWidth="1100">
     <UserControl.Resources>
         <Style
-			x:Key="ConfigTag"
-			TargetType="materialDesign:PackIcon">
-            <Setter
-				Property="Height"
-				Value="25" />
-            <Setter
-				Property="Width"
-				Value="25" />
-            <Setter
-				Property="Foreground"
-				Value="Black" />
-            <Setter
-				Property="HorizontalAlignment"
-				Value="Left" />
-            <Setter
-				Property="VerticalAlignment"
-				Value="Center" />
-        </Style>
-        <Style
-			x:Key="InputOutputTitle"
-			TargetType="{x:Type TextBlock}">
-            <Setter
-				Property="IsEnabled"
-				Value="False" />
-            <Setter
-				Property="FontSize"
-				Value="14" />
-            <Setter
-				Property="Foreground"
-				Value="#1A1A1A" />
-            <Setter
-				Property="HorizontalAlignment"
-				Value="Left" />
-            <Setter
-				Property="VerticalAlignment"
-				Value="Bottom" />
-        </Style>
-        <Style
 			x:Key="OutputContent"
 			TargetType="{x:Type TextBox}"
 			BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}">
-            <Setter
-				Property="FontWeight"
-				Value="DemiBold" />
-            <Setter
-				Property="Height"
-				Value="40" />
-            <Setter
-				Property="VerticalAlignment"
-				Value="Center" />
-            <Setter
-				Property="IsEnabled"
-				Value="False" />
-        </Style>
-        <Style
-			x:Key="Content"
-			TargetType="{x:Type TextBlock}">
-            <Setter
-				Property="FontSize"
-				Value="14" />
-            <Setter
-				Property="VerticalAlignment"
-				Value="Center" />
-            <Setter
-				Property="HorizontalAlignment"
-				Value="Left" />
+            <Setter Property="FontWeight" Value="DemiBold" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="IsEnabled" Value="False" />
         </Style>
         <Style
 			TargetType="{x:Type CheckBox}"
 			BasedOn="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}">
-            <Setter
-				Property="HorizontalAlignment"
-				Value="Right" />
-            <Setter
-				Property="IsChecked"
-				Value="True" />
-            <Setter
-				Property="Margin"
-				Value="0 0 30 0" />
-            <Setter
-				Property="Width"
-				Value="80" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="IsChecked" Value="True" />
+            <Setter Property="Margin" Value="0 0 30 0" />
+            <Setter Property="Width" Value="80" />
         </Style>
         <Style
 			x:Key="CommonButtonStyle"
 			TargetType="{x:Type Button}"
 			BasedOn="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}">
-            <Setter
-				Property="Background"
-				Value="White" />
-            <Setter
-				Property="BorderThickness"
-				Value="1,1,1,1" />
-            <Setter
-				Property="Width"
-				Value="50" />
-            <Setter
-				Property="Height"
-				Value="30" />
-            <Setter
-				Property="HorizontalAlignment"
-				Value="Right" />
-            <Setter
-				Property="BorderBrush"
-				Value="#C8C8C8" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderThickness" Value="1,1,1,1" />
+            <Setter Property="Width" Value="50" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="BorderBrush" Value="#C8C8C8" />
         </Style>
     </UserControl.Resources>
     <Border
@@ -130,7 +51,6 @@
                 <!--Header-->
                 <Grid
 					Height="60">
-                    <!--Title-->
                     <TextBlock
 						Style="{StaticResource ControlTitleTextStyle}"
 						Text="ASCII Art Generator" />
@@ -138,146 +58,119 @@
                 <!--Configuration-->
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition
-							Width="30" />
-                        <ColumnDefinition
-							Width="1000" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="1000" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition
-							Height="50" />
-                        <RowDefinition
-							Height="80" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="80" />
                     </Grid.RowDefinitions>
                     <!--Content Title-->
-                    <Grid
-						Grid.Row="0"
-						Grid.Column="1">
-                        <TextBlock
-							Style="{StaticResource ConfigurationTitleTextStyle}"
-							Text="Configuration" />
-                    </Grid>
+                    <TextBlock
+                        Grid.Row="0"
+						Grid.Column="1"
+						Style="{StaticResource ConfigurationTitleTextStyle}"
+						Text="Configuration" />
                     <!--Parameter 2-->
-                    <Grid
-						Grid.Row="1"
-						Grid.Column="1">
-                        <WrapPanel
-							HorizontalAlignment="Left">
-                            <Border
-								BorderBrush="#C8C8C8"
-								Background="White"
-								BorderThickness="1,1,1,1"
-								CornerRadius="5">
-                                <StackPanel>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition
-												Width="25" />
-                                            <ColumnDefinition
-												Width="100" />
-                                            <ColumnDefinition
-												Width="200" />
-                                            <ColumnDefinition
-												Width="680" />
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition
-												Height="60" />
-                                        </Grid.RowDefinitions>
-                                        <Grid
+                    <WrapPanel
+                        Grid.Row="1"
+						Grid.Column="1"
+						HorizontalAlignment="Left">
+                        <Border
+							BorderBrush="#C8C8C8"
+							Background="White"
+							BorderThickness="1,1,1,1"
+							CornerRadius="5">
+                            <StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="25" />
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="200" />
+                                        <ColumnDefinition Width="680" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60" />
+                                    </Grid.RowDefinitions>
+                                    <materialDesign:PackIcon
+                                            Grid.Row="0"
+											Grid.Column="1"
+											Style="{StaticResource ConfigTag}"
+											Kind="FormatFont" />
+                                    <TextBlock
+                                            Grid.Row="0"
+											Grid.Column="2"
+											Style="{StaticResource Content}"
+											Text="Fonts" />
+                                    <ComboBox
 											Grid.Row="0"
-											Grid.Column="1">
-                                            <materialDesign:PackIcon
-												Style="{StaticResource ConfigTag}"
-												Kind="FormatFont" />
-                                        </Grid>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="2">
-                                            <TextBlock
-												Style="{StaticResource Content}"
-												Text="Fonts" />
-                                        </Grid>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="3">
-                                            <ComboBox
-												Grid.Row="0"
-												Grid.Column="3"
-												x:Name="FontSelect"
-												Width="80"
-												materialDesign:HintAssist.Hint="Decimal"
-												HorizontalAlignment="Right"
-												VerticalAlignment="Center"
-												Margin="0 0 30 0">
-                                                <ComboBoxItem
+											Grid.Column="3"
+											x:Name="FontSelect"
+											Width="80"
+											materialDesign:HintAssist.Hint="Decimal"
+											HorizontalAlignment="Right"
+											VerticalAlignment="Center"
+											Margin="0 0 30 0">
+                                        <ComboBoxItem
 													Content="Standard"
                                                     IsSelected="True"/>
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="Alpha" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="Acrobatic" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="Avatar" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="Big" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="Blocks" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="Bulbhead" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="Cards" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="CatWalk" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="Doom" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="Epic" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="Graceful" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="Graffiti" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="Impossible" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="Isometric3" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="Merlin1" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="Modular" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="Slant" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="Small Slant" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="SubZero" />
-                                                <ComboBoxItem
+                                        <ComboBoxItem
 													Content="Sweet" />
-                                            </ComboBox>
-                                        </Grid>
-                                    </Grid>
-                                </StackPanel>
-                            </Border>
-                        </WrapPanel>
-                    </Grid>
+                                    </ComboBox>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </WrapPanel>
                 </Grid>
                 <!--Input&Output-->
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition
-							Width="30" />
-                        <ColumnDefinition
-							Width="1000" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="1000" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="120" />
-                        <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="*" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="120" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Grid
 						Grid.Row="0"
@@ -297,27 +190,23 @@
 							Style="{StaticResource CommonButtonStyle}"
                             Click="InputClear"/>
                     </Grid>
-                    <StackPanel
-						Grid.Row="1"
-						Grid.Column="1">
-                        <TextBox
-							x:Name="SourceInput"
-							materialDesign:HintAssist.Hint="Text Input"
-							Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                            Height="120"
-                            BorderBrush="#C8C8C8"
-							VerticalAlignment="Center"
-                            TextWrapping="Wrap"
-                            AcceptsReturn="True"
-                            Text="Chestnut Pro"/>
-                    </StackPanel>
-                    <Grid
-						Grid.Row="2"
-						Grid.Column="1">
-                        <TextBlock
-							Style="{StaticResource ConfigurationTitleTextStyle}"
-							Text="Output" />
-                    </Grid>
+                    <TextBox
+                        Grid.Row="1"
+						Grid.Column="1"
+						x:Name="SourceInput"
+						materialDesign:HintAssist.Hint="Text Input"
+						Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                        Height="120"
+                        BorderBrush="#C8C8C8"
+						VerticalAlignment="Center"
+                        TextWrapping="Wrap"
+                        AcceptsReturn="True"
+                        Text="Chestnut Pro"/>
+                    <TextBlock
+                        Grid.Row="2"
+						Grid.Column="1"
+						Style="{StaticResource ConfigurationTitleTextStyle}"
+						Text="Output" />
                     <Border
                         Grid.Row="3"
 						Grid.Column="1"

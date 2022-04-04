@@ -14,78 +14,38 @@
 			x:Key="CommonButtonStyle"
 			TargetType="{x:Type Button}"
 			BasedOn="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}">
-            <Setter
-				Property="Background"
-				Value="White" />
-            <Setter
-				Property="BorderThickness"
-				Value="1,1,1,1" />
-            <Setter
-				Property="Width"
-				Value="50" />
-            <Setter
-				Property="Height"
-				Value="30" />
-            <Setter
-				Property="HorizontalAlignment"
-				Value="Right" />
-            <Setter
-				Property="VerticalAlignment"
-				Value="Bottom" />
-            <Setter
-				Property="BorderBrush"
-				Value="#C8C8C8" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderThickness" Value="1,1,1,1" />
+            <Setter Property="Width" Value="50" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="BorderBrush" Value="#C8C8C8" />
         </Style>
         <Style
 			x:Key="TextBoxStyle"
 			TargetType="{x:Type TextBox}"
 			BasedOn="{StaticResource MaterialDesignOutlinedTextBox}">
-            <Setter
-				Property="VerticalAlignment"
-				Value="Top" />
-            <Setter
-				Property="FontSize"
-				Value="12" />
-            <Setter
-				Property="Height"
-				Value="240" />
-            <Setter
-				Property="Margin"
-				Value="0 10 0 0" />
-            <Setter
-				Property="AcceptsReturn"
-				Value="True" />
-            <Setter
-				Property="TextWrapping"
-				Value="Wrap" />
-            <Setter
-				Property="VerticalScrollBarVisibility"
-				Value="Auto" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Height" Value="240" />
+            <Setter Property="Margin" Value="0 10 0 0" />
+            <Setter Property="AcceptsReturn" Value="True" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
         </Style>
         <Style
 			x:Key="CheckBoxStyle"
 			TargetType="{x:Type CheckBox}"
 			BasedOn="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}">
-            <Setter
-				Property="HorizontalAlignment"
-				Value="Right" />
-            <Setter
-				Property="Margin"
-				Value="0 0 50 0" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="Margin" Value="0 0 50 0" />
             <Style.Triggers>
-                <Trigger
-					Property="IsChecked"
-					Value="True">
-                    <Setter
-						Property="Content"
-						Value="Encode" />
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Content" Value="Encode" />
                 </Trigger>
-                <Trigger
-					Property="IsChecked"
-					Value="False">
-                    <Setter
-						Property="Content"
-						Value="Decode" />
+                <Trigger Property="IsChecked" Value="False">
+                    <Setter Property="Content" Value="Decode" />
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -102,116 +62,93 @@
                 <!--Header-->
                 <Grid
 					Height="60">
-                    <!--Title-->
                     <TextBlock
 						Style="{StaticResource ControlTitleTextStyle}"
 						Text="Base 64 Encoder / Decoder" />
                 </Grid>
-                <!--Configuration-->
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition
-							Width="30" />
-                        <ColumnDefinition
-							Width="1000" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="1000" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition
-							Height="50" />
-                        <RowDefinition
-							Height="80" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="80" />
                     </Grid.RowDefinitions>
-                    <!--Content Title-->
-                    <Grid
-						Grid.Row="0"
-						Grid.Column="1">
-                        <TextBlock
-							Style="{StaticResource ConfigurationTitleTextStyle}"
-							Text="Configuration" />
-                    </Grid>
-                    <!--Parameter 1-->
-                    <Grid
-						Grid.Row="1"
-						Grid.Column="1">
-                        <WrapPanel
+                    <!--Configuration Title-->
+                    <TextBlock
+                        Grid.Row="0"
+						Grid.Column="1"
+						Style="{StaticResource ConfigurationTitleTextStyle}"
+						Text="Configuration" />
+                    <!--Configuration: Conversion-->
+                    <WrapPanel
+                            Grid.Row="1"
+						    Grid.Column="1"
 							HorizontalAlignment="Left">
-                            <Border
+                        <Border
 								BorderBrush="#C8C8C8"
 								Background="White"
 								BorderThickness="1,1,1,1"
 								CornerRadius="5">
-                                <StackPanel>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition
-												Width="25" />
-                                            <ColumnDefinition
-												Width="100" />
-                                            <ColumnDefinition
-												Width="300" />
-                                            <ColumnDefinition
-												Width="600" />
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition
-												Height="60" />
-                                        </Grid.RowDefinitions>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="1">
-                                            <materialDesign:PackIcon
-												Kind="CompareHorizontal"
-												Foreground="Black"
-												Height="25"
-												Width="25"
-												HorizontalAlignment="Left"
-												VerticalAlignment="Center" />
-                                        </Grid>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="2">
-                                            <TextBlock
-												HorizontalAlignment="Left"
-												FontSize="14"
-												Text="Conversion"
-												Margin="0 15 0 0" />
-                                            <TextBlock
+                            <StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="25" />
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="300" />
+                                        <ColumnDefinition Width="600" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60" />
+                                    </Grid.RowDefinitions>
+                                    <materialDesign:PackIcon
+                                        Grid.Row="0"
+										Grid.Column="1"
+										Kind="CompareHorizontal"
+										Foreground="Black"
+										Height="25"
+										Width="25"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Center" />
+                                    <Grid
+										Grid.Row="0"
+										Grid.Column="2">
+                                        <TextBlock
+                                            Grid.Row="0"
+											Grid.Column="2"
+											HorizontalAlignment="Left"
+											FontSize="14"
+											Text="Conversion"
+											Margin="0 15 0 0" />
+                                        <TextBlock
 												HorizontalAlignment="Left"
 												FontSize="11"
 												Text="Select which conversion mode you want to use"
 												Margin="0 35 0 0 "
 												Foreground="Gray" />
-                                        </Grid>
-                                        <Grid
-											Grid.Row="0"
-											Grid.Column="3">
-                                            <CheckBox
-												x:Name="Encode_Button"
-												Style="{StaticResource CheckBoxStyle}" />
-                                        </Grid>
                                     </Grid>
-                                </StackPanel>
-                            </Border>
-                        </WrapPanel>
-                    </Grid>
+                                    <CheckBox
+                                        Grid.Row="0"
+										Grid.Column="3"
+										x:Name="Encode_Button"
+										Style="{StaticResource CheckBoxStyle}" />
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </WrapPanel>
                 </Grid>
                 <!--Input-->
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition
-							Width="30" />
-                        <ColumnDefinition
-							Width="1000" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="1000" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="250" />
-                        <RowDefinition
-							Height="50" />
-                        <RowDefinition
-							Height="250" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="250" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="250" />
                     </Grid.RowDefinitions>
                     <Grid
 						Grid.Row="0"
@@ -234,15 +171,6 @@
 							Click="Base64InputClear" />
                     </Grid>
                     <Grid
-						Grid.Row="1"
-						Grid.Column="1"
-						Grid.ColumnSpan="2">
-                        <TextBox
-							x:Name="Base64Input_Box"
-							Style="{StaticResource TextBoxStyle}"
-							BorderBrush="#C8C8C8" />
-                    </Grid>
-                    <Grid
 						Grid.Row="2"
 						Grid.Column="1"
 						Grid.ColumnSpan="2">
@@ -256,16 +184,21 @@
 							Style="{StaticResource CommonButtonStyle}"
 							Click="Base64OutputCopy" />
                     </Grid>
-                    <Grid
-						Grid.Row="3"
+                    <TextBox
+                        Grid.Row="1"
 						Grid.Column="1"
-						Grid.ColumnSpan="2">
-                        <TextBox
-							x:Name="Base64Output_Box"
-							Style="{StaticResource TextBoxStyle}"
-							BorderBrush="#C8C8C8" />
+						Grid.ColumnSpan="2"
+						x:Name="Base64Input_Box"
+						Style="{StaticResource TextBoxStyle}"
+						BorderBrush="#C8C8C8" />
+                    <TextBox
+                        Grid.Row="3"
+					    Grid.Column="1"
+					    Grid.ColumnSpan="2"
+						x:Name="Base64Output_Box"
+						Style="{StaticResource TextBoxStyle}"
+						BorderBrush="#C8C8C8" />
                     </Grid>
-                </Grid>
             </StackPanel>
         </Grid>
     </Border>

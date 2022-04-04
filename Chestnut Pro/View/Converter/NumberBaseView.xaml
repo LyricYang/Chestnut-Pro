@@ -11,95 +11,24 @@
 	Background="Transparent">
     <UserControl.Resources>
         <Style
-			x:Key="ConfigTag"
-			TargetType="materialDesign:PackIcon">
-            <Setter
-				Property="Height"
-				Value="25" />
-            <Setter
-				Property="Width"
-				Value="25" />
-            <Setter
-				Property="Foreground"
-				Value="Black" />
-            <Setter
-				Property="HorizontalAlignment"
-				Value="Left" />
-            <Setter
-				Property="VerticalAlignment"
-				Value="Center" />
-        </Style>
-        <Style
-			x:Key="InputOutputTitle"
-			TargetType="{x:Type TextBlock}">
-            <Setter
-				Property="IsEnabled"
-				Value="False" />
-            <Setter
-				Property="FontSize"
-				Value="14" />
-            <Setter
-				Property="Foreground"
-				Value="#1A1A1A" />
-            <Setter
-				Property="HorizontalAlignment"
-				Value="Left" />
-            <Setter
-				Property="VerticalAlignment"
-				Value="Bottom" />
-        </Style>
-        <Style
 			x:Key="OutputContent"
 			TargetType="{x:Type TextBox}"
 			BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}">
-            <Setter
-				Property="FontWeight"
-				Value="DemiBold" />
-            <Setter
-				Property="Height"
-				Value="40" />
-            <Setter
-				Property="VerticalAlignment"
-				Value="Center" />
-            <Setter
-				Property="IsEnabled"
-				Value="False" />
-        </Style>
-        <Style
-			x:Key="Content"
-			TargetType="{x:Type TextBlock}">
-            <Setter
-				Property="FontSize"
-				Value="14" />
-            <Setter
-				Property="VerticalAlignment"
-				Value="Center" />
-            <Setter
-				Property="HorizontalAlignment"
-				Value="Left" />
+            <Setter Property="FontWeight" Value="DemiBold" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="IsEnabled" Value="False" />
         </Style>
         <Style
 			x:Key="CommonButtonStyle"
 			TargetType="{x:Type Button}"
 			BasedOn="{StaticResource MaterialDesignOutlinedSecondaryDarkButton}">
-            <Setter
-				Property="Background"
-				Value="White" />
-            <Setter
-				Property="BorderThickness"
-				Value="1,1,1,1" />
-            <Setter
-				Property="Width"
-				Value="50" />
-            <Setter
-				Property="Height"
-				Value="30" />
-            <Setter
-				Property="HorizontalAlignment"
-				Value="Right" />
-            <Setter
-				Property="BorderBrush"
-				Value="#C8C8C8" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderThickness" Value="1,1,1,1" />
+            <Setter Property="Width" Value="50" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="BorderBrush" Value="#C8C8C8" />
         </Style>
     </UserControl.Resources>
     <Border
@@ -114,7 +43,6 @@
                 <!--Header-->
                 <Grid
 					Height="60">
-                    <!--Title-->
                     <TextBlock
 						Style="{StaticResource ControlTitleTextStyle}"
 						Text="Number Base Converter" />
@@ -122,65 +50,52 @@
                 <!--Configuration-->
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition
-							Width="30" />
-                        <ColumnDefinition
-							Width="1000" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="1000" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition
-							Height="50" />
-                        <RowDefinition
-							Height="80" />
-                        <RowDefinition
-							Height="80" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="80" />
                     </Grid.RowDefinitions>
                     <!--Content Title-->
-                    <Grid
-						Grid.Row="0"
-						Grid.Column="1">
-                        <TextBlock
-							Style="{StaticResource ConfigurationTitleTextStyle}"
-							Text="Configuration" />
-                    </Grid>
-                    <!--Configuration 1-->
-                    <Grid
-						Grid.Row="1"
-						Grid.Column="1">
-                        <WrapPanel
-							HorizontalAlignment="Left">
-                            <Border
-								BorderBrush="#C8C8C8"
-								Background="White"
-								BorderThickness="1,1,1,1"
-								CornerRadius="5">
-                                <StackPanel>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition
-												Width="25" />
-                                            <ColumnDefinition
-												Width="100" />
-                                            <ColumnDefinition
-												Width="200" />
-                                            <ColumnDefinition
-												Width="680" />
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition
-												Height="60" />
-                                        </Grid.RowDefinitions>
-                                        <materialDesign:PackIcon
+                    <TextBlock
+                        Grid.Row="0"
+						Grid.Column="1"
+						Style="{StaticResource ConfigurationTitleTextStyle}"
+						Text="Configuration" />
+                    <!--Configuration:Format-->
+                    <WrapPanel
+                        Grid.Row="1"
+						Grid.Column="1"
+						HorizontalAlignment="Left">
+                        <Border
+							BorderBrush="#C8C8C8"
+							Background="White"
+							BorderThickness="1,1,1,1"
+							CornerRadius="5">
+                            <StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="25" />
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="200" />
+                                        <ColumnDefinition Width="680" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60" />
+                                    </Grid.RowDefinitions>
+                                    <materialDesign:PackIcon
 											Grid.Row="0"
 											Grid.Column="1"
 											Style="{StaticResource ConfigTag}"
 											Kind="FormatPaint" />
-                                        <TextBlock
+                                    <TextBlock
 											Grid.Row="0"
 											Grid.Column="2"
 											Style="{StaticResource Content}"
 											Text="Format number" />
-                                        <CheckBox
+                                    <CheckBox
 											Grid.Row="0"
 											Grid.Column="3"
 											x:Name="Fromat_Button"
@@ -190,51 +105,44 @@
 											Margin="0 0 30 0"
                                             Background="#7b8b6f"
 											Content="Format" />
-                                    </Grid>
-                                </StackPanel>
-                            </Border>
-                        </WrapPanel>
-                    </Grid>
-                    <!--Configuration 2-->
-                    <Grid
-						Grid.Row="2"
-						Grid.Column="1">
-                        <WrapPanel
-							HorizontalAlignment="Left">
-                            <Border
-								BorderBrush="#C8C8C8"
-								Background="White"
-								BorderThickness="1,1,1,1"
-								CornerRadius="5">
-                                <StackPanel>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition
-												Width="25" />
-                                            <ColumnDefinition
-												Width="100" />
-                                            <ColumnDefinition
-												Width="300" />
-                                            <ColumnDefinition
-												Width="580" />
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition
-												Height="60" />
-                                        </Grid.RowDefinitions>
-                                        <materialDesign:PackIcon
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </WrapPanel>
+                    <!--Configuration:Input Type-->
+                    <WrapPanel
+                        Grid.Row="2"
+						Grid.Column="1"
+						HorizontalAlignment="Left">
+                        <Border
+							BorderBrush="#C8C8C8"
+							Background="White"
+							BorderThickness="1,1,1,1"
+							CornerRadius="5">
+                            <StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="25" />
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="300" />
+                                        <ColumnDefinition Width="580" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60" />
+                                    </Grid.RowDefinitions>
+                                    <materialDesign:PackIcon
 											Grid.Row="0"
 											Grid.Column="1"
 											Style="{StaticResource ConfigTag}"
 											Kind="FormatHorizontalAlignCenter" />
-                                        <TextBlock
+                                    <TextBlock
 											Grid.Row="0"
 											Grid.Column="2"
 											HorizontalAlignment="Left"
 											FontSize="14"
 											Text="Input type"
 											Margin="0 15 0 0" />
-                                        <TextBlock
+                                    <TextBlock
 											Grid.Row="0"
 											Grid.Column="2"
 											HorizontalAlignment="Left"
@@ -242,7 +150,7 @@
 											Text="Select which input type you want to use"
 											Margin="0 35 0 0 "
 											Foreground="Gray" />
-                                        <ComboBox
+                                    <ComboBox
 											Grid.Row="0"
 											Grid.Column="3"
 											x:Name="NumberTypeBox"
@@ -251,53 +159,38 @@
 											HorizontalAlignment="Right"
 											VerticalAlignment="Center"
 											Margin="0 0 30 0">
-                                            <ComboBoxItem
+                                        <ComboBoxItem
 												Content="Decimal" />
-                                            <ComboBoxItem
+                                        <ComboBoxItem
 												Content="Binary" />
-                                            <ComboBoxItem
+                                        <ComboBoxItem
 												Content="Octal" />
-                                            <ComboBoxItem
+                                        <ComboBoxItem
 												Content="Hexadecimal" />
-                                        </ComboBox>
-                                    </Grid>
-                                </StackPanel>
-                            </Border>
-                        </WrapPanel>
-                    </Grid>
+                                    </ComboBox>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </WrapPanel>
                 </Grid>
                 <!--Input&Output-->
-                <Grid
-					Margin="0 30 0 0">
+                <Grid Margin="0 30 0 0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition
-							Width="30" />
-                        <ColumnDefinition
-							Width="1000" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="1000" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="55" />
-                        <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="55" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
                     </Grid.RowDefinitions>
                     <Grid
 						Grid.Row="0"
@@ -311,16 +204,14 @@
 							ToolTip="Convert"
 							Click="ConvertNumberBase" />
                     </Grid>
-                    <StackPanel
-						Grid.Row="1"
-						Grid.Column="1">
-                        <TextBox
-							x:Name="NumberBase_Input"
-							materialDesign:HintAssist.Hint="Input Number"
-							Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-							Height="40"
-							VerticalAlignment="Center" />
-                    </StackPanel>
+                    <TextBox
+                        Grid.Row="1"
+						Grid.Column="1"
+						x:Name="NumberBase_Input"
+						materialDesign:HintAssist.Hint="Input Number"
+						Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+						Height="40"
+						VerticalAlignment="Center" />
                     <materialDesign:Snackbar
 						Grid.Row="2"
 						Grid.Column="1"
@@ -331,34 +222,27 @@
 						HorizontalAlignment="Stretch"
 						Message="The current type isn't Valid" />
                     <!--Binary-->
-                    <Grid
-						Grid.Row="3"
-						Grid.Column="1">
-                        <TextBlock
-							Style="{StaticResource InputOutputTitle}"
-							Text="Binary" />
-                    </Grid>
+                    <TextBlock
+                        Grid.Row="3"
+					    Grid.Column="1"
+					    Style="{StaticResource InputOutputTitle}"
+					    Text="Binary" />
                     <Grid
 						Grid.Row="4"
 						Grid.Column="1">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition
-								Width="900" />
-                            <ColumnDefinition
-								Width="100" />
+                            <ColumnDefinition Width="900" />
+                            <ColumnDefinition Width="100" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition
-								Height="40" />
+                            <RowDefinition Height="40" />
                         </Grid.RowDefinitions>
-                        <StackPanel
-							Grid.Row="0"
-							Grid.Column="0">
-                            <TextBox
-								x:Name="Binary_output"
-								materialDesign:HintAssist.Hint="Output Binary"
-								Style="{StaticResource OutputContent}" />
-                        </StackPanel>
+                        <TextBox
+                            Grid.Row="0"
+							Grid.Column="0"
+							x:Name="Binary_output"
+							materialDesign:HintAssist.Hint="Output Binary"
+							Style="{StaticResource OutputContent}" />
                         <Button
 							Grid.Row="0"
 							Grid.Column="1"
@@ -368,36 +252,27 @@
 							Click="BinaryCopy" />
                     </Grid>
                     <!--Octal-->
-                    <Grid
-						Grid.Row="5"
-						Grid.Column="1">
-                        <TextBlock
-							Style="{StaticResource InputOutputTitle}"
-							Text="Octal" />
-                    </Grid>
+                    <TextBlock
+                        Grid.Row="5"
+						Grid.Column="1"
+						Style="{StaticResource InputOutputTitle}"
+						Text="Octal" />
                     <Grid
 						Grid.Row="6"
 						Grid.Column="1">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition
-								Width="900" />
-                            <ColumnDefinition
-								Width="100" />
+                            <ColumnDefinition Width="900" />
+                            <ColumnDefinition Width="100" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition
-								Height="40" />
+                            <RowDefinition Height="40" />
                         </Grid.RowDefinitions>
-                        <Grid
-							Grid.Row="0"
-							Grid.Column="0">
-                            <StackPanel>
-                                <TextBox
-									x:Name="Octal_output"
-									materialDesign:HintAssist.Hint="Output Octal"
-									Style="{StaticResource OutputContent}" />
-                            </StackPanel>
-                        </Grid>
+                        <TextBox
+                            Grid.Row="0"
+							Grid.Column="0"
+							x:Name="Octal_output"
+							materialDesign:HintAssist.Hint="Output Octal"
+							Style="{StaticResource OutputContent}" />
                         <Button
 							Grid.Row="0"
 							Grid.Column="1"
@@ -407,36 +282,27 @@
 							Click="OctalCopy" />
                     </Grid>
                     <!--Decimal-->
-                    <Grid
-						Grid.Row="7"
-						Grid.Column="1">
-                        <TextBlock
-							Style="{StaticResource InputOutputTitle}"
-							Text="Decimal" />
-                    </Grid>
+                    <TextBlock
+                        Grid.Row="7"
+						Grid.Column="1"
+						Style="{StaticResource InputOutputTitle}"
+						Text="Decimal" />
                     <Grid
 						Grid.Row="8"
 						Grid.Column="1">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition
-								Width="900" />
-                            <ColumnDefinition
-								Width="100" />
+                            <ColumnDefinition Width="900" />
+                            <ColumnDefinition Width="100" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition
-								Height="40" />
+                            <RowDefinition Height="40" />
                         </Grid.RowDefinitions>
-                        <Grid
-							Grid.Row="0"
-							Grid.Column="0">
-                            <StackPanel>
-                                <TextBox
-									x:Name="Decimal_output"
-									materialDesign:HintAssist.Hint="Output Decimal"
-									Style="{StaticResource OutputContent}" />
-                            </StackPanel>
-                        </Grid>
+                        <TextBox
+                            Grid.Row="0"
+							Grid.Column="0"
+							x:Name="Decimal_output"
+							materialDesign:HintAssist.Hint="Output Decimal"
+							Style="{StaticResource OutputContent}" />
                         <Button
 							Grid.Row="0"
 							Grid.Column="1"
@@ -446,36 +312,27 @@
 							Click="DecimalCopy" />
                     </Grid>
                     <!--Hexadecimal-->
-                    <Grid
-						Grid.Row="9"
-						Grid.Column="1">
-                        <TextBlock
-							Style="{StaticResource InputOutputTitle}"
-							Text="Hexadecimal" />
-                    </Grid>
+                    <TextBlock
+                        Grid.Row="9"
+						Grid.Column="1"
+						Style="{StaticResource InputOutputTitle}"
+						Text="Hexadecimal" />
                     <Grid
 						Grid.Row="10"
 						Grid.Column="1">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition
-								Width="900" />
-                            <ColumnDefinition
-								Width="100" />
+                            <ColumnDefinition Width="900" />
+                            <ColumnDefinition Width="100" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition
-								Height="40" />
+                            <RowDefinition Height="40" />
                         </Grid.RowDefinitions>
-                        <Grid
-							Grid.Row="0"
-							Grid.Column="0">
-                            <StackPanel>
-                                <TextBox
-									x:Name="Hexadecimal_output"
-									materialDesign:HintAssist.Hint="Output Hexadecimal"
-									Style="{StaticResource OutputContent}" />
-                            </StackPanel>
-                        </Grid>
+                        <TextBox
+                            Grid.Row="0"
+							Grid.Column="0"
+							x:Name="Hexadecimal_output"
+							materialDesign:HintAssist.Hint="Output Hexadecimal"
+							Style="{StaticResource OutputContent}" />
                         <Button
 							Grid.Row="0"
 							Grid.Column="1"

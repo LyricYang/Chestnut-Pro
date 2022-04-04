@@ -14,73 +14,35 @@
 			x:Key="CommonButtonStyle"
 			TargetType="{x:Type ButtonBase}"
 			BasedOn="{StaticResource MaterialDesignOutlinedButton}">
-            <Setter
-				Property="Background"
-				Value="#FCFCFC" />
-            <Setter
-				Property="BorderThickness"
-				Value="1,1,1,1" />
-            <Setter
-				Property="Width"
-				Value="50" />
-            <Setter
-				Property="Height"
-				Value="30" />
-            <Setter
-				Property="HorizontalAlignment"
-				Value="Right" />
-            <Setter
-				Property="BorderBrush"
-				Value="#C8C8C8" />
+            <Setter Property="Background" Value="#FCFCFC" />
+            <Setter Property="BorderThickness" Value="1,1,1,1" />
+            <Setter Property="Width" Value="50" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="BorderBrush" Value="#C8C8C8" />
         </Style>
         <Style
 			x:Key="ConvertButtonStyle"
 			TargetType="{x:Type ButtonBase}"
 			BasedOn="{StaticResource MaterialDesignFlatMidBgButton}">
-            <Setter
-				Property="HorizontalAlignment"
-				Value="Right" />
-            <Setter
-				Property="FontSize"
-				Value="12" />
-            <Setter
-                Property="Background"
-                Value="#7b8b6f"/>
-            <Setter
-                Property="BorderBrush"
-                Value="#7b8b6f"/>
-            <Setter
-				Property="Width"
-				Value="75" />
-            <Setter
-				Property="Height"
-				Value="30" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Background" Value="#7b8b6f"/>
+            <Setter Property="BorderBrush" Value="#7b8b6f"/>
+            <Setter Property="Width" Value="75" />
+            <Setter Property="Height" Value="30" />
         </Style>
         <Style
 			x:Key="CommonTextBoxStyle"
 			TargetType="{x:Type TextBox}"
 			BasedOn="{StaticResource MaterialDesignOutlinedTextBox}">
-            <Setter
-				Property="BorderBrush"
-				Value="#C8C8C8" />
-            <Setter
-				Property="VerticalAlignment"
-				Value="Top" />
-            <Setter
-				Property="FontSize"
-				Value="12" />
-            <Setter
-				Property="Height"
-				Value="440" />
-            <Setter
-				Property="TextWrapping"
-				Value="Wrap" />
-            <Setter
-				Property="AcceptsTab"
-				Value="True" />
-            <Setter
-				Property="VerticalScrollBarVisibility"
-				Value="Auto" />
+            <Setter Property="BorderBrush" Value="#C8C8C8" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Height" Value="440" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="AcceptsTab" Value="True" />
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
         </Style>
     </UserControl.Resources>
     <Border
@@ -95,29 +57,21 @@
                 <!--Header-->
                 <Grid
 					Height="60">
-                    <!--Title-->
                     <TextBlock
 						Style="{StaticResource ControlTitleTextStyle}"
 						Text="TSV-CSV Converter" />
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition
-							Width="30" />
-                        <ColumnDefinition
-							Width="*" />
-                        <ColumnDefinition
-							Width="8" />
-                        <ColumnDefinition
-							Width="*" />
-                        <ColumnDefinition
-							Width="30" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="8" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="30" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition
-							Height="50" />
-                        <RowDefinition
-							Height="150" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="150" />
                     </Grid.RowDefinitions>
                     <!--File Title-->
                     <Grid
@@ -153,45 +107,44 @@
 							Content="Convert"
 							Click="TSVCSVFileConvert" />
                     </Grid>
-                    <Grid
-						Grid.Row="1"
-						Grid.Column="1">
-                        <WrapPanel
+                    <WrapPanel
+                            Grid.Row="1"
+							Grid.Column="1"
 							HorizontalAlignment="Left">
-                            <Border
+                        <Border
 								BorderThickness="1,1,1,1"
 								Background="#FCFCFC"
 								Width="510"
 								Height="150"
 								CornerRadius="5">
-                                <Border.BorderBrush>
-                                    <DrawingBrush
+                            <Border.BorderBrush>
+                                <DrawingBrush
 										Viewport="10,10,10,10"
 										ViewportUnits="Absolute"
 										TileMode="Tile">
-                                        <DrawingBrush.Drawing>
-                                            <DrawingGroup>
-                                                <GeometryDrawing
+                                    <DrawingBrush.Drawing>
+                                        <DrawingGroup>
+                                            <GeometryDrawing
 													Brush="#C8C8C8">
-                                                    <GeometryDrawing.Geometry>
-                                                        <GeometryGroup>
-                                                            <RectangleGeometry
+                                                <GeometryDrawing.Geometry>
+                                                    <GeometryGroup>
+                                                        <RectangleGeometry
 																Rect="0,0,50,50" />
-                                                            <RectangleGeometry
+                                                        <RectangleGeometry
 																Rect="50,50,50,50" />
-                                                        </GeometryGroup>
-                                                    </GeometryDrawing.Geometry>
-                                                </GeometryDrawing>
-                                            </DrawingGroup>
-                                        </DrawingBrush.Drawing>
-                                    </DrawingBrush>
-                                </Border.BorderBrush>
-                                <StackPanel
+                                                    </GeometryGroup>
+                                                </GeometryDrawing.Geometry>
+                                            </GeometryDrawing>
+                                        </DrawingGroup>
+                                    </DrawingBrush.Drawing>
+                                </DrawingBrush>
+                            </Border.BorderBrush>
+                            <StackPanel
 									HorizontalAlignment="Center"
 									VerticalAlignment="Center"
 									Width="420"
 									Height="130">
-                                    <Button
+                                <Button
 										Style="{StaticResource MaterialDesignFlatLightButton}"
 										ToolTip="MaterialDesignFlatLightButton"
 										FontWeight="Bold"
@@ -200,7 +153,7 @@
 										Content="Browse file"
 										Click="BrowseTSVFile"
 										Margin="0 20 0 0" />
-                                    <TextBlock
+                                <TextBlock
 										x:Name="TSV_File_Text_Box"
 										Margin="5 0 0 0"
 										HorizontalAlignment="Left"
@@ -208,49 +161,47 @@
 										TextTrimming="CharacterEllipsis"
 										Visibility="Hidden"
 										MinWidth="380" />
-                                </StackPanel>
-                            </Border>
-                        </WrapPanel>
-                    </Grid>
-                    <Grid
-						Grid.Row="1"
-						Grid.Column="3">
-                        <WrapPanel
-							HorizontalAlignment="Left">
-                            <Border
+                            </StackPanel>
+                        </Border>
+                    </WrapPanel>
+                    <WrapPanel
+                        Grid.Row="1"
+						Grid.Column="3"
+						HorizontalAlignment="Left">
+                        <Border
 								BorderThickness="1,1,1,1"
 								Background="#FCFCFC"
 								Width="510"
 								Height="150"
 								CornerRadius="5">
-                                <Border.BorderBrush>
-                                    <DrawingBrush
+                            <Border.BorderBrush>
+                                <DrawingBrush
 										Viewport="10,10,10,10"
 										ViewportUnits="Absolute"
 										TileMode="Tile">
-                                        <DrawingBrush.Drawing>
-                                            <DrawingGroup>
-                                                <GeometryDrawing
+                                    <DrawingBrush.Drawing>
+                                        <DrawingGroup>
+                                            <GeometryDrawing
 													Brush="#C8C8C8">
-                                                    <GeometryDrawing.Geometry>
-                                                        <GeometryGroup>
-                                                            <RectangleGeometry
+                                                <GeometryDrawing.Geometry>
+                                                    <GeometryGroup>
+                                                        <RectangleGeometry
 																Rect="0,0,50,50" />
-                                                            <RectangleGeometry
+                                                        <RectangleGeometry
 																Rect="50,50,50,50" />
-                                                        </GeometryGroup>
-                                                    </GeometryDrawing.Geometry>
-                                                </GeometryDrawing>
-                                            </DrawingGroup>
-                                        </DrawingBrush.Drawing>
-                                    </DrawingBrush>
-                                </Border.BorderBrush>
-                                <StackPanel
+                                                    </GeometryGroup>
+                                                </GeometryDrawing.Geometry>
+                                            </GeometryDrawing>
+                                        </DrawingGroup>
+                                    </DrawingBrush.Drawing>
+                                </DrawingBrush>
+                            </Border.BorderBrush>
+                            <StackPanel
 									HorizontalAlignment="Center"
 									VerticalAlignment="Center"
 									Width="420"
 									Height="130">
-                                    <Button
+                                <Button
 										Style="{StaticResource MaterialDesignFlatLightButton}"
 										ToolTip="MaterialDesignFlatLightButton"
 										FontWeight="Bold"
@@ -259,7 +210,7 @@
 										Content="Browse file"
 										Click="BrowseCSVFile"
 										Margin="0 20 0 0" />
-                                    <TextBlock
+                                <TextBlock
 										x:Name="CSV_File_Text_Box"
 										Margin="5 0 0 0"
 										HorizontalAlignment="Left"
@@ -267,31 +218,22 @@
 										TextTrimming="CharacterEllipsis"
 										Visibility="Hidden"
 										MinWidth="380" />
-                                </StackPanel>
-                            </Border>
-                        </WrapPanel>
-                    </Grid>
+                            </StackPanel>
+                        </Border>
+                    </WrapPanel>
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition
-							Width="30" />
-                        <ColumnDefinition
-							Width="*" />
-                        <ColumnDefinition
-							Width="8" />
-                        <ColumnDefinition
-							Width="*" />
-                        <ColumnDefinition
-							Width="30" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="8" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="30" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition
-							Height="30" />
-                        <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="450" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="450" />
                     </Grid.RowDefinitions>
                     <!--File Title-->
                     <Grid
@@ -311,16 +253,14 @@
 							Style="{StaticResource CommonButtonStyle}" />
                     </Grid>
                     <!--TSV Content Title-->
-                    <Grid
-						Grid.Row="2"
-						Grid.Column="1">
-                        <TextBox
-							x:Name="TSV_Text_Box"
-							Style="{StaticResource CommonTextBoxStyle}"
-							Margin="0 10 0 0"
-							materialDesign:HintAssist.Hint="TSV Text"
-							BorderBrush="#C8C8C8" />
-                    </Grid>
+                    <TextBox
+                        Grid.Row="2"
+						Grid.Column="1"
+						x:Name="TSV_Text_Box"
+						Style="{StaticResource CommonTextBoxStyle}"
+						Margin="0 10 0 0"
+						materialDesign:HintAssist.Hint="TSV Text"
+						BorderBrush="#C8C8C8" />
                     <GridSplitter
 						Grid.Row="2"
 						Grid.Column="2"
@@ -360,16 +300,14 @@
 							Click="TSVCSVTextConvert" />
                     </Grid>
                     <!--TSV Content Title-->
-                    <Grid
-						Grid.Row="2"
-						Grid.Column="3">
-                        <TextBox
-							x:Name="CSV_Text_Box"
-							Style="{StaticResource CommonTextBoxStyle}"
-							Margin="0 10 0 0"
-							materialDesign:HintAssist.Hint="CSV Text"
-							BorderBrush="#C8C8C8" />
-                    </Grid>
+                    <TextBox
+                        Grid.Row="2"
+						Grid.Column="3"
+						x:Name="CSV_Text_Box"
+						Style="{StaticResource CommonTextBoxStyle}"
+						Margin="0 10 0 0"
+						materialDesign:HintAssist.Hint="CSV Text"
+						BorderBrush="#C8C8C8" />
                 </Grid>
             </StackPanel>
         </Grid>
