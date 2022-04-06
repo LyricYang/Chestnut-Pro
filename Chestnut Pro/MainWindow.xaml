@@ -88,7 +88,8 @@
                         <!--Converter-->
                         <Expander
 							HorizontalAlignment="Stretch"
-							Background="{x:Null}">
+							Background="{x:Null}"
+                            IsExpanded="True">
                             <Expander.Header>
                                 <StackPanel
 									Orientation="Horizontal">
@@ -129,7 +130,8 @@
                         <!--Generator-->
                         <Expander
 							HorizontalAlignment="Stretch"
-							Background="{x:Null}">
+							Background="{x:Null}"
+                            IsExpanded="True">
                             <Expander.Header>
                                 <StackPanel
 									Orientation="Horizontal">
@@ -170,7 +172,8 @@
                         <!--Formatter-->
                         <Expander
 							HorizontalAlignment="Stretch"
-							Background="{x:Null}">
+							Background="{x:Null}"
+                            IsExpanded="True">
                             <Expander.Header>
                                 <StackPanel
 									Orientation="Horizontal">
@@ -211,7 +214,8 @@
                         <!--Encoder-->
                         <Expander
 							HorizontalAlignment="Stretch"
-							Background="{x:Null}">
+							Background="{x:Null}"
+                            IsExpanded="True">
                             <Expander.Header>
                                 <StackPanel
 									Orientation="Horizontal">
@@ -252,7 +256,8 @@
                         <!--Chart-->
                         <Expander
 							HorizontalAlignment="Stretch"
-							Background="{x:Null}">
+							Background="{x:Null}"
+                            IsExpanded="True">
                             <Expander.Header>
                                 <StackPanel
 									Orientation="Horizontal">

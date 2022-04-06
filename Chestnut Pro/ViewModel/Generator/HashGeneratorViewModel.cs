@@ -1,16 +1,9 @@
 ﻿namespace Chestnut_Pro.ViewModel
 {
-    using System.ComponentModel;
-
     /// <summary>
     /// Hash Generator View Model
     /// </summary>
-    public class HashGeneratorViewModel : INotifyPropertyChanged
+    public class HashGeneratorViewModel : ViewModelBase
     {
-        public HashGeneratorViewModel()
-        {
-        }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

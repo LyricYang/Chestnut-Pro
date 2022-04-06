@@ -139,7 +139,11 @@
             }
         }
 
+        /// <summary>
+        /// Menu Command
+        /// </summary>
         private ICommand _menuCommand;
+
         public ICommand MenuCommand => _menuCommand ?? (_menuCommand = new RelayCommand(param => SwitchViews(param)));
 
         /// <summary>
