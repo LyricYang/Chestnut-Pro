@@ -7,6 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chestnut Pro", "Chestnut Pr
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "ChestnutProSetup", "ChestnutProSetup\ChestnutProSetup.wixproj", "{0B7067EB-1C5A-4ACB-8B3B-5F962D4EB2AD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C71826A1-C715-4A69-BCF2-9BCE25978CE9}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

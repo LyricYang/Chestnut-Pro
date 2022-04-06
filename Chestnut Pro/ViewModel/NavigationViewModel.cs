@@ -10,7 +10,7 @@
     /// <summary>
     /// Navigation View Model
     /// </summary>
-    public class NavigationViewModel : INotifyPropertyChanged
+    public class NavigationViewModel : ViewModelBase
     {
         /// <summary>
         /// CollectionViewSource enables XAML code to set the commonly used CollectionView properties,
@@ -57,7 +57,7 @@
             };
 
             ConverterItemsCollection = new CollectionViewSource { Source = converterItems };
-            ConverterItemsCollection.Filter += MenuItems_Filter;
+            ConverterItemsCollection.Filter += MenuItemsFilter;
 
             // Generator Views
             ObservableCollection<MenuItems> generatorItems = new()
@@ -69,7 +69,7 @@
             };
 
             GeneratorItemsCollection = new CollectionViewSource { Source = generatorItems };
-            GeneratorItemsCollection.Filter += MenuItems_Filter;
+            GeneratorItemsCollection.Filter += MenuItemsFilter;
 
             // Formatter Views
             ObservableCollection<MenuItems> formatterItems = new()
@@ -79,7 +79,7 @@
             };
 
             FormatterItemsCollection = new CollectionViewSource { Source = formatterItems };
-            FormatterItemsCollection.Filter += MenuItems_Filter;
+            FormatterItemsCollection.Filter += MenuItemsFilter;
 
             // Encoder Views
             ObservableCollection<MenuItems> encoderItems = new()
@@ -88,7 +88,7 @@
             };
 
             EncoderItemsCollection = new CollectionViewSource { Source = encoderItems };
-            EncoderItemsCollection.Filter += MenuItems_Filter;
+            EncoderItemsCollection.Filter += MenuItemsFilter;
 
             // Chart Views
             ObservableCollection<MenuItems> chartItems = new()
@@ -97,7 +97,7 @@
             };
 
             ChartItemsCollection = new CollectionViewSource { Source = chartItems };
-            ChartItemsCollection.Filter += MenuItems_Filter;
+            ChartItemsCollection.Filter += MenuItemsFilter;
 
             // Set Home Page
             SelectedViewModel = new AllToolsView();
@@ -105,17 +105,7 @@
         }
 
         /// <summary>
-        /// Implement interface member for INotifyPropertyChanged.
-        /// </summary>
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        private void OnPropertyChanged(string propName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
-        }
-
-        /// <summary>
-        /// Text Search Filter
+        /// Text Search Filter Text
         /// </summary>
         private string filterText;
 
@@ -130,11 +120,60 @@
                 GeneratorItemsCollection.View.Refresh();
                 EncoderItemsCollection.View.Refresh();
                 ChartItemsCollection.View.Refresh();
-                OnPropertyChanged(nameof(FilterText));
+                OnPropertyChanged();
             }
         }
 
-        private void MenuItems_Filter(object sender, FilterEventArgs e)
+        /// <summary>
+        /// Selected View Model
+        /// </summary>
+        private object _selectedViewModel;
+
+        public object SelectedViewModel
+        {
+            get => _selectedViewModel;
+            set
+            {
+                _selectedViewModel = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private ICommand _menuCommand;
+        public ICommand MenuCommand => _menuCommand ?? (_menuCommand = new RelayCommand(param => SwitchViews(param)));
+
+        /// <summary>
+        /// Switch Views
+        /// </summary>
+        /// <param name="parameter"></param>
+        public void SwitchViews(object? parameter)
+        {
+            SelectedViewModel = parameter switch
+            {
+                "All Tools" => new AllToolsViewModel(),
+                "NumberBase" => new NumberBaseViewModel(),
+                "Epoch" => new EpochViewModel(),
+                "TSV/CSV" => new TSVCSVViewModel(),
+                "GUID" => new GUIDGeneratorViewModel(),
+                "Hash" => new HashGeneratorViewModel(),
+                "ASCII Art" => new ASCIIArtGeneratorViewModel(),
+                "Palette" => new ColorPaletteViewModel(),
+                "JSON" => new JsonFormatterViewModel(),
+                "XML" => new XmlFormatterViewModel(),
+                "Base64" => new Base64ViewModel(),
+                "Sankey Chart" => new ChartGeneratorView(),
+                "Settings" => new SettingsViewModel(),
+                "Dashboard" => new DashboardViewModel(),
+                _ => new AllToolsViewModel()
+            };
+        }
+
+        /// <summary>
+        /// Menu Items Filter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItemsFilter(object sender, FilterEventArgs e)
         {
             if (string.IsNullOrEmpty(FilterText))
             {
@@ -142,369 +181,8 @@
                 return;
             }
 
-            MenuItems? _item = e.Item as MenuItems;
-            if (_item.MenuName.ToUpper().Contains(FilterText.ToUpper()))
-            {
-                e.Accepted = true;
-            }
-            else
-            {
-                e.Accepted = false;
-            }
-        }
-
-        private object _selectedViewModel;
-        public object SelectedViewModel
-        {
-            get => _selectedViewModel;
-            set
-            {
-                _selectedViewModel = value;
-                OnPropertyChanged(nameof(SelectedViewModel));
-            }
-        }
-
-        /// <summary>
-        /// Switch Views
-        /// </summary>
-        /// <param name="parameter"></param>
-        public void SwitchViews(object parameter)
-        {
-            switch (parameter)
-            {
-                case "All Tools":
-                    SelectedViewModel = new AllToolsViewModel();
-                    break;
-                case "NumberBase":
-                    SelectedViewModel = new NumberBaseViewModel();
-                    break;
-                case "GUID":
-                    SelectedViewModel = new GUIDGeneratorViewModel();
-                    break;
-                case "Sankey Chart":
-                    SelectedViewModel = new ChartGeneratorViewModel();
-                    break;
-                case "Base64":
-                    SelectedViewModel = new Base64ViewModel();
-                    break;
-                case "Palette":
-                    SelectedViewModel = new ColorPaletteViewModel();
-                    break;
-                case "TSV/CSV":
-                    SelectedViewModel = new TSVCSVViewModel();
-                    break;
-                case "JSON":
-                    SelectedViewModel = new JsonFormatterViewModel();
-                    break;
-                case "XML":
-                    SelectedViewModel = new XmlFormatterViewModel();
-                    break;
-                case "Epoch":
-                    SelectedViewModel = new EpochViewModel();
-                    break;
-                case "Hash":
-                    SelectedViewModel = new HashGeneratorViewModel();
-                    break;
-                case "ASCII Art":
-                    SelectedViewModel = new ASCIIArtGeneratorViewModel();
-                    break;
-                default:
-                    SelectedViewModel = new AllToolsViewModel();
-                    break;
-            }
-        }
-
-        private ICommand _menuCommand;
-        public ICommand MenuCommand
-        {
-            get
-            {
-                if (_menuCommand == null)
-                {
-                    _menuCommand = new RelayCommand(param => SwitchViews(param));
-                }
-                return _menuCommand;
-            }
-        }
-
-        // ============================== Show Color Palette View =============================================
-        public void ColorPaletteView()
-        {
-            SelectedViewModel = new ColorPaletteViewModel();
-        }
-
-        // This PC button Command
-        private ICommand _colorPaletteCommand;
-        public ICommand ColorPaletteCommand
-        {
-            get
-            {
-                if (_colorPaletteCommand == null)
-                {
-                    _colorPaletteCommand = new RelayCommand(param => ColorPaletteView());
-                }
-                return _colorPaletteCommand;
-            }
-        }
-
-        // ============================== Show GUID Generator View =============================================
-        public void GUIDGeneratorView()
-        {
-            SelectedViewModel = new GUIDGeneratorViewModel();
-        }
-
-        // This PC button Command
-        private ICommand _GUIDGeneratorCommand;
-        public ICommand GUIDGeneratorCommand
-        {
-            get
-            {
-                if (_GUIDGeneratorCommand == null)
-                {
-                    _GUIDGeneratorCommand = new RelayCommand(param => GUIDGeneratorView());
-                }
-                return _GUIDGeneratorCommand;
-            }
-        }
-
-        // ============================== Show Number Base Converter View =============================================
-        public void NumberBaseConverterView()
-        {
-            SelectedViewModel = new NumberBaseViewModel();
-        }
-
-        // This PC button Command
-        private ICommand _NumberBaseCommand;
-        public ICommand NumberBaseCommand
-        {
-            get
-            {
-                if (_NumberBaseCommand == null)
-                {
-                    _NumberBaseCommand = new RelayCommand(param => NumberBaseConverterView());
-                }
-                return _NumberBaseCommand;
-            }
-        }
-
-        // ============================== Show Base 64 Generator View =============================================
-        public void Base64GeneratorView()
-        {
-            SelectedViewModel = new Base64ViewModel();
-        }
-
-        // This PC button Command
-        private ICommand _Base64GeneratorCommand;
-        public ICommand Base64GeneratorCommand
-        {
-            get
-            {
-                if (_Base64GeneratorCommand == null)
-                {
-                    _Base64GeneratorCommand = new RelayCommand(param => Base64GeneratorView());
-                }
-                return _Base64GeneratorCommand;
-            }
-        }
-
-        // ============================== Show JSON Formatter View =============================================
-        public void JsonFormatterView()
-        {
-            SelectedViewModel = new JsonFormatterViewModel();
-        }
-
-        // This PC button Command
-        private ICommand _JsonFormatterCommand;
-        public ICommand JsonFormatterCommand
-        {
-            get
-            {
-                if (_JsonFormatterCommand == null)
-                {
-                    _JsonFormatterCommand = new RelayCommand(param => JsonFormatterView());
-                }
-                return _JsonFormatterCommand;
-            }
-        }
-
-        // ============================== Show XML Formatter View =============================================
-        public void XMLFormatterView()
-        {
-            SelectedViewModel = new XmlFormatterViewModel();
-        }
-
-        // This PC button Command
-        private ICommand _XMLFormatterCommand;
-        public ICommand XMLFormatterCommand
-        {
-            get
-            {
-                if (_XMLFormatterCommand == null)
-                {
-                    _XMLFormatterCommand = new RelayCommand(param => XMLFormatterView());
-                }
-                return _XMLFormatterCommand;
-            }
-        }
-
-        // ============================== Show TSV/CSV Converter View =============================================
-        public void TSVCSVConverterView()
-        {
-            SelectedViewModel = new TSVCSVViewModel();
-        }
-
-        // This PC button Command
-        private ICommand _TsvCsvConverterCommand;
-        public ICommand TsvCsvConverterCommand
-        {
-            get
-            {
-                if (_TsvCsvConverterCommand == null)
-                {
-                    _TsvCsvConverterCommand = new RelayCommand(param => TSVCSVConverterView());
-                }
-                return _TsvCsvConverterCommand;
-            }
-        }
-
-        // ============================== Show Settings View =============================================
-        public void SettingsView()
-        {
-            SelectedViewModel = new SettingsViewModel();
-        }
-
-        // This PC button Command
-        private ICommand _SettingsCommand;
-        public ICommand SettingsCommand
-        {
-            get
-            {
-                if (_SettingsCommand == null)
-                {
-                    _SettingsCommand = new RelayCommand(param => SettingsView());
-                }
-                return _SettingsCommand;
-            }
-        }
-
-        // ============================== Show Dashboard View =============================================
-        public void DashboardView()
-        {
-            SelectedViewModel = new DashboardViewModel();
-        }
-
-        // This PC button Command
-        private ICommand _DashboardCommand;
-        public ICommand DashboardCommand
-        {
-            get
-            {
-                if (_DashboardCommand == null)
-                {
-                    _DashboardCommand = new RelayCommand(param => DashboardView());
-                }
-                return _DashboardCommand;
-            }
-        }
-
-        // ============================== Show All Tools View =============================================
-        public void AllToolsView()
-        {
-            SelectedViewModel = new AllToolsViewModel();
-        }
-
-        // This PC button Command
-        private ICommand _AllToolsCommand;
-        public ICommand AllToolsCommand
-        {
-            get
-            {
-                if (_AllToolsCommand == null)
-                {
-                    _AllToolsCommand = new RelayCommand(param => AllToolsView());
-                }
-                return _AllToolsCommand;
-            }
-        }
-
-        // ============================== Show Epoch View =============================================
-        public void EpochConverterView()
-        {
-            SelectedViewModel = new EpochViewModel();
-        }
-
-        // This PC button Command
-        private ICommand _EpochConverterCommand;
-        public ICommand EpochConverterCommand
-        {
-            get
-            {
-                if (_EpochConverterCommand == null)
-                {
-                    _EpochConverterCommand = new RelayCommand(param => EpochConverterView());
-                }
-                return _EpochConverterCommand;
-            }
-        }
-
-        // ============================== Show Sankey Chart View =============================================
-        public void SankeyChartView()
-        {
-            SelectedViewModel = new ChartGeneratorViewModel();
-        }
-
-        // This PC button Command
-        private ICommand _SankeyChartCommand;
-        public ICommand SankeyChartCommand
-        {
-            get
-            {
-                if (_SankeyChartCommand == null)
-                {
-                    _SankeyChartCommand = new RelayCommand(param => SankeyChartView());
-                }
-                return _SankeyChartCommand;
-            }
-        }
-
-        // ============================== Show Hash View =============================================
-        public void HashGeneratorView()
-        {
-            SelectedViewModel = new HashGeneratorViewModel();
-        }
-
-        // This PC button Command
-        private ICommand _HashGeneratorCommand;
-        public ICommand HashGeneratorCommand
-        {
-            get
-            {
-                if (_HashGeneratorCommand == null)
-                {
-                    _HashGeneratorCommand = new RelayCommand(param => HashGeneratorView());
-                }
-                return _HashGeneratorCommand;
-            }
-        }
-
-        // ============================== Show ASCII Art View =============================================
-        public void ASCIIArtGeneratorView()
-        {
-            SelectedViewModel = new ASCIIArtGeneratorViewModel();
-        }
-
-        // This PC button Command
-        private ICommand _ASCIIArtGeneratorCommand;
-        public ICommand ASCIIArtGeneratorCommand
-        {
-            get
-            {
-                if (_ASCIIArtGeneratorCommand == null)
-                {
-                    _ASCIIArtGeneratorCommand = new RelayCommand(param => ASCIIArtGeneratorView());
-                }
-                return _ASCIIArtGeneratorCommand;
-            }
+            MenuItems? item = e.Item as MenuItems;
+            e.Accepted = item.MenuName.ToUpper().Contains(FilterText.ToUpper()) ? true : false;
         }
     }
 }

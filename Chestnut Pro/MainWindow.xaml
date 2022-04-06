@@ -75,7 +75,8 @@
 							Content="All Tools"
 							FontWeight="Bold"
 							Tag="\Assets\tools-hardware.png"
-							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.AllToolsCommand}"
+                            CommandParameter="All Tools"
+							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MenuCommand}"
 							Style="{StaticResource MenuButtonStyle}"
 							GroupName="MenuGroup"
 							Margin="5 0 0 0" />
@@ -305,7 +306,8 @@
                     <RadioButton
 						Content="Settings"
 						Tag="\Assets\settings.png"
-						Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.SettingsCommand}"
+                        CommandParameter="Settings"
+						Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MenuCommand}"
 						Style="{StaticResource MenuButtonStyle}"
 						GroupName="MenuGroup"
 						Margin="5 110 0 0" />

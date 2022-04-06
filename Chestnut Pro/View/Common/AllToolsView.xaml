@@ -74,7 +74,8 @@
 									Style="{StaticResource Content}"
 									Text="Convert numbers from&#xA;one base to another" />
                                 <Button
-									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.NumberBaseCommand}">
+                                    CommandParameter="NumberBase"
+									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MenuCommand}">
                                     <materialDesign:PackIcon
 										Kind="DotsHorizontal" />
                                 </Button>
@@ -95,7 +96,8 @@
 									Style="{StaticResource Content}"
 									Text="Convert epoch to&#xA;human-readable date" />
                                 <Button
-									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.EpochConverterCommand}">
+                                    CommandParameter="Epoch"
+									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MenuCommand}">
                                     <materialDesign:PackIcon
 										Kind="DotsHorizontal" />
                                 </Button>
@@ -116,7 +118,8 @@
 									Style="{StaticResource Content}"
 									Text="Convert csv and tsv&#xA;to each other" />
                                 <Button
-									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.TsvCsvConverterCommand}">
+                                    CommandParameter="TSV/CSV"
+									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MenuCommand}">
                                     <materialDesign:PackIcon
 										Kind="DotsHorizontal" />
                                 </Button>
@@ -137,7 +140,8 @@
 									Style="{StaticResource Content}"
 									Text="Generate GUIDs version&#xA;1 and 4" />
                                 <Button
-									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.GUIDGeneratorCommand}">
+                                    CommandParameter="GUID"
+									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MenuCommand}">
                                     <materialDesign:PackIcon
 										Kind="DotsHorizontal" />
                                 </Button>
@@ -162,7 +166,8 @@
 									Style="{StaticResource Content}"
 									Text="Convert RGB to CMYK&#xA;and Picture" />
                                 <Button
-									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.ColorPaletteCommand}">
+                                    CommandParameter="Palette"
+									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MenuCommand}">
                                     <materialDesign:PackIcon
 										Kind="DotsHorizontal" />
                                 </Button>
@@ -183,7 +188,8 @@
 									Style="{StaticResource Content}"
 									Text="Indent or minify JSON&#xA;data" />
                                 <Button
-									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.JsonFormatterCommand}">
+                                    CommandParameter="JSON"
+									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MenuCommand}">
                                     <materialDesign:PackIcon
 										Kind="DotsHorizontal" />
                                 </Button>
@@ -204,7 +210,8 @@
 									Style="{StaticResource Content}"
 									Text="Indent or minify XML&#xA;data" />
                                 <Button
-                                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.XMLFormatterCommand}">
+                                    CommandParameter="XML"
+                                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MenuCommand}">
                                     <materialDesign:PackIcon
 										Kind="DotsHorizontal" />
                                 </Button>
@@ -225,7 +232,8 @@
 									Style="{StaticResource Content}"
 									Text="Encode and decode&#xA;Base64 data" />
                                 <Button
-									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.Base64GeneratorCommand}">
+                                    CommandParameter="Base64"
+									Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MenuCommand}">
                                     <materialDesign:PackIcon
 										Kind="DotsHorizontal" />
                                 </Button>
@@ -250,7 +258,8 @@
 									Style="{StaticResource Content}"
 									Text="Generate sankey&#xA;diagram" />
                                 <Button
-                                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.SankeyChartCommand}">
+                                    CommandParameter="Sankey Chart"
+                                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MenuCommand}">
                                     <materialDesign:PackIcon
 										Kind="DotsHorizontal" />
                                 </Button>
@@ -271,7 +280,8 @@
 									Style="{StaticResource Content}"
 									Text="Calculate MD5, SHA1,&#xA;SHA256 and SHA512" />
                                 <Button
-                                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.HashGeneratorCommand}">
+                                    CommandParameter="Hash"
+                                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MenuCommand}">
                                     <materialDesign:PackIcon
 										Kind="DotsHorizontal" />
                                 </Button>
