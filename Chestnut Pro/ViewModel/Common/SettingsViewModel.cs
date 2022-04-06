@@ -5,12 +5,7 @@
     /// <summary>
     /// Settings View Model
     /// </summary>
-    public class SettingsViewModel : INotifyPropertyChanged
+    public class SettingsViewModel : ViewModelBase
     {
-        public SettingsViewModel()
-        {
-        }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

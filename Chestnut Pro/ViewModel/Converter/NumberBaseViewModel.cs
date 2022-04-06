@@ -5,12 +5,7 @@
     /// <summary>
     /// Number Base View Model
     /// </summary>
-    public class NumberBaseViewModel : INotifyPropertyChanged
+    public class NumberBaseViewModel : ViewModelBase
     {
-        public NumberBaseViewModel()
-        {
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

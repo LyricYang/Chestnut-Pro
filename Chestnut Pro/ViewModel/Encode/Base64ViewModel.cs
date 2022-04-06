@@ -1,16 +1,9 @@
 ﻿namespace Chestnut_Pro.ViewModel
 {
-    using System.ComponentModel;
-
     /// <summary>
     /// Base 64 View Model
     /// </summary>
-    public class Base64ViewModel : INotifyPropertyChanged
+    public class Base64ViewModel : ViewModelBase
     {
-        public Base64ViewModel()
-        {
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

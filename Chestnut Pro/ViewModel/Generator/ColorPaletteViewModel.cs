@@ -2,12 +2,11 @@
 {
     using Chestnut_Pro.Model;
     using System.Collections.ObjectModel;
-    using System.ComponentModel;
 
     /// <summary>
     /// Color Palette View Model
     /// </summary>
-    public class ColorPaletteViewModel : INotifyPropertyChanged
+    public class ColorPaletteViewModel : ViewModelBase
     {
         public ObservableCollection<HeaderModel> PaletteColumnHeadersCollection { get; set; }
 
@@ -325,7 +324,5 @@
                 new() { ColorHex = "#263238" },
             };
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

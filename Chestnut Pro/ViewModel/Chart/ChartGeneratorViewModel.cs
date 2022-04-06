@@ -2,14 +2,13 @@
 {
     using System;
     using System.Collections.ObjectModel;
-    using System.ComponentModel;
     using Chestnut_Pro.Model;
     using Chestnut_Pro.Service;
 
     /// <summary>
     /// Chart Generator View Model
     /// </summary>
-    public class ChartGeneratorViewModel : INotifyPropertyChanged
+    public class ChartGeneratorViewModel : ViewModelBase
     {
         private ObservableCollection<ChartModel> _data;
         public ObservableCollection<ChartModel> Data
@@ -33,7 +32,5 @@
                 });
             }
         }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

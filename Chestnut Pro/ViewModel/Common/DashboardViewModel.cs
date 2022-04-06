@@ -1,7 +1,6 @@
 ﻿namespace Chestnut_Pro.ViewModel
 {
     using System;
-    using System.ComponentModel;
     using System.Windows.Media;
     using Chestnut_Pro.Service;
     using Chestnut_Pro.Service.Common;
@@ -12,7 +11,7 @@
     /// <summary>
     /// Dashboard View Model
     /// </summary>
-    public class DashboardViewModel : INotifyPropertyChanged
+    public class DashboardViewModel : ViewModelBase
     {
         public SeriesCollection SeriesCollection { get; set; }
         public SeriesCollection LastHourSeries { get; set; }
@@ -107,13 +106,6 @@
 
             Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", " Aug", "Sep", "Oct", "Nov", "Dec"};
             Formatter = value => value.ToString();
-        }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        private void OnPropertyChanged(string propName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
         }
     }
 
