@@ -62,15 +62,5 @@
             XMLInput_Box.Text = string.Empty;
             XMLOutput_Box.Text = string.Empty;
         }
-
-        /// <summary>
-        /// XML Copy
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void XMLCopy(object sender, RoutedEventArgs e)
-        {
-            Clipboard.SetText(XMLOutput_Box.Text);
-        }
     }
 }

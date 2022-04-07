@@ -4,6 +4,7 @@
     using Chestnut_Pro.View;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
+    using System.Windows;
     using System.Windows.Data;
     using System.Windows.Input;
 
@@ -147,6 +148,13 @@
         public ICommand MenuCommand => _menuCommand ?? (_menuCommand = new RelayCommand(param => SwitchViews(param)));
 
         /// <summary>
+        /// Menu Command
+        /// </summary>
+        private ICommand _copyCommand;
+
+        public ICommand CopyCommand => _copyCommand ?? (_copyCommand = new RelayCommand(param => CopyContent(param)));
+
+        /// <summary>
         /// Switch Views
         /// </summary>
         /// <param name="parameter"></param>
@@ -170,6 +178,19 @@
                 "Dashboard" => new DashboardViewModel(),
                 _ => new AllToolsViewModel()
             };
+        }
+
+        /// <summary>
+        /// Copy Text Box Content
+        /// </summary>
+        /// <param name="parameter"></param>
+        public void CopyContent(object? parameter)
+        {
+            var content = parameter as string;
+            if (!string.IsNullOrEmpty(content))
+            {
+                Clipboard.SetText(content.TrimEnd('\n').Trim('\r'));
+            }
         }
 
         /// <summary>

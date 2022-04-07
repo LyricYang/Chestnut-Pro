@@ -82,20 +82,10 @@
 							Style="{StaticResource ConfigurationTitleTextStyle}"
 							Text="TSV-CSV File Converter" />
                         <Button
-							Content="{materialDesign:PackIcon ContentCopy}"
-							ToolTip="Copy"
-							Style="{StaticResource CommonButtonStyle}"
-							Margin="0 0 573 0" />
-                        <Button
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
 							Style="{StaticResource CommonButtonStyle}"
 							Margin="0 0 518 0" />
-                        <Button
-							Content="{materialDesign:PackIcon ContentCopy}"
-							ToolTip="Copy"
-							Style="{StaticResource CommonButtonStyle}"
-							Margin="0 0 135 0" />
                         <Button
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
@@ -246,7 +236,9 @@
 							Content="{materialDesign:PackIcon ContentCopy}"
 							ToolTip="Copy"
 							Style="{StaticResource CommonButtonStyle}"
-							Margin="0 0 60 0" />
+							Margin="0 0 60 0"
+                            CommandParameter="{Binding ElementName=TSV_Text_Box, Path=Text}"
+							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CopyCommand}"/>
                         <Button
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
@@ -288,7 +280,9 @@
 							Content="{materialDesign:PackIcon ContentCopy}"
 							ToolTip="Copy"
 							Style="{StaticResource CommonButtonStyle}"
-							Margin="0 0 135 0" />
+							Margin="0 0 135 0"
+                            CommandParameter="{Binding ElementName=CSV_Text_Box, Path=Text}"
+							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CopyCommand}"/>
                         <Button
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"

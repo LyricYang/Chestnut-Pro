@@ -43,31 +43,6 @@
             }
         }
 
-        private void CopySource(object sender, RoutedEventArgs e)
-        {
-            Clipboard.SetText(SourceInput.Text);
-        }
-
-        private void CopyMD5(object sender, RoutedEventArgs e)
-        {
-            Clipboard.SetText(MD5Output.Text);
-        }
-
-        private void CopySha1(object sender, RoutedEventArgs e)
-        {
-            Clipboard.SetText(SHA1Output.Text);
-        }
-
-        private void CopySha256(object sender, RoutedEventArgs e)
-        {
-            Clipboard.SetText(SHA256Output.Text);
-        }
-
-        private void CopySha512(object sender, RoutedEventArgs e)
-        {
-            Clipboard.SetText(SHA512Output.Text);
-        }
-
         private void ClearSource(object sender, RoutedEventArgs e)
         {
             SourceInput.Text = string.Empty;

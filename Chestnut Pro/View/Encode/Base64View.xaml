@@ -182,7 +182,8 @@
 							Content="{materialDesign:PackIcon ContentCopy}"
 							ToolTip="Copy"
 							Style="{StaticResource CommonButtonStyle}"
-							Click="Base64OutputCopy" />
+							CommandParameter="{Binding ElementName=Base64Output_Box, Path=Text}"
+							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CopyCommand}"/>
                     </Grid>
                     <TextBox
                         Grid.Row="1"

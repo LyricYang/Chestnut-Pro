@@ -208,7 +208,8 @@
 							ToolTip="Copy"
 							Style="{StaticResource CommonButtonStyle}"
 							Margin="0 0 60 0"
-							Click="GUIDCopy" />
+							CommandParameter="{Binding ElementName=GUIDOutput_Box, Path=Text}"
+							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CopyCommand}"/>
                         <Button
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"

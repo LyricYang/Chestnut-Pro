@@ -18,16 +18,6 @@
         }
 
         /// <summary>
-        /// Copy GUID
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void GUIDCopy(object sender, RoutedEventArgs e)
-        {
-            Clipboard.SetText(GUIDOutput_Box.Text);
-        }
-
-        /// <summary>
         /// Clear output text
         /// </summary>
         /// <param name="sender"></param>

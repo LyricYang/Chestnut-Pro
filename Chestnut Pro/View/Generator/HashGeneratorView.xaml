@@ -227,7 +227,8 @@
 							ToolTip="Copy"
 							Style="{StaticResource CommonButtonStyle}"
 							Margin="0 0 60 0"
-                            Click="CopySource"/>
+                            CommandParameter="{Binding ElementName=SourceInput, Path=Text}"
+							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CopyCommand}"/>
                         <Button
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
@@ -263,7 +264,8 @@
                             VerticalAlignment="Bottom"
                             Margin="25 0 0 0"
 							ToolTip="Copy"
-                            Click="CopyMD5"/>
+                            CommandParameter="{Binding ElementName=MD5Output, Path=Text}"
+							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CopyCommand}"/>
                     </StackPanel>
                     <!--SHA1-->
                     <TextBlock
@@ -285,7 +287,8 @@
                             VerticalAlignment="Bottom"
                             Margin="25 0 0 0"
 							ToolTip="Copy"
-                            Click="CopySha1"/>
+                            CommandParameter="{Binding ElementName=SHA1Output, Path=Text}"
+							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CopyCommand}"/>
                     </StackPanel>
                     <!--SHA256-->
                     <TextBlock
@@ -307,7 +310,8 @@
                             VerticalAlignment="Bottom"
                             Margin="25 0 0 0"
 							ToolTip="Copy"
-                            Click="CopySha256"/>
+                            CommandParameter="{Binding ElementName=SHA256Output, Path=Text}"
+							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CopyCommand}"/>
                     </StackPanel>
                     <!--SHA512-->
                     <TextBlock
@@ -329,7 +333,8 @@
                             VerticalAlignment="Bottom"
                             Margin="25 0 0 0"
 							ToolTip="Copy"
-                            Click="CopySha512"/>
+                            CommandParameter="{Binding ElementName=SHA512Output, Path=Text}"
+							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CopyCommand}"/>
                     </StackPanel>
                 </Grid>
             </StackPanel>

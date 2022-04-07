@@ -15,11 +15,6 @@
             InitializeComponent();
         }
 
-        private void Base64OutputCopy(object sender, RoutedEventArgs e)
-        {
-            Clipboard.SetText(Base64Output_Box.Text);
-        }
-
         private void Base64InputClear(object sender, RoutedEventArgs e)
         {
             Base64Output_Box.Text = string.Empty;

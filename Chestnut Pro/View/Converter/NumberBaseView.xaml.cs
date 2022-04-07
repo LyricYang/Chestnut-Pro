@@ -50,46 +50,6 @@
         }
 
         /// <summary>
-        /// Copy binary text
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BinaryCopy(object sender, System.Windows.RoutedEventArgs e)
-        {
-            Clipboard.SetText(Binary_output.Text);
-        }
-
-        /// <summary>
-        /// Copy octal text
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OctalCopy(object sender, System.Windows.RoutedEventArgs e)
-        {
-            Clipboard.SetText(Octal_output.Text);
-        }
-
-        /// <summary>
-        /// Copy decimal text
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DecimalCopy(object sender, System.Windows.RoutedEventArgs e)
-        {
-            Clipboard.SetText(Decimal_output.Text);
-        }
-
-        /// <summary>
-        /// Copy hexadecimal text
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void HexadecimalCopy(object sender, System.Windows.RoutedEventArgs e)
-        {
-            Clipboard.SetText(Hexadecimal_output.Text);
-        }
-
-        /// <summary>
         /// Split String With White Space
         /// </summary>
         /// <param name="number"></param>

@@ -61,10 +61,5 @@ namespace Chestnut_Pro.View
             JsonInput_Box.Text = string.Empty;
             JsonOutput_Box.Text = string.Empty;
         }
-
-        private void JsonCopy(object sender, RoutedEventArgs e)
-        {
-            Clipboard.SetText(JsonOutput_Box.Text);
-        }
     }
 }
