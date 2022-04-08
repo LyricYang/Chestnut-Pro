@@ -117,8 +117,8 @@
 											x:Name="Uppercase_Button"
                                             Grid.Row="0"
 											Grid.Column="3"
-											IsChecked="False"
-											Content="Uppercase" />
+											IsChecked="{Binding Uppercase}"
+											Content="Uppercase"/>
                                 </Grid>
                             </StackPanel>
                         </Border>
@@ -221,7 +221,8 @@
 							Content="{materialDesign:PackIcon CursorDefaultClick}"
 							ToolTip="Convert"
                             Margin="0 0 120 0"
-                            Click="CalculateHash"/>
+                            CommandParameter="{Binding ElementName=OutputTypeSelected, Path=Text}"
+                            Command="{Binding ConvertCommand}"/>
                         <Button
 							Content="{materialDesign:PackIcon ContentCopy}"
 							ToolTip="Copy"
@@ -233,12 +234,13 @@
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
 							Style="{StaticResource CommonButtonStyle}"
-                            Click="ClearSource"/>
+                            Command="{Binding ClearCommand}"/>
                     </Grid>
                     <TextBox
 						x:Name="SourceInput"
                         Grid.Row="1"
 						Grid.Column="1"
+                        Text="{Binding InputText}"
 						materialDesign:HintAssist.Hint="Text Input"
 						Style="{StaticResource MaterialDesignOutlinedTextBox}"
                         Height="120"
@@ -257,6 +259,7 @@
                         <TextBox
 							x:Name="MD5Output"
                             Width="925"
+                            Text="{Binding MD5Output}"
 							Style="{StaticResource OutputContent}" />
                         <Button
 							Content="{materialDesign:PackIcon ContentCopy}"
@@ -280,6 +283,7 @@
                         <TextBox
 							x:Name="SHA1Output"
                             Width="925"
+                            Text="{Binding SHA1Output}"
 							Style="{StaticResource OutputContent}" />
                         <Button
 							Content="{materialDesign:PackIcon ContentCopy}"
@@ -303,6 +307,7 @@
                         <TextBox
 							x:Name="SHA256Output"
                             Width="925"
+                            Text="{Binding SHA256Output}"
 							Style="{StaticResource OutputContent}" />
                         <Button
 							Content="{materialDesign:PackIcon ContentCopy}"
@@ -326,6 +331,7 @@
                         <TextBox
 							x:Name="SHA512Output"
                             Width="925"
+                            Text="{Binding SHA512Output}"
 							Style="{StaticResource OutputContent}" />
                         <Button
 							Content="{materialDesign:PackIcon ContentCopy}"

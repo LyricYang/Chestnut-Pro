@@ -96,6 +96,7 @@
                                         Grid.Row="0"
 										Grid.Column="3"
 										x:Name="Hyphens_Button"
+                                        IsChecked="{Binding Hyphens}"
 										Content="Hyphens" />
                                 </Grid>
                             </StackPanel>
@@ -136,7 +137,7 @@
                                         Grid.Row="0"
 										Grid.Column="3"
 										x:Name="Uppercase_Button"
-										IsChecked="False"
+										IsChecked="{Binding Uppercase}"
 										Content="Uppercase" />
                                 </Grid>
                             </StackPanel>
@@ -167,7 +168,8 @@
 							VerticalAlignment="Bottom"
 							ToolTip="Generator"
 							Content="Generate GUID(s)"
-							Click="GUIDGenerate" />
+                            CommandParameter="{Binding ElementName=GUIDCount_Box, Path=Text}"
+							Command="{Binding ConvertCommand}" />
                         <ComboBox
 							x:Name="GUIDCount_Box"
 							Style="{StaticResource MaterialDesignFloatingHintComboBox}"
@@ -214,13 +216,14 @@
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
 							Style="{StaticResource CommonButtonStyle}"
-							Click="GUIDClear" />
+							Command="{Binding ClearCommand}" />
                     </Grid>
                     <TextBox
                         Grid.Row="2"
 						Grid.Column="1"
 						x:Name="GUIDOutput_Box"
 						Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                        Text="{Binding OutputText, Mode=OneWay}"
 						VerticalAlignment="Top"
 						FontSize="14"
 						Height="390"
@@ -228,7 +231,7 @@
 						AcceptsReturn="True"
 						TextWrapping="Wrap"
                         IsEnabled="False"/>
-                    </Grid>
+                </Grid>
             </StackPanel>
         </Grid>
     </Border>

@@ -148,7 +148,7 @@
         public ICommand MenuCommand => _menuCommand ?? (_menuCommand = new RelayCommand(param => SwitchViews(param)));
 
         /// <summary>
-        /// Menu Command
+        /// Copy Command
         /// </summary>
         private ICommand _copyCommand;
 

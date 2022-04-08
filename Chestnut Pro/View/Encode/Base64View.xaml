@@ -163,12 +163,13 @@
 							ToolTip="Convert"
 							Style="{StaticResource CommonButtonStyle}"
 							Margin="0 0 60 0"
-							Click="Base64Convert" />
+                            CommandParameter="{Binding ElementName=Encode_Button, Path=IsChecked}"
+							Command="{Binding ConvertCommand}" />
                         <Button
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
 							Style="{StaticResource CommonButtonStyle}"
-							Click="Base64InputClear" />
+							Command="{Binding ClearCommand}" />
                     </Grid>
                     <Grid
 						Grid.Row="2"
@@ -190,6 +191,7 @@
 						Grid.Column="1"
 						Grid.ColumnSpan="2"
 						x:Name="Base64Input_Box"
+                        Text="{Binding InputText}"
 						Style="{StaticResource TextBoxStyle}"
 						BorderBrush="#C8C8C8" />
                     <TextBox
@@ -197,9 +199,10 @@
 					    Grid.Column="1"
 					    Grid.ColumnSpan="2"
 						x:Name="Base64Output_Box"
+                        Text="{Binding OutputText, Mode=OneWay}"
 						Style="{StaticResource TextBoxStyle}"
 						BorderBrush="#C8C8C8" />
-                    </Grid>
+                </Grid>
             </StackPanel>
         </Grid>
     </Border>
