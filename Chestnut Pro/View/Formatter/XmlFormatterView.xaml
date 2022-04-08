@@ -223,8 +223,7 @@
 							Content="{materialDesign:PackIcon ContentCopy}"
 							ToolTip="Copy"
 							Style="{StaticResource CommonButtonStyle}"
-							CommandParameter="{Binding ElementName=XMLOutput_Box, Path=Text}"
-							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CopyCommand}"/>
+							Click="CopyContent"/>
                     </Grid>
                     <Border
                         Grid.Row="1"

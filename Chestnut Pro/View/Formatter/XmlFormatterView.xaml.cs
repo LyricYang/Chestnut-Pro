@@ -53,6 +53,16 @@
         }
 
         /// <summary>
+        /// Copy Button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CopyContent(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(XMLOutput_Box.Text);
+        }
+
+        /// <summary>
         /// XML clear
         /// </summary>
         /// <param name="sender"></param>

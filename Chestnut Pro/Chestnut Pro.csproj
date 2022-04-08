@@ -16,6 +16,7 @@
     <None Remove="Assets\base64.png" />
     <None Remove="Assets\chart.png" />
     <None Remove="Assets\chestnut.ico" />
+    <None Remove="Assets\chestnutgeneral.png" />
     <None Remove="Assets\china.png" />
     <None Remove="Assets\collapse.png" />
     <None Remove="Assets\csv.png" />
@@ -57,6 +58,7 @@
     <Resource Include="Assets\chestnut.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\chestnutgeneral.png" />
     <Resource Include="Assets\china.png" />
     <Resource Include="Assets\collapse.png" />
     <Resource Include="Assets\csv.png" />

@@ -38,7 +38,7 @@ namespace Chestnut_Pro.View
         }
 
         /// <summary>
-        /// Json formatter
+        /// JSON formatter
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -52,7 +52,7 @@ namespace Chestnut_Pro.View
         }
 
         /// <summary>
-        /// Json clear
+        /// JSON clear
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -60,6 +60,16 @@ namespace Chestnut_Pro.View
         {
             JsonInput_Box.Text = string.Empty;
             JsonOutput_Box.Text = string.Empty;
+        }
+
+        /// <summary>
+        /// Copy Button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CopyContent(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(JsonOutput_Box.Text);
         }
     }
 }

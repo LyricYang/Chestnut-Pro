@@ -1,10 +1,5 @@
 ﻿<UserControl
-	x:Class="Chestnut_Pro.View.SettingsView"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+	x:Class="Chestnut_Pro.View.SettingsView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 	mc:Ignorable="d"
 	d:DesignHeight="850"
 	d:DesignWidth="1100"
@@ -27,154 +22,119 @@
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="30" />
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition
+							Width="30" />
+                        <ColumnDefinition
+							Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="50" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition
+							Height="120" />
+                        <RowDefinition
+							Height="50" />
+                        <RowDefinition
+							Height="*" />
                     </Grid.RowDefinitions>
-                    <TextBlock
-                        Grid.Row="0"
-						Grid.Column="1"
-						Style="{StaticResource ConfigurationTitleTextStyle}"
-						Text="About" />
                     <StackPanel
-                        Grid.Row="1"
-						Grid.Column="1">
-                        <materialDesign:Card
-								UniformCornerRadius="5"
-								HorizontalAlignment="Left"
-								Width="1000"
-								Background="White">
-                            <StackPanel Margin="2">
-                                <Expander
-										HorizontalAlignment="Stretch"
-										Background="White">
-                                    <Expander.Header>
-                                        <StackPanel
-												Orientation="Horizontal">
-                                            <Image
-													Source="\Assets\chestnut.ico"
-													Stretch="Fill"
-													Width="16"
-													Height="16"
-													Margin="0 0 10 0" />
-                                            <StackPanel
-													Orientation="Vertical">
-                                                <TextBlock
-														Text="Chestnut Pro"
-														FontWeight="Bold"
-														FontSize="12" />
-                                                <TextBlock
-														Text="Integrate some commonly used tools" />
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </Expander.Header>
-                                    <Expander.Content>
-                                        <StackPanel
-												Orientation="Vertical"
-												TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
-												Margin="24,8,24,16">
-                                            <TextBlock
-													TextWrapping="Wrap">
-													<Span
-														Foreground="Brown">
-														<Bold>Chestnut Pro</Bold>
-													</Span> integrate tools commonly used
-                                                    by soft engineer in the development, such as color palette,
-                                                    number base converter, tsv file and csv file converter.
-                                                    No need to bookmark various tool sites.<LineBreak /><LineBreak /><Bold>Many tools are available.</Bold><LineBreak />
-                                                    ⚬ Number Base<LineBreak />
-                                                    ⚬ GUID Generator<LineBreak />
-                                                    ⚬ Color Palette<LineBreak />
-                                                    ⚬ TSV/CSV Converter<LineBreak /></TextBlock>
-                                        </StackPanel>
-                                    </Expander.Content>
-                                </Expander>
-                            </StackPanel>
-                        </materialDesign:Card>
-                        <materialDesign:Card
-								UniformCornerRadius="5"
-								HorizontalAlignment="Left"
-								Width="1000"
-								Background="White"
-								Margin="0 10 0 0">
-                            <StackPanel
-									Margin="2">
-                                <Expander
-										HorizontalAlignment="Stretch"
-										Background="White">
-                                    <Expander.Header>
-                                        <StackPanel
-												Orientation="Horizontal">
-                                            <materialDesign:PackIcon
-													Kind="LinkVariant"
-													Height="16"
-													Width="16"
-													HorizontalAlignment="Center"
-													VerticalAlignment="Center"
-													Margin="0 0 10 0" />
-                                            <TextBlock
-													Text="Useful Github Repo"
-													FontWeight="Bold"
-													FontSize="12" />
-                                        </StackPanel>
-                                    </Expander.Header>
-                                    <Expander.Content>
-                                        <WrapPanel
-												Orientation="Horizontal"
-												TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
-												Margin="24,8,24,16">
-                                            <TextBlock
-													Margin="35 0 0 0"
-													FontWeight="Bold">
-													<Hyperlink
-														Foreground="Orange"
-														NavigateUri="https://github.com/LyricYang/Chestnut-Pro"
-														RequestNavigate="Hyperlink_RequestNavigate">
-                                                        SourceCode
+						Grid.Row="0"
+						Grid.Column="1"
+						Orientation="Horizontal">
+                        <Border
+							CornerRadius="5"
+							Height="105"
+							Width="160">
+                            <Image
+								Source="\Assets\chestnutgeneral.png" />
+                        </Border>
+                        <StackPanel>
+                            <TextBlock
+								Margin="20 10 0 0"
+								TextWrapping="Wrap"
+								Width="800"
+								FontSize="13"
+								FontFamily="Microsoft YaHei"
+								Foreground="Gray">
+								<Span
+									Foreground="Brown">
+									<Bold>Chestnut Pro</Bold>
+								</Span> is a set of utilities for users to streamline their development process for greater productive.
+                            It integrates tools commonly used by soft engineer, such as base64 encoder, hash generator,
+                            number base converter, JSON/XML formatter, etc. No need to bookmark various tool sites.<LineBreak /><Span
+									FontStyle="Italic">-- by Aaron Yeoh.</Span></TextBlock>
+                            <WrapPanel>
+                                <TextBlock
+									Margin="20 10 0 0"
+									FontWeight="Bold">
+									<Hyperlink
+										NavigateUri="https://github.com/LyricYang/Chestnut-Pro"
+										RequestNavigate="Hyperlink_RequestNavigate">
+                                                        Github repository
                                                     </Hyperlink>
-                                            </TextBlock>
-                                            <TextBlock
-													Margin="35 0 0 0"
-													FontWeight="Bold">
-													<Hyperlink
-														NavigateUri="https://github.com/veler/DevToys"
-														RequestNavigate="Hyperlink_RequestNavigate">
+                                </TextBlock>
+                                <TextBlock
+									Margin="35 10 0 0"
+									FontWeight="Bold">
+									<Hyperlink
+										NavigateUri="https://github.com/veler/DevToys"
+										RequestNavigate="Hyperlink_RequestNavigate">
                                                         DevToys
                                                     </Hyperlink>
-                                            </TextBlock>
-                                            <TextBlock
-													Margin="35 0 0 0"
-													FontWeight="Bold">
-													<Hyperlink
-														NavigateUri="https://github.com/microsoft/PowerToys"
-														RequestNavigate="Hyperlink_RequestNavigate">
+                                </TextBlock>
+                                <TextBlock
+									Margin="35 10 0 0"
+									FontWeight="Bold">
+									<Hyperlink
+										NavigateUri="https://github.com/microsoft/PowerToys"
+										RequestNavigate="Hyperlink_RequestNavigate">
                                                         PowerToys
                                                     </Hyperlink>
-                                            </TextBlock>
-                                            <TextBlock
-													Margin="35 0 0 0"
-													FontWeight="Bold">
-													<Hyperlink
-														NavigateUri="https://github.com/icsharpcode/AvalonEdit"
-														RequestNavigate="Hyperlink_RequestNavigate">
+                                </TextBlock>
+                                <TextBlock
+									Margin="35 10 0 0"
+									FontWeight="Bold">
+									<Hyperlink
+										NavigateUri="https://github.com/icsharpcode/AvalonEdit"
+										RequestNavigate="Hyperlink_RequestNavigate">
                                                         AvalonEdit
                                                     </Hyperlink>
-                                            </TextBlock>
-                                            <TextBlock
-													Margin="35 0 0 0"
-													FontWeight="Bold">
-													<Hyperlink
-														NavigateUri="https://github.com/microsoft/monaco-editor"
-														RequestNavigate="Hyperlink_RequestNavigate">
-                                                        MonacoEditor
-                                                    </Hyperlink>
-                                            </TextBlock>
-                                        </WrapPanel>
-                                    </Expander.Content>
-                                </Expander>
+                                </TextBlock>
+                            </WrapPanel>
+                        </StackPanel>
+                    </StackPanel>
+                    <TextBlock
+						Grid.Row="1"
+						Grid.Column="1"
+						Style="{StaticResource ConfigurationTitleTextStyle}"
+						Text="Version" />
+                    <StackPanel
+						Grid.Row="2"
+						Grid.Column="1">
+                        <materialDesign:Card
+							UniformCornerRadius="5"
+							HorizontalAlignment="Left"
+							Width="1000"
+							Height="60"
+							Background="White">
+                            <StackPanel
+								Orientation="Horizontal">
+                                <Image
+									Source="\Assets\chestnut.ico"
+									Stretch="Fill"
+									Width="16"
+									Height="16"
+									VerticalAlignment="Center"
+									Margin="30 0 10 0" />
+                                <StackPanel
+									Orientation="Vertical"
+									VerticalAlignment="Center"
+									Margin="20 0 0 0">
+                                    <TextBlock
+										Text="V 1.3.5.0"
+										FontWeight="Bold"
+										FontSize="12" />
+                                    <TextBlock
+										Text="Last release: 2022/04/08" />
+                                </StackPanel>
                             </StackPanel>
                         </materialDesign:Card>
                     </StackPanel>
