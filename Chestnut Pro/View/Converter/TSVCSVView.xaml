@@ -85,17 +85,21 @@
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
 							Style="{StaticResource CommonButtonStyle}"
-							Margin="0 0 518 0" />
+							Margin="0 0 518 0"
+                            CommandParameter="{Binding ElementName=TSV_File_Text_Box, Path=Name}"
+                            Command="{Binding ClearCommand}"/>
                         <Button
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
 							Style="{StaticResource CommonButtonStyle}"
 							Margin="0 0 80 0"
-							HorizontalAlignment="Right" />
+							HorizontalAlignment="Right"
+                            CommandParameter="{Binding ElementName=CSV_File_Text_Box, Path=Name}"
+                            Command="{Binding ClearCommand}"/>
                         <Button
 							Style="{StaticResource ConvertButtonStyle}"
 							Content="Convert"
-							Click="TSVCSVFileConvert" />
+							Command="{Binding FileConvertCommand}" />
                     </Grid>
                     <WrapPanel
                             Grid.Row="1"
@@ -141,15 +145,16 @@
 										FontStyle="Oblique"
 										Foreground="#7b8b6f"
 										Content="Browse file"
-										Click="BrowseTSVFile"
+										Command="{Binding BrowserCommand}"
 										Margin="0 20 0 0" />
                                 <TextBlock
 										x:Name="TSV_File_Text_Box"
 										Margin="5 0 0 0"
 										HorizontalAlignment="Left"
+                                        Text="{Binding TSVFileText, Mode=OneWay}"
 										IsEnabled="False"
 										TextTrimming="CharacterEllipsis"
-										Visibility="Hidden"
+										Visibility="{Binding TSVVisible, Mode=OneWay}"
 										MinWidth="380" />
                             </StackPanel>
                         </Border>
@@ -198,15 +203,16 @@
 										FontStyle="Oblique"
 										Foreground="#7b8b6f"
 										Content="Browse file"
-										Click="BrowseCSVFile"
+										Command="{Binding BrowserCommand}"
 										Margin="0 20 0 0" />
                                 <TextBlock
 										x:Name="CSV_File_Text_Box"
 										Margin="5 0 0 0"
 										HorizontalAlignment="Left"
 										IsEnabled="False"
+                                        Text="{Binding CSVFileText,Mode=OneWay}"
 										TextTrimming="CharacterEllipsis"
-										Visibility="Hidden"
+										Visibility="{Binding CSVVisible, Mode=OneWay}"
 										MinWidth="380" />
                             </StackPanel>
                         </Border>
@@ -242,13 +248,16 @@
                         <Button
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
-							Style="{StaticResource CommonButtonStyle}" />
+							Style="{StaticResource CommonButtonStyle}"
+                            CommandParameter="{Binding ElementName=TSV_Text_Box, Path=Name}"
+                            Command="{Binding ClearCommand}"/>
                     </Grid>
                     <!--TSV Content Title-->
                     <TextBox
                         Grid.Row="2"
 						Grid.Column="1"
 						x:Name="TSV_Text_Box"
+                        Text="{Binding TSVText}"
 						Style="{StaticResource CommonTextBoxStyle}"
 						Margin="0 10 0 0"
 						materialDesign:HintAssist.Hint="TSV Text"
@@ -287,17 +296,20 @@
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
 							Style="{StaticResource CommonButtonStyle}"
-							Margin="0 0 80 0" />
+							Margin="0 0 80 0"
+                            CommandParameter="{Binding ElementName=CSV_Text_Box, Path=Name}"
+                            Command="{Binding ClearCommand}"/>
                         <Button
 							Style="{StaticResource ConvertButtonStyle}"
 							Content="Convert"
-							Click="TSVCSVTextConvert" />
+							Command="{Binding TextConvertCommand}" />
                     </Grid>
                     <!--TSV Content Title-->
                     <TextBox
                         Grid.Row="2"
 						Grid.Column="3"
 						x:Name="CSV_Text_Box"
+                        Text="{Binding CSVText}"
 						Style="{StaticResource CommonTextBoxStyle}"
 						Margin="0 10 0 0"
 						materialDesign:HintAssist.Hint="CSV Text"
