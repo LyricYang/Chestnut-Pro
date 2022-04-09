@@ -110,7 +110,7 @@
 						Style="{StaticResource ConfigurationTitleTextStyle}"
 						Text="Unix Timestamp Converter" />
                     <!--Unix Converter-->
-                    <WrapPanel
+                    <StackPanel
                         Grid.Row="3"
 						Grid.Column="1"
 						HorizontalAlignment="Left">
@@ -121,81 +121,105 @@
 							CornerRadius="5"
 							Height="60"
 							Width="1000">
-                            <StackPanel
-								Orientation="Horizontal">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="200" />
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="200" />
+                                </Grid.ColumnDefinitions>
                                 <TextBlock
+                                    Grid.Column="0"
 									VerticalAlignment="Center"
-									Margin="20 0 10 0"
-									FontWeight="Bold">
-                                    Date Time:
-                                </TextBlock>
-                                <DatePicker
-									x:Name="DatePick"
-									Height="35"
-									Width="100"
-									materialDesign:HintAssist.Hint="Pick Date"
-									Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
-                                <materialDesign:TimePicker
-									x:Name="TimePick"
-									Style="{StaticResource MaterialDesignFloatingHintTimePicker}"
-									materialDesign:HintAssist.Hint="With Seconds"
-									Is24Hours="True"
-									WithSeconds="True"
-									Height="35"
-									Width="100"
-									Margin="10 0 25 0" />
+                                    HorizontalAlignment="Right"
+									FontWeight="Bold"
+                                    xml:space="preserve"
+                                    Text="Date Time :"
+                                    Margin="0 0 10 0"/>
+                                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                    <DatePicker
+										x:Name="DatePick"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Center"
+										Height="35"
+										Width="80"
+										materialDesign:HintAssist.Hint="Pick Date"
+										Style="{StaticResource MaterialDesignFloatingHintDatePicker}"
+                                        Margin="0 0 10 0"/>
+                                    <materialDesign:TimePicker
+										x:Name="TimePick"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Center"
+										Style="{StaticResource MaterialDesignFloatingHintTimePicker}"
+										materialDesign:HintAssist.Hint="With Seconds"
+										Is24Hours="True"
+										WithSeconds="True"
+										Height="35"
+										Width="80" />
+                                </StackPanel>
                                 <Button
+                                    Grid.Column="2"
 									Style="{StaticResource MaterialDesignIconForegroundButton}"
-									ToolTip="MaterialDesignIconForegroundButton"
+									ToolTip="TimeToUnix"
 									Click="DateTimeToUnix">
-                                    <materialDesign:PackIcon
-										Kind="ArrowRightThick" />
+                                    <materialDesign:PackIcon Kind="ArrowRightThick" />
                                 </Button>
                                 <TextBlock
+                                    Grid.Column="3"
 									VerticalAlignment="Center"
-									Margin="25 0 10 0"
-									FontWeight="Bold">
-                                    Unix TimeStamp:
-                                </TextBlock>
+                                    HorizontalAlignment="Right"
+									FontWeight="Bold"
+                                    xml:space="preserve"
+                                    Text="Unix TimeStamp :"
+                                    Margin="0 0 10 0"/>
                                 <TextBox
+                                    Grid.Column="4"
 									x:Name="UnixTimestamp"
 									Style="{StaticResource MaterialDesignFloatingHintTextBox}"
 									Height="35"
-									Width="150"
+									Width="120"
 									VerticalAlignment="Center"
+                                    HorizontalAlignment="Left"
 									materialDesign:TextFieldAssist.HasClearButton="True"
-									materialDesign:TextFieldAssist.SuffixText="ms"></TextBox>
+									materialDesign:TextFieldAssist.SuffixText="ms"/>
                                 <Button
+                                    Grid.Column="5"
 									Style="{StaticResource MaterialDesignIconForegroundButton}"
-									ToolTip="MaterialDesignIconForegroundButton"
-									Margin="25 0 0 0"
+									ToolTip="UnixToTime"
 									Click="UnixToDateTime">
-                                    <materialDesign:PackIcon
-										Kind="ArrowRightThick" />
+                                    <materialDesign:PackIcon Kind="ArrowRightThick" />
                                 </Button>
                                 <TextBlock
+                                    Grid.Column="6"
 									VerticalAlignment="Center"
-									Margin="25 0 10 0"
-									FontWeight="Bold">
-                                    Date Time:
-                                </TextBlock>
+                                    HorizontalAlignment="Right"
+									Margin="0 0 10 0"
+									FontWeight="Bold"
+                                    xml:space="preserve"
+                                    Text="Date Time :"/>
                                 <TextBox
+                                    Grid.Column="7"
 									x:Name="DateTimeTextBox"
 									Style="{StaticResource MaterialDesignFloatingHintTextBox}"
 									Height="35"
-									Width="150"
+									Width="120"
 									VerticalAlignment="Center"
+                                    HorizontalAlignment="Left"
 									materialDesign:TextFieldAssist.HasClearButton="True"></TextBox>
-                            </StackPanel>
+                            </Grid>
                         </Border>
-                    </WrapPanel>
+                    </StackPanel>
                     <!--Configuration Title-->
                     <TextBlock
                         Grid.Row="4"
 						Grid.Column="1"
 						Style="{StaticResource ConfigurationTitleTextStyle}"
-						Text="Difference between dates" />
-                    <WrapPanel
+						Text="Difference Between Dates" />
+                    <StackPanel
                         Grid.Row="5"
 						Grid.Column="1"
 						HorizontalAlignment="Left">
@@ -206,67 +230,88 @@
 							CornerRadius="5"
 							Height="60"
 							Width="1000">
-                            <StackPanel
-								Orientation="Horizontal">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="200" />
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="200" />
+                                </Grid.ColumnDefinitions>
                                 <TextBlock
+                                    Grid.Column="0"
 									VerticalAlignment="Center"
-									Margin="20 0 10 0"
-									FontWeight="Bold">
-                                    From:
-                                </TextBlock>
+                                    HorizontalAlignment="Right"
+									FontWeight="Bold"
+                                    xml:space="preserve"
+                                    Text="From         :"
+                                    Margin="0 0 10 0"/>
                                 <DatePicker
+                                    Grid.Column="1"
 									x:Name="FromDate"
+                                    HorizontalAlignment="Left"
 									Height="35"
 									Width="150"
 									materialDesign:HintAssist.Hint="Pick Date"
                                     materialDesign:TextFieldAssist.HasClearButton="True"
 									Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
                                 <Button
+                                    Grid.Column="2"
 									Style="{StaticResource MaterialDesignIconForegroundButton}"
-									ToolTip="MaterialDesignIconForegroundButton"
-									Click="CalculateDifference"
-                                    Margin="65 0 65 0">
+									ToolTip="Difference"
+									Click="CalculateDifference">
                                     <materialDesign:PackIcon
 										Kind="ChevronLeft" />
                                 </Button>
                                 <TextBlock
+                                    Grid.Column="3"
 									VerticalAlignment="Center"
+                                    HorizontalAlignment="Right"
 									Margin="0 0 10 0"
-									FontWeight="Bold">
-                                    Difference:
-                                </TextBlock>
+									FontWeight="Bold"
+                                    xml:space="preserve"
+                                    Text="Difference           :"/>
                                 <TextBox
+                                    Grid.Column="4"
 									x:Name="Difference"
 									Style="{StaticResource MaterialDesignFloatingHintTextBox}"
 									Height="35"
-									Width="150"
+									Width="120"
 									VerticalAlignment="Center"
+                                    HorizontalAlignment="Left"
 									materialDesign:TextFieldAssist.HasClearButton="True"
 									materialDesign:TextFieldAssist.SuffixText="days"/>
                                 <Button
+                                    Grid.Column="5"
 									Style="{StaticResource MaterialDesignIconForegroundButton}"
-									ToolTip="MaterialDesignIconForegroundButton"
-									Click="CalculateFromToDate"
-                                    Margin="65 0 65 0">
+									ToolTip="FromAddDays"
+									Click="CalculateFromToDate">
                                     <materialDesign:PackIcon
 										Kind="ChevronRight" />
                                 </Button>
                                 <TextBlock
+                                    Grid.Column="6"
 									VerticalAlignment="Center"
+                                    HorizontalAlignment="Right"
 									Margin="0 0 10 0"
-									FontWeight="Bold">
-                                    To:
-                                </TextBlock>
+									FontWeight="Bold"
+                                    xml:space="preserve"
+                                    Text="To              :"/>
                                 <DatePicker
+                                    Grid.Column="7"
 									x:Name="ToDate"
+                                    HorizontalAlignment="Left"
 									Height="35"
-									Width="150"
+									Width="120"
 									materialDesign:HintAssist.Hint="Pick Date"
                                     materialDesign:TextFieldAssist.HasClearButton="True"
 									Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
-                            </StackPanel>
+                            </Grid>
                         </Border>
-                    </WrapPanel>
+                    </StackPanel>
                 </Grid>
             </StackPanel>
         </Grid>
