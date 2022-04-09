@@ -1,14 +1,14 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Chestnut_Pro.Service
+﻿namespace Chestnut_Pro.Service
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using System;
+    using System.IO;
+    using System.Text;
+
+    /// <summary>
+    /// JSON Helper
+    /// </summary>
     public class JsonHelper
     {
         /// <summary>
@@ -30,7 +30,7 @@ namespace Chestnut_Pro.Service
             }
             catch (JsonReaderException)
             {
-                // Exception in parsing json. It likely mean the text isn't a JSON.
+                // Exception in parsing JSON. It likely mean the text isn't a JSON.
                 return false;
             }
             catch (Exception) //some other exception

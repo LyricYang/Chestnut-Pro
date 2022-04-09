@@ -5,10 +5,13 @@
     using System.Text.RegularExpressions;
     using System.Xml;
 
+    /// <summary>
+    /// XML Helper
+    /// </summary>
     public static class XmlHelper
     {
         /// <summary>
-        /// Detects whether the given string is a valid Xml or not.
+        /// Detects whether the given string is a valid XML or not.
         /// </summary>
         internal static bool IsValid(string? input)
         {
@@ -28,7 +31,7 @@
             {
                 var xmlDocument = new XmlDocument();
 
-                // If loading failed, it's not valid Xml.
+                // If loading failed, it's not valid XML.
                 xmlDocument.LoadXml(input);
 
                 return true;
@@ -44,7 +47,7 @@
         }
 
         /// <summary>
-        /// Format a string to the specified Xml format.
+        /// Format a string to the specified XML format.
         /// </summary>
         internal static string Format(string? input, Indentation indentationMode, bool newLineOnAttributes)
         {

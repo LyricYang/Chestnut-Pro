@@ -102,7 +102,7 @@
 											x:Name="Fromat_Button"
 											HorizontalAlignment="Right"
 											Style="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}"
-											IsChecked="True"
+											IsChecked="{Binding Format}"
 											Margin="0 0 30 0"
                                             Background="#7b8b6f"
 											Content="Format" />
@@ -203,7 +203,8 @@
 							Style="{StaticResource CommonButtonStyle}"
 							Content="{materialDesign:PackIcon CursorDefaultClick}"
 							ToolTip="Convert"
-							Click="ConvertNumberBase" />
+                            CommandParameter="{Binding ElementName=NumberTypeBox, Path=Text}"
+							Command="{Binding ConvertCommand}" />
                     </Grid>
                     <TextBox
                         Grid.Row="1"
@@ -212,12 +213,13 @@
 						materialDesign:HintAssist.Hint="Input Number"
 						Style="{StaticResource MaterialDesignFloatingHintTextBox}"
 						Height="40"
-						VerticalAlignment="Center" />
+						VerticalAlignment="Center"
+                        Text="{Binding InputText}"/>
                     <materialDesign:Snackbar
 						Grid.Row="2"
 						Grid.Column="1"
 						x:Name="Warning_Message"
-						IsActive="False"
+						IsActive="{Binding Active, Mode=OneWay}"
 						Background="#FF673AB7"
 						Opacity="1"
 						HorizontalAlignment="Stretch"
@@ -243,6 +245,7 @@
 							Grid.Column="0"
 							x:Name="Binary_output"
 							materialDesign:HintAssist.Hint="Output Binary"
+                            Text="{Binding BinaryText}"
 							Style="{StaticResource OutputContent}"/>
                         <Button
 							Grid.Row="0"
@@ -274,6 +277,7 @@
 							Grid.Column="0"
 							x:Name="Octal_output"
 							materialDesign:HintAssist.Hint="Output Octal"
+                            Text="{Binding OctalText}"
 							Style="{StaticResource OutputContent}" />
                         <Button
 							Grid.Row="0"
@@ -305,6 +309,7 @@
 							Grid.Column="0"
 							x:Name="Decimal_output"
 							materialDesign:HintAssist.Hint="Output Decimal"
+                            Text="{Binding DecimalText}"
 							Style="{StaticResource OutputContent}" />
                         <Button
 							Grid.Row="0"
@@ -336,6 +341,7 @@
 							Grid.Column="0"
 							x:Name="Hexadecimal_output"
 							materialDesign:HintAssist.Hint="Output Hexadecimal"
+                            Text="{Binding HexadecimalText}"
 							Style="{StaticResource OutputContent}" />
                         <Button
 							Grid.Row="0"
