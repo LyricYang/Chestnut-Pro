@@ -105,17 +105,21 @@
                                 <StackPanel
 									Orientation="Horizontal">
                                     <CheckBox
+                                        x:Name="SelectAll"
 										Content="Select All"
 										IsChecked="True"
                                         Background="#7b8b6f"
 										VerticalAlignment="Bottom"
 										Margin="0 10 10 0"
-										Click="SelectAll" />
+                                        CommandParameter="{Binding ElementName=SelectAll, Path=IsChecked}"
+										Command="{Binding SelectAllCommand}" />
                                     <CheckBox
 										Content="Clear All"
 										VerticalAlignment="Bottom"
+                                        Background="#7b8b6f"
 										Margin="10 10 10 0"
-										Click="ClearAll" />
+                                        IsChecked="{Binding ClearChecked}"
+										Command="{Binding ClearCommand}"/>
                                 </StackPanel>
                             </StackPanel>
                         </Grid>
@@ -141,6 +145,7 @@
 											Style="{StaticResource MaterialDesignFloatingHintTextBox}"
 											Width="315"
 											Margin="0 5 0 0"
+                                            Text="{Binding FileText, Mode=TwoWay}"
 											VerticalAlignment="Bottom"
 											materialDesign:HintAssist.Hint="File Path (.csv)"
 											FontSize="11" />
@@ -149,7 +154,7 @@
 											Foreground="Black"
 											BorderThickness="0"
 											Margin="0 5 0 0"
-                                            Click="BrowseFile"
+                                            Command="{Binding BrowserCommand}"
 											Style="{StaticResource MaterialDesignOutlinedLightButton}"
 											Content="{materialDesign:PackIcon FileImport}" />
                                         <TextBlock
