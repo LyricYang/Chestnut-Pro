@@ -24,59 +24,69 @@
             <Setter Property="BorderBrush" Value="#C8C8C8" />
         </Style>
     </UserControl.Resources>
-    <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
+    <ScrollViewer
+		Style="{StaticResource ScrollViewerStyle}">
         <Border
-		BorderBrush="#C8C8C8"
-		Background="#FCFCFC"
-		BorderThickness="1,1,1,1"
-		CornerRadius="5">
+			BorderBrush="#C8C8C8"
+			Background="#FCFCFC"
+			BorderThickness="1,1,1,1"
+			CornerRadius="5">
             <StackPanel
-			Margin="5">
+				Margin="5">
                 <StackPanel
-				Background="#FCFCFC">
+					Background="#FCFCFC">
                     <!--Header-->
                     <Grid
-					Height="60">
+						Height="60">
                         <TextBlock
-						Style="{StaticResource ControlTitleTextStyle}"
-						Text="JSON Formatter" />
+							Style="{StaticResource ControlTitleTextStyle}"
+							Text="JSON Formatter" />
                     </Grid>
                     <!--Configuration-->
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="30" />
-                            <ColumnDefinition Width="1000" />
+                            <ColumnDefinition
+								Width="30" />
+                            <ColumnDefinition
+								Width="1000" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="50" />
-                            <RowDefinition Height="80" />
+                            <RowDefinition
+								Height="50" />
+                            <RowDefinition
+								Height="80" />
                         </Grid.RowDefinitions>
                         <!--Content Title-->
                         <TextBlock
-                        Grid.Row="0"
-						Grid.Column="1"
-						Style="{StaticResource ConfigurationTitleTextStyle}"
-						Text="Configuration" />
+							Grid.Row="0"
+							Grid.Column="1"
+							Style="{StaticResource ConfigurationTitleTextStyle}"
+							Text="Configuration" />
                         <!--Configuration:Indentation-->
                         <WrapPanel
-                        Grid.Row="1"
-						Grid.Column="1"
-						HorizontalAlignment="Left">
+							Grid.Row="1"
+							Grid.Column="1"
+							HorizontalAlignment="Left">
                             <Border
-							BorderBrush="#C8C8C8"
-							Background="White"
-							BorderThickness="1,1,1,1"
-							CornerRadius="5">
+								BorderBrush="#C8C8C8"
+								Background="White"
+								BorderThickness="1,1,1,1"
+								CornerRadius="5">
                                 <StackPanel>
                                     <Grid>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="25" />
-                                            <ColumnDefinition Width="100" />
-                                            <ColumnDefinition Width="300" />
-                                            <ColumnDefinition Width="580" />
+                                            <ColumnDefinition
+												Width="25" />
+                                            <ColumnDefinition
+												Width="100" />
+                                            <ColumnDefinition
+												Width="300" />
+                                            <ColumnDefinition
+												Width="580" />
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="60" />
+                                            <RowDefinition
+												Height="60" />
                                         </Grid.RowDefinitions>
                                         <materialDesign:PackIcon
 											Grid.Row="0"
@@ -121,108 +131,115 @@
                     <!--Input-->
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="30" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="8" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="58" />
+                            <ColumnDefinition
+								Width="30" />
+                            <ColumnDefinition
+								Width="*" />
+                            <ColumnDefinition
+								Width="8" />
+                            <ColumnDefinition
+								Width="*" />
+                            <ColumnDefinition
+								Width="58" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="40" />
-                            <RowDefinition Height="550" />
+                            <RowDefinition
+								Height="40" />
+                            <RowDefinition
+								Height="550" />
                         </Grid.RowDefinitions>
                         <Grid
-						Grid.Row="0"
-						Grid.Column="1">
+							Grid.Row="0"
+							Grid.Column="1">
                             <TextBlock
-							Style="{StaticResource ConfigurationTitleTextStyle}"
-							Text="Input"
-							VerticalAlignment="Bottom" />
+								Style="{StaticResource ConfigurationTitleTextStyle}"
+								Text="Input"
+								VerticalAlignment="Bottom" />
                             <Button
-							Content="{materialDesign:PackIcon CursorDefaultClick}"
-							ToolTip="Convert"
-							Style="{StaticResource CommonButtonStyle}"
-							Margin="0 0 60 0"
-							Click="JsonFormat" />
+								Content="{materialDesign:PackIcon CursorDefaultClick}"
+								ToolTip="Convert"
+								Style="{StaticResource CommonButtonStyle}"
+								Margin="0 0 60 0"
+								Click="JsonFormat" />
                             <Button
-							Content="{materialDesign:PackIcon Close}"
-							ToolTip="Clear"
-							Style="{StaticResource CommonButtonStyle}"
-							Click="JsonClear" />
+								Content="{materialDesign:PackIcon Close}"
+								ToolTip="Clear"
+								Style="{StaticResource CommonButtonStyle}"
+								Click="JsonClear" />
                         </Grid>
                         <Grid
-						Grid.Row="0"
-						Grid.Column="3">
+							Grid.Row="0"
+							Grid.Column="3">
                             <TextBlock
-							Style="{StaticResource ConfigurationTitleTextStyle}"
-							Text="Output"
-							VerticalAlignment="Bottom" />
+								Style="{StaticResource ConfigurationTitleTextStyle}"
+								Text="Output"
+								VerticalAlignment="Bottom" />
                             <Button
-							Content="{materialDesign:PackIcon ContentCopy}"
-							ToolTip="Copy"
-							Style="{StaticResource CommonButtonStyle}"
-                            Click="CopyContent"/>
+								Content="{materialDesign:PackIcon ContentCopy}"
+								ToolTip="Copy"
+								Style="{StaticResource CommonButtonStyle}"
+								Click="CopyContent" />
                         </Grid>
                         <Border
-                        Grid.Row="1"
-						Grid.Column="1"
-						BorderBrush="#C8C8C8"
-						Background="#FCFCFC"
-						BorderThickness="1,1,1,1"
-						Height="525"
-						CornerRadius="5">
+							Grid.Row="1"
+							Grid.Column="1"
+							BorderBrush="#C8C8C8"
+							Background="#FCFCFC"
+							BorderThickness="1,1,1,1"
+							Height="525"
+							CornerRadius="5">
                             <avalonEdit:TextEditor
-							Name="JsonInput_Box"
-							FontFamily="Consolas"
-							SyntaxHighlighting="Json"
-							Height="520"
-							FontSize="10pt"
-							Background="#FCFCFC" />
+								Name="JsonInput_Box"
+								FontFamily="Consolas"
+								SyntaxHighlighting="Json"
+								Height="520"
+								FontSize="10pt"
+								Background="#FCFCFC" />
                         </Border>
                         <GridSplitter
-						Grid.Row="1"
-						Grid.Column="2"
-						Width="5"
-						HorizontalAlignment="Center"
-						VerticalAlignment="Stretch">
+							Grid.Row="1"
+							Grid.Column="2"
+							Width="5"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Stretch">
                             <GridSplitter.Template>
                                 <ControlTemplate
-								TargetType="{x:Type GridSplitter}">
+									TargetType="{x:Type GridSplitter}">
                                     <Grid>
                                         <TextBlock
-										HorizontalAlignment="Center"
-										VerticalAlignment="Center"
-										Text="⁞" />
+											HorizontalAlignment="Center"
+											VerticalAlignment="Center"
+											Text="⁞" />
                                         <Rectangle
-										Fill="#00FFFFFF" />
+											Fill="#00FFFFFF" />
                                     </Grid>
                                 </ControlTemplate>
                             </GridSplitter.Template>
                         </GridSplitter>
                         <Border
-                        Grid.Row="1"
-						Grid.Column="3"
-						BorderBrush="#C8C8C8"
-						Background="#FCFCFC"
-						BorderThickness="1,1,1,1"
-						Height="525"
-						CornerRadius="5">
+							Grid.Row="1"
+							Grid.Column="3"
+							BorderBrush="#C8C8C8"
+							Background="#FCFCFC"
+							BorderThickness="1,1,1,1"
+							Height="525"
+							CornerRadius="5">
                             <avalonEdit:TextEditor
-							Name="JsonOutput_Box"
-							FontFamily="Consolas"
-							SyntaxHighlighting="Json"
-							Height="520"
-							FontSize="10pt"
-							Background="#FCFCFC" />
+								Name="JsonOutput_Box"
+								FontFamily="Consolas"
+								SyntaxHighlighting="Json"
+								Height="520"
+								FontSize="10pt"
+								Background="#FCFCFC" />
                         </Border>
                     </Grid>
                 </StackPanel>
                 <materialDesign:Snackbar
-                Margin="0 5 0 0"
-				x:Name="Warning_Message"
-				IsActive="False"
-				Background="#DD2C00"
-                Message=""/>
+					Margin="0 5 0 0"
+					x:Name="Warning_Message"
+					IsActive="False"
+					Background="#DD2C00"
+					Message="" />
             </StackPanel>
         </Border>
     </ScrollViewer>

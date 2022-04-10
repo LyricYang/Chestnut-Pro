@@ -7,347 +7,348 @@
     <UserControl.DataContext>
         <vm:ChartGeneratorViewModel />
     </UserControl.DataContext>
-    <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
+    <ScrollViewer
+		Style="{StaticResource ScrollViewerStyle}">
         <Border
-		BorderBrush="#C8C8C8"
-		Background="#FCFCFC"
-		BorderThickness="1,1,1,1"
-		CornerRadius="5">
+			BorderBrush="#C8C8C8"
+			Background="#FCFCFC"
+			BorderThickness="1,1,1,1"
+			CornerRadius="5">
             <StackPanel
-			Margin="5">
+				Margin="5">
                 <StackPanel
-				Background="#FCFCFC">
+					Background="#FCFCFC">
                     <!--Header-->
                     <Grid
-					Height="60">
+						Height="60">
                         <!--Title-->
                         <TextBlock
-						Style="{StaticResource ControlTitleTextStyle}"
-						Text="Sankey Chart" />
+							Style="{StaticResource ControlTitleTextStyle}"
+							Text="Sankey Chart" />
                     </Grid>
                     <!--Configuration-->
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition
-							Width="30" />
+								Width="30" />
                             <ColumnDefinition
-							Width="1030" />
+								Width="1030" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition
-							Height="50" />
+								Height="50" />
                             <RowDefinition
-							Height="250" />
+								Height="250" />
                             <RowDefinition
-							Height="40" />
+								Height="40" />
                             <RowDefinition
-							Height="400" />
+								Height="400" />
                         </Grid.RowDefinitions>
                         <Grid
-						Grid.Row="0"
-						Grid.Column="1">
+							Grid.Row="0"
+							Grid.Column="1">
                             <TextBlock
-							Style="{StaticResource ConfigurationTitleTextStyle}"
-							Text="Data Source" />
+								Style="{StaticResource ConfigurationTitleTextStyle}"
+								Text="Data Source" />
                             <TextBlock
-							Style="{StaticResource ConfigurationTitleTextStyle}"
-							Text="Configuration"
-							Margin="520 0 0 0" />
+								Style="{StaticResource ConfigurationTitleTextStyle}"
+								Text="Configuration"
+								Margin="520 0 0 0" />
                         </Grid>
                         <Grid
-						Grid.Row="1"
-						Grid.Column="1">
+							Grid.Row="1"
+							Grid.Column="1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition
-								Width="500" />
+									Width="500" />
                                 <ColumnDefinition
-								Width="*" />
+									Width="*" />
                             </Grid.ColumnDefinitions>
                             <Grid
-							Grid.Row="0"
-							Grid.Column="0">
+								Grid.Row="0"
+								Grid.Column="0">
                                 <StackPanel>
                                     <Border
-									BorderBrush="#C8C8C8"
-									BorderThickness="1,1,1,1"
-									CornerRadius="5"
-									Height="210">
+										BorderBrush="#C8C8C8"
+										BorderThickness="1,1,1,1"
+										CornerRadius="5"
+										Height="210">
                                         <DataGrid
-										Name="SourceData"
-										Height="200"
-										Width="500"
-										HorizontalAlignment="Left"
-										Margin="2 2 2 2"
-										VerticalAlignment="Top"
-										ItemsSource="{Binding Path=Data}"
-										MouseDoubleClick="DoubleClickDeleteRow"
-										AutoGenerateColumns="False"
-                                        Background="{x:Null}">
+											Name="SourceData"
+											Height="200"
+											Width="500"
+											HorizontalAlignment="Left"
+											Margin="2 2 2 2"
+											VerticalAlignment="Top"
+											ItemsSource="{Binding Path=Data}"
+											MouseDoubleClick="DoubleClickDeleteRow"
+											AutoGenerateColumns="False"
+											Background="{x:Null}">
                                             <DataGrid.Columns>
                                                 <DataGridTextColumn
-												Binding="{Binding Source}"
-												Header="Source"
-												Width="160" />
+													Binding="{Binding Source}"
+													Header="Source"
+													Width="160" />
                                                 <DataGridTextColumn
-												Binding="{Binding Destination}"
-												Header="Destination"
-												Width="160" />
+													Binding="{Binding Destination}"
+													Header="Destination"
+													Width="160" />
                                                 <DataGridTextColumn
-												Binding="{Binding Value}"
-												Header="Value"
-												Width="80" />
+													Binding="{Binding Value}"
+													Header="Value"
+													Width="80" />
                                                 <DataGridCheckBoxColumn
-												Binding="{Binding Visible}"
-												Header="Visible"
-												Width="80" />
+													Binding="{Binding Visible}"
+													Header="Visible"
+													Width="80" />
                                             </DataGrid.Columns>
                                         </DataGrid>
                                     </Border>
                                     <StackPanel
-									Orientation="Horizontal">
+										Orientation="Horizontal">
                                         <CheckBox
-                                        x:Name="SelectAll"
-										Content="Select All"
-										IsChecked="True"
-                                        Background="#7b8b6f"
-										VerticalAlignment="Bottom"
-										Margin="0 10 10 0"
-                                        CommandParameter="{Binding ElementName=SelectAll, Path=IsChecked}"
-										Command="{Binding SelectAllCommand}" />
+											x:Name="SelectAll"
+											Content="Select All"
+											IsChecked="True"
+											Background="#7b8b6f"
+											VerticalAlignment="Bottom"
+											Margin="0 10 10 0"
+											CommandParameter="{Binding ElementName=SelectAll, Path=IsChecked}"
+											Command="{Binding SelectAllCommand}" />
                                         <CheckBox
-										Content="Clear All"
-										VerticalAlignment="Bottom"
-                                        Background="#7b8b6f"
-										Margin="10 10 10 0"
-                                        IsChecked="{Binding ClearChecked}"
-										Command="{Binding ClearCommand}"/>
+											Content="Clear All"
+											VerticalAlignment="Bottom"
+											Background="#7b8b6f"
+											Margin="10 10 10 0"
+											IsChecked="{Binding ClearChecked}"
+											Command="{Binding ClearCommand}" />
                                     </StackPanel>
                                 </StackPanel>
                             </Grid>
                             <Grid
-							Grid.Row="0"
-							Grid.Column="1">
+								Grid.Row="0"
+								Grid.Column="1">
                                 <StackPanel
-								Margin="20 0 0 0">
+									Margin="20 0 0 0">
                                     <Border
-									BorderBrush="#C8C8C8"
-									BorderThickness="1,1,1,1"
-									CornerRadius="5"
-									Height="210">
+										BorderBrush="#C8C8C8"
+										BorderThickness="1,1,1,1"
+										CornerRadius="5"
+										Height="210">
                                         <WrapPanel
-										VerticalAlignment="Top">
+											VerticalAlignment="Top">
                                             <TextBlock
-											VerticalAlignment="Bottom"
-											Margin="35 0 10 0"
-											FontWeight="Bold"
-											xml:space="preserve">File Path       :</TextBlock>
+												VerticalAlignment="Bottom"
+												Margin="35 0 10 0"
+												FontWeight="Bold"
+												xml:space="preserve">File Path       :</TextBlock>
                                             <TextBox
-											x:Name="FilePath"
-											Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-											Width="315"
-											Margin="0 5 0 0"
-                                            Text="{Binding FileText, Mode=TwoWay}"
-											VerticalAlignment="Bottom"
-											materialDesign:HintAssist.Hint="File Path (.csv)"
-											FontSize="11" />
+												x:Name="FilePath"
+												Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+												Width="315"
+												Margin="0 5 0 0"
+												Text="{Binding FileText, Mode=TwoWay}"
+												VerticalAlignment="Bottom"
+												materialDesign:HintAssist.Hint="File Path (.csv)"
+												FontSize="11" />
                                             <Button
-											Background="#FCFCFC"
-											Foreground="Black"
-											BorderThickness="0"
-											Margin="0 5 0 0"
-                                            Command="{Binding BrowserCommand}"
-											Style="{StaticResource MaterialDesignOutlinedLightButton}"
-											Content="{materialDesign:PackIcon FileImport}" />
+												Background="#FCFCFC"
+												Foreground="Black"
+												BorderThickness="0"
+												Margin="0 5 0 0"
+												Command="{Binding BrowserCommand}"
+												Style="{StaticResource MaterialDesignOutlinedLightButton}"
+												Content="{materialDesign:PackIcon FileImport}" />
                                             <TextBlock
-											VerticalAlignment="Bottom"
-											Margin="35 0 10 0"
-											FontWeight="Bold"
-											xml:space="preserve">Node Width :</TextBlock>
+												VerticalAlignment="Bottom"
+												Margin="35 0 10 0"
+												FontWeight="Bold"
+												xml:space="preserve">Node Width :</TextBlock>
                                             <ComboBox
-											x:Name="NodeWidth"
-											Style="{StaticResource MaterialDesignFloatingHintComboBox}"
-											materialDesign:TextFieldAssist.PrefixText="x "
-											materialDesign:TextFieldAssist.UnderlineBrush="#7b8b6f"
-											materialDesign:ColorZoneAssist.Mode="SecondaryLight"
-											materialDesign:HintAssist.Hint="Width"
-											HorizontalAlignment="Left"
-											Margin="0 15 0 0"
-											Width="120">
+												x:Name="NodeWidth"
+												Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+												materialDesign:TextFieldAssist.PrefixText="x "
+												materialDesign:TextFieldAssist.UnderlineBrush="#7b8b6f"
+												materialDesign:ColorZoneAssist.Mode="SecondaryLight"
+												materialDesign:HintAssist.Hint="Width"
+												HorizontalAlignment="Left"
+												Margin="0 15 0 0"
+												Width="120">
                                                 <ComboBoxItem
-												Content="2" />
+													Content="2" />
                                                 <ComboBoxItem
-												Content="4" />
+													Content="4" />
                                                 <ComboBoxItem
-												Content="6" />
+													Content="6" />
                                                 <ComboBoxItem
-												Content="8"
-												IsSelected="True" />
+													Content="8"
+													IsSelected="True" />
                                                 <ComboBoxItem
-												Content="10" />
+													Content="10" />
                                                 <ComboBoxItem
-												Content="12" />
+													Content="12" />
                                                 <ComboBoxItem
-												Content="14" />
+													Content="14" />
                                             </ComboBox>
                                             <TextBlock
-											VerticalAlignment="Bottom"
-											Margin="30 0 10 0"
-											FontWeight="Bold"
-											xml:space="preserve">Font Size    :</TextBlock>
+												VerticalAlignment="Bottom"
+												Margin="30 0 10 0"
+												FontWeight="Bold"
+												xml:space="preserve">Font Size    :</TextBlock>
                                             <ComboBox
-											x:Name="FontSize"
-											Style="{StaticResource MaterialDesignFloatingHintComboBox}"
-											materialDesign:TextFieldAssist.PrefixText="x "
-											materialDesign:TextFieldAssist.UnderlineBrush="#7b8b6f"
-											materialDesign:ColorZoneAssist.Mode="SecondaryLight"
-											materialDesign:HintAssist.Hint="Size"
-											HorizontalAlignment="Left"
-											Margin="0 15 0 0"
-											Width="120">
+												x:Name="FontSize"
+												Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+												materialDesign:TextFieldAssist.PrefixText="x "
+												materialDesign:TextFieldAssist.UnderlineBrush="#7b8b6f"
+												materialDesign:ColorZoneAssist.Mode="SecondaryLight"
+												materialDesign:HintAssist.Hint="Size"
+												HorizontalAlignment="Left"
+												Margin="0 15 0 0"
+												Width="120">
                                                 <ComboBoxItem
-												Content="8" />
+													Content="8" />
                                                 <ComboBoxItem
-												Content="10"
-												IsSelected="True" />
+													Content="10"
+													IsSelected="True" />
                                                 <ComboBoxItem
-												Content="12" />
+													Content="12" />
                                                 <ComboBoxItem
-												Content="14" />
+													Content="14" />
                                                 <ComboBoxItem
-												Content="16" />
+													Content="16" />
                                                 <ComboBoxItem
-												Content="18" />
+													Content="18" />
                                                 <ComboBoxItem
-												Content="20" />
+													Content="20" />
                                                 <ComboBoxItem
-												Content="22" />
+													Content="22" />
                                             </ComboBox>
                                             <TextBlock
-											VerticalAlignment="Bottom"
-											Margin="35 0 10 0"
-											FontWeight="Bold"
-											xml:space="preserve">Padding        :</TextBlock>
+												VerticalAlignment="Bottom"
+												Margin="35 0 10 0"
+												FontWeight="Bold"
+												xml:space="preserve">Padding        :</TextBlock>
                                             <TextBox
-											x:Name="NodePad"
-											Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-											Width="50"
-											VerticalAlignment="Bottom"
-											materialDesign:HintAssist.Hint="Node"
-											Margin="0 15 0 0"
-											FontSize="11"
-											Text="10" />
+												x:Name="NodePad"
+												Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+												Width="50"
+												VerticalAlignment="Bottom"
+												materialDesign:HintAssist.Hint="Node"
+												Margin="0 15 0 0"
+												FontSize="11"
+												Text="10" />
                                             <TextBox
-											x:Name="LabelPad"
-											Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-											Width="50"
-											VerticalAlignment="Bottom"
-											materialDesign:HintAssist.Hint="Label"
-											Margin="20 15 0 0"
-											FontSize="11"
-											Text="5" />
+												x:Name="LabelPad"
+												Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+												Width="50"
+												VerticalAlignment="Bottom"
+												materialDesign:HintAssist.Hint="Label"
+												Margin="20 15 0 0"
+												FontSize="11"
+												Text="5" />
                                             <TextBlock
-											VerticalAlignment="Bottom"
-											Margin="30 0 10 0"
-											FontWeight="Bold"
-											xml:space="preserve">Font Name :</TextBlock>
+												VerticalAlignment="Bottom"
+												Margin="30 0 10 0"
+												FontWeight="Bold"
+												xml:space="preserve">Font Name :</TextBlock>
                                             <ComboBox
-											x:Name="FontName"
-											Style="{StaticResource MaterialDesignFloatingHintComboBox}"
-											materialDesign:TextFieldAssist.UnderlineBrush="#7b8b6f"
-											materialDesign:ColorZoneAssist.Mode="SecondaryLight"
-											HorizontalAlignment="Left"
-											Margin="0 15 0 0"
-											Width="120">
+												x:Name="FontName"
+												Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+												materialDesign:TextFieldAssist.UnderlineBrush="#7b8b6f"
+												materialDesign:ColorZoneAssist.Mode="SecondaryLight"
+												HorizontalAlignment="Left"
+												Margin="0 15 0 0"
+												Width="120">
                                                 <ComboBoxItem
-												Content="Microsoft YaHei"
-												IsSelected="True" />
+													Content="Microsoft YaHei"
+													IsSelected="True" />
                                                 <ComboBoxItem
-												Content="Times-Roman" />
+													Content="Times-Roman" />
                                                 <ComboBoxItem
-												Content="Calibri" />
+													Content="Calibri" />
                                             </ComboBox>
                                             <TextBlock
-											VerticalAlignment="Bottom"
-											Margin="35 0 10 0"
-											FontWeight="Bold"
-											xml:space="preserve">Chart Size     :</TextBlock>
+												VerticalAlignment="Bottom"
+												Margin="35 0 10 0"
+												FontWeight="Bold"
+												xml:space="preserve">Chart Size     :</TextBlock>
                                             <TextBox
-											x:Name="ChartWidth"
-											Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-											Width="50"
-											VerticalAlignment="Bottom"
-                                            materialDesign:TextFieldAssist.SuffixText="px"
-											materialDesign:HintAssist.Hint="Width"
-											Margin="0 15 0 0"
-											FontSize="11"
-											Text="900" />
+												x:Name="ChartWidth"
+												Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+												Width="50"
+												VerticalAlignment="Bottom"
+												materialDesign:TextFieldAssist.SuffixText="px"
+												materialDesign:HintAssist.Hint="Width"
+												Margin="0 15 0 0"
+												FontSize="11"
+												Text="900" />
                                             <TextBox
-											x:Name="ChartHeight"
-											Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-											Width="50"
-											VerticalAlignment="Bottom"
-                                            materialDesign:TextFieldAssist.SuffixText="px"
-											materialDesign:HintAssist.Hint="Height"
-											Margin="20 15 0 0"
-											FontSize="11"
-											Text="350" />
+												x:Name="ChartHeight"
+												Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+												Width="50"
+												VerticalAlignment="Bottom"
+												materialDesign:TextFieldAssist.SuffixText="px"
+												materialDesign:HintAssist.Hint="Height"
+												Margin="20 15 0 0"
+												FontSize="11"
+												Text="350" />
                                             <CheckBox
-                                            x:Name="NodeBold"
-											Style="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}"
-											Height="25"
-											Width="95"
-											VerticalAlignment="Bottom"
-											Margin="30 20 0 0"
-											Content="Blod" />
+												x:Name="NodeBold"
+												Style="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}"
+												Height="25"
+												Width="95"
+												VerticalAlignment="Bottom"
+												Margin="30 20 0 0"
+												Content="Blod" />
                                             <CheckBox
-                                            x:Name="NodeItalic"
-											Style="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}"
-											Height="25"
-											Width="95"
-											VerticalAlignment="Bottom"
-											Margin="10 0 0 0"
-											Content="Italic" />
+												x:Name="NodeItalic"
+												Style="{StaticResource MaterialDesignFilterChipPrimaryCheckBox}"
+												Height="25"
+												Width="95"
+												VerticalAlignment="Bottom"
+												Margin="10 0 0 0"
+												Content="Italic" />
                                         </WrapPanel>
                                     </Border>
                                     <Button
-									Style="{StaticResource MaterialDesignFlatDarkBgButton}"
-									materialDesign:ButtonAssist.CornerRadius="3"
-									Height="30"
-									FontSize="12"
-									Content="Convert"
-									Click="DisplayChart"
-									Margin="0 10 0 0"
-                                    Background="#7b8b6f"
-                                    BorderBrush="#7b8b6f"
-									HorizontalAlignment="Right" />
+										Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+										materialDesign:ButtonAssist.CornerRadius="3"
+										Height="30"
+										FontSize="12"
+										Content="Convert"
+										Click="DisplayChart"
+										Margin="0 10 0 0"
+										Background="#7b8b6f"
+										BorderBrush="#7b8b6f"
+										HorizontalAlignment="Right" />
                                 </StackPanel>
                             </Grid>
                         </Grid>
                         <TextBlock
-						Grid.Row="2"
-						Grid.Column="1"
-						Style="{StaticResource ConfigurationTitleTextStyle}"
-						Text="Display" />
+							Grid.Row="2"
+							Grid.Column="1"
+							Style="{StaticResource ConfigurationTitleTextStyle}"
+							Text="Display" />
                         <Border
-						Grid.Row="3"
-						Grid.Column="1"
-						BorderBrush="#C8C8C8"
-						BorderThickness="1,1,1,1"
-						Height="400"
-						VerticalAlignment="Top"
-						CornerRadius="5">
+							Grid.Row="3"
+							Grid.Column="1"
+							BorderBrush="#C8C8C8"
+							BorderThickness="1,1,1,1"
+							Height="400"
+							VerticalAlignment="Top"
+							CornerRadius="5">
                             <wv2:WebView2
-							x:Name="chartView"
-							Margin="2 2 2 2" />
+								x:Name="chartView"
+								Margin="2 2 2 2" />
                         </Border>
                     </Grid>
                 </StackPanel>
                 <materialDesign:Snackbar
-                Margin="0 5 0 0"
-				x:Name="Warning_Message"
-				IsActive="{Binding Message.IsActive, Mode=OneWay}"
-				Background="#DD2C00"
-				Message="{Binding Message.Msg, Mode=OneWay}" />
+					Margin="0 5 0 0"
+					x:Name="Warning_Message"
+					IsActive="{Binding Message.IsActive, Mode=OneWay}"
+					Background="#DD2C00"
+					Message="{Binding Message.Msg, Mode=OneWay}" />
             </StackPanel>
         </Border>
     </ScrollViewer>
