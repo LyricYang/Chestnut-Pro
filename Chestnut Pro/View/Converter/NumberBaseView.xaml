@@ -37,7 +37,7 @@
 		Background="#FCFCFC"
 		BorderThickness="1,1,1,1"
 		CornerRadius="5">
-        <Grid
+        <StackPanel
 			Margin="5">
             <StackPanel
 				Background="#FCFCFC">
@@ -216,14 +216,13 @@
 						VerticalAlignment="Center"
                         Text="{Binding InputText}"/>
                     <materialDesign:Snackbar
-						Grid.Row="2"
-						Grid.Column="1"
+                        Grid.Column="1"
+                        Grid.Row="2"
 						x:Name="Warning_Message"
-						IsActive="{Binding Active, Mode=OneWay}"
-						Background="#FF673AB7"
-						Opacity="1"
-						HorizontalAlignment="Stretch"
-						Message="The current type isn't Valid" />
+						IsActive="{Binding Message.IsActive, Mode=OneWay}"
+						Background="#DD2C00"
+                        HorizontalAlignment="Stretch"
+						Message="{Binding Message.Msg, Mode=OneWay}" />
                     <!--Binary-->
                     <TextBlock
                         Grid.Row="3"
@@ -354,6 +353,6 @@
                     </Grid>
                 </Grid>
             </StackPanel>
-        </Grid>
+        </StackPanel>
     </Border>
 </UserControl>

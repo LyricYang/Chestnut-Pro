@@ -1,9 +1,6 @@
 ﻿namespace Chestnut_Pro.View
 {
     using Figgle;
-    using System;
-    using System.Security.Cryptography;
-    using System.Text;
     using System.Windows;
     using System.Windows.Controls;
 

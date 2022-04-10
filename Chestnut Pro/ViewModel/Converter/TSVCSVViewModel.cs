@@ -1,5 +1,6 @@
 ﻿namespace Chestnut_Pro.ViewModel
 {
+    using Chestnut_Pro.Model;
     using Chestnut_Pro.Service;
     using Microsoft.Win32;
     using System;
@@ -14,6 +15,17 @@
     {
         private const string TSV = ".tsv";
         private const string CSV = ".csv";
+
+        private WarningMessage _message;
+
+        /// <summary>
+        /// Warning Message
+        /// </summary>
+        public WarningMessage Message
+        {
+            get { return _message; }
+            set { _message = value; OnPropertyChanged(); }
+        }
 
         private string _tsvVisible;
 
@@ -138,16 +150,21 @@
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
             {
+                Message = new WarningMessage();
                 var file = openFileDialog.FileName;
                 if (Path.GetExtension(file) == TSV)
                 {
                     TSVFileText = file;
                     TSVVisible = "Visible";
                 }
-                if (Path.GetExtension(file) == CSV)
+                else if (Path.GetExtension(file) == CSV)
                 {
                     CSVFileText = file;
                     CSVVisible = "Visible";
+                }
+                else
+                {
+                    Message = new WarningMessage(true, $"Doesn't support this file type: {Path.GetExtension(file)}!");
                 }
             }
         }
@@ -164,6 +181,7 @@
                 List<string> outputLines = new List<string>();
                 var outputFolder = string.Empty;
                 var outputFile = string.Empty;
+                Message = new WarningMessage();
 
                 if (!string.IsNullOrEmpty(TSVFileText))
                 {
@@ -192,7 +210,7 @@
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                Message = new WarningMessage(true, ex.Message);
             }
         }
 
@@ -205,6 +223,7 @@
         {
             try
             {
+                Message = new WarningMessage();
                 if (!string.IsNullOrEmpty(TSVText))
                 {
                     CSVText = TSVText.Replace("\t", ",");
@@ -216,7 +235,7 @@
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                Message = new WarningMessage(true, ex.Message);
             }
         }
     }

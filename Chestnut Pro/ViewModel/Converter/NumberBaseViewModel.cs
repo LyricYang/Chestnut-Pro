@@ -1,5 +1,6 @@
 ﻿namespace Chestnut_Pro.ViewModel
 {
+    using Chestnut_Pro.Model;
     using Chestnut_Pro.Service;
     using System;
     using System.Windows.Input;
@@ -9,15 +10,15 @@
     /// </summary>
     public class NumberBaseViewModel : ViewModelBase
     {
-        private bool _active;
+        private WarningMessage _message;
 
         /// <summary>
-        /// Active
+        /// Warning Message
         /// </summary>
-        public bool Active
+        public WarningMessage Message
         {
-            get { return _active; }
-            set { _active = value; OnPropertyChanged(); }
+            get { return _message; }
+            set { _message = value; OnPropertyChanged(); }
         }
 
         private bool _format = true;
@@ -107,7 +108,7 @@
             input = input.Replace(" ", "").Replace(",", "");
             if (NumberBaseHelper.CheckNumberValid(input, type))
             {
-                Active = false;
+                Message = new WarningMessage();
                 var number = type switch
                 {
                     NumberBaseType.Binary => Convert.ToInt32(input, 2),
@@ -123,7 +124,7 @@
             }
             else
             {
-                Active = true;
+                Message = new WarningMessage(true, "Input data does not match type!");
             }
         }
     }

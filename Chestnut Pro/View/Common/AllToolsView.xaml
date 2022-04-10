@@ -300,7 +300,7 @@
 									Text="ASCII Art" />
                                 <TextBlock
 									Style="{StaticResource Content}"
-									Text="Generate ascii art&#xA;with different fonts" />
+									Text="Generate ASCII art&#xA;with different fonts" />
                                 <Button
                                     CommandParameter="ASCII Art"
                                     Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MenuCommand}">

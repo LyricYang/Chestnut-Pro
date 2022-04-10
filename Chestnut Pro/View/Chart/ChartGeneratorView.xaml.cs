@@ -3,14 +3,11 @@
     using Chestnut_Pro.Model;
     using Chestnut_Pro.ViewModel;
     using System;
-    using System.Collections.ObjectModel;
     using System.Text;
     using System.Windows;
     using System.Windows.Controls;
-    using Microsoft.Win32;
     using System.Windows.Input;
     using System.IO;
-    using Chestnut_Pro.Service;
 
     /// <summary>
     /// Interaction logic for DownloadView.xaml

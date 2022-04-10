@@ -1,5 +1,6 @@
 ﻿namespace Chestnut_Pro.ViewModel
 {
+    using Chestnut_Pro.Model;
     using System;
     using System.Text;
     using System.Windows.Input;
@@ -9,6 +10,16 @@
     /// </summary>
     public class Base64ViewModel : ViewModelBase
     {
+        private WarningMessage _message;
+
+        /// <summary>
+        /// Warning Message
+        /// </summary>
+        public WarningMessage Message
+        {
+            get { return _message; }
+            set { _message = value; OnPropertyChanged(); }
+        }
 
         private string _inputText;
 
@@ -64,6 +75,7 @@
         {
             try
             {
+                Message = new WarningMessage();
                 var encode = Convert.ToBoolean(parameter ?? "false");
                 if (encode)
                 {
@@ -78,7 +90,7 @@
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                Message = new WarningMessage(true, ex.Message);
             }
         }
     }

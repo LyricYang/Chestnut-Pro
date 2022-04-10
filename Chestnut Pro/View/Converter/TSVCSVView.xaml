@@ -50,7 +50,7 @@
 		Background="#FCFCFC"
 		BorderThickness="1,1,1,1"
 		CornerRadius="5">
-        <Grid
+        <StackPanel
 			Margin="5">
             <StackPanel
 				Background="#FCFCFC">
@@ -316,6 +316,12 @@
 						BorderBrush="#C8C8C8" />
                 </Grid>
             </StackPanel>
-        </Grid>
+            <materialDesign:Snackbar
+                Margin="0 5 0 0"
+					x:Name="Warning_Message"
+					IsActive="{Binding Message.IsActive, Mode=OneWay}"
+					Background="#DD2C00"
+					Message="{Binding Message.Msg, Mode=OneWay}" />
+        </StackPanel>
     </Border>
 </UserControl>
