@@ -41,60 +41,61 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-    <Border
+    <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
+        <Border
 		BorderBrush="#C8C8C8"
 		Background="#FCFCFC"
 		BorderThickness="1,1,1,1"
 		CornerRadius="5">
-        <Grid
-			Margin="5">
             <StackPanel
+			Margin="5">
+                <StackPanel
 				Background="#FCFCFC">
-                <!--Header-->
-                <Grid
+                    <!--Header-->
+                    <Grid
 					Height="60">
-                    <TextBlock
+                        <TextBlock
 						Style="{StaticResource ControlTitleTextStyle}"
 						Text="XML Formatter" />
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="30" />
-                        <ColumnDefinition Width="1000" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="50" />
-                        <RowDefinition Height="80" />
-                        <RowDefinition Height="80" />
-                    </Grid.RowDefinitions>
-                    <!--Configuration Title-->
-                    <TextBlock
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="1000" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="80" />
+                            <RowDefinition Height="80" />
+                        </Grid.RowDefinitions>
+                        <!--Configuration Title-->
+                        <TextBlock
                         Grid.Row="0"
 						Grid.Column="1"
 						Style="{StaticResource ConfigurationTitleTextStyle}"
 						Text="Configuration" />
-                    <!--Configuration:Indentation-->
-                    <WrapPanel
+                        <!--Configuration:Indentation-->
+                        <WrapPanel
                         Grid.Row="1"
 						Grid.Column="1"
 						HorizontalAlignment="Left">
-                        <Border
+                            <Border
 							BorderBrush="#C8C8C8"
 							Background="White"
 							BorderThickness="1,1,1,1"
 							CornerRadius="5">
-                            <StackPanel>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="25" />
-                                        <ColumnDefinition Width="100" />
-                                        <ColumnDefinition Width="300" />
-                                        <ColumnDefinition Width="580" />
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="60" />
-                                    </Grid.RowDefinitions>
-                                    <materialDesign:PackIcon
+                                <StackPanel>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="25" />
+                                            <ColumnDefinition Width="100" />
+                                            <ColumnDefinition Width="300" />
+                                            <ColumnDefinition Width="580" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="60" />
+                                        </Grid.RowDefinitions>
+                                        <materialDesign:PackIcon
 											Grid.Row="0"
 											Grid.Column="1"
 											Kind="ArrowExpandHorizontal"
@@ -103,14 +104,14 @@
 											Width="25"
 											HorizontalAlignment="Left"
 											VerticalAlignment="Center" />
-                                    <TextBlock
+                                        <TextBlock
 											Grid.Row="0"
 											Grid.Column="2"
 											HorizontalAlignment="Left"
 											VerticalAlignment="Center"
 											FontSize="14"
 											Text="Indentation" />
-                                    <ComboBox
+                                        <ComboBox
 											Grid.Row="0"
 											Grid.Column="3"
 											x:Name="XMLIndentation"
@@ -119,42 +120,42 @@
 											Height="30"
 											Width="80"
 											Margin="0 0 30 0">
-                                        <ComboBoxItem
+                                            <ComboBoxItem
 												Content="2 spaces" />
-                                        <ComboBoxItem
+                                            <ComboBoxItem
 												Content="4 spaces" />
-                                        <ComboBoxItem
+                                            <ComboBoxItem
 												Content="1 tab"
 												IsSelected="True" />
-                                        <ComboBoxItem
+                                            <ComboBoxItem
 												Content="Minified" />
-                                    </ComboBox>
-                                </Grid>
-                            </StackPanel>
-                        </Border>
-                    </WrapPanel>
-                    <!--Configuration:New Line-->
-                    <WrapPanel
+                                        </ComboBox>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
+                        </WrapPanel>
+                        <!--Configuration:New Line-->
+                        <WrapPanel
                         Grid.Row="2"
 						Grid.Column="1"
 						HorizontalAlignment="Left">
-                        <Border
+                            <Border
 							BorderBrush="#C8C8C8"
 							Background="White"
 							BorderThickness="1,1,1,1"
 							CornerRadius="5">
-                            <StackPanel>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="25" />
-                                        <ColumnDefinition Width="100" />
-                                        <ColumnDefinition Width="300" />
-                                        <ColumnDefinition Width="580" />
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="60" />
-                                    </Grid.RowDefinitions>
-                                    <materialDesign:PackIcon
+                                <StackPanel>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="25" />
+                                            <ColumnDefinition Width="100" />
+                                            <ColumnDefinition Width="300" />
+                                            <ColumnDefinition Width="580" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="60" />
+                                        </Grid.RowDefinitions>
+                                        <materialDesign:PackIcon
 											Grid.Row="0"
 											Grid.Column="1"
 											Kind="Altimeter"
@@ -163,69 +164,69 @@
 											Width="25"
 											HorizontalAlignment="Left"
 											VerticalAlignment="Center" />
-                                    <TextBlock
+                                        <TextBlock
 											Grid.Row="0"
 											Grid.Column="2"
 											HorizontalAlignment="Left"
 											VerticalAlignment="Center"
 											FontSize="14"
 											Text="Put attributes on new line" />
-                                    <CheckBox
+                                        <CheckBox
 											Grid.Row="0"
 											Grid.Column="3"
 											x:Name="XMLNewLine"
 											Style="{StaticResource CheckBoxStyle}" />
-                                </Grid>
-                            </StackPanel>
-                        </Border>
-                    </WrapPanel>
-                </Grid>
-                <!--Input-->
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="30" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="58" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="40" />
-                        <RowDefinition Height="500" />
-                    </Grid.RowDefinitions>
-                    <Grid
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
+                        </WrapPanel>
+                    </Grid>
+                    <!--Input-->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="8" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="58" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="500" />
+                        </Grid.RowDefinitions>
+                        <Grid
 						Grid.Row="0"
 						Grid.Column="1">
-                        <TextBlock
+                            <TextBlock
 							Style="{StaticResource ConfigurationTitleTextStyle}"
 							Text="Input"
 							VerticalAlignment="Bottom" />
-                        <Button
+                            <Button
 							Content="{materialDesign:PackIcon CursorDefaultClick}"
 							ToolTip="Convert"
 							Style="{StaticResource CommonButtonStyle}"
 							Margin="0 0 60 0"
 							Click="XMLFormat" />
-                        <Button
+                            <Button
 							Content="{materialDesign:PackIcon Close}"
 							ToolTip="Clear"
 							Style="{StaticResource CommonButtonStyle}"
 							Click="XMLClear" />
-                    </Grid>
-                    <Grid
+                        </Grid>
+                        <Grid
 						Grid.Row="0"
 						Grid.Column="3">
-                        <TextBlock
+                            <TextBlock
 							Style="{StaticResource ConfigurationTitleTextStyle}"
 							Text="Output"
 							VerticalAlignment="Bottom" />
-                        <Button
+                            <Button
 							Content="{materialDesign:PackIcon ContentCopy}"
 							ToolTip="Copy"
 							Style="{StaticResource CommonButtonStyle}"
 							Click="CopyContent"/>
-                    </Grid>
-                    <Border
+                        </Grid>
+                        <Border
                         Grid.Row="1"
 						Grid.Column="1"
 						BorderBrush="#C8C8C8"
@@ -233,35 +234,35 @@
 						BorderThickness="1,1,1,1"
 						Height="475"
 						CornerRadius="5">
-                        <avalonEdit:TextEditor
+                            <avalonEdit:TextEditor
 							Name="XMLInput_Box"
 							FontFamily="Consolas"
 							SyntaxHighlighting="Json"
 							Height="520"
 							FontSize="10pt"
 							Background="#FCFCFC" />
-                    </Border>
-                    <GridSplitter
+                        </Border>
+                        <GridSplitter
 						Grid.Row="1"
 						Grid.Column="2"
 						Width="5"
 						HorizontalAlignment="Center"
 						VerticalAlignment="Stretch">
-                        <GridSplitter.Template>
-                            <ControlTemplate
+                            <GridSplitter.Template>
+                                <ControlTemplate
 								TargetType="{x:Type GridSplitter}">
-                                <Grid>
-                                    <TextBlock
+                                    <Grid>
+                                        <TextBlock
 										HorizontalAlignment="Center"
 										VerticalAlignment="Center"
 										Text="⁞" />
-                                    <Rectangle
+                                        <Rectangle
 										Fill="#00FFFFFF" />
-                                </Grid>
-                            </ControlTemplate>
-                        </GridSplitter.Template>
-                    </GridSplitter>
-                    <Border
+                                    </Grid>
+                                </ControlTemplate>
+                            </GridSplitter.Template>
+                        </GridSplitter>
+                        <Border
                         Grid.Row="1"
 						Grid.Column="3"
 						BorderBrush="#C8C8C8"
@@ -269,16 +270,23 @@
 						BorderThickness="1,1,1,1"
 						Height="475"
 						CornerRadius="5">
-                        <avalonEdit:TextEditor
+                            <avalonEdit:TextEditor
 							Name="XMLOutput_Box"
 							FontFamily="Consolas"
 							SyntaxHighlighting="Json"
 							Height="520"
 							FontSize="10pt"
 							Background="#FCFCFC" />
-                    </Border>
-                </Grid>
+                        </Border>
+                    </Grid>
+                </StackPanel>
+                <materialDesign:Snackbar
+                Margin="0 5 0 0"
+				x:Name="Warning_Message"
+				IsActive="False"
+				Background="#DD2C00"
+                Message=""/>
             </StackPanel>
-        </Grid>
-    </Border>
+        </Border>
+    </ScrollViewer>
 </UserControl>

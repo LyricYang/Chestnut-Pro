@@ -61,6 +61,16 @@
             set { _fileText = value; OnPropertyChanged(); }
         }
 
+        private WarningMessage _message;
+
+        /// <summary>
+        /// Warning Message
+        /// </summary>
+        public WarningMessage Message
+        {
+            get { return _message; }
+            set { _message = value; OnPropertyChanged(); }
+        }
 
         /// <summary>
         /// Clear Command
@@ -127,6 +137,7 @@
                 var file = openFileDialog.FileName;
                 if (Path.GetExtension(file) == ".csv")
                 {
+                    Message = new WarningMessage();
                     FileText = file;
                     var source = new ObservableCollection<ChartModel>();
                     foreach (var row in FileUtils.GetFileContent(file))
@@ -142,6 +153,10 @@
                     }
 
                     Data = source;
+                }
+                else
+                {
+                    Message = new WarningMessage(true, "File types other than .csv are not supported!");
                 }
             }
         }

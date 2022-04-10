@@ -2,6 +2,7 @@
 namespace Chestnut_Pro.View
 {
     using ICSharpCode.AvalonEdit.Folding;
+    using MaterialDesignThemes.Wpf;
     using System;
     using System.Windows;
     using System.Windows.Controls;
@@ -44,10 +45,16 @@ namespace Chestnut_Pro.View
         /// <param name="e"></param>
         private void JsonFormat(object sender, RoutedEventArgs e)
         {
+            Warning_Message.IsActive = false;
             var json = JsonInput_Box.Text;
             if (!string.IsNullOrEmpty(json) && JsonHelper.IsValid(json))
             {
                 JsonOutput_Box.Text = JsonHelper.Format(json, (Indentation)JsonFormatComboBox.SelectedIndex);
+            }
+            else
+            {
+                Warning_Message.IsActive = true;
+                Warning_Message.Message.Content = "wrong format!";
             }
         }
 

@@ -44,11 +44,17 @@
         /// <param name="e"></param>
         private void XMLFormat(object sender, RoutedEventArgs e)
         {
+            Warning_Message.IsActive = false;
             var xml = XMLInput_Box.Text;
             var newLine = XMLNewLine?.IsChecked ?? true;
             if (!string.IsNullOrEmpty(xml) && XmlHelper.IsValid(xml))
             {
                 XMLOutput_Box.Text = XmlHelper.Format(xml, (Indentation)XMLIndentation.SelectedIndex, newLine);
+            }
+            else
+            {
+                Warning_Message.IsActive = true;
+                Warning_Message.Message.Content = "wrong format!";
             }
         }
 

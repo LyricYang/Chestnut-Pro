@@ -50,8 +50,7 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-    <ScrollViewer
-		Style="{StaticResource ScrollViewerStyle}">
+    <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
         <Border
 		BorderBrush="#C8C8C8"
 		Background="#FCFCFC"
