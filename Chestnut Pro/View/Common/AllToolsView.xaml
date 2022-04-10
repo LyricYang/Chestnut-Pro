@@ -250,7 +250,7 @@
                             <StackPanel
 								Margin="10">
                                 <materialDesign:PackIcon
-									Kind="Finance" />
+									Kind="ChartSankeyVariant" />
                                 <TextBlock
 									Style="{StaticResource Title}"
 									Text="Sankey Chart" />
@@ -281,6 +281,28 @@
 									Text="Calculate MD5, SHA1,&#xA;SHA256 and SHA512" />
                                 <Button
                                     CommandParameter="Hash"
+                                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MenuCommand}">
+                                    <materialDesign:PackIcon
+										Kind="DotsHorizontal" />
+                                </Button>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <!--Hash Generator-->
+                        <materialDesign:Card
+							Style="{StaticResource ToolCard}"
+							Margin="30">
+                            <StackPanel
+								Margin="10">
+                                <materialDesign:PackIcon
+									Kind="FormatTextVariantOutline" />
+                                <TextBlock
+									Style="{StaticResource Title}"
+									Text="ASCII Art" />
+                                <TextBlock
+									Style="{StaticResource Content}"
+									Text="Generate ascii art&#xA;with different fonts" />
+                                <Button
+                                    CommandParameter="ASCII Art"
                                     Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MenuCommand}">
                                     <materialDesign:PackIcon
 										Kind="DotsHorizontal" />
