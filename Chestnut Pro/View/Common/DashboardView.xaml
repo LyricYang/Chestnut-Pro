@@ -41,7 +41,7 @@
 							HorizontalAlignment="Left"
 							BorderBrush="{x:Null}"
 							Background="{x:Null}"
-							Margin="15,0,0,0">
+							Margin="30,0,0,0">
                             <StackPanel>
                                 <materialDesign:PackIcon
 									Kind="ReorderHorizontal"
@@ -53,7 +53,7 @@
 							VerticalAlignment="Center"
 							Width="100"
 							materialDesign:HintAssist.Hint="Lyric Yang"
-							Margin="0,0,30,0">
+                            Margin="0 0 5 0">
                             <ComboBoxItem>
                                 <TextBlock
 									Text="Lyric Yang" />
@@ -69,10 +69,10 @@
 						HorizontalAlignment="Left">
                         <materialDesign:Card
 							UniformCornerRadius="15"
-							Width="355"
+							Width="360"
 							Height="130"
 							Background="White"
-							Margin="30,0,0,0">
+							Margin="50,0,0,0">
                             <StackPanel>
                                 <StackPanel
 									Margin="20 10 10 0"
@@ -213,7 +213,7 @@
                     </WrapPanel>
                     <!--Repositories-->
                     <materialDesign:Card
-						Margin="30 20 30 10"
+						Margin="50 20 5 10"
 						UniformCornerRadius="20"
 						Height="285"
 						Background="White">
@@ -272,7 +272,7 @@
 						HorizontalAlignment="Center">
                         <!--Stock-->
                         <materialDesign:Card
-							Margin="10"
+							Margin="45 10 10 10"
 							Width="260"
 							UniformCornerRadius="20"
 							Padding="10">
@@ -357,7 +357,7 @@
                         </materialDesign:Card>
                         <!--Following-->
                         <materialDesign:Card
-							Margin="10"
+							Margin="10 10 0 10"
 							UniformCornerRadius="20"
 							Background="White"
 							Width="390">
