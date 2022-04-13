@@ -299,13 +299,14 @@
                 <StackPanel
 					Grid.Row="2"
 					Grid.Column="0">
-                    <!--<RadioButton
-							Content="Dashboard"
-							Tag="\Assets\dashboard.png"
-							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.DashboardCommand}"
-							Style="{StaticResource MenuButtonStyle}"
-							GroupName="MenuGroup"
-							Margin="5 70 0 0" />-->
+                    <RadioButton
+						Content="Dashboard"
+						Tag="\Assets\dashboard.png"
+						CommandParameter="Dashboard"
+						Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MenuCommand}"
+						Style="{StaticResource MenuButtonStyle}"
+						GroupName="MenuGroup"
+						Margin="5 70 0 0" />
                     <RadioButton
 						Content="Settings"
 						Tag="\Assets\settings.png"
@@ -313,7 +314,7 @@
 						Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.MenuCommand}"
 						Style="{StaticResource MenuButtonStyle}"
 						GroupName="MenuGroup"
-						Margin="5 110 0 0" />
+						Margin="5 2 0 0" />
                 </StackPanel>
             </Grid>
             <!--Page Container-->

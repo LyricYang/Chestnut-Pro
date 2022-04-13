@@ -1,111 +1,189 @@
 ﻿namespace Chestnut_Pro.ViewModel
 {
-    using System;
-    using System.Windows.Media;
+    using System.Collections.ObjectModel;
+    using System.Linq;
+    using Chestnut_Pro.Model;
     using Chestnut_Pro.Service;
-    using Chestnut_Pro.Service.Common;
-    using LiveCharts;
-    using LiveCharts.Defaults;
-    using LiveCharts.Wpf;
+    using Newtonsoft.Json;
 
     /// <summary>
     /// Dashboard View Model
     /// </summary>
     public class DashboardViewModel : ViewModelBase
     {
-        public SeriesCollection SeriesCollection { get; set; }
-        public SeriesCollection LastHourSeries { get; set; }
-        public SeriesCollection LastHourSeries1 { get; set; }
-        public string[] Labels { get; set; }
-        public Func<double, string> Formatter { get; set; }
+        private ObservableCollection<GithubRepo> _repos;
 
+        /// <summary>
+        /// Data Source
+        /// </summary>
+        public ObservableCollection<GithubRepo> Repos
+        {
+            get { return _repos; }
+            set { _repos = value; OnPropertyChanged(); }
+        }
+
+        private int _stars;
+
+        public int Stars
+        {
+            get { return _stars; }
+            set { _stars = value; OnPropertyChanged(); }
+        }
+
+        private int _forks;
+
+        public int Forks
+        {
+            get { return _forks; }
+            set { _forks = value; OnPropertyChanged(); }
+        }
+
+        private GithubUser _user;
+
+        public GithubUser User
+        {
+            get { return _user; }
+            set { _user = value; OnPropertyChanged(); }
+        }
+
+        /// <summary>
+        /// Stock
+        /// </summary>
+        private string _lastestPri;
+
+        public string LastestPri
+        {
+            get { return _lastestPri; }
+            set { _lastestPri = value; OnPropertyChanged(); }
+        }
+
+        private string _limit;
+
+        public string Limit
+        {
+            get { return _limit; }
+            set { _limit = value; OnPropertyChanged(); }
+        }
+
+        private string _maxPri;
+
+        public string MaxPri
+        {
+            get { return _maxPri; }
+            set { _maxPri = value; OnPropertyChanged(); }
+        }
+
+        private string _minPri;
+
+        public string MinPri
+        {
+            get { return _minPri; }
+            set { _minPri = value; OnPropertyChanged(); }
+        }
+
+        /// <summary>
+        /// Gold
+        /// </summary>
+        private string _AU99LastestPri;
+
+        public string AU99LastestPri
+        {
+            get { return _AU99LastestPri; }
+            set { _AU99LastestPri = value; OnPropertyChanged(); }
+        }
+
+        private string _AU99Limit;
+
+        public string AU99Limit
+        {
+            get { return _AU99Limit; }
+            set { _AU99Limit = value; OnPropertyChanged(); }
+        }
+
+        private string _AU99MaxPri;
+
+        public string AU99MaxPri
+        {
+            get { return _AU99MaxPri; }
+            set { _AU99MaxPri = value; OnPropertyChanged(); }
+        }
+
+        private string _AU99MinPri;
+
+        public string AU99MinPri
+        {
+            get { return _AU99MinPri; }
+            set { _AU99MinPri = value; OnPropertyChanged(); }
+        }
+
+        public ObservableCollection<FollowingModel> FollowingUserCollection { get; set; }
 
         public DashboardViewModel()
         {
-            dynamic data = FileUtils.ReadJsonFile(AppDomain.CurrentDomain.BaseDirectory + Constants.JSON_DATA_FILE_PATH);
-            // overhead
-            var overhead = new ChartValues<ObservableValue>();
-            foreach (var monVal in data.Data.Expenditure.Year2021.Month)
+            // Github Information
+            _repos = new ObservableCollection<GithubRepo>();
+            var content = HttpSearchAPI.GetGithubReposAsync("LyricYang").GetAwaiter().GetResult();
+            dynamic repos = JsonConvert.DeserializeObject(content);
+
+            foreach (var repo in repos)
             {
-                overhead.Add(new ObservableValue(monVal.Value));
+                _repos.Add(new GithubRepo()
+                {
+                    Name = repo.name,
+                    Url = repo.html_url,
+                    CreatedTime = repo.created_at,
+                    Language = repo.language,
+                    Watchers = repo.watchers,
+                    Forks = repo.forks,
+                });
             }
-            // salary
-            var salary = new ChartValues<ObservableValue>();
-            foreach (var monVal in data.Data.Income.Year2021.Month)
+
+            _stars = _repos.Sum(t => t.Watchers);
+            _forks = _repos.Sum(t => t.Forks);
+
+            var userContent = HttpSearchAPI.GetGithubUserAsync("LyricYang").GetAwaiter().GetResult();
+            dynamic user = JsonConvert.DeserializeObject(userContent);
+
+            _user = new GithubUser()
             {
-                salary.Add(new ObservableValue(monVal.Value));
+                UserName = user.login,
+                Url = user.html_url,
+                Company = user.company,
+                ReposCount = user.public_repos,
+                Followers = user.followers,
+                CreatedTime = user.created_at,
+                BIO = user.bio,
+            };
+
+            FollowingUserCollection = new ObservableCollection<FollowingModel>();
+            var relationship = HttpSearchAPI.GetGithubUserRelationshipAsync("LyricYang", "following").GetAwaiter().GetResult();
+            dynamic follows = JsonConvert.DeserializeObject(relationship);
+            foreach (var f in follows)
+            {
+                FollowingUserCollection.Add(new FollowingModel()
+                {
+                    Name = f.login,
+                    Avatar = f.avatar_url
+                });
             }
 
-            // Income and Expenditure
-            SeriesCollection = new SeriesCollection
-            {
-                new LineSeries
-                {
-                    Title = "Overhead",
-                    Stroke = Brushes.OrangeRed,
-                    StrokeThickness = 2,
-                    Fill = Brushes.Transparent,
-                    PointGeometrySize = 10,
-                    LineSmoothness = 1,
-                    StrokeDashArray = new DoubleCollection { 2 },
-                    Values = overhead,
-                },
-                new LineSeries
-                {
-                    Title = "Salary",
-                    Stroke = Brushes.Blue,
-                    StrokeThickness = 2,
-                    Fill = Brushes.Transparent,
-                    PointGeometrySize = 10,
-                    LineSmoothness = 1,
-                    Values = salary
-                }
-            };
+            // MSFT stock
+            var stock = HttpSearchAPI.GetUSAStockAsync("msft").GetAwaiter().GetResult();
+            dynamic msft = JsonConvert.DeserializeObject(stock);
 
+            _lastestPri = "$" + msft.result[0].data.lastestpri;
+            _limit = msft.result[0].data.limit + "%";
+            _minPri = "$" + msft.result[0].data.min52;
+            _maxPri = "$" + msft.result[0].data.max52;
 
-            LastHourSeries = new SeriesCollection
-            {
-                new LineSeries
-                {
-                    AreaLimit = -10,
-                    Values = new ChartValues<ObservableValue>
-                    {
-                        new ObservableValue(3),
-                        new ObservableValue(1),
-                        new ObservableValue(9),
-                        new ObservableValue(4),
-                        new ObservableValue(5),
-                        new ObservableValue(3),
-                        new ObservableValue(1),
-                        new ObservableValue(2),
-                        new ObservableValue(3),
-                        new ObservableValue(7),
-                    }
-                }
-            };
-            LastHourSeries1 = new SeriesCollection
-            {
-                new LineSeries
-                {
-                    AreaLimit = -10,
-                    Values = new ChartValues<ObservableValue>
-                    {
-                        new ObservableValue(13),
-                        new ObservableValue(11),
-                        new ObservableValue(9),
-                        new ObservableValue(14),
-                        new ObservableValue(5),
-                        new ObservableValue(3),
-                        new ObservableValue(12),
-                        new ObservableValue(2),
-                        new ObservableValue(3),
-                        new ObservableValue(7),
-                    }
-                }
-            };
+            // Gold price
+            var gold = HttpSearchAPI.GetSHGoldAsync().GetAwaiter().GetResult();
+            dynamic shGold = JsonConvert.DeserializeObject(gold);
 
-            Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", " Aug", "Sep", "Oct", "Nov", "Dec"};
-            Formatter = value => value.ToString();
+            _AU99LastestPri = "￥" + shGold.result[0]["4"].latestpri;
+            _AU99Limit = shGold.result[0]["4"].limit;
+            _AU99MinPri = "￥" + shGold.result[0]["4"].minpri;
+            _AU99MaxPri = "￥" + shGold.result[0]["4"].maxpri;
         }
     }
 

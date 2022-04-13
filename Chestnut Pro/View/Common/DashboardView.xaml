@@ -1,18 +1,12 @@
 ﻿<UserControl
-	x:Class="Chestnut_Pro.View.DashboardView"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-    xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+	x:Class="Chestnut_Pro.View.DashboardView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
 	mc:Ignorable="d"
 	d:DesignHeight="850"
 	d:DesignWidth="1100"
 	Background="Transparent">
     <Border
 		BorderBrush="#C8C8C8"
-		Background="#ececea"
+		Background="#FCFCFC"
 		BorderThickness="1,1,1,1"
 		CornerRadius="5">
         <Grid
@@ -38,7 +32,7 @@
             <Grid
 				Grid.Column="0">
                 <StackPanel
-					Background="#ececea">
+					Background="#FCFCFC">
                     <!--Header-->
                     <Grid
 						Height="60">
@@ -58,11 +52,11 @@
 							HorizontalAlignment="Right"
 							VerticalAlignment="Center"
 							Width="100"
-							materialDesign:HintAssist.Hint="Aaron Yeoh"
+							materialDesign:HintAssist.Hint="Lyric Yang"
 							Margin="0,0,30,0">
                             <ComboBoxItem>
                                 <TextBlock
-									Text="Aaron Yeoh" />
+									Text="Lyric Yang" />
                             </ComboBoxItem>
                             <ComboBoxItem>
                                 <TextBlock
@@ -79,27 +73,78 @@
 							Height="130"
 							Background="White"
 							Margin="30,0,0,0">
-                            <StackPanel
-								Margin="20 10 20 10">
-                                <materialDesign:PackIcon
-									Kind="CardAccountDetailsOutline"
-									Foreground="Black" />
-                                <TextBlock
-									FontWeight="SemiBold"
-									FontSize="25"
-									Text=""
-									Margin="0 10 0 0">
-									<Hyperlink
-										Name="Github"
-										NavigateUri="https://github.com/LyricYang"
-										Foreground="Black">Aaron Yeoh</Hyperlink>
-                                </TextBlock>
-                                <TextBlock
-									FontSize="12"
-									Text="yanglin9837@gmail.com" />
-                                <materialDesign:PackIcon
-									Kind="EllipsisHorizontal"
-									HorizontalAlignment="Right" />
+                            <StackPanel>
+                                <StackPanel
+									Margin="20 10 10 0"
+									Orientation="Horizontal">
+                                    <materialDesign:PackIcon
+										Kind="CardAccountDetailsOutline"
+										Margin="10"
+										Foreground="Black" />
+                                    <TextBlock
+										FontWeight="SemiBold"
+										FontSize="25"
+										Margin="10 5 0 0">
+										<Hyperlink
+											Name="Github"
+											NavigateUri="{Binding User.Url}"
+											Foreground="Black">
+											<TextBlock
+												Text="{Binding User.UserName}" />
+										</Hyperlink>
+									</TextBlock>
+                                </StackPanel>
+                                <StackPanel
+									Margin="0 0 0 5"
+									Orientation="Horizontal">
+                                    <TextBlock
+										FontSize="12"
+										FontWeight="Bold"
+										Margin="30 0 0 0"
+										xml:space="preserve"
+										Text="Company : " />
+                                    <TextBlock
+										FontSize="12"
+										Margin="5 0 0 0"
+										Text="{Binding User.Company}" />
+                                    <TextBlock
+										FontSize="12"
+										FontWeight="Bold"
+										Margin="80 0 0 0"
+										xml:space="preserve"
+										Text="Repos : " />
+                                    <TextBlock
+										FontSize="12"
+										Margin="5 0 0 0"
+										Text="{Binding User.ReposCount}" />
+                                </StackPanel>
+                                <StackPanel
+									Orientation="Horizontal"
+									Margin="0 0 0 5">
+                                    <TextBlock
+										FontSize="12"
+										FontWeight="Bold"
+										Margin="30 0 0 0"
+										xml:space="preserve"
+										Text="Create      : " />
+                                    <TextBlock
+										FontSize="12"
+										Margin="5 0 0 0"
+										Text="{Binding User.CreatedTime}" />
+                                </StackPanel>
+                                <StackPanel
+									Orientation="Horizontal">
+                                    <TextBlock
+										FontSize="12"
+										FontWeight="Bold"
+										Margin="30 0 0 0"
+										xml:space="preserve"
+										Text="Motto      : " />
+                                    <TextBlock
+										FontSize="12"
+										Margin="5 0 0 0"
+										Text="{Binding User.BIO}" />
+                                </StackPanel>
                             </StackPanel>
                         </materialDesign:Card>
                         <materialDesign:Card
@@ -117,7 +162,7 @@
                                 <TextBlock
 									FontWeight="SemiBold"
 									FontSize="25"
-									Text="55"
+									Text="{Binding User.Followers}"
 									Margin="0 10 0 0" />
                                 <TextBlock
 									FontSize="12"
@@ -155,7 +200,7 @@
                                 <TextBlock
 									FontWeight="SemiBold"
 									FontSize="25"
-									Text="489"
+									Text="{Binding Stars}"
 									Margin="0 10 0 0" />
                                 <TextBlock
 									FontSize="12"
@@ -166,322 +211,190 @@
                             </StackPanel>
                         </materialDesign:Card>
                     </WrapPanel>
-                    <!--Expenditure-->
+                    <!--Repositories-->
                     <materialDesign:Card
-						Margin="30 20"
+						Margin="30 20 30 10"
 						UniformCornerRadius="20"
 						Height="285"
 						Background="White">
                         <StackPanel>
                             <Grid>
                                 <TextBlock
-									Margin="20"
+									Margin="20 20 0 0"
 									HorizontalAlignment="Left"
 									FontWeight="SemiBold"
-									Text="Expenditure"
+									Text="Repositories"
 									FontSize="18" />
-                                <StackPanel
-									Orientation="Horizontal"
-									HorizontalAlignment="Right">
-                                    <TextBlock
-										FontWeight="ExtraBold"
-										FontSize="14"
-										Text=""
-										FontFamily="wingdings"
-										VerticalAlignment="Center"
-										Foreground="#42A5F4" />
-                                    <TextBlock
-										Text="Salary"
-										HorizontalAlignment="Right"
-										VerticalAlignment="Center"
-										FontWeight="SemiBold"
-										FontSize="14"
-										Margin="5 0 10 0" />
-                                    <TextBlock
-										FontWeight="ExtraBold"
-										FontSize="14"
-										Text=""
-										FontFamily="wingdings"
-										VerticalAlignment="Center"
-										Foreground="#F55F54" />
-                                    <TextBlock
-										Text="Overhead"
-										HorizontalAlignment="Right"
-										VerticalAlignment="Center"
-										FontWeight="SemiBold"
-										FontSize="14"
-										Margin="5 0 20 0" />
-                                </StackPanel>
                             </Grid>
-                            <lvc:CartesianChart
-								Series="{Binding SeriesCollection}"
-								Hoverable="False"
-								Margin="10 0"
-								Height="200">
-                                <lvc:CartesianChart.VisualElements>
-                                    <lvc:VisualElement
-										X="8"
-										Y="12558.03">
-                                        <lvc:VisualElement.UIElement>
-                                            <TextBlock
-												Foreground="Black">
-                                                Max:12558.03
-                                            </TextBlock>
-                                        </lvc:VisualElement.UIElement>
-                                    </lvc:VisualElement>
-                                    <lvc:VisualElement
-										X="5"
-										Y="4548.58">
-                                        <lvc:VisualElement.UIElement>
-                                            <TextBlock
-												Foreground="Black">
-                                                Min:4548.58
-                                            </TextBlock>
-                                        </lvc:VisualElement.UIElement>
-                                    </lvc:VisualElement>
-                                </lvc:CartesianChart.VisualElements>
-                                <lvc:CartesianChart.AxisX>
-                                    <lvc:Axis
-										ShowLabels="True"
-										Foreground="Black"
-										Labels="{Binding Labels}" />
-                                </lvc:CartesianChart.AxisX>
-                                <lvc:CartesianChart.AxisY>
-                                    <lvc:Axis
-										Title="Money"
-										ShowLabels="True"
-										Foreground="Black"
-										MinValue="0" />
-                                </lvc:CartesianChart.AxisY>
-                            </lvc:CartesianChart>
+                            <Border
+								BorderBrush="#C8C8C8"
+								Margin="2 2 2 2"
+								Height="215"
+								CornerRadius="5">
+                                <DataGrid
+									HorizontalAlignment="Left"
+									Margin="2 2 2 2"
+									VerticalAlignment="Top"
+									ItemsSource="{Binding Path=Repos}"
+									AutoGenerateColumns="False"
+									CanUserAddRows="False"
+									CanUserResizeColumns="False"
+									CanUserDeleteRows="False"
+									Background="{x:Null}">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn
+											Binding="{Binding Name}"
+											Header="Repo Name"
+											Width="220" />
+                                        <DataGridTextColumn
+											Binding="{Binding Language}"
+											Header="Language"
+											Width="100" />
+                                        <DataGridTextColumn
+											Binding="{Binding Watchers}"
+											Header="Stars"
+											Width="80" />
+                                        <DataGridTextColumn
+											Binding="{Binding Forks}"
+											Header="Forks"
+											Width="80" />
+                                        <DataGridTextColumn
+											Binding="{Binding CreatedTime}"
+											Header="Created"
+											Width="*" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Border>
                         </StackPanel>
                     </materialDesign:Card>
-                    <!--Statistics-->
+                    <!--Finance-->
                     <WrapPanel
 						HorizontalAlignment="Center">
+                        <!--Stock-->
                         <materialDesign:Card
 							Margin="10"
+							Width="260"
 							UniformCornerRadius="20"
 							Padding="10">
                             <StackPanel>
                                 <TextBlock
-									Text="Key Metrics"
-									Margin="10 20"
+									Text="MSFT"
+									Margin="10 10 0 0"
+									FontWeight="ExtraBold"
+									Foreground="#D84315"
+									FontSize="20" />
+                                <StackPanel
+									Orientation="Horizontal">
+                                    <TextBlock
+										Text="{Binding LastestPri}"
+										FontSize="28"
+										FontWeight="ExtraBold"
+										FontFamily="Courier New"
+										Margin="10" />
+                                    <TextBlock
+										Text="{Binding Limit}"
+										FontSize="14"
+										FontWeight="SemiBold"
+										FontFamily="Courier New"
+										Foreground="Green"
+										VerticalAlignment="Center"
+										Margin="5 10 0 0" />
+                                </StackPanel>
+                                <StackPanel
+									Orientation="Horizontal">
+                                    <TextBlock
+										Text="{Binding MaxPri}"
+										FontSize="20"
+										FontFamily="Courier New"
+										FontWeight="Bold"
+										Margin="10 0 0 0" />
+                                    <TextBlock
+										Text="{Binding MinPri}"
+										FontSize="20"
+										FontWeight="Bold"
+										FontFamily="Courier New"
+										Margin="10 0 0 0" />
+                                </StackPanel>
+                                <TextBlock
+									Text="SH Gold"
+									Margin="10 20 0 0"
+									FontWeight="ExtraBold"
+									Foreground="#D84315"
+									FontSize="20" />
+                                <StackPanel
+									Orientation="Horizontal">
+                                    <TextBlock
+										Text="{Binding AU99LastestPri}"
+										FontSize="28"
+										FontWeight="ExtraBold"
+										FontFamily="Courier New"
+										Margin="10" />
+                                    <TextBlock
+										Text="{Binding AU99Limit}"
+										FontSize="14"
+										FontWeight="SemiBold"
+										Foreground="Green"
+										FontFamily="Courier New"
+										VerticalAlignment="Center"
+										Margin="5 10 0 0" />
+                                </StackPanel>
+                                <StackPanel
+									Orientation="Horizontal">
+                                    <TextBlock
+										Text="{Binding AU99MaxPri}"
+										FontSize="20"
+										FontWeight="Bold"
+										FontFamily="Courier New"
+										Margin="10 0 0 0" />
+                                    <TextBlock
+										Text="{Binding AU99MinPri}"
+										FontSize="20"
+										FontWeight="Bold"
+										FontFamily="Courier New"
+										Margin="20 0 0 20" />
+                                </StackPanel>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <!--Following-->
+                        <materialDesign:Card
+							Margin="10"
+							UniformCornerRadius="20"
+							Background="White"
+							Width="390">
+                            <StackPanel
+								Margin="10">
+                                <TextBlock
+									Margin="20 10 0 0"
+									HorizontalAlignment="Left"
 									FontWeight="SemiBold"
+									Text="Following"
 									FontSize="18" />
-                                <Grid
-									Height="150">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition />
-                                        <ColumnDefinition />
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition />
-                                        <RowDefinition />
-                                        <RowDefinition />
-                                        <RowDefinition />
-                                    </Grid.RowDefinitions>
-                                    <TextBlock
-										Text="Deposit"
-										Grid.Column="0"
-										Grid.Row="0"
-										HorizontalAlignment="Left"
-										VerticalAlignment="Center"
-										FontSize="13"
-										FontWeight="SemiBold" />
-                                    <TextBlock
-										Text="Expenses"
-										Grid.Column="0"
-										Grid.Row="1"
-										HorizontalAlignment="Left"
-										VerticalAlignment="Center"
-										FontSize="13"
-										FontWeight="SemiBold" />
-                                    <TextBlock
-										Text="Seniority"
-										Grid.Column="0"
-										Grid.Row="2"
-										HorizontalAlignment="Left"
-										VerticalAlignment="Center"
-										FontSize="13"
-										FontWeight="SemiBold" />
-                                    <TextBlock
-										Text="Investment"
-										Grid.Column="0"
-										Grid.Row="3"
-										HorizontalAlignment="Left"
-										VerticalAlignment="Center"
-										FontSize="13"
-										FontWeight="SemiBold" />
-                                    <StackPanel
-										Grid.Column="1"
-										Grid.Row="0"
-										HorizontalAlignment="Left"
-										VerticalAlignment="Center"
-										Orientation="Horizontal">
-                                        <TextBlock
-											Text="17w"
-											FontWeight="SemiBold"
-											Margin="5 0" />
-                                        <ProgressBar
-											Margin="8 0 5 0"
-											HorizontalAlignment="Right"
-											Width="100"
-											Height="8"
-											Foreground="Orange"
-											Background="#FFE8E8E8"
-											BorderBrush="Orange"
-											Value="32" />
-                                        <TextBlock
-											Text="50w"
-											FontWeight="SemiBold" />
-                                    </StackPanel>
-                                    <StackPanel
-										Grid.Column="1"
-										Grid.Row="2"
-										HorizontalAlignment="Left"
-										VerticalAlignment="Center"
-										Orientation="Horizontal">
-                                        <TextBlock
-											Text="1007"
-											FontWeight="SemiBold"
-											Margin="5 0" />
-                                        <ProgressBar
-											Margin="5 0"
-											HorizontalAlignment="Right"
-											Width="100"
-											Height="8"
-											Foreground="Orange"
-											Background="#FFE8E8E8"
-											BorderBrush="Orange"
-											Value="7" />
-                                        <TextBlock
-											Text="14405"
-											FontWeight="SemiBold" />
-                                    </StackPanel>
-                                    <StackPanel
-										Grid.Column="1"
-										Grid.Row="1"
-										HorizontalAlignment="Left"
-										VerticalAlignment="Center"
-										Orientation="Horizontal">
-                                        <TextBlock
-											Text="8.5w"
-											FontWeight="SemiBold"
-											Margin="5 0" />
-                                        <ProgressBar
-											Margin="5 0"
-											HorizontalAlignment="Right"
-											Width="100"
-											Height="8"
-											Foreground="SeaGreen"
-											Background="#FFE8E8E8"
-											BorderBrush="SeaGreen"
-											Value="85" />
-                                        <TextBlock
-											Text="10w"
-											FontWeight="SemiBold" />
-                                    </StackPanel>
-                                    <StackPanel
-										Grid.Column="1"
-										Grid.Row="3"
-										HorizontalAlignment="Left"
-										VerticalAlignment="Center"
-										Orientation="Horizontal">
-                                        <TextBlock
-											Text="0.6w"
-											FontWeight="SemiBold"
-											Margin="5 0" />
-                                        <ProgressBar
-											Margin="5 0"
-											HorizontalAlignment="Right"
-											Width="100"
-											Height="8"
-											Foreground="SeaGreen"
-											Background="#FFE8E8E8"
-											BorderBrush="SeaGreen"
-											Value="1.2" />
-                                        <TextBlock
-											Text="5w"
-											FontWeight="SemiBold" />
-                                    </StackPanel>
-                                </Grid>
-                            </StackPanel>
-                        </materialDesign:Card>
-                        <materialDesign:Card
-							Margin="10"
-							UniformCornerRadius="20"
-							Background="#633648">
-                            <StackPanel
-								Margin="10">
-                                <TextBlock
-									Text="Engagged Users"
-									FontSize="14"
-									Foreground="White"
-									TextAlignment="Center" />
-                                <TextBlock
-									Text="12.5K"
-									TextAlignment="Center"
-									Margin="0 5"
-									Foreground="White"
-									FontSize="18" />
-                                <lvc:CartesianChart
-									Margin="0 5"
-									Series="{Binding LastHourSeries}"
-									Hoverable="False"
-									DataTooltip="{x:Null}"
-									Height="160"
-									Width="160">
-                                    <lvc:CartesianChart.AxisX>
-                                        <lvc:Axis
-											MinValue="0" />
-                                    </lvc:CartesianChart.AxisX>
-                                </lvc:CartesianChart>
-                                <materialDesign:PackIcon
-									Kind="ArrowUp"
-									HorizontalAlignment="Center"
-									Margin="0 5"
-									Width="20"
-									Height="20"
-									Foreground="#62A78B" />
-                            </StackPanel>
-                        </materialDesign:Card>
-                        <materialDesign:Card
-							Margin="10"
-							UniformCornerRadius="20"
-							Background="#633648">
-                            <StackPanel
-								Margin="10">
-                                <TextBlock
-									Text="Page Impression"
-									FontSize="14"
-									Foreground="White"
-									TextAlignment="Center" />
-                                <TextBlock
-									Text="12.5K"
-									TextAlignment="Center"
-									Margin="0 5"
-									Foreground="White"
-									FontSize="18" />
-                                <lvc:CartesianChart
-									Margin="0 5"
-									Series="{Binding LastHourSeries1}"
-									Hoverable="False"
-									DataTooltip="{x:Null}"
-									Height="160"
-									Width="160">
-                                    <lvc:CartesianChart.AxisX>
-                                        <lvc:Axis
-											MinValue="0" />
-                                    </lvc:CartesianChart.AxisX>
-                                </lvc:CartesianChart>
-                                <materialDesign:PackIcon
-									Kind="ArrowUp"
-									HorizontalAlignment="Center"
-									Margin="0 5"
-									Width="20"
-									Height="20"
-									Foreground="#62A78B" />
+                                <WrapPanel
+									Margin="20">
+                                    <ItemsControl
+										ItemsSource="{Binding FollowingUserCollection}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <WrapPanel
+													Orientation="Horizontal" />
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border
+													Height="40"
+													Width="40">
+                                                    <ToggleButton
+														Style="{StaticResource MaterialDesignActionToggleButton}"
+														ToolTip="{Binding Name}">
+                                                        <Image
+															Source="{Binding Avatar}" />
+                                                    </ToggleButton>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </WrapPanel>
                             </StackPanel>
                         </materialDesign:Card>
                     </WrapPanel>
@@ -491,134 +404,106 @@
             <StackPanel
 				Grid.Column="1"
 				Background="#FCFCFC">
-                <!--Note-->
+                <!--Calendar-->
                 <materialDesign:Card
-					Background="#FF673AB7"
-					Foreground="White"
-					Margin="30,30,30,10"
-					Padding="5"
-					UniformCornerRadius="20"
-					HorizontalAlignment="Center"
-					Width="275">
-                    <StackPanel>
-                        <TextBlock
-							Margin="16 16 12 8"
-							FontSize="16"
-							Text="Notes" />
-                        <CheckBox
-							Margin="16 4 16 0"
-							Style="{StaticResource MaterialDesignUserForegroundCheckBox}"
-							Content="Reading" />
-                        <CheckBox
-							Margin="16 4 16 0"
-							Style="{StaticResource MaterialDesignUserForegroundCheckBox}"
-							Content="Coding" />
-                        <CheckBox
-							Margin="16 4 16 0"
-							Style="{StaticResource MaterialDesignUserForegroundCheckBox}"
-							Content="Execising" />
-                        <CheckBox
-							Margin="16 4 16 0"
-							Style="{StaticResource MaterialDesignUserForegroundCheckBox}"
-							Content="Writing" />
-                        <Separator
-							Style="{StaticResource MaterialDesignLightSeparator}" />
-                        <StackPanel
-							Margin="8 0 8 8"
-							Orientation="Horizontal"
-							HorizontalAlignment="Right">
-                            <Button
-								HorizontalAlignment="Right"
-								Style="{StaticResource MaterialDesignToolForegroundButton}"
-								Width="30"
-								Padding="2 0 0 0"
-								materialDesign:RippleAssist.IsCentered="True">
-                                <materialDesign:PackIcon
-									Kind="CheckAll" />
-                            </Button>
-                        </StackPanel>
-                    </StackPanel>
-                </materialDesign:Card>
-                <materialDesign:Card
-					Background="#FF673AB7"
-					Margin="20 10"
+					Background="#009473"
+					Margin="0,60,30,10"
 					Padding="5"
 					UniformCornerRadius="20"
 					HorizontalAlignment="Center"
 					Width="277">
                     <Calendar
+						DisplayMode="Month"
 						Foreground="White"
-						Background="{x:Null}">
-                        <Calendar.BlackoutDates>
-                            <CalendarDateRange
-								Start="2/1/2022"
-								End="2/23/2022"></CalendarDateRange>
-                        </Calendar.BlackoutDates>
-                    </Calendar>
+						Background="#009473"
+						Style="{DynamicResource MaterialDesignCalendarPortraitForeground}"></Calendar>
                 </materialDesign:Card>
+                <!--Notification-->
                 <materialDesign:Card
-					Margin="20 10"
-					Padding="5"
-					UniformCornerRadius="15"
-					HorizontalAlignment="Center">
-                    <WrapPanel
-						Margin="10">
-                        <materialDesign:PackIcon
-							Kind="HandPeace"
-							Foreground="#FFC83D"
-							VerticalAlignment="Center"
-							Margin="10 0" />
-                        <TextBlock
-							Margin="10 0"
-							VerticalAlignment="Center">
-                            <TextBlock.Inlines>
-                                <Run
-									Text="Say Hi to" />
-                                <Run
-									Text="Laith Hart"
-									FontWeight="SemiBold"
-									FontSize="14" />
-                            </TextBlock.Inlines>
-                        </TextBlock>
-                        <Image
-							Source="../Assets/avatar1.jpg"
-							Width="40"
-							Height="40"
-							Margin="10 0"
-							x:Name="avatar1" />
-                    </WrapPanel>
-                </materialDesign:Card>
-                <materialDesign:Card
-					Margin="20 10"
-					Padding="5"
-					UniformCornerRadius="15"
-					HorizontalAlignment="Center">
-                    <WrapPanel
-						Margin="10">
-                        <materialDesign:PackIcon
-							Kind="HandPeace"
-							Foreground="#FFC83D"
-							VerticalAlignment="Center"
-							Margin="10 0" />
-                        <TextBlock
-							Margin="10 0"
-							VerticalAlignment="Center">
-                            <TextBlock.Inlines>
-                                <Run
-									Text="Say Hi to" />
-                                <Run
-									Text="Laith Hart"
-									FontWeight="SemiBold"
-									FontSize="14" />
-                            </TextBlock.Inlines>
-                        </TextBlock>
-                        <Image
-							Source="../Assets/avatar1.jpg"
-							Width="40"
-							Height="40"
-							Margin="10 0"
-							x:Name="avatar2" />
-                    </WrapPanel>
+					Background="#009473"
+					Margin="0,10,30,10"
+					Padding="10"
+					UniformCornerRadius="20"
+					HorizontalAlignment="Center"
+					Height="340"
+					Width="277">
+                    <materialDesign:DialogHost
+						DialogClosing="Sample5_DialogHost_OnDialogClosing"
+						Style="{StaticResource MaterialDesignEmbeddedDialogHost}"
+						DialogMargin="8">
+                        <materialDesign:DialogHost.DialogContent>
+                            <StackPanel
+								Margin="16">
+                                <TextBlock
+									Text="Add a new animal." />
+                                <TextBox
+									Margin="0 8 0 0"
+									HorizontalAlignment="Stretch"
+									x:Name="AnimalTextBox" />
+                                <StackPanel
+									Orientation="Horizontal"
+									HorizontalAlignment="Right">
+                                    <Button
+										Style="{StaticResource MaterialDesignFlatButton}"
+										IsDefault="True"
+										Margin="0 8 8 0"
+										Content="ACCEPT"
+										Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}">
+                                        <Button.CommandParameter>
+                                            <system:Boolean xmlns:system="clr-namespace:System;assembly=mscorlib">
+                                                True
+                                            </system:Boolean>
+                                        </Button.CommandParameter>
+                                    </Button>
+                                    <Button
+										Style="{StaticResource MaterialDesignFlatButton}"
+										IsCancel="True"
+										Margin="0 8 8 0"
+										Content="CANCEL"
+										Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}">
+                                        <Button.CommandParameter>
+                                            <system:Boolean xmlns:system="clr-namespace:System;assembly=mscorlib">
+                                                False
+                                            </system:Boolean>
+                                        </Button.CommandParameter>
+                                    </Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </materialDesign:DialogHost.DialogContent>
+                        <Border
+							BorderThickness="1"
+							BorderBrush="{x:Null}"
+							ClipToBounds="True"
+							HorizontalAlignment="Stretch">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+										Height="*" />
+                                    <RowDefinition
+										Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <ListBox
+									x:Name="AnimalListBox">
+                                    <ListBoxItem
+										Content="Dog" Foreground="White"/>
+                                    <ListBoxItem
+										Content="Cat" Foreground="White"/>
+                                    <ListBoxItem
+										Content="Platypus" Foreground="White"/>
+                                </ListBox>
+                                <Button
+									Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+									Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}"
+									Background="#E2583E"
+									BorderBrush="#E2583E"
+									VerticalAlignment="Bottom"
+									HorizontalAlignment="Right"
+									Grid.Row="0"
+									Margin="0 0 20 10"
+									Content="{materialDesign:PackIcon Kind=Plus, Size=22}" />
+                            </Grid>
+                        </Border>
+                    </materialDesign:DialogHost>
                 </materialDesign:Card>
             </StackPanel>
         </Grid>

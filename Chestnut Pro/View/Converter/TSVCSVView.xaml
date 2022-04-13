@@ -278,6 +278,7 @@
 							Style="{StaticResource CommonTextBoxStyle}"
 							Margin="0 10 0 0"
 							materialDesign:HintAssist.Hint="TSV Text"
+                            AcceptsReturn="True"
 							BorderBrush="#C8C8C8" />
                         <GridSplitter
 							Grid.Row="2"
@@ -329,6 +330,7 @@
 							Text="{Binding CSVText}"
 							Style="{StaticResource CommonTextBoxStyle}"
 							Margin="0 10 0 0"
+                            AcceptsReturn="True"
 							materialDesign:HintAssist.Hint="CSV Text"
 							BorderBrush="#C8C8C8" />
                     </Grid>
