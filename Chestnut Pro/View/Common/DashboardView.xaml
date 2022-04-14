@@ -406,7 +406,7 @@
 				Background="#FCFCFC">
                 <!--Calendar-->
                 <materialDesign:Card
-					Background="#009473"
+					Background="White"
 					Margin="0,60,30,10"
 					Padding="5"
 					UniformCornerRadius="20"
@@ -414,32 +414,30 @@
 					Width="277">
                     <Calendar
 						DisplayMode="Month"
-						Foreground="White"
-						Background="#009473"
+						Foreground="Black"
+						Background="White"
 						Style="{DynamicResource MaterialDesignCalendarPortraitForeground}"></Calendar>
                 </materialDesign:Card>
                 <!--Notification-->
                 <materialDesign:Card
-					Background="#009473"
+					Background="White"
 					Margin="0,10,30,10"
 					Padding="10"
 					UniformCornerRadius="20"
 					HorizontalAlignment="Center"
-					Height="340"
+					Height="338"
 					Width="277">
                     <materialDesign:DialogHost
-						DialogClosing="Sample5_DialogHost_OnDialogClosing"
 						Style="{StaticResource MaterialDesignEmbeddedDialogHost}"
 						DialogMargin="8">
                         <materialDesign:DialogHost.DialogContent>
                             <StackPanel
 								Margin="16">
                                 <TextBlock
-									Text="Add a new animal." />
+									Text="Add an agenda." />
                                 <TextBox
 									Margin="0 8 0 0"
-									HorizontalAlignment="Stretch"
-									x:Name="AnimalTextBox" />
+									HorizontalAlignment="Stretch"/>
                                 <StackPanel
 									Orientation="Horizontal"
 									HorizontalAlignment="Right">
@@ -480,17 +478,52 @@
                                     <RowDefinition
 										Height="*" />
                                     <RowDefinition
+										Height="*" />
+                                    <RowDefinition
 										Height="Auto" />
                                 </Grid.RowDefinitions>
-                                <ListBox
-									x:Name="AnimalListBox">
-                                    <ListBoxItem
-										Content="Dog" Foreground="White"/>
-                                    <ListBoxItem
-										Content="Cat" Foreground="White"/>
-                                    <ListBoxItem
-										Content="Platypus" Foreground="White"/>
-                                </ListBox>
+                                <StackPanel Grid.Row="0" >
+                                    <TextBlock
+										Margin="0 10 0 0"
+										HorizontalAlignment="Left"
+										FontWeight="SemiBold"
+										Text="Agency"
+										FontSize="16" />
+                                    <ListBox ItemsSource="{Binding TodayAgenda}">
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel>
+                                                    <CheckBox
+                                                    Foreground="Black"
+													Margin="10 0 0 0">
+                                                        <TextBlock Text="{Binding Content}"/>
+                                                    </CheckBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+                                </StackPanel>
+                                <StackPanel Grid.Row="1" >
+                                    <TextBlock
+										HorizontalAlignment="Left"
+										FontWeight="SemiBold"
+										Text="Completed"
+										FontSize="16" />
+                                    <ListBox Grid.Row="1" ItemsSource="{Binding FinishAgenda}">
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel>
+                                                    <CheckBox
+                                                    IsChecked="True"
+                                                    Foreground="Gray"
+													Margin="10 0 0 0">
+                                                        <TextBlock TextDecorations="Strikethrough" Text="{Binding Content}"/>
+                                                    </CheckBox>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+                                </StackPanel>
                                 <Button
 									Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
 									Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}"
@@ -498,8 +531,8 @@
 									BorderBrush="#E2583E"
 									VerticalAlignment="Bottom"
 									HorizontalAlignment="Right"
-									Grid.Row="0"
-									Margin="0 0 20 10"
+									Grid.Row="2"
+									Margin="0 0 20 5"
 									Content="{materialDesign:PackIcon Kind=Plus, Size=22}" />
                             </Grid>
                         </Border>

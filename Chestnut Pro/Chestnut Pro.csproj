@@ -96,6 +96,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Data\Agenda.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\Data.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

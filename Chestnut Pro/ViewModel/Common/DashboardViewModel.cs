@@ -1,5 +1,6 @@
 ﻿namespace Chestnut_Pro.ViewModel
 {
+    using System;
     using System.Collections.ObjectModel;
     using System.Linq;
     using Chestnut_Pro.Model;
@@ -11,6 +12,22 @@
     /// </summary>
     public class DashboardViewModel : ViewModelBase
     {
+        private ObservableCollection<AgendaModel> _todayAgenda;
+
+        public ObservableCollection<AgendaModel> TodayAgenda
+        {
+            get { return _todayAgenda; }
+            set { _todayAgenda = value; OnPropertyChanged(); }
+        }
+
+        private ObservableCollection<AgendaModel> _finishAgenda;
+
+        public ObservableCollection<AgendaModel> FinishAgenda
+        {
+            get { return _finishAgenda; }
+            set { _finishAgenda = value; OnPropertyChanged(); }
+        }
+
         private ObservableCollection<GithubRepo> _repos;
 
         /// <summary>
@@ -120,6 +137,35 @@
 
         public DashboardViewModel()
         {
+            _todayAgenda = new ObservableCollection<AgendaModel>();
+            _finishAgenda = new ObservableCollection<AgendaModel>();
+
+            var agendaJson = FileUtils.ReadJsonFile(AppDomain.CurrentDomain.BaseDirectory + "\\Data\\Agenda.json");
+            var todayData = agendaJson.Agenda[DateTime.Now.Date.ToString("yyyyMMdd")];
+            foreach (var agenda in todayData.agency)
+            {
+                _todayAgenda.Add(new AgendaModel()
+                {
+                    AgendaId = agenda.id,
+                    Title = agenda.title,
+                    Content = agenda.content,
+                    From = agenda.from,
+                    To = agenda.to,
+                });
+            }
+
+            foreach (var agenda in todayData.finish)
+            {
+                _finishAgenda.Add(new AgendaModel()
+                {
+                    AgendaId = agenda.id,
+                    Title = agenda.title,
+                    Content = agenda.content,
+                    From = agenda.from,
+                    To = agenda.to,
+                });
+            }
+
             // Github Information
             _repos = new ObservableCollection<GithubRepo>();
             var content = HttpSearchAPI.GetGithubReposAsync("LyricYang").GetAwaiter().GetResult();

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<?define Chestnut Pro_TargetDir=$(var.Chestnut Pro.TargetDir)?>
-	<Product Id="*" Name="Chestnut Pro" Language="1033" Version="1.3.5.0" Manufacturer="Aaron Yeoh" UpgradeCode="ffc623e1-cbc5-4525-a81b-8e8fb65ce8ea">
+	<Product Id="*" Name="Chestnut Pro" Language="1033" Version="2.3.5.0" Manufacturer="Aaron Yeoh" UpgradeCode="ffc623e1-cbc5-4525-a81b-8e8fb65ce8ea">
 		<!-- Package -->
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 		<!-- Upgrade -->
@@ -24,7 +24,7 @@
 		<!-- Exit Text-->
 		<Property Id="WIXUI_EXITDIALOGOPTIONALTEXT" Value="Thank you for installing this product." />
 		<!-- Custom Action: launch after installation -->
-		<Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch CrowdCrawler immediately" />
+		<Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch Chestnut Pro immediately" />
 		<Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOX" Value="1"/>
 		<Property Id="WixShellExecTarget" Value="[#CrowdCrawlerWorker.exe]" />
 		<CustomAction Id="LaunchApplication" FileKey="Chestnut_Pro.exe" Return="asyncNoWait" Impersonate="no" ExeCommand="" />
@@ -90,6 +90,9 @@
 			<Component Id="Microsoft.Web.WebView2.Wpf.dll" Guid="999f7f6a-6d6c-43b2-a305-9c0d6ad7a334">
 				<File Id="Microsoft.Web.WebView2.Wpf.dll" Name="Microsoft.Web.WebView2.Wpf.dll" Source="$(var.Chestnut Pro_TargetDir)Microsoft.Web.WebView2.Wpf.dll" />
 			</Component>
+			<Component Id="Figgle.dll" Guid="c2a60e11-616b-4865-8e46-2a3c3ac73785">
+				<File Id="Figgle.dll" Name="Figgle.dll" Source="$(var.Chestnut Pro_TargetDir)Figgle.dll" />
+			</Component>
 			<Component Id="WebView2Loader.dll" Guid="57765638-bdb6-4073-ab21-3df1b26248df">
 				<File Id="WebView2Loader.dll" Name="WebView2Loader.dll" Source="$(var.Chestnut Pro_TargetDir)\runtimes\win-x64\native\WebView2Loader.dll" />
 			</Component>
@@ -99,6 +102,9 @@
 	<!-- .ini File Components-->
 	<Fragment>
 		<ComponentGroup Id="DataFileComponents" Directory="DataFolder">
+			<Component Id="Agenda.json" Guid="BBD94455-A70B-48F4-9C76-84A56B7C6A60">
+				<File Id="Agenda.json" Name="Agenda.json" Source="$(var.Chestnut Pro_TargetDir)\Data\Agenda.json" />
+			</Component>
 			<Component Id="Data.json" Guid="ACA72C4F-6364-4EBF-99BC-3F96ABA935D4">
 				<File Id="Data.json" Name="Data.json" Source="$(var.Chestnut Pro_TargetDir)\Data\Data.json" />
 			</Component>
