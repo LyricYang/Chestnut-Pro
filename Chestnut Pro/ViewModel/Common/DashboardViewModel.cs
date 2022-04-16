@@ -142,28 +142,32 @@
 
             var agendaJson = FileUtils.ReadJsonFile(AppDomain.CurrentDomain.BaseDirectory + "\\Data\\Agenda.json");
             var todayData = agendaJson.Agenda[DateTime.Now.Date.ToString("yyyyMMdd")];
-            foreach (var agenda in todayData.agency)
-            {
-                _todayAgenda.Add(new AgendaModel()
-                {
-                    AgendaId = agenda.id,
-                    Title = agenda.title,
-                    Content = agenda.content,
-                    From = agenda.from,
-                    To = agenda.to,
-                });
-            }
 
-            foreach (var agenda in todayData.finish)
+            if (todayData != null)
             {
-                _finishAgenda.Add(new AgendaModel()
+                foreach (var agenda in todayData.agency)
                 {
-                    AgendaId = agenda.id,
-                    Title = agenda.title,
-                    Content = agenda.content,
-                    From = agenda.from,
-                    To = agenda.to,
-                });
+                    _todayAgenda.Add(new AgendaModel()
+                    {
+                        AgendaId = agenda.id,
+                        Title = agenda.title,
+                        Content = agenda.content,
+                        From = agenda.from,
+                        To = agenda.to,
+                    });
+                }
+
+                foreach (var agenda in todayData.finish)
+                {
+                    _finishAgenda.Add(new AgendaModel()
+                    {
+                        AgendaId = agenda.id,
+                        Title = agenda.title,
+                        Content = agenda.content,
+                        From = agenda.from,
+                        To = agenda.to,
+                    });
+                }
             }
 
             // Github Information
