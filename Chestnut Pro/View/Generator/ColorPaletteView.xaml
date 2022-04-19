@@ -185,18 +185,116 @@
                     <Grid
 						Grid.Row="0"
 						Grid.Column="1">
+                        <StackPanel
+                            Orientation="Horizontal"
+                            Margin="20 15 0 0">
+                            <materialDesign:Badged
+                                x:Name="Badged1"
+								BadgeBackground="White"
+                                Visibility="Hidden"
+								Badge="{materialDesign:PackIcon Pin}">
+                                <Button
+                                    x:Name="PinButton1"
+									Style="{StaticResource MaterialDesignRaisedButton}"
+									materialDesign:ButtonAssist.CornerRadius="3"
+									Height="30"
+									Width="80"
+                                    Visibility="Hidden"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top"
+                                    Click="ColorDisplay"/>
+                            </materialDesign:Badged>
+                            <materialDesign:Badged
+                                x:Name="Badged2"
+								BadgeBackground="White"
+                                Visibility="Hidden"
+								Badge="{materialDesign:PackIcon Pin}">
+                                <Button
+                                    x:Name="PinButton2"
+									Style="{StaticResource MaterialDesignRaisedButton}"
+									materialDesign:ButtonAssist.CornerRadius="3"
+									Height="30"
+									Width="80"
+                                    Margin="20 0 0 0"
+                                    Visibility="Hidden"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top"
+                                    Click="ColorDisplay"/>
+                            </materialDesign:Badged>
+                            <materialDesign:Badged
+                                x:Name="Badged3"
+								BadgeBackground="White"
+                                Visibility="Hidden"
+								Badge="{materialDesign:PackIcon Pin}">
+                                <Button
+                                    x:Name="PinButton3"
+									Style="{StaticResource MaterialDesignRaisedButton}"
+									materialDesign:ButtonAssist.CornerRadius="3"
+									Height="30"
+									Width="80"
+                                    Margin="20 0 0 0"
+                                    Visibility="Hidden"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top"
+                                    Click="ColorDisplay"/>
+                            </materialDesign:Badged>
+                            <materialDesign:Badged
+                                x:Name="Badged4"
+								BadgeBackground="White"
+                                Visibility="Hidden"
+								Badge="{materialDesign:PackIcon Pin}">
+                                <Button
+                                    x:Name="PinButton4"
+									Style="{StaticResource MaterialDesignRaisedButton}"
+									materialDesign:ButtonAssist.CornerRadius="3"
+									Height="30"
+									Width="80"
+                                    Margin="20 0 0 0"
+                                    Visibility="Hidden"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top"
+                                    Click="ColorDisplay"/>
+                            </materialDesign:Badged>
+                            <materialDesign:Badged
+                                x:Name="Badged5"
+                                Visibility="Hidden"
+								BadgeBackground="White"
+								Badge="{materialDesign:PackIcon Pin}">
+                                <Button
+                                    x:Name="PinButton5"
+									Style="{StaticResource MaterialDesignRaisedButton}"
+									materialDesign:ButtonAssist.CornerRadius="3"
+									Height="30"
+									Width="80"
+                                    Margin="20 0 0 0"
+                                    Visibility="Hidden"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top"
+                                    Click="ColorDisplay"/>
+                            </materialDesign:Badged>
+                        </StackPanel>
+
                         <materialDesign:Card
                             Grid.Row="0"
-							Grid.Column="1"
 							x:Name="Palette_Card"
 							UniformCornerRadius="15"
 							BorderThickness="5"
 							BorderBrush="White"
 							Background="White"
-							Margin="10,40,40,375">
+							Margin="10,60,40,359">
                             <StackPanel
-								Margin="15"
-								VerticalAlignment="Center">
+								Margin="10,0,10,0"
+								VerticalAlignment="Center" Height="161">
+                                <Button
+                                    Content="{materialDesign:PackIcon Pin}"
+                                    ToolTip="Pin"
+                                    HorizontalAlignment="Right"
+                                    Background="{x:Null}"
+                                    Foreground="Black"
+                                    BorderBrush="{x:Null}"
+                                    Width="45"
+                                    Height="30"
+                                    Click="PinColor"/>
                                 <materialDesign:PackIcon
 									Kind="Palette"
 									Height="50"

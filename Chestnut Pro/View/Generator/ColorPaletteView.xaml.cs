@@ -246,5 +246,34 @@
             };
             ShowHexColor(hexStr);
         }
+
+        /// <summary>
+        /// Pin Color to main panel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PinColor(object sender, System.Windows.RoutedEventArgs e)
+        {
+            try
+            {
+                var color = Color_Text.Text ?? string.Empty;
+                if (!string.IsNullOrEmpty(color) && !color.Equals("#FFFFFF", StringComparison.OrdinalIgnoreCase))
+                {
+                    color = color.Trim('#');
+                    var r = int.Parse(color.Substring(0, 2), NumberStyles.AllowHexSpecifier);
+                    var g = int.Parse(color.Substring(2, 2), NumberStyles.AllowHexSpecifier);
+                    var b = int.Parse(color.Substring(4, 2), NumberStyles.AllowHexSpecifier);
+                    Badged1.Visibility = System.Windows.Visibility.Visible;
+                    PinButton1.Visibility = System.Windows.Visibility.Visible;
+                    PinButton1.Background = new SolidColorBrush(Color.FromRgb((byte)r, (byte)g, (byte)b));
+                    PinButton1.BorderBrush = new SolidColorBrush(Color.FromRgb((byte)r, (byte)g, (byte)b));
+                    PinButton1.ToolTip = "#" + color;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }
