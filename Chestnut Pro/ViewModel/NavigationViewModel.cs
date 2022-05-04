@@ -54,7 +54,8 @@
             {
                 new() { MenuName = "NumberBase", MenuImage = @"Assets/number-base.png" },
                 new() { MenuName = "Epoch", MenuImage = @"Assets/timestamp.png" },
-                new() { MenuName = "TSV/CSV", MenuImage = @"Assets/csv.png" },
+                new() { MenuName = "TSV-CSV", MenuImage = @"Assets/csv.png" },
+                new() { MenuName = "JSON-YAML", MenuImage = @"Assets/yaml.png" },
             };
 
             ConverterItemsCollection = new CollectionViewSource { Source = converterItems };
@@ -86,6 +87,7 @@
             ObservableCollection<MenuItems> encoderItems = new()
             {
                 new() { MenuName = "Base64", MenuImage = @"Assets/base64.png" },
+                new() { MenuName = "JWT Decoder", MenuImage = @"Assets/jwt.png" },
             };
 
             EncoderItemsCollection = new CollectionViewSource { Source = encoderItems };
@@ -165,7 +167,8 @@
                 "All Tools" => new AllToolsViewModel(),
                 "NumberBase" => new NumberBaseViewModel(),
                 "Epoch" => new EpochViewModel(),
-                "TSV/CSV" => new TSVCSVViewModel(),
+                "TSV-CSV" => new TSVCSVViewModel(),
+                "JSON-YAML" => new JsonYamlConverterVeiwModel(),
                 "GUID" => new GUIDGeneratorViewModel(),
                 "Hash" => new HashGeneratorViewModel(),
                 "ASCII Art" => new ASCIIArtGeneratorViewModel(),
@@ -173,6 +176,7 @@
                 "JSON" => new JsonFormatterViewModel(),
                 "XML" => new XmlFormatterViewModel(),
                 "Base64" => new Base64ViewModel(),
+                "JWT Decoder" => new JWTDecoderViewModel(),
                 "Sankey Chart" => new ChartGeneratorView(),
                 "Settings" => new SettingsViewModel(),
                 "Dashboard" => new DashboardViewModel(),

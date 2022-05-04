@@ -75,4 +75,14 @@
 		DataType="{x:Type viewmodel:ASCIIArtGeneratorViewModel}">
         <view:ASCIIArtGeneratorView />
     </DataTemplate>
+    <!--JSON YAML Page-->
+    <DataTemplate
+		DataType="{x:Type viewmodel:JsonYamlConverterVeiwModel}">
+        <view:JsonYamlConverterView />
+    </DataTemplate>
+    <!--JWT Decoder Page-->
+    <DataTemplate
+		DataType="{x:Type viewmodel:JWTDecoderViewModel}">
+        <view:JWTDecoderView />
+    </DataTemplate>
 </ResourceDictionary>

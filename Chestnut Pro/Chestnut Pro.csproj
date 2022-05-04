@@ -28,6 +28,7 @@
     <None Remove="Assets\indentright.png" />
     <None Remove="Assets\india.png" />
     <None Remove="Assets\jsonformat.png" />
+    <None Remove="Assets\jwt.png" />
     <None Remove="Assets\number-base.png" />
     <None Remove="Assets\palette.png" />
     <None Remove="Assets\print_icon.png" />
@@ -36,6 +37,7 @@
     <None Remove="Assets\tools-hardware.png" />
     <None Remove="Assets\unitedstates.png" />
     <None Remove="Assets\xml.png" />
+    <None Remove="Assets\yaml.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,6 +48,8 @@
     <PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1150.38" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.17.0" />
+    <PackageReference Include="YamlDotNet" Version="11.2.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -75,6 +79,7 @@
     <Resource Include="Assets\indentright.png" />
     <Resource Include="Assets\india.png" />
     <Resource Include="Assets\jsonformat.png" />
+    <Resource Include="Assets\jwt.png" />
     <Resource Include="Assets\number-base.png" />
     <Resource Include="Assets\palette.png" />
     <Resource Include="Assets\settings.png" />
@@ -84,6 +89,7 @@
     <Resource Include="Assets\tools-hardware.png" />
     <Resource Include="Assets\unitedstates.png" />
     <Resource Include="Assets\xml.png" />
+    <Resource Include="Assets\yaml.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -112,6 +118,14 @@
 
   <ItemGroup>
     <Page Update="View\Common\AllToolsView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Converter\JsonYamlConverterView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Encode\JWTDecoderView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
