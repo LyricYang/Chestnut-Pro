@@ -3,6 +3,7 @@
     using System;
     using System.Collections.ObjectModel;
     using System.Linq;
+    using System.Windows.Input;
     using Chestnut_Pro.Model;
     using Chestnut_Pro.Service;
     using Newtonsoft.Json;
@@ -12,6 +13,22 @@
     /// </summary>
     public class DashboardViewModel : ViewModelBase
     {
+        private readonly ObservableCollection<ComboBoxItem> _userEntries;
+        private ComboBoxItem _userEntry;
+
+        public ObservableCollection<ComboBoxItem> UserEntries => _userEntries;
+
+        public ComboBoxItem UserEntry
+        {
+            get { return _userEntry; }
+            set
+            {
+                if (_userEntry == value) return;
+                _userEntry = value;
+                OnPropertyChanged();
+            }
+        }
+
         private ObservableCollection<AgendaModel> _todayAgenda;
 
         public ObservableCollection<AgendaModel> TodayAgenda
@@ -137,6 +154,24 @@
 
         public DashboardViewModel()
         {
+            _userEntries = new ObservableCollection<ComboBoxItem>()
+            {
+                new ComboBoxItem()
+                {
+                    ID = 1,
+                    Name = "LyricYang"
+                },
+                new ComboBoxItem()
+                {
+                    ID= 2,
+                    Name = "Microsoft"
+                }
+            };
+            _userEntry = new ComboBoxItem()
+            {
+                ID = 1,
+                Name = "LyricYang"
+            };
             _todayAgenda = new ObservableCollection<AgendaModel>();
             _finishAgenda = new ObservableCollection<AgendaModel>();
 
@@ -236,5 +271,4 @@
             _AU99MaxPri = "￥" + shGold.result[0]["4"].maxpri;
         }
     }
-
 }
