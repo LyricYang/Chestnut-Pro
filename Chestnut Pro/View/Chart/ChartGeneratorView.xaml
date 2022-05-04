@@ -149,7 +149,7 @@
 												Margin="0 5 0 0"
 												Text="{Binding FileText, Mode=TwoWay}"
 												VerticalAlignment="Bottom"
-												materialDesign:HintAssist.Hint="File Path (.csv)"
+												materialDesign:HintAssist.Hint="File Path (.csv, format: Source,Destination,Value)"
 												FontSize="11" />
                                             <Button
 												Background="#FCFCFC"
