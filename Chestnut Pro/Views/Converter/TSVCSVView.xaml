@@ -1,0 +1,347 @@
+﻿<UserControl
+	x:Class="Chestnut_Pro.Views.TSVCSVView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+	mc:Ignorable="d"
+	d:DesignHeight="850"
+	d:DesignWidth="1100"
+	Background="Transparent">
+    <UserControl.Resources>
+        <Style
+			x:Key="CommonButtonStyle"
+			TargetType="{x:Type ButtonBase}"
+			BasedOn="{StaticResource MaterialDesignOutlinedButton}">
+            <Setter Property="Background" Value="#FCFCFC" />
+            <Setter Property="BorderThickness" Value="1,1,1,1" />
+            <Setter Property="Width" Value="50" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="BorderBrush" Value="#C8C8C8" />
+        </Style>
+        <Style
+			x:Key="ConvertButtonStyle"
+			TargetType="{x:Type ButtonBase}"
+			BasedOn="{StaticResource MaterialDesignFlatMidBgButton}">
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Background" Value="#7b8b6f"/>
+            <Setter Property="BorderBrush" Value="#7b8b6f"/>
+            <Setter Property="Width" Value="75" />
+            <Setter Property="Height" Value="30" />
+        </Style>
+        <Style
+			x:Key="CommonTextBoxStyle"
+			TargetType="{x:Type TextBox}"
+			BasedOn="{StaticResource MaterialDesignOutlinedTextBox}">
+            <Setter Property="BorderBrush" Value="#C8C8C8" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Height" Value="440" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="AcceptsTab" Value="True" />
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+        </Style>
+    </UserControl.Resources>
+    <ScrollViewer
+		Style="{StaticResource ScrollViewerStyle}">
+        <Border
+			BorderBrush="#C8C8C8"
+			Background="#FCFCFC"
+			BorderThickness="1,1,1,1"
+			CornerRadius="5">
+            <StackPanel
+				Margin="5">
+                <StackPanel
+					Background="#FCFCFC">
+                    <!--Header-->
+                    <Grid
+						Height="60">
+                        <TextBlock
+							Style="{StaticResource ControlTitleTextStyle}"
+							Text="TSV-CSV Converter" />
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+								Width="30" />
+                            <ColumnDefinition
+								Width="*" />
+                            <ColumnDefinition
+								Width="8" />
+                            <ColumnDefinition
+								Width="*" />
+                            <ColumnDefinition
+								Width="30" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+								Height="50" />
+                            <RowDefinition
+								Height="150" />
+                        </Grid.RowDefinitions>
+                        <!--File Title-->
+                        <Grid
+							Grid.Row="0"
+							Grid.Column="1"
+							Grid.ColumnSpan="3">
+                            <TextBlock
+								Style="{StaticResource ConfigurationTitleTextStyle}"
+								Text="TSV-CSV File Converter" />
+                            <Button
+								Content="{materialDesign:PackIcon Close}"
+								ToolTip="Clear"
+								Style="{StaticResource CommonButtonStyle}"
+								Margin="0 0 518 0"
+								CommandParameter="{Binding ElementName=TSV_File_Text_Box, Path=Name}"
+								Command="{Binding ClearCommand}" />
+                            <Button
+								Content="{materialDesign:PackIcon Close}"
+								ToolTip="Clear"
+								Style="{StaticResource CommonButtonStyle}"
+								Margin="0 0 80 0"
+								HorizontalAlignment="Right"
+								CommandParameter="{Binding ElementName=CSV_File_Text_Box, Path=Name}"
+								Command="{Binding ClearCommand}" />
+                            <Button
+								Style="{StaticResource ConvertButtonStyle}"
+								Content="Convert"
+								Command="{Binding FileConvertCommand}" />
+                        </Grid>
+                        <WrapPanel
+							Grid.Row="1"
+							Grid.Column="1"
+							HorizontalAlignment="Left">
+                            <Border
+								BorderThickness="1,1,1,1"
+								Background="#FCFCFC"
+								Width="510"
+								Height="150"
+								CornerRadius="5">
+                                <Border.BorderBrush>
+                                    <DrawingBrush
+										Viewport="10,10,10,10"
+										ViewportUnits="Absolute"
+										TileMode="Tile">
+                                        <DrawingBrush.Drawing>
+                                            <DrawingGroup>
+                                                <GeometryDrawing
+													Brush="#C8C8C8">
+                                                    <GeometryDrawing.Geometry>
+                                                        <GeometryGroup>
+                                                            <RectangleGeometry
+																Rect="0,0,50,50" />
+                                                            <RectangleGeometry
+																Rect="50,50,50,50" />
+                                                        </GeometryGroup>
+                                                    </GeometryDrawing.Geometry>
+                                                </GeometryDrawing>
+                                            </DrawingGroup>
+                                        </DrawingBrush.Drawing>
+                                    </DrawingBrush>
+                                </Border.BorderBrush>
+                                <StackPanel
+									HorizontalAlignment="Center"
+									VerticalAlignment="Center"
+									Width="420"
+									Height="130">
+                                    <Button
+										Style="{StaticResource MaterialDesignFlatLightButton}"
+										ToolTip="MaterialDesignFlatLightButton"
+										FontWeight="Bold"
+										FontStyle="Oblique"
+										Foreground="#7b8b6f"
+										Content="Browse file"
+										Command="{Binding BrowserCommand}"
+										Margin="0 20 0 0" />
+                                    <TextBlock
+										x:Name="TSV_File_Text_Box"
+										Margin="5 0 0 0"
+										HorizontalAlignment="Left"
+										Text="{Binding TSVFileText, Mode=OneWay}"
+										IsEnabled="False"
+										TextTrimming="CharacterEllipsis"
+										Visibility="{Binding TSVVisible, Mode=OneWay}"
+										MinWidth="380" />
+                                </StackPanel>
+                            </Border>
+                        </WrapPanel>
+                        <WrapPanel
+							Grid.Row="1"
+							Grid.Column="3"
+							HorizontalAlignment="Left">
+                            <Border
+								BorderThickness="1,1,1,1"
+								Background="#FCFCFC"
+								Width="510"
+								Height="150"
+								CornerRadius="5">
+                                <Border.BorderBrush>
+                                    <DrawingBrush
+										Viewport="10,10,10,10"
+										ViewportUnits="Absolute"
+										TileMode="Tile">
+                                        <DrawingBrush.Drawing>
+                                            <DrawingGroup>
+                                                <GeometryDrawing
+													Brush="#C8C8C8">
+                                                    <GeometryDrawing.Geometry>
+                                                        <GeometryGroup>
+                                                            <RectangleGeometry
+																Rect="0,0,50,50" />
+                                                            <RectangleGeometry
+																Rect="50,50,50,50" />
+                                                        </GeometryGroup>
+                                                    </GeometryDrawing.Geometry>
+                                                </GeometryDrawing>
+                                            </DrawingGroup>
+                                        </DrawingBrush.Drawing>
+                                    </DrawingBrush>
+                                </Border.BorderBrush>
+                                <StackPanel
+									HorizontalAlignment="Center"
+									VerticalAlignment="Center"
+									Width="420"
+									Height="130">
+                                    <Button
+										Style="{StaticResource MaterialDesignFlatLightButton}"
+										ToolTip="MaterialDesignFlatLightButton"
+										FontWeight="Bold"
+										FontStyle="Oblique"
+										Foreground="#7b8b6f"
+										Content="Browse file"
+										Command="{Binding BrowserCommand}"
+										Margin="0 20 0 0" />
+                                    <TextBlock
+										x:Name="CSV_File_Text_Box"
+										Margin="5 0 0 0"
+										HorizontalAlignment="Left"
+										IsEnabled="False"
+										Text="{Binding CSVFileText,Mode=OneWay}"
+										TextTrimming="CharacterEllipsis"
+										Visibility="{Binding CSVVisible, Mode=OneWay}"
+										MinWidth="380" />
+                                </StackPanel>
+                            </Border>
+                        </WrapPanel>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+								Width="30" />
+                            <ColumnDefinition
+								Width="*" />
+                            <ColumnDefinition
+								Width="8" />
+                            <ColumnDefinition
+								Width="*" />
+                            <ColumnDefinition
+								Width="30" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+								Height="30" />
+                            <RowDefinition
+								Height="40" />
+                            <RowDefinition
+								Height="450" />
+                        </Grid.RowDefinitions>
+                        <!--File Title-->
+                        <Grid
+							Grid.Row="1"
+							Grid.Column="1">
+                            <TextBlock
+								Style="{StaticResource ConfigurationTitleTextStyle}"
+								Text="TSV-CSV Text Converter" />
+                            <Button
+								Content="{materialDesign:PackIcon ContentCopy}"
+								ToolTip="Copy"
+								Style="{StaticResource CommonButtonStyle}"
+								Margin="0 0 60 0"
+								CommandParameter="{Binding ElementName=TSV_Text_Box, Path=Text}"
+								Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CopyCommand}" />
+                            <Button
+								Content="{materialDesign:PackIcon Close}"
+								ToolTip="Clear"
+								Style="{StaticResource CommonButtonStyle}"
+								CommandParameter="{Binding ElementName=TSV_Text_Box, Path=Name}"
+								Command="{Binding ClearCommand}" />
+                        </Grid>
+                        <!--TSV Content Title-->
+                        <TextBox
+							Grid.Row="2"
+							Grid.Column="1"
+							x:Name="TSV_Text_Box"
+							Text="{Binding TSVText}"
+							Style="{StaticResource CommonTextBoxStyle}"
+							Margin="0 10 0 0"
+							materialDesign:HintAssist.Hint="TSV Text"
+                            AcceptsReturn="True"
+							BorderBrush="#C8C8C8" />
+                        <GridSplitter
+							Grid.Row="2"
+							Grid.Column="2"
+							Width="5"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Stretch">
+                            <GridSplitter.Template>
+                                <ControlTemplate
+									TargetType="{x:Type GridSplitter}">
+                                    <Grid>
+                                        <TextBlock
+											HorizontalAlignment="Center"
+											VerticalAlignment="Center"
+											Text="⁞" />
+                                        <Rectangle
+											Fill="#00FFFFFF" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </GridSplitter.Template>
+                        </GridSplitter>
+                        <Grid
+							Grid.Row="1"
+							Grid.Column="3">
+                            <Button
+								Content="{materialDesign:PackIcon ContentCopy}"
+								ToolTip="Copy"
+								Style="{StaticResource CommonButtonStyle}"
+								Margin="0 0 135 0"
+								CommandParameter="{Binding ElementName=CSV_Text_Box, Path=Text}"
+								Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CopyCommand}" />
+                            <Button
+								Content="{materialDesign:PackIcon Close}"
+								ToolTip="Clear"
+								Style="{StaticResource CommonButtonStyle}"
+								Margin="0 0 80 0"
+								CommandParameter="{Binding ElementName=CSV_Text_Box, Path=Name}"
+								Command="{Binding ClearCommand}" />
+                            <Button
+								Style="{StaticResource ConvertButtonStyle}"
+								Content="Convert"
+								Command="{Binding TextConvertCommand}" />
+                        </Grid>
+                        <!--TSV Content Title-->
+                        <TextBox
+							Grid.Row="2"
+							Grid.Column="3"
+							x:Name="CSV_Text_Box"
+							Text="{Binding CSVText}"
+							Style="{StaticResource CommonTextBoxStyle}"
+							Margin="0 10 0 0"
+                            AcceptsReturn="True"
+							materialDesign:HintAssist.Hint="CSV Text"
+							BorderBrush="#C8C8C8" />
+                    </Grid>
+                </StackPanel>
+                <materialDesign:Snackbar
+					Margin="0 5 0 0"
+					x:Name="Warning_Message"
+					IsActive="{Binding Message.IsActive, Mode=OneWay}"
+					Background="#DD2C00"
+					Message="{Binding Message.Msg, Mode=OneWay}" />
+            </StackPanel>
+        </Border>
+    </ScrollViewer>
+</UserControl>

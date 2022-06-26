@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:viewmodel="clr-namespace:Chestnut_Pro.ViewModel"
-    xmlns:view="clr-namespace:Chestnut_Pro.View">
+    xmlns:viewmodel="clr-namespace:Chestnut_Pro.ViewModels"
+    xmlns:view="clr-namespace:Chestnut_Pro.Views">
     <!--Data Templates apply Views to ViewModel objects displayed in the UI-->
     <!--Dashboard Page-->
     <DataTemplate
@@ -14,7 +14,6 @@
 		DataType="{x:Type viewmodel:SettingsViewModel}">
         <view:SettingsView />
     </DataTemplate>
-
     <!--All tools Page-->
     <DataTemplate
 		DataType="{x:Type viewmodel:AllToolsViewModel}">
@@ -45,7 +44,7 @@
 		DataType="{x:Type viewmodel:TSVCSVViewModel}">
         <view:TSVCSVView />
     </DataTemplate>
-    <!--JSON Fomatter Page-->
+    <!--JSON Formatter Page-->
     <DataTemplate
 		DataType="{x:Type viewmodel:JsonFormatterViewModel}">
         <view:JsonFormatterView />

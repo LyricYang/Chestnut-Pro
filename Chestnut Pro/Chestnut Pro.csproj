@@ -48,6 +48,7 @@
     <PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1150.38" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.17.0" />
     <PackageReference Include="YamlDotNet" Version="11.2.1" />
   </ItemGroup>
@@ -93,10 +94,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="View\Common\AllToolsView.xaml.cs">
+    <Compile Update="Views\Common\AllToolsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Common\SettingsView.xaml.cs">
+    <Compile Update="Views\Common\SettingsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -117,45 +118,45 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="View\Common\AllToolsView.xaml">
+    <Page Update="Views\Common\AllToolsView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Converter\JsonYamlConverterView.xaml">
+    <Page Update="Views\Converter\JsonYamlConverterView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Encode\JWTDecoderView.xaml">
+    <Page Update="Views\Encode\JWTDecoderView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Formatter\XmlFormatterView.xaml">
+    <Page Update="Views\Formatter\XmlFormatterView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Converter\EpochView.xaml">
+    <Page Update="Views\Converter\EpochView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Formatter\JsonFormatterView.xaml">
+    <Page Update="Views\Formatter\JsonFormatterView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Encode\Base64View.xaml">
+    <Page Update="Views\Encode\Base64View.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
-    <Page Update="View\Common\SettingsView.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\Chart\ChartGeneratorView.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-    </Page>
-    <Page Update="View\Generator\ASCIIArtGeneratorView.xaml">
+    <Page Update="Views\Common\SettingsView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Generator\HashGeneratorView.xaml">
+    <Page Update="Views\Chart\ChartGeneratorView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Views\Generator\ASCIIArtGeneratorView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Generator\HashGeneratorView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
   </ItemGroup>

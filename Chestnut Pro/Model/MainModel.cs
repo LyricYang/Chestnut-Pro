@@ -10,7 +10,7 @@ namespace Chestnut_Pro.Model
     public class MenuItems
     {
         public string MenuName { get; set; }
-
+        public string MenuType { get; set; }
         public string MenuImage { get; set; }
     }
 }
