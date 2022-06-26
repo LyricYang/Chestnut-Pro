@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <None Remove="Assets\ascii.png" />
-    <None Remove="Assets\avatar1.jpg" />
     <None Remove="Assets\base64.png" />
     <None Remove="Assets\chart.png" />
     <None Remove="Assets\chestnut.ico" />
@@ -55,9 +54,6 @@
 
   <ItemGroup>
     <Resource Include="Assets\ascii.png" />
-    <Resource Include="Assets\avatar1.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Assets\base64.png" />
     <Resource Include="Assets\chart.png" />
     <Resource Include="Assets\chestnut.ico">

@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chestnut Pro", "Chestnut Pro\Chestnut Pro.csproj", "{28C3D6F4-0BF0-4D06-948A-E433760C2857}"
 EndProject
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "ChestnutProSetup", "ChestnutProSetup\ChestnutProSetup.wixproj", "{0B7067EB-1C5A-4ACB-8B3B-5F962D4EB2AD}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C71826A1-C715-4A69-BCF2-9BCE25978CE9}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
@@ -28,14 +26,6 @@ Global
 		{28C3D6F4-0BF0-4D06-948A-E433760C2857}.Release|Any CPU.Build.0 = Release|Any CPU
 		{28C3D6F4-0BF0-4D06-948A-E433760C2857}.Release|x86.ActiveCfg = Release|Any CPU
 		{28C3D6F4-0BF0-4D06-948A-E433760C2857}.Release|x86.Build.0 = Release|Any CPU
-		{0B7067EB-1C5A-4ACB-8B3B-5F962D4EB2AD}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{0B7067EB-1C5A-4ACB-8B3B-5F962D4EB2AD}.Debug|Any CPU.Build.0 = Debug|x86
-		{0B7067EB-1C5A-4ACB-8B3B-5F962D4EB2AD}.Debug|x86.ActiveCfg = Debug|x86
-		{0B7067EB-1C5A-4ACB-8B3B-5F962D4EB2AD}.Debug|x86.Build.0 = Debug|x86
-		{0B7067EB-1C5A-4ACB-8B3B-5F962D4EB2AD}.Release|Any CPU.ActiveCfg = Release|x86
-		{0B7067EB-1C5A-4ACB-8B3B-5F962D4EB2AD}.Release|Any CPU.Build.0 = Release|x86
-		{0B7067EB-1C5A-4ACB-8B3B-5F962D4EB2AD}.Release|x86.ActiveCfg = Release|x86
-		{0B7067EB-1C5A-4ACB-8B3B-5F962D4EB2AD}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
