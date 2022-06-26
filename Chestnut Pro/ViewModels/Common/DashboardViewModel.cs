@@ -1,8 +1,8 @@
 ﻿namespace Chestnut_Pro.ViewModels
 {
-    using System;
     using System.Collections.ObjectModel;
     using System.Linq;
+    using System.Threading.Tasks;
     using Chestnut_Pro.Model;
     using Chestnut_Pro.Service;
     using Newtonsoft.Json;
@@ -27,14 +27,6 @@
                 _userEntry = value;
                 RaisePropertyChanged();
             }
-        }
-
-        private ObservableCollection<AgendaModel> _todayAgenda;
-
-        public ObservableCollection<AgendaModel> TodayAgenda
-        {
-            get { return _todayAgenda; }
-            set { _todayAgenda = value; RaisePropertyChanged(); }
         }
 
         private ObservableCollection<AgendaModel> _finishAgenda;
@@ -172,38 +164,6 @@
                 ID = 1,
                 Name = "LyricYang"
             };
-            _todayAgenda = new ObservableCollection<AgendaModel>();
-            _finishAgenda = new ObservableCollection<AgendaModel>();
-
-            var agendaJson = FileUtils.ReadJsonFile(AppDomain.CurrentDomain.BaseDirectory + "\\Data\\Agenda.json");
-            var todayData = agendaJson.Agenda[DateTime.Now.Date.ToString("yyyyMMdd")];
-
-            if (todayData != null)
-            {
-                foreach (var agenda in todayData.agency)
-                {
-                    _todayAgenda.Add(new AgendaModel()
-                    {
-                        AgendaId = agenda.id,
-                        Title = agenda.title,
-                        Content = agenda.content,
-                        From = agenda.from,
-                        To = agenda.to,
-                    });
-                }
-
-                foreach (var agenda in todayData.finish)
-                {
-                    _finishAgenda.Add(new AgendaModel()
-                    {
-                        AgendaId = agenda.id,
-                        Title = agenda.title,
-                        Content = agenda.content,
-                        From = agenda.from,
-                        To = agenda.to,
-                    });
-                }
-            }
 
             // Github Information
             _repos = new ObservableCollection<GithubRepo>();

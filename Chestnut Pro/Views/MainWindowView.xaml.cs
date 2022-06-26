@@ -1,7 +1,10 @@
 ﻿namespace Chestnut_Pro.Views
 {
+    using Microsoft.Identity.Client;
     using System;
+    using System.Threading.Tasks;
     using System.Windows;
+    using System.Windows.Interop;
     using System.Windows.Threading;
 
     /// <summary>
@@ -17,6 +20,15 @@
         public MainWindowView()
         {
             InitializeComponent();
+
+            var app = App.PublicClientApp;
+            var aadInfo = app.AcquireTokenInteractive(App.scopes)
+                .WithParentActivityOrWindow(new WindowInteropHelper(this).Handle)
+                .ExecuteAsync()
+                .Result;
+
+            var account = aadInfo.Account;
+
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 10);
             timer.Tick += TimerTick;

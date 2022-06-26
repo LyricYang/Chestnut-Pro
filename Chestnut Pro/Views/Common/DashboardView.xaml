@@ -32,31 +32,8 @@
             <Grid
 				Grid.Column="0">
                 <StackPanel
-					Background="#FCFCFC">
-                    <!--Header-->
-                    <Grid
-						Height="60">
-                        <Button
-							Style="{StaticResource MaterialDesignFloatingActionButton}"
-							HorizontalAlignment="Left"
-							BorderBrush="{x:Null}"
-							Background="{x:Null}"
-							Margin="30,0,0,0">
-                            <StackPanel>
-                                <materialDesign:PackIcon
-									Kind="ReorderHorizontal"
-									Foreground="Gray" />
-                            </StackPanel>
-                        </Button>
-                        <ComboBox
-                            ItemsSource="{Binding Path=UserEntries}"
-                            SelectedItem="{Binding Path=UserEntry}"
-                            DisplayMemberPath="Name"
-							HorizontalAlignment="Right"
-							VerticalAlignment="Center"
-							Width="100"
-                            Margin="0 0 5 0"/>
-                    </Grid>
+					Background="#FCFCFC"
+                    Margin="0 50 0 0">
                     <!--Profile-->
                     <WrapPanel
 						HorizontalAlignment="Left">
@@ -397,10 +374,20 @@
             <StackPanel
 				Grid.Column="1"
 				Background="#FCFCFC">
-                <!--Calendar-->
+                <!--Notification-->
                 <materialDesign:Card
 					Background="White"
-					Margin="0,60,30,10"
+					Margin="0,50,30,10"
+					Padding="10"
+					UniformCornerRadius="20"
+					HorizontalAlignment="Center"
+					Height="338"
+					Width="277">
+                </materialDesign:Card>
+                <!--Calendar-->
+                <materialDesign:Card
+					Background="#F0C05A"
+                    Margin="0,10,30,10"
 					Padding="5"
 					UniformCornerRadius="20"
 					HorizontalAlignment="Center"
@@ -408,128 +395,8 @@
                     <Calendar
 						DisplayMode="Month"
 						Foreground="Black"
-						Background="White"
-						Style="{DynamicResource MaterialDesignCalendarPortraitForeground}"></Calendar>
-                </materialDesign:Card>
-                <!--Notification-->
-                <materialDesign:Card
-					Background="White"
-					Margin="0,10,30,10"
-					Padding="10"
-					UniformCornerRadius="20"
-					HorizontalAlignment="Center"
-					Height="338"
-					Width="277">
-                    <materialDesign:DialogHost
-						Style="{StaticResource MaterialDesignEmbeddedDialogHost}"
-						DialogMargin="8">
-                        <materialDesign:DialogHost.DialogContent>
-                            <StackPanel
-								Margin="16">
-                                <TextBlock
-									Text="Add an agenda." />
-                                <TextBox
-									Margin="0 8 0 0"
-									HorizontalAlignment="Stretch"/>
-                                <StackPanel
-									Orientation="Horizontal"
-									HorizontalAlignment="Right">
-                                    <Button
-										Style="{StaticResource MaterialDesignFlatButton}"
-										IsDefault="True"
-										Margin="0 8 8 0"
-										Content="ACCEPT"
-										Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}">
-                                        <Button.CommandParameter>
-                                            <system:Boolean xmlns:system="clr-namespace:System;assembly=mscorlib">
-                                                True
-                                            </system:Boolean>
-                                        </Button.CommandParameter>
-                                    </Button>
-                                    <Button
-										Style="{StaticResource MaterialDesignFlatButton}"
-										IsCancel="True"
-										Margin="0 8 8 0"
-										Content="CANCEL"
-										Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}">
-                                        <Button.CommandParameter>
-                                            <system:Boolean xmlns:system="clr-namespace:System;assembly=mscorlib">
-                                                False
-                                            </system:Boolean>
-                                        </Button.CommandParameter>
-                                    </Button>
-                                </StackPanel>
-                            </StackPanel>
-                        </materialDesign:DialogHost.DialogContent>
-                        <Border
-							BorderThickness="1"
-							BorderBrush="{x:Null}"
-							ClipToBounds="True"
-							HorizontalAlignment="Stretch">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition
-										Height="*" />
-                                    <RowDefinition
-										Height="*" />
-                                    <RowDefinition
-										Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <StackPanel Grid.Row="0" >
-                                    <TextBlock
-										Margin="0 10 0 0"
-										HorizontalAlignment="Left"
-										FontWeight="SemiBold"
-										Text="Agency"
-										FontSize="16" />
-                                    <ListBox ItemsSource="{Binding TodayAgenda}">
-                                        <ListBox.ItemTemplate>
-                                            <DataTemplate>
-                                                <StackPanel>
-                                                    <CheckBox
-                                                    Foreground="Black"
-													Margin="10 0 0 0">
-                                                        <TextBlock Text="{Binding Content}"/>
-                                                    </CheckBox>
-                                                </StackPanel>
-                                            </DataTemplate>
-                                        </ListBox.ItemTemplate>
-                                    </ListBox>
-                                </StackPanel>
-                                <StackPanel Grid.Row="1" >
-                                    <TextBlock
-										HorizontalAlignment="Left"
-										FontWeight="SemiBold"
-										Text="Completed"
-										FontSize="16" />
-                                    <ListBox Grid.Row="1" ItemsSource="{Binding FinishAgenda}">
-                                        <ListBox.ItemTemplate>
-                                            <DataTemplate>
-                                                <StackPanel>
-                                                    <CheckBox
-                                                    IsChecked="True"
-                                                    Foreground="Gray"
-													Margin="10 0 0 0">
-                                                        <TextBlock TextDecorations="Strikethrough" Text="{Binding Content}"/>
-                                                    </CheckBox>
-                                                </StackPanel>
-                                            </DataTemplate>
-                                        </ListBox.ItemTemplate>
-                                    </ListBox>
-                                </StackPanel>
-                                <Button
-									Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
-									Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}"
-									Background="#E2583E"
-									BorderBrush="#E2583E"
-									VerticalAlignment="Bottom"
-									HorizontalAlignment="Right"
-									Grid.Row="2"
-									Margin="0 0 20 5"
-									Content="{materialDesign:PackIcon Kind=Plus, Size=22}" />
-                            </Grid>
-                        </Border>
-                    </materialDesign:DialogHost>
+						Background="#F0C05A"
+						Style="{DynamicResource MaterialDesignCalendarPortraitForeground}"/>
                 </materialDesign:Card>
             </StackPanel>
         </Grid>
