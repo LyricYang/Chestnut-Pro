@@ -1,8 +1,6 @@
 ﻿namespace Chestnut_Pro.Views
 {
-    using Microsoft.Identity.Client;
     using System;
-    using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Interop;
     using System.Windows.Threading;
@@ -21,14 +19,13 @@
         {
             InitializeComponent();
 
-            var app = App.PublicClientApp;
-            var aadInfo = app.AcquireTokenInteractive(App.scopes)
+            // AAD authentication
+            var aadInfo = App.PublicClientApp.AcquireTokenInteractive(App.Scopes)
                 .WithParentActivityOrWindow(new WindowInteropHelper(this).Handle)
                 .ExecuteAsync()
                 .Result;
 
-            var account = aadInfo.Account;
-
+            this.UserName.Text = aadInfo.Account.Username;
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 10);
             timer.Tick += TimerTick;
