@@ -6,8 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 	mc:Ignorable="d"
-	d:DesignHeight="820"
-	d:DesignWidth="1100"
+	d:DesignHeight="690"
+	d:DesignWidth="940"
 	Background="Transparent">
     <UserControl.Resources>
         <Style
@@ -52,7 +52,7 @@
 					Background="#FCFCFC">
                     <!--Header-->
                     <Grid
-						Height="60">
+						Height="50">
                         <TextBlock
 							Style="{StaticResource ControlTitleTextStyle}"
 							Text="All tools" />
@@ -62,7 +62,7 @@
                         <!--Number Base-->
                         <materialDesign:Card
 							Style="{StaticResource ToolCard}"
-							Margin="40 30 30 30">
+							Margin="30 15 10 15">
                             <StackPanel
 								Margin="10">
                                 <materialDesign:PackIcon
@@ -84,7 +84,7 @@
                         <!--Unix Timestamp-->
                         <materialDesign:Card
 							Style="{StaticResource ToolCard}"
-							Margin="30">
+							Margin="15 15 10 15">
                             <StackPanel
 								Margin="10">
                                 <materialDesign:PackIcon
@@ -106,7 +106,7 @@
                         <!--TSV <> CSV-->
                         <materialDesign:Card
 							Style="{StaticResource ToolCard}"
-							Margin="30">
+							Margin="15 15 10 15">
                             <StackPanel
 								Margin="10">
                                 <materialDesign:PackIcon
@@ -128,7 +128,7 @@
                         <!--GUID Generator-->
                         <materialDesign:Card
 							Style="{StaticResource ToolCard}"
-							Margin="30">
+							Margin="15 15 10 15">
                             <StackPanel
 								Margin="10">
                                 <materialDesign:PackIcon
@@ -154,7 +154,7 @@
                         <!--RGB Converter-->
                         <materialDesign:Card
 							Style="{StaticResource ToolCard}"
-							Margin="40 30 30 30">
+							Margin="30 15 10 15">
                             <StackPanel
 								Margin="10">
                                 <materialDesign:PackIcon
@@ -176,7 +176,7 @@
                         <!--JSON Converter-->
                         <materialDesign:Card
 							Style="{StaticResource ToolCard}"
-							Margin="30">
+							Margin="15 15 10 15">
                             <StackPanel
 								Margin="10">
                                 <materialDesign:PackIcon
@@ -198,7 +198,7 @@
                         <!--XML Formatter-->
                         <materialDesign:Card
 							Style="{StaticResource ToolCard}"
-							Margin="30">
+							Margin="15 15 10 15">
                             <StackPanel
 								Margin="10">
                                 <materialDesign:PackIcon
@@ -220,7 +220,7 @@
                         <!--Base 64 Encoder / Decoder-->
                         <materialDesign:Card
 							Style="{StaticResource ToolCard}"
-							Margin="30">
+							Margin="15 15 10 15">
                             <StackPanel
 								Margin="10">
                                 <materialDesign:PackIcon
@@ -246,7 +246,7 @@
                         <!--Sankey Chart-->
                         <materialDesign:Card
 							Style="{StaticResource ToolCard}"
-							Margin="40 30 30 30">
+							Margin="30 15 10 15">
                             <StackPanel
 								Margin="10">
                                 <materialDesign:PackIcon
@@ -268,7 +268,7 @@
                         <!--Hash Generator-->
                         <materialDesign:Card
 							Style="{StaticResource ToolCard}"
-							Margin="30">
+							Margin="15 15 10 15">
                             <StackPanel
 								Margin="10">
                                 <materialDesign:PackIcon
@@ -290,7 +290,7 @@
                         <!--Hash Generator-->
                         <materialDesign:Card
 							Style="{StaticResource ToolCard}"
-							Margin="30">
+							Margin="15 15 10 15">
                             <StackPanel
 								Margin="10">
                                 <materialDesign:PackIcon

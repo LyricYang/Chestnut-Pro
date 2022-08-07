@@ -2,7 +2,6 @@
 {
     using System;
     using System.Windows;
-    using System.Windows.Interop;
     using System.Windows.Threading;
 
     /// <summary>
@@ -12,20 +11,13 @@
     {
         DispatcherTimer timer;
         bool hidden = true;
-        double maxWidth = 1360;
-        double minWidth = 1160;
+        double maxWidth = 1180;
+        double minWidth = 1000;
 
         public MainWindowView()
         {
             InitializeComponent();
 
-            // AAD authentication
-            var aadInfo = App.PublicClientApp.AcquireTokenInteractive(App.Scopes)
-                .WithParentActivityOrWindow(new WindowInteropHelper(this).Handle)
-                .ExecuteAsync()
-                .Result;
-
-            this.UserName.Text = aadInfo.Account.Username;
             timer = new DispatcherTimer
             {
                 Interval = new TimeSpan(0, 0, 0, 0, 10)
@@ -43,7 +35,7 @@
         {
             if (hidden)
             {
-                DashboardWindow.Width += 100;
+                DashboardWindow.Width += 90;
                 if (DashboardWindow.Width >= maxWidth)
                 {
                     timer.Stop();
@@ -52,7 +44,7 @@
             }
             else
             {
-                DashboardWindow.Width -= 100;
+                DashboardWindow.Width -= 90;
                 if (DashboardWindow.Width <= minWidth)
                 {
                     timer.Stop();

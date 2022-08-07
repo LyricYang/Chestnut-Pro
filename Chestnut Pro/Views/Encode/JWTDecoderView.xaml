@@ -6,8 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 	mc:Ignorable="d"
-	d:DesignHeight="850"
-	d:DesignWidth="1100"
+	d:DesignHeight="690"
+	d:DesignWidth="940"
 	Background="Transparent">
     <UserControl.Resources>
         <Style
@@ -62,7 +62,7 @@
 					Background="#FCFCFC">
                     <!--Header-->
                     <Grid
-						Height="60">
+						Height="50">
                         <TextBlock
 							Style="{StaticResource ControlTitleTextStyle}"
 							Text="JWT Decoder" />
@@ -71,25 +71,25 @@
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition
-								Width="30" />
+							Width="30" />
                             <ColumnDefinition
-								Width="1000" />
+							Width="100" />
+                            <ColumnDefinition
+                            Width="780"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition
-								Height="40" />
-                            <RowDefinition
-								Height="150" />
-                            <RowDefinition
-								Height="50" />
-                            <RowDefinition
-								Height="150" />
-                            <RowDefinition
-								Height="10" />
-                            <RowDefinition
 								Height="30" />
                             <RowDefinition
-								Height="280" />
+								Height="120" />
+                            <RowDefinition
+								Height="40" />
+                            <RowDefinition
+								Height="120" />
+                            <RowDefinition
+								Height="40" />
+                            <RowDefinition
+								Height="250" />
                         </Grid.RowDefinitions>
                         <Grid
 							Grid.Row="0"
@@ -118,7 +118,7 @@
 							x:Name="JWTInput_Box"
 							Text="{Binding InputText}"
 							Style="{StaticResource TextBoxStyle}"
-                            Height="130"
+                            Height="100"
 							BorderBrush="#C8C8C8" />
                         <Grid
 							Grid.Row="2"
@@ -144,28 +144,8 @@
 								Style="{StaticResource TextBoxStyle}"
 								VerticalAlignment="Stretch"
 								BorderBrush="#C8C8C8" />
-                        <GridSplitter
-							Grid.Row="4"
-							Grid.Column="2"
-							Height="10"
-							HorizontalAlignment="Stretch"
-							VerticalAlignment="Center">
-                            <GridSplitter.Template>
-                                <ControlTemplate
-									TargetType="{x:Type GridSplitter}">
-                                    <Grid>
-                                        <TextBlock
-											HorizontalAlignment="Center"
-											VerticalAlignment="Center"
-											Text="::::" />
-                                        <Rectangle
-											Fill="#00FFFFFF" />
-                                    </Grid>
-                                </ControlTemplate>
-                            </GridSplitter.Template>
-                        </GridSplitter>
                         <Grid
-							Grid.Row="5"
+							Grid.Row="4"
 							Grid.Column="1"
 							Grid.ColumnSpan="2">
                             <TextBlock

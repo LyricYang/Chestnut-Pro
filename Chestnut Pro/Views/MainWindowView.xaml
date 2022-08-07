@@ -3,10 +3,10 @@
 	xmlns:prism="http://prismlibrary.com/"
     mc:Ignorable="d"
 	Title="Chestnut Pro"
-	Height="888"
-	Width="1160"
-	MinHeight="888"
-	MinWidth="1160"
+	Height="710"
+	Width="1000"
+	MinHeight="710"
+	MinWidth="1000"
 	x:Name="DashboardWindow"
 	WindowStartupLocation="CenterScreen"
     prism:ViewModelLocator.AutoWireViewModel="True"
@@ -19,7 +19,7 @@
                 <ColumnDefinition
 					Width="*" />
                 <ColumnDefinition
-					Width="1100" />
+					Width="940" />
             </Grid.ColumnDefinitions>
             <!--Menu Search Box-->
             <Grid
@@ -28,30 +28,14 @@
 				Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition
-						Height="50" />
-                    <RowDefinition
 						Height="55" />
                     <RowDefinition
-						Height="600" />
+						Height="4*" />
                     <RowDefinition
 						Height="*" />
                 </Grid.RowDefinitions>
-                <StackPanel
-					Grid.Row="0"
-					Grid.Column="0"
-					Orientation="Horizontal">
-                    <materialDesign:PackIcon
-                        VerticalAlignment="Center"
-                        Margin="15 0 0 0"
-                        Kind="FaceRecognition" />
-                    <TextBlock
-                        x:Name="UserName"
-                        VerticalAlignment="Center"
-                        Margin="15 0 0 0"/>
-                </StackPanel>
-                <!--Search Box-->
                 <Grid
-					Grid.Row="1"
+					Grid.Row="0"
 					Grid.Column="0"
 					Margin="0 10 0 0">
                     <Button
@@ -77,7 +61,7 @@
                 <!--Menu-->
                 <ScrollViewer
 					Style="{StaticResource ScrollViewerStyle}"
-					Grid.Row="2"
+					Grid.Row="1"
 					Grid.Column="0">
                     <StackPanel
 						Orientation="Vertical">
@@ -134,7 +118,7 @@
                 </ScrollViewer>
                 <!--Settings-->
                 <StackPanel
-					Grid.Row="3"
+					Grid.Row="2"
 					Grid.Column="0">
                     <RadioButton
 						Content="Dashboard"
@@ -160,8 +144,7 @@
 				Grid.Column="1"
 				Grid.RowSpan="3"
 				x:Name="Pages"
-                prism:RegionManager.RegionName="ContentRegion"
-				Margin="0,10,0,0" />
+                prism:RegionManager.RegionName="ContentRegion"/>
         </Grid>
     </Grid>
 </Window>

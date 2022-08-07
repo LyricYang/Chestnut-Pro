@@ -6,8 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 	mc:Ignorable="d"
-	d:DesignHeight="850"
-	d:DesignWidth="1100">
+	d:DesignHeight="690"
+	d:DesignWidth="940">
     <UserControl.Resources>
         <Style
 			x:Key="OutputContent"
@@ -15,7 +15,7 @@
 			BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}">
             <Setter Property="FontWeight" Value="DemiBold" />
             <Setter Property="Height" Value="40" />
-            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
             <Setter Property="IsEnabled" Value="False" />
         </Style>
         <Style
@@ -49,7 +49,7 @@
 				Background="#FCFCFC">
                 <!--Header-->
                 <Grid
-					Height="60">
+					Height="50">
                     <!--Title-->
                     <TextBlock
 						Style="{StaticResource ControlTitleTextStyle}"
@@ -61,27 +61,29 @@
                         <ColumnDefinition
 							Width="30" />
                         <ColumnDefinition
-							Width="1000" />
+							Width="100" />
+                        <ColumnDefinition
+                            Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition
-							Height="50" />
+							Height="35" />
                         <RowDefinition
-							Height="80" />
+							Height="60" />
                         <RowDefinition
-							Height="80" />
+							Height="60" />
                     </Grid.RowDefinitions>
                     <!-- Configuration Title -->
                     <TextBlock
-                        Grid.Row="0"
 						Grid.Column="1"
 						Style="{StaticResource ConfigurationTitleTextStyle}"
 						Text="Configuration" />
                     <!-- Configuration:Uppercase -->
                     <WrapPanel
-                            Grid.Row="1"
-						    Grid.Column="1"
-							HorizontalAlignment="Left">
+                        Grid.Row="1"
+						Grid.Column="1"
+						HorizontalAlignment="Left"
+                        Grid.ColumnSpan="2">
                         <Border
 								BorderBrush="#C8C8C8"
 								Background="White"
@@ -91,17 +93,17 @@
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition
-												Width="25" />
+												Width="45" />
                                         <ColumnDefinition
 												Width="100" />
                                         <ColumnDefinition
 												Width="300" />
                                         <ColumnDefinition
-												Width="580" />
+												Width="430" />
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition
-												Height="60" />
+												Height="50" />
                                     </Grid.RowDefinitions>
                                     <materialDesign:PackIcon
                                             Grid.Row="0"
@@ -125,9 +127,10 @@
                     </WrapPanel>
                     <!-- Configuration:Output Type -->
                     <WrapPanel
-                            Grid.Row="2"
-						    Grid.Column="1"
-							HorizontalAlignment="Left">
+                        Grid.Row="2"
+						Grid.Column="1"
+						HorizontalAlignment="Left"
+                        Grid.ColumnSpan="2">
                         <Border
 								BorderBrush="#C8C8C8"
 								Background="White"
@@ -137,17 +140,17 @@
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition
-												Width="25" />
+												Width="45" />
                                         <ColumnDefinition
 												Width="100" />
                                         <ColumnDefinition
-												Width="200" />
+												Width="300" />
                                         <ColumnDefinition
-												Width="680" />
+												Width="430" />
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition
-												Height="60" />
+												Height="50" />
                                     </Grid.RowDefinitions>
                                     <materialDesign:PackIcon
                                         Grid.Row="0"
@@ -185,29 +188,21 @@
                         <ColumnDefinition
 							Width="30" />
                         <ColumnDefinition
-							Width="1000" />
+							Width="875" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition
-							Height="40" />
+							Height="60" />
                         <RowDefinition
 							Height="120" />
                         <RowDefinition
 							Height="60" />
                         <RowDefinition
-							Height="40" />
+							Height="50" />
                         <RowDefinition
-							Height="40" />
+							Height="50" />
                         <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="40" />
-                        <RowDefinition
-							Height="40" />
+							Height="50" />
                     </Grid.RowDefinitions>
                     <!--Input-->
                     <Grid
@@ -247,18 +242,18 @@
                         BorderBrush="#C8C8C8"
 						VerticalAlignment="Center" />
                     <!--MD5-->
-                    <TextBlock
+                    <StackPanel
                         Grid.Row="2"
 						Grid.Column="1"
-						Style="{StaticResource InputOutputTitle}"
-						Text="MD5" />
-                    <StackPanel
-                        Grid.Row="3"
-						Grid.Column="1"
                         Orientation="Horizontal">
+                        <TextBlock
+                            Style="{StaticResource InputOutputTitle}"
+                            Text="MD5"
+                            Width="60"
+                            VerticalAlignment="Bottom"/>
                         <TextBox
 							x:Name="MD5Output"
-                            Width="925"
+                            Width="740"
                             Text="{Binding MD5Output}"
 							Style="{StaticResource OutputContent}" />
                         <Button
@@ -271,18 +266,18 @@
 							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CopyCommand}"/>
                     </StackPanel>
                     <!--SHA1-->
-                    <TextBlock
-                        Grid.Row="4"
-						Grid.Column="1"
-						Style="{StaticResource InputOutputTitle}"
-						Text="SHA1"/>
                     <StackPanel
-                            Grid.Row="5"
+                            Grid.Row="3"
 						    Grid.Column="1"
                             Orientation="Horizontal">
+                        <TextBlock
+                            Style="{StaticResource InputOutputTitle}"
+                            Text="SHA1"
+                            Width="60"
+                            VerticalAlignment="Bottom"/>
                         <TextBox
 							x:Name="SHA1Output"
-                            Width="925"
+                            Width="740"
                             Text="{Binding SHA1Output}"
 							Style="{StaticResource OutputContent}" />
                         <Button
@@ -295,18 +290,18 @@
 							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CopyCommand}"/>
                     </StackPanel>
                     <!--SHA256-->
-                    <TextBlock
-                        Grid.Row="6"
-						Grid.Column="1"
-						Style="{StaticResource InputOutputTitle}"
-						Text="SHA256" />
                     <StackPanel
-                        Grid.Row="7"
+                        Grid.Row="4"
 						Grid.Column="1"
                         Orientation="Horizontal">
+                        <TextBlock
+                            Style="{StaticResource InputOutputTitle}"
+                            Text="SHA256"
+                            Width="60"
+                            VerticalAlignment="Bottom"/>
                         <TextBox
 							x:Name="SHA256Output"
-                            Width="925"
+                            Width="740"
                             Text="{Binding SHA256Output}"
 							Style="{StaticResource OutputContent}" />
                         <Button
@@ -319,18 +314,18 @@
 							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CopyCommand}"/>
                     </StackPanel>
                     <!--SHA512-->
-                    <TextBlock
-                        Grid.Row="8"
-						Grid.Column="1"
-						Style="{StaticResource InputOutputTitle}"
-						Text="SHA512" />
                     <StackPanel
                         Grid.Row="9"
 						Grid.Column="1"
                         Orientation="Horizontal">
+                        <TextBlock
+                            Style="{StaticResource InputOutputTitle}"
+                            Text="SHA512"
+                            Width="60"
+                            VerticalAlignment="Bottom"/>
                         <TextBox
 							x:Name="SHA512Output"
-                            Width="925"
+                            Width="740"
                             Text="{Binding SHA512Output}"
 							Style="{StaticResource OutputContent}" />
                         <Button

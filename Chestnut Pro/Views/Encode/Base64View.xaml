@@ -6,8 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 	mc:Ignorable="d"
-	d:DesignHeight="850"
-	d:DesignWidth="1100"
+	d:DesignHeight="690"
+	d:DesignWidth="940"
 	Background="Transparent">
     <UserControl.Resources>
         <Style
@@ -28,7 +28,7 @@
 			BasedOn="{StaticResource MaterialDesignOutlinedTextBox}">
             <Setter Property="VerticalAlignment" Value="Top" />
             <Setter Property="FontSize" Value="12" />
-            <Setter Property="Height" Value="240" />
+            <Setter Property="Height" Value="215" />
             <Setter Property="Margin" Value="0 10 0 0" />
             <Setter Property="AcceptsReturn" Value="True" />
             <Setter Property="TextWrapping" Value="Wrap" />
@@ -63,7 +63,7 @@
 					Background="#FCFCFC">
                     <!--Header-->
                     <Grid
-						Height="60">
+						Height="50">
                         <TextBlock
 							Style="{StaticResource ControlTitleTextStyle}"
 							Text="Base 64 Encoder / Decoder" />
@@ -71,15 +71,17 @@
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition
-								Width="30" />
+							Width="30" />
                             <ColumnDefinition
-								Width="1000" />
+							Width="100" />
+                            <ColumnDefinition
+                            Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition
-								Height="50" />
+							Height="35" />
                             <RowDefinition
-								Height="80" />
+							Height="60" />
                         </Grid.RowDefinitions>
                         <!--Configuration Title-->
                         <TextBlock
@@ -91,7 +93,8 @@
                         <WrapPanel
 							Grid.Row="1"
 							Grid.Column="1"
-							HorizontalAlignment="Left">
+							HorizontalAlignment="Left"
+							Grid.ColumnSpan="2">
                             <Border
 								BorderBrush="#C8C8C8"
 								Background="White"
@@ -101,17 +104,17 @@
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition
-												Width="25" />
+												Width="45" />
                                             <ColumnDefinition
 												Width="100" />
                                             <ColumnDefinition
 												Width="300" />
                                             <ColumnDefinition
-												Width="600" />
+												Width="430" />
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
                                             <RowDefinition
-												Height="60" />
+												Height="50" />
                                         </Grid.RowDefinitions>
                                         <materialDesign:PackIcon
 											Grid.Row="0"
@@ -131,12 +134,12 @@
 												HorizontalAlignment="Left"
 												FontSize="14"
 												Text="Conversion"
-												Margin="0 15 0 0" />
+												Margin="0 10 0 0" />
                                             <TextBlock
 												HorizontalAlignment="Left"
 												FontSize="11"
 												Text="Select which conversion mode you want to use"
-												Margin="0 35 0 0 "
+												Margin="0 25 0 0 "
 												Foreground="Gray" />
                                         </Grid>
                                         <CheckBox
@@ -155,17 +158,17 @@
                             <ColumnDefinition
 								Width="30" />
                             <ColumnDefinition
-								Width="1000" />
+								Width="875" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition
-								Height="40" />
+								Height="35" />
                             <RowDefinition
-								Height="250" />
+								Height="225" />
                             <RowDefinition
-								Height="50" />
+								Height="35" />
                             <RowDefinition
-								Height="250" />
+								Height="225" />
                         </Grid.RowDefinitions>
                         <Grid
 							Grid.Row="0"

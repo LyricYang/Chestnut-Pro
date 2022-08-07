@@ -263,7 +263,6 @@
                     var r = int.Parse(color.Substring(0, 2), NumberStyles.AllowHexSpecifier);
                     var g = int.Parse(color.Substring(2, 2), NumberStyles.AllowHexSpecifier);
                     var b = int.Parse(color.Substring(4, 2), NumberStyles.AllowHexSpecifier);
-                    Badged1.Visibility = System.Windows.Visibility.Visible;
                     PinButton1.Visibility = System.Windows.Visibility.Visible;
                     PinButton1.Background = new SolidColorBrush(Color.FromRgb((byte)r, (byte)g, (byte)b));
                     PinButton1.BorderBrush = new SolidColorBrush(Color.FromRgb((byte)r, (byte)g, (byte)b));

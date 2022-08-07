@@ -6,8 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 	mc:Ignorable="d"
-	d:DesignHeight="850"
-	d:DesignWidth="1100">
+	d:DesignHeight="690"
+	d:DesignWidth="940">
     <UserControl.Resources>
         <Style
 			TargetType="{x:Type CheckBox}"
@@ -40,7 +40,7 @@
 				Background="#FCFCFC">
                 <!--Header-->
                 <Grid
-					Height="60">
+					Height="50">
                     <TextBlock
 						Style="{StaticResource ControlTitleTextStyle}"
 						Text="GUID Generator" />
@@ -48,12 +48,13 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30" />
-                        <ColumnDefinition Width="1000" />
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="50" />
-                        <RowDefinition Height="80" />
-                        <RowDefinition Height="80" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
                     </Grid.RowDefinitions>
                     <!--Content Title-->
                     <TextBlock
@@ -63,9 +64,10 @@
 						Text="Configuration" />
                     <!--Configuration:Hyphens-->
                     <WrapPanel
-                            Grid.Row="1"
-						    Grid.Column="1"
-							HorizontalAlignment="Left">
+                        Grid.Row="1"
+						Grid.Column="1"
+						HorizontalAlignment="Left"
+                        Grid.ColumnSpan="2">
                         <Border
 								BorderBrush="#C8C8C8"
 								Background="White"
@@ -74,13 +76,13 @@
                             <StackPanel>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="25" />
+                                        <ColumnDefinition Width="45" />
                                         <ColumnDefinition Width="100" />
-                                        <ColumnDefinition Width="200" />
-                                        <ColumnDefinition Width="680" />
+                                        <ColumnDefinition Width="300" />
+                                        <ColumnDefinition Width="430" />
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="60" />
+                                        <RowDefinition Height="50" />
                                     </Grid.RowDefinitions>
                                     <materialDesign:PackIcon
                                         Grid.Row="0"
@@ -106,7 +108,8 @@
                     <WrapPanel
                         Grid.Row="2"
 						Grid.Column="1"
-						HorizontalAlignment="Left">
+						HorizontalAlignment="Left"
+                        Grid.ColumnSpan="2">
                         <Border
 							BorderBrush="#C8C8C8"
 							Background="White"
@@ -115,13 +118,13 @@
                             <StackPanel>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="25" />
+                                        <ColumnDefinition Width="45" />
                                         <ColumnDefinition Width="100" />
                                         <ColumnDefinition Width="300" />
-                                        <ColumnDefinition Width="580" />
+                                        <ColumnDefinition Width="430" />
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="60" />
+                                        <RowDefinition Height="50" />
                                     </Grid.RowDefinitions>
                                     <materialDesign:PackIcon
                                         Grid.Row="0"
@@ -145,16 +148,15 @@
                     </WrapPanel>
                 </Grid>
                 <!--Input&Output-->
-                <Grid
-					Margin="0 30 0 0">
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30" />
-                        <ColumnDefinition Width="1000" />
+                        <ColumnDefinition Width="875" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="40" />
-                        <RowDefinition Height="40" />
-                        <RowDefinition Height="400" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="350" />
                     </Grid.RowDefinitions>
                     <Grid
 						Grid.Row="0"
@@ -226,7 +228,7 @@
                         Text="{Binding OutputText, Mode=OneWay}"
 						VerticalAlignment="Top"
 						FontSize="14"
-						Height="390"
+						Height="330"
 						Margin="0 10 0 0"
 						AcceptsReturn="True"
 						TextWrapping="Wrap"

@@ -7,8 +7,8 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:vm="clr-namespace:Chestnut_Pro.ViewModels"
 	mc:Ignorable="d"
-	d:DesignHeight="850"
-	d:DesignWidth="1100">
+	d:DesignHeight="690"
+	d:DesignWidth="940">
     <UserControl.DataContext>
         <vm:ColorPaletteViewModel />
     </UserControl.DataContext>
@@ -44,16 +44,15 @@
 				Background="#FCFCFC">
                 <!--Header-->
                 <Grid
-					Height="60">
+					Height="50">
                     <TextBlock
 						Text="Color Palette"
 						Style="{StaticResource ControlTitleTextStyle}" />
                 </Grid>
-                <Grid
-					Margin="0 30 0 0">
+                <Grid Margin="0 10 0 0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="550" />
-                        <ColumnDefinition Width="550" />
+                        <ColumnDefinition Width="515" />
+                        <ColumnDefinition Width="440" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="600" />
@@ -64,7 +63,7 @@
 						Grid.Column="0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="30" />
-                            <ColumnDefinition Width="75" />
+                            <ColumnDefinition Width="65" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
@@ -185,95 +184,73 @@
                     <Grid
 						Grid.Row="0"
 						Grid.Column="1">
-                        <StackPanel
-                            Orientation="Horizontal"
-                            Margin="20 15 0 0">
-                            <materialDesign:Badged
-                                x:Name="Badged1"
-								BadgeBackground="White"
+                        <StackPanel Orientation="Horizontal">
+                            <Button
+                                x:Name="PinButton1"
+								materialDesign:ButtonAssist.CornerRadius="3"
+								Height="25"
+								Width="55"
                                 Visibility="Hidden"
-								Badge="{materialDesign:PackIcon Pin}">
-                                <Button
-                                    x:Name="PinButton1"
-									Style="{StaticResource MaterialDesignRaisedButton}"
-									materialDesign:ButtonAssist.CornerRadius="3"
-									Height="30"
-									Width="80"
-                                    Visibility="Hidden"
-									HorizontalAlignment="Left"
-									VerticalAlignment="Top"
-                                    Click="ColorDisplay"/>
-                            </materialDesign:Badged>
-                            <materialDesign:Badged
-                                x:Name="Badged2"
-								BadgeBackground="White"
+								HorizontalAlignment="Left"
+								VerticalAlignment="Top"
+                                Click="ColorDisplay"
+                                Margin="15 10 0 0"/>
+                            <Button
+                                x:Name="PinButton2"
+								Style="{StaticResource MaterialDesignRaisedButton}"
+								materialDesign:ButtonAssist.CornerRadius="3"
+								Height="25"
+								Width="55"
+                                Margin="10 10 0 0"
                                 Visibility="Hidden"
-								Badge="{materialDesign:PackIcon Pin}">
-                                <Button
-                                    x:Name="PinButton2"
-									Style="{StaticResource MaterialDesignRaisedButton}"
-									materialDesign:ButtonAssist.CornerRadius="3"
-									Height="30"
-									Width="80"
-                                    Margin="20 0 0 0"
-                                    Visibility="Hidden"
-									HorizontalAlignment="Left"
-									VerticalAlignment="Top"
-                                    Click="ColorDisplay"/>
-                            </materialDesign:Badged>
-                            <materialDesign:Badged
-                                x:Name="Badged3"
-								BadgeBackground="White"
+								HorizontalAlignment="Left"
+								VerticalAlignment="Top"
+                                Click="ColorDisplay"/>
+                            <Button
+                                x:Name="PinButton3"
+								Style="{StaticResource MaterialDesignRaisedButton}"
+								materialDesign:ButtonAssist.CornerRadius="3"
+								Height="25"
+								Width="55"
+                                Margin="10 10 0 0"
                                 Visibility="Hidden"
-								Badge="{materialDesign:PackIcon Pin}">
-                                <Button
-                                    x:Name="PinButton3"
-									Style="{StaticResource MaterialDesignRaisedButton}"
-									materialDesign:ButtonAssist.CornerRadius="3"
-									Height="30"
-									Width="80"
-                                    Margin="20 0 0 0"
-                                    Visibility="Hidden"
-									HorizontalAlignment="Left"
-									VerticalAlignment="Top"
-                                    Click="ColorDisplay"/>
-                            </materialDesign:Badged>
-                            <materialDesign:Badged
-                                x:Name="Badged4"
-								BadgeBackground="White"
+								HorizontalAlignment="Left"
+								VerticalAlignment="Top"
+                                Click="ColorDisplay"/>
+                            <Button
+                                x:Name="PinButton4"
+								Style="{StaticResource MaterialDesignRaisedButton}"
+								materialDesign:ButtonAssist.CornerRadius="3"
+								Height="25"
+								Width="55"
+                                Margin="10 10 0 0"
                                 Visibility="Hidden"
-								Badge="{materialDesign:PackIcon Pin}">
-                                <Button
-                                    x:Name="PinButton4"
-									Style="{StaticResource MaterialDesignRaisedButton}"
-									materialDesign:ButtonAssist.CornerRadius="3"
-									Height="30"
-									Width="80"
-                                    Margin="20 0 0 0"
-                                    Visibility="Hidden"
-									HorizontalAlignment="Left"
-									VerticalAlignment="Top"
-                                    Click="ColorDisplay"/>
-                            </materialDesign:Badged>
-                            <materialDesign:Badged
-                                x:Name="Badged5"
+								HorizontalAlignment="Left"
+								VerticalAlignment="Top"
+                                Click="ColorDisplay"/>
+                            <Button
+                                x:Name="PinButton5"
+								Style="{StaticResource MaterialDesignRaisedButton}"
+								materialDesign:ButtonAssist.CornerRadius="3"
+								Height="25"
+								Width="55"
+                                Margin="10 10 0 0"
                                 Visibility="Hidden"
-								BadgeBackground="White"
-								Badge="{materialDesign:PackIcon Pin}">
-                                <Button
-                                    x:Name="PinButton5"
-									Style="{StaticResource MaterialDesignRaisedButton}"
-									materialDesign:ButtonAssist.CornerRadius="3"
-									Height="30"
-									Width="80"
-                                    Margin="20 0 0 0"
-                                    Visibility="Hidden"
-									HorizontalAlignment="Left"
-									VerticalAlignment="Top"
-                                    Click="ColorDisplay"/>
-                            </materialDesign:Badged>
+								HorizontalAlignment="Left"
+								VerticalAlignment="Top"
+                                Click="ColorDisplay"/>
+                            <Button
+                                x:Name="PinButton6"
+								Style="{StaticResource MaterialDesignRaisedButton}"
+								materialDesign:ButtonAssist.CornerRadius="3"
+								Height="25"
+								Width="55"
+                                Margin="10 10 0 0"
+                                Visibility="Hidden"
+								HorizontalAlignment="Left"
+								VerticalAlignment="Top"
+                                Click="ColorDisplay"/>
                         </StackPanel>
-
                         <materialDesign:Card
                             Grid.Row="0"
 							x:Name="Palette_Card"
@@ -281,10 +258,10 @@
 							BorderThickness="5"
 							BorderBrush="White"
 							Background="White"
-							Margin="10,60,40,359">
+							Margin="10,45,40,396">
                             <StackPanel
 								Margin="10,0,10,0"
-								VerticalAlignment="Center" Height="161">
+								VerticalAlignment="Center" Height="140">
                                 <Button
                                     Content="{materialDesign:PackIcon Pin}"
                                     ToolTip="Pin"
@@ -313,39 +290,39 @@
                         </materialDesign:Card>
                         <materialDesign:PackIcon
 							Kind="AlphaRBoxOutline"
-							Height="40"
-							Width="40"
-							Margin="8,322,0,0" />
+							Height="35"
+							Width="35"
+							Margin="25,270,0,300" VerticalAlignment="Center" />
                         <TextBox
 							x:Name="RGB_BOX_R"
 							MaxLength="3"
-							Height="35"
-							Margin="58,328,317,236"
+							Height="30"
+							Margin="67,270,260,300"
 							materialDesign:HintAssist.Hint="0-255"
 							materialDesign:TransitionAssist.DisableTransitions="True" />
                         <materialDesign:PackIcon
 							Kind="AlphaGBoxOutline"
-							Height="40"
-							Width="40"
-							Margin="8,402,0,0" />
+							Height="35"
+							Width="35"
+							Margin="25,320,0,0" />
                         <TextBox
 							x:Name="RGB_BOX_G"
 							MaxLength="3"
-							Height="35"
-							Margin="58,406,317,159"
+							Height="30"
+							Margin="67,322,260,248"
 							materialDesign:HintAssist.Hint="0-255"
 							materialDesign:TransitionAssist.DisableTransitions="True" />
                         <materialDesign:PackIcon
 							Kind="AlphaBBoxOutline"
-							Height="40"
-							Width="40"
-							Margin="8,472,0,0"
+							Height="35"
+							Width="35"
+							Margin="25,380,0,0"
 							RenderTransformOrigin="0.631,-0.472" />
                         <TextBox
 							x:Name="RGB_BOX_B"
 							MaxLength="3"
-							Height="35"
-							Margin="58,480,317,85"
+							Height="30"
+							Margin="67,382,260,188"
 							materialDesign:HintAssist.Hint="0-255"
 							materialDesign:TransitionAssist.DisableTransitions="True" />
                         <TextBlock
@@ -355,13 +332,13 @@
 							Foreground="#1A1A1A"
 							HorizontalAlignment="Left"
 							VerticalAlignment="Top"
-							Margin="283,335,0,0" />
+							Margin="230,276,0,0" />
                         <TextBox
 							x:Name="Hex_Copy"
 							Height="30"
-							Margin="328,331,52,239"
+							Margin="270,270,60,300"
 							materialDesign:HintAssist.Hint="#FFFFFF"
-							materialDesign:TransitionAssist.DisableTransitions="True" />
+							materialDesign:TransitionAssist.DisableTransitions="True" RenderTransformOrigin="0.5,0.6" />
                         <TextBlock
 							Text="HSL"
 							FontSize="14"
@@ -369,11 +346,11 @@
 							Foreground="#1A1A1A"
 							HorizontalAlignment="Left"
 							VerticalAlignment="Top"
-							Margin="283,413,0,0" />
+							Margin="230,328,0,0" />
                         <TextBox
 							x:Name="HSL_Copy"
 							Height="30"
-							Margin="328,408,52,162"
+							Margin="270,322,60,248"
 							materialDesign:HintAssist.Hint="0.00,0.00%,100.00%"
 							materialDesign:TransitionAssist.DisableTransitions="True" />
                         <TextBlock
@@ -383,11 +360,11 @@
 							Foreground="#1A1A1A"
 							HorizontalAlignment="Left"
 							VerticalAlignment="Top"
-							Margin="283,485,0,0" />
+							Margin="224,388,0,0" />
                         <TextBox
 							x:Name="CMYK_Copy"
 							Height="30"
-							Margin="328,482,52,88"
+							Margin="275,382,60,188"
 							materialDesign:HintAssist.Hint="0.00,0.00,0.00,0.00"
 							materialDesign:TransitionAssist.DisableTransitions="True" />
                         <ComboBox
@@ -395,9 +372,9 @@
 							materialDesign:HintAssist.Hint="Input"
 							materialDesign:TextFieldAssist.SuffixText="type"
 							Height="30"
-							Width="213"
+							Width="150"
 							HorizontalAlignment="Left"
-							Margin="20,262,0,308">
+							Margin="30,220,0,350">
                             <ComboBoxItem
 								IsSelected="True"
 								Content="RGB" />
@@ -413,9 +390,9 @@
 							materialDesign:HintAssist.Hint="Popular"
 							materialDesign:TextFieldAssist.SuffixText="type"
 							Height="30"
-							Width="214"
+							Width="150"
 							HorizontalAlignment="Left"
-							Margin="285,262,0,308"
+							Margin="230,220,0,350"
 							SelectionChanged="PopularColorChanged"
 							DropDownClosed="DropDownClosed">
                             <ComboBoxItem
@@ -497,7 +474,7 @@
                             Background="#7b8b6f"
                             BorderBrush="#7b8b6f"
 							HorizontalAlignment="Right"
-							Margin="0,565,144,5"/>
+							Margin="0,440,155,130"/>
                         <Button
 							Style="{StaticResource MaterialDesignRaisedButton}"
 							materialDesign:ButtonAssist.CornerRadius="3"
@@ -510,7 +487,7 @@
                             Background="#7b8b6f"
                             BorderBrush="#7b8b6f"
 							HorizontalAlignment="Right"
-							Margin="0,565,51,5"/>
+							Margin="0,440,62,130"/>
                     </Grid>
                 </Grid>
             </StackPanel>
