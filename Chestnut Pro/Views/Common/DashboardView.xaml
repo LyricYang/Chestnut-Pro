@@ -384,7 +384,7 @@
 					Padding="10"
 					UniformCornerRadius="20"
 					HorizontalAlignment="Center"
-					Height="255"
+					Height="260"
 					Width="265">
                 </materialDesign:Card>
                 <!--Calendar-->

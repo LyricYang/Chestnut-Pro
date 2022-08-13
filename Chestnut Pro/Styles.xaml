@@ -65,7 +65,7 @@
         <Setter Property="Height" Value="35" />
         <Setter Property="BorderBrush" Value="#C8C8C8" />
         <Setter Property="BorderThickness" Value="1,1,1,1" />
-        <Setter Property="Width" Value="170" />
+        <Setter Property="Width" Value="165" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="Background" Value="#efefef" />
         <Setter Property="Foreground" Value="#303030" />
@@ -73,6 +73,7 @@
         <Setter Property="CaretBrush" Value="Black" />
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Margin" Value="0 0 10 0" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
@@ -116,7 +117,7 @@
                 <ControlTemplate TargetType="RadioButton">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="210" />
+                            <ColumnDefinition Width="205" />
                         </Grid.ColumnDefinitions>
                         <Border x:Name="border"
                                 Background="Transparent"
